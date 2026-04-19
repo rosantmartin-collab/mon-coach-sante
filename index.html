@@ -3675,7 +3675,10 @@ async function signOut(){
 async function forceSyncCloud(){
   showToast('☁️ Synchronisation...');
   await loadFromCloud();
+  ensureWeek();
   renderPage();
+  renderHome();
+  renderRecettes();
   showToast('✅ Données synchronisées !');
 }
 
@@ -3717,7 +3720,9 @@ document.addEventListener('DOMContentLoaded',()=>{
       load();
       await loadFromCloud();
       ensureWeek();
+      await saveToCloud();
       showPage(S.page||'home');
+      renderPage();
       document.querySelectorAll('.mo').forEach(m=>{
         m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active');});
       });
