@@ -1970,13 +1970,17 @@ function viewMealFiche(day,slot){
   const detailed=MEAL_STEPS[m.n]||null;
   const ficheData={emoji:m.flag||meta.emoji,name:m.n,cuisine:meta.lbl,category:meta.cat,persons:1,prep:'~15 min',cook:'~20 min',diff:'',color:meta.color,colorLight:meta.colorLight,
     ingredients:(()=>{
-      // Chercher la recette complète dans la bibliothèque
+      // Chercher la recette complète dans la bibliothèque (comparaison souple)
       const allRecipes=[...RECIPE_SUGGESTIONS,...RECIPE_SUGGESTIONS_EXTRA,...(S.recipes||[])];
-      const found=allRecipes.find(r=>r.name===m.n);
+      const mName=(m.n||'').toLowerCase().trim();
+      const found=allRecipes.find(r=>{
+        const rName=(r.name||'').toLowerCase().trim();
+        return rName===mName || mName.includes(rName) || rName.includes(mName);
+      });
       if(found&&found.ingredients&&found.ingredients.length){
         return found.ingredients;
       }
-      // Sinon utiliser les ingrédients simplifiés du plan
+      // Sinon afficher les ingrédients du plan avec quantité vide
       return (m.ing||[]).map(i=>({ico:'•',qty:'',name:i}));
     })(),
     tips:detailed?[...detailed.tips,{dot:'#8b5cf6',text:'<strong>'+m.k+' kcal</strong> · P: '+m.p+'g · G: '+m.c+'g · L: '+m.l+'g'}]:[{dot:'#4caf50',text:'<strong>'+m.k+' kcal</strong>'},{dot:'#1565c0',text:'Protéines : <strong>'+m.p+'g</strong>'},{dot:'#f57f17',text:'Glucides : <strong>'+m.c+'g</strong>'},{dot:'#c62828',text:'Lipides : <strong>'+m.l+'g</strong>'}],
