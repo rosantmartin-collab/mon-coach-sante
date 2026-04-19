@@ -3676,10 +3676,13 @@ async function forceSyncCloud(){
   showToast('☁️ Synchronisation...');
   await loadFromCloud();
   ensureWeek();
-  renderPage();
-  renderHome();
-  renderRecettes();
-  showToast('✅ Données synchronisées !');
+  try{renderHome();}catch(e){}
+  try{renderRecettes();}catch(e){}
+  try{renderMeals();}catch(e){}
+  try{renderSport();}catch(e){}
+  try{renderStats();}catch(e){}
+  try{renderProfile();}catch(e){}
+  showToast('✅ '+S.recipes.length+' recettes synchronisées !');
 }
 
 async function saveToCloud(){
@@ -3695,16 +3698,21 @@ async function loadFromCloud(){
     const {data,error}=await supa.from('coach_data').select('data').eq('user_id',_currentUser.id).single();
     if(data&&data.data){
       const p=JSON.parse(data.data);
-      S=Object.assign({},S,p,{profile:Object.assign({},S.profile,p.profile||{})});
+      // Le cloud prime sur tout
+      S=Object.assign({},p);
+      if(!S.profile)S.profile={name:'',weight:75,height:175,goal:'maintenance',exclusions:[]};
       if(!S.profile.exclusions)S.profile.exclusions=[];
       if(!S.recipes)S.recipes=[];
       if(!S.proposals)S.proposals=[];
       if(!S.rejectedIds)S.rejectedIds=[];
-      // Sauvegarder aussi dans localStorage pour la prochaine fois
+      if(!S.meals)S.meals={};
+      if(!S.workouts)S.workouts=[];
+      if(!S.plan)S.plan={};
+      if(!S.page)S.page='home';
+      if(!S.mealDay)S.mealDay='lundi';
+      // Sauvegarder dans localStorage
       try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
-      console.log('✅ Données chargées depuis le cloud - recettes:',S.recipes.length);
-    } else {
-      console.log('ℹ️ Pas de données cloud trouvées pour cet utilisateur');
+      console.log('✅ Cloud chargé - recettes:',S.recipes.length,'profil:',S.profile.name);
     }
   }catch(e){console.error('loadFromCloud erreur:',e);}
 }
