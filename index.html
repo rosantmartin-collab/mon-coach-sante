@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Mon Coach Santé v2.10 🏋️</title>
+<title>Mon Coach Santé v2.11 🏋️</title>
 <style>
 :root {
   --bg:#0f172a;--bg2:#1e293b;--bg3:#334155;--bg4:#475569;
@@ -378,6 +378,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <button class="filter-btn" onclick="filterRecipes('plat',this)">🍽️ Plats</button>
     <button class="filter-btn" onclick="filterRecipes('dessert',this)">🍰 Desserts</button>
     <button class="filter-btn" onclick="filterRecipes('collation',this)">🫐 Collations</button>
+        <button class="filter-btn" onclick="filterRecipes('apéro',this)">🥂 Apéro</button>
   </div>
   <div id="my-recipes-list"></div>
 </div>
@@ -424,6 +425,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
             <option value="collation">🫐 Collation</option>
             <option value="dessert">🍰 Dessert</option>
             <option value="entrée">🥗 Entrée</option>
+            <option value="apéro">🥂 Apéro</option>
           </select>
         </div>
         <div class="fg"><label class="fl">Emoji</label><input class="fi" id="ar-emoji" type="text" placeholder="🍗" maxlength="2"></div>
@@ -3310,7 +3312,186 @@ const RECIPE_SUGGESTIONS_EXTRA=[
    ingredients:[{ico:"🐟",qty:"800g",name:"Poissons variés"},{ico:"🦐",qty:"200g",name:"Crevettes et moules"},{ico:"🍅",qty:"400g",name:"Tomates concassées"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🌿",qty:"1 dose",name:"Safran"},{ico:"🍷",qty:"15cl",name:"Vin blanc"},{ico:"🌿",qty:"QS",name:"Fenouil, thym, huile d'olive"}],
    tips:[{dot:"#e65100",text:"Rouille maison = âme de la bouillabaisse"},{dot:"#4caf50",text:"Ébullition vive 10 min = bouillon émulsionné"}],
    steps:[{title:"Base",desc:"Faire revenir oignons et fenouil. Ajouter tomates, vin, safran. Verser 1L eau."},{title:"Poissons",desc:"Porter à vive ébullition. Ajouter poissons fermes puis fragiles. 10-12 min."},{title:"Fruits de mer",desc:"Ajouter crevettes et moules 3-4 min. Servir bouillon avec croûtons et rouille."}],
-   errors:["Cuisson douce → bouillon pas émulsionné"],variantes:["Soupe de poisson"],footer:"Plat emblématique · Marseille",stars:"★★★★★"}
+   errors:["Cuisson douce → bouillon pas émulsionné"],variantes:["Soupe de poisson"],footer:"Plat emblématique · Marseille",stars:"★★★★★"},
+  {id:"re01",emoji:"🧀",name:"Fondue savoyarde",cuisine:"Cuisine Savoyarde",persons:4,prep:"15 min",cook:"15 min",diff:"Facile ★★",color:"#f9a825",colorLight:"#fffde7",category:"apéro",seasons:["winter"],
+   ingredients:[{ico:"🧀",qty:"400g",name:"Comté"},{ico:"🧀",qty:"400g",name:"Beaufort"},{ico:"🍷",qty:"30cl",name:"Vin blanc de Savoie"},{ico:"🧄",qty:"1 gousse",name:"Ail"},{ico:"🌿",qty:"1 c.à.c.",name:"Fécule de maïs"},{ico:"🌿",qty:"QS",name:"Muscade, poivre blanc"},{ico:"🍞",qty:"1 baguette",name:"Pain en cubes"}],
+   tips:[{dot:"#f9a825",text:"Frotter le caquelon avec l'ail = arôme discret mais présent"},{dot:"#4caf50",text:"Fécule diluée dans le vin = empêche la séparation du fromage"}],
+   steps:[{title:"Préparer",desc:"Frotter le caquelon avec la gousse d'ail coupée. Verser le vin blanc. Porter à frémissement."},{title:"Ajouter le fromage",desc:"Incorporer les fromages râpés progressivement en remuant en 8. Ajouter la fécule diluée dans un peu de vin."},{title:"Assaisonner et servir",desc:"Muscade, poivre blanc. Maintenir au réchaud. Tremper les cubes de pain en remuant."}],
+   errors:["Fromage ajouté trop vite → grumeaux","Trop de chaleur → fromage qui se sépare"],variantes:["Avec champignons grillés","Avec charcuterie","Fondue au chocolat en dessert"],footer:"Tradition · Savoie",stars:"★★★★★"},
+
+  {id:"re02",emoji:"🥩",name:"Carpaccio de bœuf truffé",cuisine:"Cuisine Italienne",persons:4,prep:"15 min",cook:"0 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"entrée",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"400g",name:"Filet de bœuf très frais"},{ico:"🧀",qty:"60g",name:"Parmesan en copeaux"},{ico:"🌿",qty:"60g",name:"Roquette"},{ico:"🫒",qty:"4 c.à.s.",name:"Huile de truffe ou d'olive"},{ico:"🍋",qty:"1",name:"Citron"},{ico:"🧂",qty:"QS",name:"Fleur de sel, poivre"}],
+   tips:[{dot:"#c62828",text:"Filet semi-congelé 30 min = tranches ultra-fines"},{dot:"#4caf50",text:"Assaisonner juste avant de servir = fraîcheur maximale"}],
+   steps:[{title:"Trancher",desc:"Placer le filet 30 min au congélateur. Trancher très finement au couteau bien aiguisé. Étaler sur les assiettes."},{title:"Assaisonner",desc:"Arroser d'huile de truffe et de jus de citron. Fleur de sel et poivre."},{title:"Garnir",desc:"Disposer la roquette et les copeaux de parmesan. Servir immédiatement."}],
+   errors:["Viande pas de qualité → risque sanitaire","Assaisonner trop tôt → viande qui cuit dans le citron"],variantes:["Avec câpres","Avec anchois","Avec copeaux de truffe"],footer:"Antipasto · Italie",stars:"★★★★★"},
+
+  {id:"re03",emoji:"🍤",name:"Tempura de légumes sauce dashi",cuisine:"Cuisine Japonaise",persons:4,prep:"20 min",cook:"15 min",diff:"Facile ★★",color:"#f57f17",colorLight:"#fff9e6",category:"apéro",seasons:["all"],
+   ingredients:[{ico:"🥕",qty:"2",name:"Carottes"},{ico:"🫑",qty:"1",name:"Poivron"},{ico:"🍄",qty:"8",name:"Champignons shiitake"},{ico:"🌾",qty:"150g",name:"Farine à tempura ou farine + fécule"},{ico:"💧",qty:"20cl",name:"Eau glacée"},{ico:"🥚",qty:"1",name:"Jaune d'œuf"},{ico:"🫙",qty:"QS",name:"Sauce soja, mirin, dashi pour tremper"}],
+   tips:[{dot:"#f57f17",text:"Eau glacée + pas trop mélanger = pâte légère avec des grumeaux"},{dot:"#4caf50",text:"Huile à 175°C = tempura qui gonfle et reste croustillante"}],
+   steps:[{title:"Pâte tempura",desc:"Mélanger brièvement farine, jaune d'œuf et eau glacée. Ne pas trop mélanger — des grumeaux sont normaux."},{title:"Préparer les légumes",desc:"Couper en bâtonnets ou tranches épaisses. Sécher soigneusement."},{title:"Frire",desc:"Tremper les légumes dans la pâte. Frire à 175°C, 2-3 min. Égoutter. Servir avec la sauce dashi chaude."}],
+   errors:["Eau pas glacée → pâte épaisse","Trop mélanger → tempura dure"],variantes:["Crevettes tempura","Tofu tempura","Avec sel matcha"],footer:"Beignets légers · Japon",stars:"★★★★★"},
+
+  {id:"re04",emoji:"🫙",name:"Rillettes de canard maison",cuisine:"Cuisine Gasconne",persons:8,prep:"15 min",cook:"2h",diff:"Facile ★",color:"#795548",colorLight:"#efebe9",category:"apéro",seasons:["winter","autumn"],
+   ingredients:[{ico:"🦆",qty:"4",name:"Cuisses de canard confites (boîte)"},{ico:"🧄",qty:"3 gousses",name:"Ail"},{ico:"🌿",qty:"QS",name:"Thym, laurier, persil"},{ico:"🧂",qty:"QS",name:"Sel, poivre, quatre-épices"},{ico:"🍷",qty:"5cl",name:"Armagnac (facultatif)"}],
+   tips:[{dot:"#795548",text:"Effilocher à la fourchette = texture rustique authentique"},{dot:"#4caf50",text:"Graisse de canard récupérée = conservation naturelle"}],
+   steps:[{title:"Effilocher",desc:"Récupérer la viande des cuisses confites. Retirer les os et la peau. Effilocher à la fourchette."},{title:"Assaisonner",desc:"Mélanger avec ail haché, herbes, sel, poivre, quatre-épices et armagnac. Incorporer un peu de graisse de canard pour lier."},{title:"Mettre en pot",desc:"Tasser dans des ramequins ou pots. Couvrir d'une couche de graisse. Réfrigérer 24h. Servir avec cornichons et pain grillé."}],
+   errors:["Pas assez de graisse → rillettes sèches"],variantes:["Rillettes de porc","Avec des figues","Avec des noix"],footer:"Charcuterie maison · Gascogne",stars:"★★★★★"},
+
+  {id:"re05",emoji:"🍋",name:"Sorbet citron basilic",cuisine:"Cuisine Italienne",persons:6,prep:"20 min",cook:"10 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["summer"],
+   ingredients:[{ico:"🍋",qty:"6",name:"Citrons (jus + zeste)"},{ico:"🍬",qty:"200g",name:"Sucre"},{ico:"💧",qty:"25cl",name:"Eau"},{ico:"🌿",qty:"10 feuilles",name:"Basilic frais"},{ico:"🥚",qty:"1 blanc",name:"Blanc d'œuf (facultatif)"}],
+   tips:[{dot:"#f9a825",text:"Sirop refroidi complètement avant de congeler = texture fine"},{dot:"#4caf50",text:"Blanc d'œuf monté = sorbet plus aérien et crémeux"}],
+   steps:[{title:"Sirop",desc:"Porter eau et sucre à ébullition 2 min. Ajouter le basilic hors du feu. Infuser 10 min. Filtrer."},{title:"Mélanger",desc:"Incorporer le jus et les zestes de citron au sirop refroidi."},{title:"Congeler",desc:"Verser dans un récipient. Congeler 2h. Mixer ou fouetter vigoureusement. Recongeler 1h minimum. Répéter 2-3 fois pour une texture crémeuse."}],
+   errors:["Sirop chaud → détruit le basilic","Pas remixer → sorbet avec des cristaux"],variantes:["Sorbet citron vert","Avec de la menthe","En coupe dans des citrons évidés"],footer:"Dessert glacé · Italie",stars:"★★★★★"},
+
+  {id:"re06",emoji:"🍫",name:"Coulant au caramel beurre salé",cuisine:"Cuisine Française",persons:4,prep:"20 min",cook:"10 min",diff:"Facile ★★",color:"#f57f17",colorLight:"#fff9e6",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🍫",qty:"150g",name:"Chocolat blanc"},{ico:"🧈",qty:"100g",name:"Beurre"},{ico:"🥚",qty:"3",name:"Œufs + 2 jaunes"},{ico:"🍬",qty:"80g",name:"Sucre"},{ico:"🌾",qty:"40g",name:"Farine"},{ico:"🍮",qty:"4 c.à.c.",name:"Caramel beurre salé"},{ico:"🧂",qty:"QS",name:"Fleur de sel"}],
+   tips:[{dot:"#f57f17",text:"Caramel déposé congelé au centre = cœur coulant garanti"},{dot:"#4caf50",text:"Préparer la veille et cuire au dernier moment = zéro stress"}],
+   steps:[{title:"Ganache",desc:"Faire fondre chocolat blanc et beurre. Fouetter œufs et sucre jusqu'au ruban. Incorporer le chocolat puis la farine."},{title:"Préparer les ramequins",desc:"Beurrer et fariner des ramequins. Verser la pâte à mi-hauteur. Déposer une cuillère de caramel congelé au centre. Recouvrir de pâte."},{title:"Cuire",desc:"Four préchauffé à 200°C, 10-11 min. Le centre doit rester tremblotant. Démouler immédiatement. Fleur de sel."}],
+   errors:["Caramel pas congelé → disparaît dans la pâte","Trop cuire → cœur pris"],variantes:["Version chocolat noir","Cœur framboise","Avec glace vanille"],footer:"Dessert signature · France",stars:"★★★★★"},
+
+  {id:"re07",emoji:"🥐",name:"Escargots en feuilleté au beurre d'ail",cuisine:"Cuisine Française",persons:4,prep:"15 min",cook:"15 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"apéro",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"1 rouleau",name:"Pâte feuilletée"},{ico:"🐌",qty:"24",name:"Escargots (conserve)"},{ico:"🧈",qty:"100g",name:"Beurre mou"},{ico:"🧄",qty:"4 gousses",name:"Ail"},{ico:"🌿",qty:"QS",name:"Persil plat, sel, poivre"},{ico:"🥚",qty:"1 jaune",name:"Pour la dorure"}],
+   tips:[{dot:"#2e7d32",text:"Beurre d'ail persillé bien froid avant de garnir = reste à l'intérieur"},{dot:"#4caf50",text:"Four très chaud = feuilletage bien doré"}],
+   steps:[{title:"Beurre d'ail",desc:"Mélanger beurre mou, ail haché très fin, persil ciselé, sel et poivre. Réfrigérer 15 min."},{title:"Préparer les feuilletés",desc:"Couper la pâte en 24 carrés. Déposer un escargot et une noisette de beurre d'ail sur chaque carré. Fermer en triangle ou chausson. Dorer."},{title:"Cuire",desc:"Four à 200°C, 12-15 min jusqu'à bien dorés. Servir chaud."}],
+   errors:["Beurre trop mou → fuit pendant la cuisson"],variantes:["En coquilles classiques","Avec champignons","Version mini-vol au vent"],footer:"Apéro festif · France",stars:"★★★★"},
+
+  {id:"re08",emoji:"🍊",name:"Tarte à l'orange sanguine",cuisine:"Cuisine Méditerranéenne",persons:8,prep:"25 min",cook:"30 min",diff:"Facile ★★",color:"#e65100",colorLight:"#fff3e0",category:"dessert",seasons:["winter"],
+   ingredients:[{ico:"🍊",qty:"4",name:"Oranges sanguines (jus + zeste)"},{ico:"🥚",qty:"4",name:"Œufs"},{ico:"🍬",qty:"150g",name:"Sucre"},{ico:"🧈",qty:"80g",name:"Beurre"},{ico:"🌾",qty:"1",name:"Pâte sablée"},{ico:"🌿",qty:"QS",name:"Amandes effilées, sucre glace"}],
+   tips:[{dot:"#e65100",text:"Oranges sanguines de janvier-mars = couleur bordeaux magnifique"},{dot:"#4caf50",text:"Crème orange moins acide que le citron = moins de sucre nécessaire"}],
+   steps:[{title:"Cuire la pâte à blanc",desc:"Foncer le moule. Précuire à blanc 15 min à 180°C."},{title:"Crème orange",desc:"Fouetter jus d'orange, zestes, œufs et sucre. Cuire au bain-marie en remuant jusqu'à épaississement. Hors du feu, incorporer le beurre froid."},{title:"Finir",desc:"Verser la crème sur le fond refroidi. Réfrigérer 2h. Parsemer d'amandes effilées grillées et de sucre glace."}],
+   errors:["Crème trop liquide → ne tient pas","Cuire trop fort → œufs brouillés"],variantes:["Avec du chocolat blanc","Crème yuzu","En verrines"],footer:"Tarte d'hiver · Méditerranée",stars:"★★★★★"},
+
+  {id:"re09",emoji:"🥞",name:"Gaufres liégeoises au sucre perlé",cuisine:"Cuisine Belge",persons:8,prep:"20 min",cook:"20 min",diff:"Facile ★★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"500g",name:"Farine"},{ico:"🧈",qty:"250g",name:"Beurre mou"},{ico:"🥚",qty:"2",name:"Œufs"},{ico:"🥛",qty:"15cl",name:"Lait tiède"},{ico:"🌿",qty:"10g",name:"Levure boulangère"},{ico:"🍬",qty:"30g",name:"Sucre"},{ico:"🍬",qty:"150g",name:"Sucre perlé"},{ico:"🧂",qty:"1 pincée",name:"Sel"}],
+   tips:[{dot:"#f9a825",text:"Sucre perlé ajouté en dernier = caramélise pendant la cuisson"},{dot:"#4caf50",text:"Pâte levée = gaufres aériennes à l'intérieur"}],
+   steps:[{title:"Pâte",desc:"Délayer la levure dans le lait tiède. Mélanger farine, sucre, sel, œufs et beurre mou. Ajouter le lait+levure. Pétrir 8 min. Lever 1h."},{title:"Incorporer le sucre perlé",desc:"Dégazer la pâte. Incorporer le sucre perlé délicatement."},{title:"Cuire",desc:"Former des boules de pâte. Cuire au gaufrier préchauffé 4-5 min jusqu'à gaufres dorées et caramel de sucre croustillant."}],
+   errors:["Sucre perlé ordinaire → fond pendant la cuisson","Pas assez lever → gaufres denses"],variantes:["Avec vanille","Version Bruxelles (plus légère)","Avec chantilly"],footer:"Spécialité · Liège, Belgique",stars:"★★★★★"},
+
+  {id:"re10",emoji:"🍇",name:"Verrines mascarpone fruits rouges",cuisine:"Cuisine Française",persons:6,prep:"15 min",cook:"0 min",diff:"Facile ★",color:"#e91e63",colorLight:"#fce4ec",category:"dessert",seasons:["summer"],
+   ingredients:[{ico:"🧀",qty:"250g",name:"Mascarpone"},{ico:"🥛",qty:"20cl",name:"Crème liquide entière"},{ico:"🍬",qty:"60g",name:"Sucre glace"},{ico:"🌿",qty:"1 c.à.c.",name:"Vanille"},{ico:"🍓",qty:"400g",name:"Fruits rouges variés"},{ico:"🌾",qty:"QS",name:"Spéculoos émiettés"},{ico:"🌿",qty:"QS",name:"Menthe fraîche"}],
+   tips:[{dot:"#e91e63",text:"Mascarpone + crème fouettée = texture nuage légère"},{dot:"#4caf50",text:"Spéculoos = base croustillante qui contraste avec la crème"}],
+   steps:[{title:"Crème mascarpone",desc:"Fouetter mascarpone, crème liquide très froide, sucre glace et vanille jusqu'à crème ferme."},{title:"Préparer",desc:"Émietter les spéculoos grossièrement. Laver les fruits rouges."},{title:"Monter les verrines",desc:"Spéculoos émiettés au fond. Crème mascarpone. Fruits rouges. Menthe fraîche. Réfrigérer 30 min."}],
+   errors:["Mascarpone pas froid → crème qui ne monte pas"],variantes:["Avec mangue","Avec pêches rôties","Version tiramisu"],footer:"Dessert léger · France",stars:"★★★★★"},
+
+  {id:"re11",emoji:"🧁",name:"Éclairs au café",cuisine:"Cuisine Française",persons:12,prep:"30 min",cook:"30 min",diff:"Moyenne ★★★",color:"#795548",colorLight:"#efebe9",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"💧",qty:"25cl",name:"Eau"},{ico:"🧈",qty:"80g",name:"Beurre"},{ico:"🌾",qty:"120g",name:"Farine"},{ico:"🥚",qty:"4",name:"Œufs"},{ico:"🥛",qty:"50cl",name:"Lait pour la crème"},{ico:"☕",qty:"2 c.à.s.",name:"Café soluble"},{ico:"🧈",qty:"150g",name:"Beurre pour la crème mousseline"},{ico:"🍬",qty:"200g",name:"Fondant blanc"}],
+   tips:[{dot:"#795548",text:"Choux longs et réguliers à la poche à douille"},{dot:"#4caf50",text:"Crème pâtissière + beurre = crème mousseline onctueuse"}],
+   steps:[{title:"Pâte à choux",desc:"Faire la pâte à choux classique. Dresser en longs bâtonnets à la poche à douille. Four à 200°C, 25-30 min."},{title:"Crème café",desc:"Crème pâtissière avec le café incorporé. Refroidir. Monter avec le beurre pommade au batteur."},{title:"Garnir et glacer",desc:"Couper les éclairs. Garnir de crème au café à la poche. Glacer le dessus avec le fondant café. Réfrigérer 1h."}],
+   errors:["Ouvrir le four → choux qui retombent","Crème pas assez froide avant le beurre → granuleuse"],variantes:["Éclairs au chocolat","Éclairs framboise","Version mini"],footer:"Pâtisserie · France",stars:"★★★★★"},
+
+  {id:"re12",emoji:"🍕",name:"Focaccia aux olives et romarin",cuisine:"Cuisine Italienne",persons:8,prep:"20 min",cook:"25 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"apéro",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"500g",name:"Farine"},{ico:"💧",qty:"35cl",name:"Eau tiède"},{ico:"🌿",qty:"7g",name:"Levure boulangère sèche"},{ico:"🫒",qty:"10cl",name:"Huile d'olive"},{ico:"🧂",qty:"10g",name:"Sel"},{ico:"🫒",qty:"100g",name:"Olives noires"},{ico:"🌿",qty:"QS",name:"Romarin, fleur de sel"}],
+   tips:[{dot:"#2e7d32",text:"Huile d'olive généreuse dans le plat = focaccia qui ne colle pas et base croustillante"},{dot:"#4caf50",text:"Creuser des trous profonds avec les doigts = signature de la focaccia"}],
+   steps:[{title:"Pâte",desc:"Mélanger farine, levure, sel. Ajouter l'eau tiède et 5cl d'huile d'olive. Pétrir 10 min. Lever 1h."},{title:"Étaler",desc:"Verser dans un plat huilé généreusement. Étirer avec les doigts. Creuser des trous profonds. Lever encore 30 min."},{title:"Garnir et cuire",desc:"Enfoncer les olives dans les trous. Romarin. Arroser d'huile d'olive et fleur de sel. Four à 220°C, 20-25 min."}],
+   errors:["Pas assez d'huile → focaccia sèche","Pas de trous → focaccia plate"],variantes:["Avec tomates séchées","Avec oignons caramélisés","Avec fromage"],footer:"Pain apéritif · Gênes, Italie",stars:"★★★★★"},
+
+  {id:"re13",emoji:"🍓",name:"Fraisier classique",cuisine:"Cuisine Française",persons:8,prep:"45 min",cook:"20 min",diff:"Difficile ★★★★",color:"#e91e63",colorLight:"#fce4ec",category:"dessert",seasons:["spring","summer"],
+   ingredients:[{ico:"🌾",qty:"4",name:"Œufs pour la génoise"},{ico:"🍬",qty:"120g",name:"Sucre"},{ico:"🌾",qty:"120g",name:"Farine"},{ico:"🍓",qty:"600g",name:"Fraises fraîches"},{ico:"🥛",qty:"50cl",name:"Lait pour la crème"},{ico:"🧈",qty:"200g",name:"Beurre pour la crème mousseline"},{ico:"🌿",qty:"QS",name:"Sirop de fraise, vanille"}],
+   tips:[{dot:"#e91e63",text:"Fraises bien mûres et parfumées = tout le fraisier"},{dot:"#4caf50",text:"Cercle à pâtisserie = présentation parfaite"}],
+   steps:[{title:"Génoise",desc:"Fouetter œufs et sucre au bain-marie jusqu'à ruban. Incorporer la farine. Cuire à 180°C, 18 min. Couper en 2 disques."},{title:"Crème mousseline vanille",desc:"Crème pâtissière vanillée. Refroidir. Incorporer le beurre pommade au batteur."},{title:"Monter",desc:"Placer un disque dans le cercle. Imbiber de sirop. Disposer les fraises coupées contre le cercle. Crème mousseline. Fraises entières. Deuxième disque imbibé. Crème. Réfrigérer 4h."}],
+   errors:["Fraises pas mûres → fade","Génoise trop épaisse → gâteau lourd"],variantes:["Fraisier pistache","Avec fraises et framboises","Fraisier façon Charlotte"],footer:"Pâtisserie de fête · France",stars:"★★★★★"},
+
+  {id:"re14",emoji:"🥂",name:"Petites bouchées de saumon en croûte",cuisine:"Cuisine Française",persons:12,prep:"20 min",cook:"15 min",diff:"Facile ★",color:"#1565c0",colorLight:"#e3f2fd",category:"apéro",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"1 rouleau",name:"Pâte feuilletée"},{ico:"🐟",qty:"200g",name:"Saumon fumé"},{ico:"🧀",qty:"100g",name:"Philadelphia cream cheese"},{ico:"🌿",qty:"QS",name:"Aneth, ciboulette, citron"},{ico:"🥚",qty:"1 jaune",name:"Pour la dorure"},{ico:"🌿",qty:"QS",name:"Graines de sésame"}],
+   tips:[{dot:"#1565c0",text:"Philadelphia à température ambiante = farce crémeuse facile à étaler"},{dot:"#4caf50",text:"Sésame sur le dessus = croquant et visuel appétissant"}],
+   steps:[{title:"Garniture",desc:"Mélanger Philadelphia, aneth ciselé, ciboulette, zeste de citron. Étaler sur la pâte."},{title:"Garnir et former",desc:"Disposer le saumon fumé. Rouler en boudin serré. Réfrigérer 15 min. Couper en rondelles."},{title:"Cuire",desc:"Disposer sur une plaque. Dorer au jaune d'œuf. Parsemer de sésame. Four à 200°C, 12-15 min."}],
+   errors:["Boudin mal serré → se défait à la cuisson"],variantes:["Avec du thon","Avec de la ricotta","Avec des herbes de Provence"],footer:"Apéro élégant · France",stars:"★★★★★"},
+
+  {id:"re15",emoji:"🍮",name:"Flan parisien à la vanille",cuisine:"Cuisine Française",persons:8,prep:"20 min",cook:"45 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🥛",qty:"1L",name:"Lait entier"},{ico:"🥛",qty:"25cl",name:"Crème liquide entière"},{ico:"🥚",qty:"4",name:"Œufs + 2 jaunes"},{ico:"🍬",qty:"180g",name:"Sucre"},{ico:"🌾",qty:"80g",name:"Maïzena"},{ico:"🌿",qty:"2",name:"Gousses de vanille"},{ico:"🌾",qty:"1",name:"Pâte brisée"}],
+   tips:[{dot:"#f9a825",text:"Le flan parisien = crème pâtissière cuite dans un fond de pâte"},{dot:"#4caf50",text:"Bords bien noirs au four = caractéristique du vrai flan parisien"}],
+   steps:[{title:"Crème",desc:"Infuser la vanille dans le lait+crème chaud. Fouetter œufs, sucre et maïzena. Verser le lait chaud en fouettant. Cuire en remuant jusqu'à épaississement."},{title:"Foncer",desc:"Foncer un moule avec la pâte brisée (hauts bords). Précuire à blanc 10 min."},{title:"Cuire",desc:"Verser la crème sur le fond. Four à 200°C, 35-40 min. Le dessus doit être bien doré voire légèrement brûlé. Réfrigérer 4h."}],
+   errors:["Pas assez cuire → flan qui ne tient pas","Réfrigérer insuffisamment → coupe difficile"],variantes:["Sans pâte","Au chocolat","À la noix de coco"],footer:"Classique de boulangerie · Paris",stars:"★★★★★"},
+
+  {id:"re16",emoji:"🧇",name:"Waffle belge au beurre",cuisine:"Cuisine Belge",persons:6,prep:"15 min",cook:"20 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"300g",name:"Farine"},{ico:"🧈",qty:"150g",name:"Beurre mou"},{ico:"🥚",qty:"3",name:"Œufs"},{ico:"🥛",qty:"20cl",name:"Lait"},{ico:"🍬",qty:"50g",name:"Sucre"},{ico:"🌿",qty:"1 sachet",name:"Levure chimique"},{ico:"🌿",qty:"1 c.à.c.",name:"Vanille"},{ico:"🧂",qty:"1 pincée",name:"Sel"}],
+   tips:[{dot:"#f9a825",text:"Beurre mou (pas fondu) = waffles croustillants et alvéolés"},{dot:"#4caf50",text:"Gaufrier bien préchauffé et huilé = waffles qui ne collent pas"}],
+   steps:[{title:"Pâte",desc:"Fouetter le beurre mou avec le sucre. Ajouter les œufs un par un. Incorporer farine, levure, sel, lait et vanille."},{title:"Cuire",desc:"Gaufrier préchauffé et légèrement beurré. Verser la pâte. Cuire 4-5 min jusqu'à waffles dorées et croustillantes."},{title:"Servir",desc:"Servir chaud avec chantilly, fruits, sirop d'érable ou chocolat fondu."}],
+   errors:["Beurre fondu → waffles moins croustillantes","Gaufrier pas assez chaud → waffles molles"],variantes:["Aux myrtilles","Au chocolat","Waffles salées avec fromage"],footer:"Brunch · Belgique",stars:"★★★★★"},
+
+  {id:"re17",emoji:"🫒",name:"Olives marinées aux agrumes",cuisine:"Cuisine Méditerranéenne",persons:8,prep:"10 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"apéro",seasons:["all"],
+   ingredients:[{ico:"🫒",qty:"400g",name:"Olives mélangées (vertes et noires)"},{ico:"🍋",qty:"1",name:"Citron (zeste)"},{ico:"🍊",qty:"1",name:"Orange (zeste)"},{ico:"🧄",qty:"2 gousses",name:"Ail"},{ico:"🌿",qty:"QS",name:"Thym, romarin, laurier, piment"},{ico:"🫒",qty:"10cl",name:"Huile d'olive"}],
+   tips:[{dot:"#2e7d32",text:"Mariner 24h minimum = olives qui absorbent tous les arômes"},{dot:"#4caf50",text:"Se conservent 3 semaines au réfrigérateur sous huile"}],
+   steps:[{title:"Préparer",desc:"Écraser légèrement les olives avec le plat d'un couteau pour aider à l'absorption."},{title:"Mélanger",desc:"Mélanger avec les zestes d'agrumes, l'ail tranché, les herbes et le piment."},{title:"Mariner",desc:"Arroser d'huile d'olive. Mélanger. Réfrigérer 24h en remuant de temps en temps. Servir à température ambiante."}],
+   errors:["Pas assez mariner → olives banales","Servir froides → huile figée"],variantes:["Avec de la coriandre","Avec du cumin","Version grecque avec feta"],footer:"Mezze · Méditerranée",stars:"★★★★★"},
+
+  {id:"re18",emoji:"🍰",name:"Gâteau basque à la crème",cuisine:"Cuisine Basque",persons:8,prep:"25 min",cook:"40 min",diff:"Facile ★★",color:"#795548",colorLight:"#efebe9",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"300g",name:"Farine"},{ico:"🧈",qty:"180g",name:"Beurre mou"},{ico:"🍬",qty:"180g",name:"Sucre"},{ico:"🥚",qty:"3",name:"Œufs"},{ico:"🌿",qty:"QS",name:"Vanille, levure chimique, sel"},{ico:"🥛",qty:"50cl",name:"Lait pour la crème"},{ico:"🌿",qty:"QS",name:"Rhum (facultatif)"}],
+   tips:[{dot:"#795548",text:"Pâte sablée très riche en beurre = texture fondante caractéristique"},{dot:"#4caf50",text:"Motif losange à la fourchette = signature du gâteau basque"}],
+   steps:[{title:"Pâte",desc:"Fouetter beurre et sucre. Ajouter les œufs. Incorporer farine, levure et sel. Réfrigérer 30 min."},{title:"Crème pâtissière",desc:"Faire une crème pâtissière vanillée+rhum. Refroidir."},{title:"Monter et cuire",desc:"Étaler les 2/3 de la pâte dans un moule. Garnir de crème. Couvrir du reste de pâte. Dorer. Motif losange. Four à 180°C, 35-40 min."}],
+   errors:["Pâte trop chaude → difficile à étaler","Crème trop liquide → coule"],variantes:["Avec confiture de cerises noires","Au chocolat","Mini gâteaux basques"],footer:"Spécialité · Pays Basque",stars:"★★★★★"},
+
+  {id:"re19",emoji:"🫙",name:"Pesto rosso aux tomates séchées",cuisine:"Cuisine Sicilienne",persons:6,prep:"10 min",cook:"0 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"apéro",seasons:["all"],
+   ingredients:[{ico:"🍅",qty:"100g",name:"Tomates séchées à l'huile"},{ico:"🥜",qty:"50g",name:"Amandes ou pignons"},{ico:"🧄",qty:"2 gousses",name:"Ail"},{ico:"🧀",qty:"50g",name:"Parmesan râpé"},{ico:"🌿",qty:"QS",name:"Basilic frais"},{ico:"🫒",qty:"10cl",name:"Huile d'olive"}],
+   tips:[{dot:"#c62828",text:"Mixer grossièrement = pesto avec de la texture"},{dot:"#4caf50",text:"Se conserve 2 semaines au réfrigérateur sous huile"}],
+   steps:[{title:"Mixer",desc:"Mixer tomates séchées, amandes, ail et basilic grossièrement."},{title:"Incorporer",desc:"Ajouter le parmesan et l'huile d'olive en continuant à mixer — garder de la texture."},{title:"Assaisonner",desc:"Saler, poivrer. Servir sur des tartines grillées, avec des pâtes ou en sauce pour légumes."}],
+   errors:["Trop mixer → purée sans texture"],variantes:["Avec poivrons rôtis","Avec ricotta","Classique (basilic-pignons)"],footer:"Condiment · Sicile",stars:"★★★★★"},
+
+  {id:"re20",emoji:"🍫",name:"Mendiants au chocolat et fruits secs",cuisine:"Cuisine Française",persons:20,prep:"15 min",cook:"5 min",diff:"Facile ★",color:"#4e342e",colorLight:"#efebe9",category:"dessert",seasons:["winter"],
+   ingredients:[{ico:"🍫",qty:"200g",name:"Chocolat noir 70%"},{ico:"🥜",qty:"QS",name:"Noisettes, pistaches, amandes"},{ico:"🍇",qty:"QS",name:"Raisins secs, cranberries"},{ico:"🌿",qty:"QS",name:"Fleur de sel, zeste d'orange"},{ico:"🌸",qty:"QS",name:"Pétales de fleurs séchées (facultatif)"}],
+   tips:[{dot:"#4e342e",text:"Tempérer le chocolat = mendiants brillants qui croquent"},{dot:"#4caf50",text:"Déposer les garnitures avant que le chocolat ne fige"}],
+   steps:[{title:"Fondre le chocolat",desc:"Faire fondre les 2/3 du chocolat au bain-marie. Retirer du feu, ajouter le dernier tiers. Mélanger jusqu'à 31°C (tempérage simplifié)."},{title:"Former",desc:"Déposer des petites flaques de chocolat sur du papier sulfurisé."},{title:"Garnir et figer",desc:"Déposer immédiatement fruits secs, zeste d'orange et fleur de sel. Laisser figer à température ambiante 1h."}],
+   errors:["Chocolat trop chaud → pas brillant","Garnir trop tard → ne collent pas"],variantes:["Au chocolat blanc","Au chocolat au lait","Version cadeau en boîte"],footer:"Confiserie de Noël · France",stars:"★★★★★"},
+
+  {id:"re21",emoji:"🧁",name:"Madeleine au miel et fleur d'oranger",cuisine:"Cuisine Française",persons:12,prep:"15 min",cook:"12 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🥚",qty:"3",name:"Œufs"},{ico:"🍬",qty:"100g",name:"Sucre"},{ico:"🍯",qty:"40g",name:"Miel liquide"},{ico:"🌾",qty:"180g",name:"Farine"},{ico:"🧈",qty:"130g",name:"Beurre fondu refroidi"},{ico:"🌿",qty:"1 sachet",name:"Levure chimique"},{ico:"🌸",qty:"1 c.à.s.",name:"Eau de fleur d'oranger"}],
+   tips:[{dot:"#f9a825",text:"Miel = moelleux prolongé et saveur délicate"},{dot:"#4caf50",text:"Choc thermique (pâte froide + four chaud) = la bosse caractéristique"}],
+   steps:[{title:"Préparer la pâte",desc:"Fouetter œufs, sucre et miel jusqu'au ruban. Incorporer farine et levure. Ajouter beurre fondu tiède et eau de fleur d'oranger. Réfrigérer 1h."},{title:"Cuire",desc:"Remplir les moules à madeleines beurrés aux 2/3. Four à 220°C puis baisser à 190°C dès la mise au four. Cuire 10-12 min."},{title:"Démouler",desc:"Démouler chaud sur une grille. Déguster tièdes de préférence."}],
+   errors:["Pas reposer la pâte → pas de bosse"],variantes:["Au citron","À la lavande","Au chocolat"],footer:"Pâtisserie · Commercy, Lorraine",stars:"★★★★★"},
+
+  {id:"re22",emoji:"🥗",name:"Tartare de légumes aux herbes",cuisine:"Cuisine Végétarienne",persons:4,prep:"20 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"entrée",seasons:["summer"],
+   ingredients:[{ico:"🍅",qty:"3",name:"Tomates cœur de bœuf"},{ico:"🥒",qty:"1",name:"Concombre"},{ico:"🫑",qty:"1",name:"Poivron jaune"},{ico:"🧅",qty:"3",name:"Oignons nouveaux"},{ico:"🌿",qty:"QS",name:"Basilic, coriandre, persil"},{ico:"🫒",qty:"3 c.à.s.",name:"Huile d'olive"},{ico:"🍋",qty:"1",name:"Citron"}],
+   tips:[{dot:"#2e7d32",text:"Légumes coupés en brunoise régulière = élégance du plat"},{dot:"#4caf50",text:"Assaisonner juste avant = légumes qui gardent leur texture"}],
+   steps:[{title:"Préparer",desc:"Couper tomates, concombre et poivron en petits dés réguliers (brunoise). Émincer les oignons nouveaux."},{title:"Assaisonner",desc:"Mélanger avec les herbes ciselées, huile d'olive, jus de citron, sel et poivre. Rectifier."},{title:"Dresser",desc:"Utiliser un emporte-pièce pour dresser en cylindre. Servir avec un filet d'huile d'olive et quelques feuilles d'herbes."}],
+   errors:["Légumes pas séchés → eau dans l'assiette","Trop petit → brunoise difficile à manger"],variantes:["Avec avocat","Avec feta","Avec des câpres"],footer:"Entrée légère · Cuisine végétarienne",stars:"★★★★"},
+
+  {id:"re23",emoji:"🍰",name:"Charlotte aux fraises",cuisine:"Cuisine Française",persons:8,prep:"30 min",cook:"0 min",diff:"Facile ★★",color:"#e91e63",colorLight:"#fce4ec",category:"dessert",seasons:["spring","summer"],
+   ingredients:[{ico:"🌾",qty:"24",name:"Biscuits cuillère"},{ico:"🍓",qty:"500g",name:"Fraises fraîches"},{ico:"🥛",qty:"40cl",name:"Crème liquide entière"},{ico:"🧀",qty:"250g",name:"Mascarpone"},{ico:"🍬",qty:"80g",name:"Sucre glace"},{ico:"🌿",qty:"1 c.à.c.",name:"Vanille"},{ico:"🍓",qty:"QS",name:"Coulis de fraises"}],
+   tips:[{dot:"#e91e63",text:"Biscuits rapidement trempés dans le coulis = ne se détrempent pas"},{dot:"#4caf50",text:"Réfrigérer une nuit = Charlotte qui se tient parfaitement"}],
+   steps:[{title:"Préparer la crème",desc:"Fouetter mascarpone, crème liquide très froide, sucre glace et vanille jusqu'à crème ferme."},{title:"Monter",desc:"Chemiser un moule à charlotte de biscuits rapidement trempés dans le coulis. Alterner crème et fraises en couches. Fermer avec des biscuits imbibés."},{title:"Réfrigérer",desc:"Couvrir et réfrigérer minimum 6h, idéalement une nuit. Démouler et garnir de fraises fraîches."}],
+   errors:["Biscuits trop imbibés → charlotte qui s'effondre","Pas assez réfrigérer → crème trop souple"],variantes:["Charlotte aux poires","Au chocolat","Avec fraises et framboises"],footer:"Entremets classique · France",stars:"★★★★★"},
+
+  {id:"re24",emoji:"🥐",name:"Pain au chocolat maison (facile)",cuisine:"Cuisine Française",persons:8,prep:"30 min",cook:"20 min",diff:"Facile ★★",color:"#795548",colorLight:"#efebe9",category:"petit-déjeuner",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"500g",name:"Farine"},{ico:"🥛",qty:"28cl",name:"Lait tiède"},{ico:"🌿",qty:"7g",name:"Levure boulangère sèche"},{ico:"🍬",qty:"50g",name:"Sucre"},{ico:"🧂",qty:"8g",name:"Sel"},{ico:"🧈",qty:"30g",name:"Beurre mou"},{ico:"🍫",qty:"16 barres",name:"Chocolat à pâtisserie"},{ico:"🥚",qty:"1 jaune",name:"Pour la dorure"}],
+   tips:[{dot:"#795548",text:"Version simplifiée sans feuilletage = viennoiserie accessible à la maison"},{dot:"#4caf50",text:"Deux barres de chocolat par pain = quantité généreuse"}],
+   steps:[{title:"Pâte levée",desc:"Mélanger farine, levure, sucre, sel. Ajouter lait tiède et beurre mou. Pétrir 10 min. Lever 1h30."},{title:"Former les pains",desc:"Diviser en 8 rectangles. Poser 2 barres de chocolat au bord. Rouler en serrant. Disposer jointure en dessous. Lever encore 45 min."},{title:"Cuire",desc:"Dorer au jaune d'œuf. Four à 190°C, 15-18 min jusqu'à bien dorés."}],
+   errors:["Roulage pas serré → chocolat qui sort","Pas assez lever → pains denses"],variantes:["Avec noisettes","Avec pralinoise","Avec confiture"],footer:"Viennoiserie maison · France",stars:"★★★★"},
+
+  {id:"re25",emoji:"🎂",name:"Layer cake vanille framboise",cuisine:"Cuisine Américaine",persons:10,prep:"45 min",cook:"30 min",diff:"Moyenne ★★★",color:"#e91e63",colorLight:"#fce4ec",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"300g",name:"Farine"},{ico:"🍬",qty:"250g",name:"Sucre"},{ico:"🧈",qty:"200g",name:"Beurre mou"},{ico:"🥚",qty:"4",name:"Œufs"},{ico:"🥛",qty:"20cl",name:"Lait"},{ico:"🌿",qty:"1 sachet",name:"Levure chimique + vanille"},{ico:"🧀",qty:"500g",name:"Philadelphia pour le glaçage"},{ico:"🍓",qty:"200g",name:"Framboises"}],
+   tips:[{dot:"#e91e63",text:"Gâteaux bien refroidis avant le glaçage = crème qui ne fond pas"},{dot:"#4caf50",text:"Glaçage cream cheese + beurre pommade = texture parfaite pour les couches"}],
+   steps:[{title:"Génoises",desc:"Fouetter beurre et sucre. Ajouter les œufs. Incorporer farine+levure et lait. Diviser en 3 moules. Cuire à 180°C, 25 min."},{title:"Glaçage cream cheese",desc:"Fouetter Philadelphia, beurre pommade, sucre glace et vanille jusqu'à crème lisse."},{title:"Assembler",desc:"Alterner les disques de génoise, la crème et les framboises. Couvrir entièrement de glaçage. Décorer de framboises fraîches."}],
+   errors:["Gâteaux chauds → crème qui fond","Trop de glaçage entre les couches → instabilité"],variantes:["Avec fraises","Version chocolat-caramel","Naked cake (bords non couverts)"],footer:"Gâteau américain · USA",stars:"★★★★"},
+
+  {id:"re26",emoji:"🍷",name:"Sangria blanche aux fruits d'été",cuisine:"Cuisine Espagnole",persons:8,prep:"15 min",cook:"0 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"apéro",seasons:["summer"],
+   ingredients:[{ico:"🍷",qty:"1 bouteille",name:"Vin blanc sec"},{ico:"🍑",qty:"2",name:"Pêches"},{ico:"🍊",qty:"1",name:"Orange"},{ico:"🍋",qty:"1",name:"Citron"},{ico:"🍓",qty:"200g",name:"Fraises"},{ico:"🌿",qty:"4 c.à.s.",name:"Sucre"},{ico:"💧",qty:"50cl",name:"Eau gazeuse froide"},{ico:"🌿",qty:"QS",name:"Menthe fraîche"}],
+   tips:[{dot:"#f9a825",text:"Mariner les fruits dans le vin au moins 2h = arômes développés"},{dot:"#4caf50",text:"Eau gazeuse ajoutée au service = bulles fraîches"}],
+   steps:[{title:"Préparer les fruits",desc:"Couper pêches, orange, citron et fraises en tranches ou morceaux. Mettre dans un pichet."},{title:"Mariner",desc:"Verser le vin blanc et le sucre. Mélanger. Réfrigérer minimum 2h."},{title:"Servir",desc:"Au service, ajouter l'eau gazeuse bien froide et quelques feuilles de menthe. Servir avec des glaçons."}],
+   errors:["Pas assez mariner → sangria sans caractère","Eau gazeuse ajoutée trop tôt → perd les bulles"],variantes:["Sangria rouge classique","Sangria rosé","Sans alcool (jus de raisin)"],footer:"Boisson conviviale · Espagne",stars:"★★★★★"},
+
+  {id:"re27",emoji:"🧀",name:"Camembert rôti au miel et noix",cuisine:"Cuisine Normande",persons:4,prep:"5 min",cook:"15 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"apéro",seasons:["winter"],
+   ingredients:[{ico:"🧀",qty:"1 entier",name:"Camembert de Normandie"},{ico:"🍯",qty:"2 c.à.s.",name:"Miel"},{ico:"🥜",qty:"40g",name:"Noix concassées"},{ico:"🌿",qty:"QS",name:"Thym frais, romarin"},{ico:"🍞",qty:"QS",name:"Pain de campagne ou baguette"}],
+   tips:[{dot:"#f9a825",text:"Camembert dans sa boîte en bois = contenant naturel pour la cuisson"},{dot:"#4caf50",text:"Quelques entailles sur le dessus = herbes et miel qui pénètrent"}],
+   steps:[{title:"Préparer",desc:"Sortir le camembert de son papier. Le replacer dans sa boîte en bois. Faire des entailles en croix sur le dessus."},{title:"Garnir",desc:"Arroser de miel. Parsemer de thym, romarin et noix concassées."},{title:"Cuire et servir",desc:"Four à 180°C, 12-15 min jusqu'à fromage fondu et coulant. Servir directement dans la boîte avec du pain grillé."}],
+   errors:["Cuire trop longtemps → fromage liquide qui déborde","Camembert industriel → moins de goût"],variantes:["Avec de l'ail","Avec des lardons","Avec de la confiture de figues"],footer:"Apéro réconfortant · Normandie",stars:"★★★★★"},
+
+  {id:"re28",emoji:"🍰",name:"Mille-feuille à la crème",cuisine:"Cuisine Française",persons:6,prep:"30 min",cook:"20 min",diff:"Difficile ★★★★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"2 rouleaux",name:"Pâte feuilletée"},{ico:"🥛",qty:"50cl",name:"Lait pour la crème"},{ico:"🥚",qty:"3 jaunes",name:"Jaunes d'œuf"},{ico:"🍬",qty:"80g",name:"Sucre"},{ico:"🌾",qty:"40g",name:"Maïzena"},{ico:"🌿",qty:"1",name:"Gousse de vanille"},{ico:"🍬",qty:"150g",name:"Sucre glace pour le glaçage"},{ico:"🍫",qty:"QS",name:"Chocolat noir pour le décor"}],
+   tips:[{dot:"#f9a825",text:"Pâte feuilletée piquée et lestée = reste bien plate à la cuisson"},{dot:"#4caf50",text:"Crème pâtissière froide et ferme = mille-feuille qui se tient"}],
+   steps:[{title:"Feuilletage",desc:"Piquer la pâte. Cuire entre deux plaques lestées à 200°C, 20 min. Laisser refroidir."},{title:"Crème pâtissière",desc:"Faire une crème pâtissière vanillée. Filmer au contact. Réfrigérer."},{title:"Monter",desc:"Alterner 3 couches de feuilletage et 2 couches de crème. Glacer le dessus avec le sucre glace. Faire le décor chocolat traditionnel."}],
+   errors:["Crème trop chaude → feuilletage qui ramollit","Pas assez lester → pâte qui gonfle"],variantes:["Aux framboises","À la crème chantilly","Version chocolat"],footer:"Pâtisserie classique · France",stars:"★★★★★"},
+
+  {id:"re29",emoji:"🥂",name:"Chips de parmesan au romarin",cuisine:"Cuisine Italienne",persons:6,prep:"5 min",cook:"8 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"apéro",seasons:["all"],
+   ingredients:[{ico:"🧀",qty:"150g",name:"Parmesan râpé finement"},{ico:"🌿",qty:"QS",name:"Romarin séché ou thym"},{ico:"🌶️",qty:"QS",name:"Piment de Cayenne (facultatif)"},{ico:"🧂",qty:"QS",name:"Poivre noir"}],
+   tips:[{dot:"#f57f17",text:"Parmesan râpé très fin = chips homogènes et croustillantes"},{dot:"#4caf50",text:"Retirer du four dès la couleur dorée = encore croustillantes en refroidissant"}],
+   steps:[{title:"Former",desc:"Disposer des petits tas de parmesan râpé sur une plaque recouverte de papier sulfurisé. Aplatir légèrement."},{title:"Garnir",desc:"Parsemer de romarin, poivre et piment si désiré."},{title:"Cuire",desc:"Four à 200°C, 6-8 min jusqu'à chips bien dorées. Laisser refroidir sur la plaque — elles durcissent en refroidissant."}],
+   errors:["Pas dorées assez → molles","Trop cuites → amères"],variantes:["Au gruyère","Avec des graines de sésame","Version paprika fumé"],footer:"Apéro express · Italie",stars:"★★★★★"},
+
+  {id:"re30",emoji:"🍮",name:"Crème caramel à la fleur de sel",cuisine:"Cuisine Française",persons:6,prep:"20 min",cook:"50 min",diff:"Facile ★★",color:"#f57f17",colorLight:"#fff9e6",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🍬",qty:"200g",name:"Sucre pour le caramel"},{ico:"🥛",qty:"60cl",name:"Lait entier"},{ico:"🥚",qty:"3",name:"Œufs + 2 jaunes"},{ico:"🍬",qty:"80g",name:"Sucre pour la crème"},{ico:"🌿",qty:"1",name:"Gousse de vanille"},{ico:"🧂",qty:"QS",name:"Fleur de sel"}],
+   tips:[{dot:"#f57f17",text:"Caramel ambré (pas trop foncé) = doux sans amertume"},{dot:"#4caf50",text:"Bain-marie au four = crème homogène sans bulles"}],
+   steps:[{title:"Caramel",desc:"Faire un caramel à sec avec 200g de sucre jusqu'à couleur ambrée. Verser dans 6 ramequins en les inclinant pour couvrir le fond."},{title:"Crème",desc:"Chauffer le lait avec la vanille. Fouetter œufs, jaunes et sucre. Incorporer le lait tiède. Filtrer."},{title:"Cuire",desc:"Verser dans les ramequins sur le caramel. Bain-marie à 150°C, 45-50 min. Réfrigérer 4h. Fleur de sel avant de servir. Démouler à l'assiette."}],
+   errors:["Caramel trop foncé → amer","Bubles dans la crème → filtrer et laisser reposer"],variantes:["Au café","À la noix de coco","Version grand format"],footer:"Dessert classique · France",stars:"★★★★★"}
 
 
 
