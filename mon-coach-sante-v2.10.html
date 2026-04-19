@@ -3591,7 +3591,7 @@ function savePhotoRecipe(){
 function getGeminiKey(){return 'AIzaSyC2okqKpKeWrdJg88K6UuG9_oRddJyBhwM';}
 async function callGemini(systemPrompt, userText, imageB64, imageMime){
   const key = getGeminiKey();
-  const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + key;
+  const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + key;
   
   const parts = [];
   if(imageB64 && imageMime){
