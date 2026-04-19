@@ -3675,14 +3675,8 @@ async function signOut(){
 async function forceSyncCloud(){
   showToast('☁️ Synchronisation...');
   await loadFromCloud();
-  ensureWeek();
-  try{renderHome();}catch(e){}
-  try{renderRecettes();}catch(e){}
-  try{renderMeals();}catch(e){}
-  try{renderSport();}catch(e){}
-  try{renderStats();}catch(e){}
-  try{renderProfile();}catch(e){}
-  showToast('✅ '+S.recipes.length+' recettes synchronisées !');
+  // Recharger complètement la page pour appliquer les données
+  window.location.reload();
 }
 
 async function saveToCloud(){
