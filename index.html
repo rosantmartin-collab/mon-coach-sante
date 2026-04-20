@@ -3782,30 +3782,24 @@ function savePhotoRecipe(){
 // ============================================================
 // GEMINI API HELPER
 // ============================================================
-function getGeminiKey(){return 'AIzaSyC2okqKpKeWrdJg88K6UuG9_oRddJyBhwM';}
+function getAnthropicKey(){return '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';}
 async function callGemini(systemPrompt, userText, imageB64, imageMime){
-  const key = getGeminiKey();
-  const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + key;
-  
-  const parts = [];
+  const key = getAnthropicKey();
+  const messages = [];
+  const content = [];
   if(imageB64 && imageMime){
-    parts.push({inline_data:{mime_type:imageMime,data:imageB64}});
+    content.push({type:'image',source:{type:'base64',media_type:imageMime,data:imageB64}});
   }
-  parts.push({text: systemPrompt + "\n\n" + userText});
-  
-  const body = {
-    contents:[{parts}],
-    generationConfig:{temperature:0.7,maxOutputTokens:2000}
-  };
-  
-  const resp = await fetch(url, {
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body:JSON.stringify(body)
+  content.push({type:'text',text:systemPrompt+'\n\n'+userText});
+  messages.push({role:'user',content});
+  const resp = await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+    body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:2000,system:systemPrompt,messages:[{role:'user',content:imageB64?content:[{type:'text',text:userText}]}]})
   });
   const data = await resp.json();
   if(data.error) throw new Error(data.error.message);
-  return data.candidates[0].content.parts[0].text;
+  return data.content[0].text;
 }
 
 
