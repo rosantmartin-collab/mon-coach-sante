@@ -3888,9 +3888,11 @@ async function authGoogle(){
 async function signOut(){
   await supa.auth.signOut();
   _currentUser=null;
+  // Réinitialiser l'état
   document.getElementById('auth-screen').style.display='flex';
-  // Recharger la page pour une déconnexion propre
-  setTimeout(()=>window.location.reload(),500);
+  document.getElementById('auth-email').value='';
+  document.getElementById('auth-password').value='';
+  document.getElementById('auth-msg').textContent='';
 }
 
 
