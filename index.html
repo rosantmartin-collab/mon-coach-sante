@@ -3889,6 +3889,8 @@ async function signOut(){
   await supa.auth.signOut();
   _currentUser=null;
   document.getElementById('auth-screen').style.display='flex';
+  // Recharger la page pour une déconnexion propre
+  setTimeout(()=>window.location.reload(),500);
 }
 
 
