@@ -3886,8 +3886,9 @@ async function authGoogle(){
 }
 
 async function signOut(){
-  await supa.auth.signOut();
-  window.location.href=window.location.href;
+  try{ await supa.auth.signOut(); }catch(e){}
+  localStorage.removeItem('coachv3');
+  window.location.reload(true);
 }
 
 
