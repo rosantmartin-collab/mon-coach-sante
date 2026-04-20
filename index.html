@@ -3864,6 +3864,7 @@ function toggleAuthMode(){
 }
 
 async function authAction(){
+  localStorage.removeItem('force_logout');
   const email=document.getElementById('auth-email').value.trim();
   const pwd=document.getElementById('auth-password').value;
   const msg=document.getElementById('auth-msg');
@@ -3882,11 +3883,12 @@ async function authAction(){
 }
 
 async function authGoogle(){
+  localStorage.removeItem('force_logout');
   await supa.auth.signInWithOAuth({provider:'google',options:{redirectTo:window.location.href}});
 }
 
 async function signOut(){
-  // Effacer toutes les clés de session Supabase
+  localStorage.setItem('force_logout','1');
   Object.keys(localStorage).forEach(k=>{
     if(k.startsWith('sb-'))localStorage.removeItem(k);
   });
@@ -3947,6 +3949,11 @@ async function loadFromCloud(){
 document.addEventListener('DOMContentLoaded',()=>{
   supa.auth.onAuthStateChange(async(event,session)=>{
     if(session&&session.user){
+      // Si l'utilisateur vient de se déconnecter, ignorer la session
+      if(localStorage.getItem('force_logout')==='1'){
+        document.getElementById('auth-screen').style.display='flex';
+        return;
+      }
       _currentUser=session.user;
       document.getElementById('auth-screen').style.display='none';
       load();
