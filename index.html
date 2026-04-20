@@ -3886,8 +3886,9 @@ async function authGoogle(){
 }
 
 async function signOut(){
-  await supa.auth.signOut();
-  window.location.reload();
+  await supa.auth.signOut({scope:'global'});
+  _currentUser=null;
+  document.getElementById('auth-screen').style.display='flex';
 }
 
 
