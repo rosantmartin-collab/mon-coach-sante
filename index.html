@@ -526,6 +526,49 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 </div>
 
+<!-- EDIT RECIPE MODAL -->
+<div class="mo" id="edit-recipe-modal">
+  <div class="mod" style="max-width:580px;max-height:90vh;overflow-y:auto;">
+    <div class="mod-title">✏️ Modifier la recette</div>
+    <div class="fg"><label class="fl">Nom</label><input class="fi" id="er-name" type="text"></div>
+    <div class="g2 mb8">
+      <div class="fg"><label class="fl">Emoji</label><input class="fi" id="er-emoji" type="text" maxlength="2"></div>
+      <div class="fg"><label class="fl">Catégorie</label>
+        <select class="fsel" id="er-cat">
+          <option value="petit-déjeuner">🌅 Petit-déjeuner</option>
+          <option value="déjeuner">☀️ Déjeuner</option>
+          <option value="dîner">🌙 Dîner</option>
+          <option value="collation">🫐 Collation</option>
+          <option value="dessert">🍰 Dessert</option>
+          <option value="entrée">🥗 Entrée</option>
+          <option value="apéro">🥂 Apéro</option>
+        </select>
+      </div>
+    </div>
+    <div class="g2 mb8">
+      <div class="fg"><label class="fl">Temps de prépa</label><input class="fi" id="er-prep" type="text"></div>
+      <div class="fg"><label class="fl">Temps de cuisson</label><input class="fi" id="er-cook" type="text"></div>
+    </div>
+    <div class="fg"><label class="fl">Personnes</label><input class="fi" id="er-persons" type="number" min="1"></div>
+    <div class="fg">
+      <label class="fl">Ingrédients (un par ligne : quantité · ingrédient)</label>
+      <textarea class="fi" id="er-ing" rows="7" placeholder="400g · Spaghetti&#10;200g · Guanciale"></textarea>
+    </div>
+    <div class="fg">
+      <label class="fl">Étapes (une par ligne)</label>
+      <textarea class="fi" id="er-steps" rows="6" placeholder="Cuire les pâtes&#10;Préparer la sauce"></textarea>
+    </div>
+    <div class="fg">
+      <label class="fl">Conseils (un par ligne)</label>
+      <textarea class="fi" id="er-tips" rows="3"></textarea>
+    </div>
+    <div class="mod-actions">
+      <button class="btn btn-p" onclick="saveEditRecipe()">💾 Sauvegarder</button>
+      <button class="btn btn-g" onclick="closeEditModal()">Annuler</button>
+    </div>
+  </div>
+</div>
+
 <!-- SPORT -->
 <div id="page-sport" class="page">
   <div class="ph">
@@ -1747,7 +1790,7 @@ function renderMyRecipes(){
   let h='';
   filtered.forEach((r)=>{const i=S.recipes.indexOf(r);
     const cc=catColors[r.category]||'#e8f5e9;color:#333';
-    h+='<div class="my-recipe-item" onclick="viewRecipe('+i+')"><div class="my-recipe-emoji">'+(r.emoji||'🍽️')+'</div><div class="my-recipe-info"><div class="my-recipe-name">'+r.name+'</div><div class="my-recipe-meta">'+(r.prep?'⏱ '+r.prep+' prép. ':'')+(r.cook?'🔥 '+r.cook+' cuisson':'')+(r.persons?' · 👥 '+r.persons+' pers.':'')+'</div><div style="margin-top:4px;"><span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:'+cc+';">'+r.category+'</span>'+(r.source==='ia'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8eaf6;color:#3949ab;">🤖 IA</span>':r.source==='repas'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8f5e9;color:#2e7d32;">📋 Plan</span>':'')+'</div></div><button onclick="event.stopPropagation();deleteRecipe('+i+')" style="background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.1rem;padding:4px;">🗑️</button></div>';
+    h+='<div class="my-recipe-item" onclick="viewRecipe('+i+')"><div class="my-recipe-emoji">'+(r.emoji||'🍽️')+'</div><div class="my-recipe-info"><div class="my-recipe-name">'+r.name+'</div><div class="my-recipe-meta">'+(r.prep?'⏱ '+r.prep+' prép. ':'')+(r.cook?'🔥 '+r.cook+' cuisson':'')+(r.persons?' · 👥 '+r.persons+' pers.':'')+'</div><div style="margin-top:4px;"><span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:'+cc+';">'+r.category+'</span>'+(r.source==='ia'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8eaf6;color:#3949ab;">🤖 IA</span>':r.source==='repas'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8f5e9;color:#2e7d32;">📋 Plan</span>':'')+'</div></div><div style="display:flex;gap:4px;"><button onclick="event.stopPropagation();editRecipe('+i+')" style="background:none;border:none;color:var(--primary);cursor:pointer;font-size:1.1rem;padding:4px;" title="Modifier">✏️</button><button onclick="event.stopPropagation();deleteRecipe('+i+')" style="background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.1rem;padding:4px;" title="Supprimer">🗑️</button></div></div>';
   });
   el.innerHTML=h;
 }
