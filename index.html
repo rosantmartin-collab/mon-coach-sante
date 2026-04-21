@@ -4019,6 +4019,66 @@ document.addEventListener('DOMContentLoaded',()=>{
     }
   });
 });
+
+// ============================================================
+// EDIT RECIPE
+// ============================================================
+let _editRecipeIdx = null;
+
+function editRecipe(idx){
+  const r = S.recipes[idx];
+  if(!r) return;
+  _editRecipeIdx = idx;
+  document.getElementById('er-name').value = r.name || '';
+  document.getElementById('er-emoji').value = r.emoji || '🍽️';
+  document.getElementById('er-cat').value = r.category || 'dîner';
+  document.getElementById('er-prep').value = r.prep || '';
+  document.getElementById('er-cook').value = r.cook || '';
+  document.getElementById('er-persons').value = r.persons || 2;
+  const ingLines = (r.ingredients||[]).map(i=>(i.qty?i.qty+' · ':'')+i.name).join('\n');
+  document.getElementById('er-ing').value = ingLines;
+  const stepLines = (r.steps||[]).map(s=>s.title+(s.desc&&s.desc!==s.title?' : '+s.desc:'')).join('\n');
+  document.getElementById('er-steps').value = stepLines;
+  const tipLines = (r.tips||[]).map(t=>t.text.replace(/<[^>]+>/g,'')).join('\n');
+  document.getElementById('er-tips').value = tipLines;
+  document.getElementById('edit-recipe-modal').classList.add('active');
+}
+
+function closeEditModal(){
+  document.getElementById('edit-recipe-modal').classList.remove('active');
+  _editRecipeIdx = null;
+}
+
+function saveEditRecipe(){
+  if(_editRecipeIdx === null) return;
+  const r = S.recipes[_editRecipeIdx];
+  r.name = document.getElementById('er-name').value.trim() || r.name;
+  r.emoji = document.getElementById('er-emoji').value || r.emoji;
+  r.category = document.getElementById('er-cat').value;
+  r.prep = document.getElementById('er-prep').value;
+  r.cook = document.getElementById('er-cook').value;
+  r.persons = parseInt(document.getElementById('er-persons').value) || r.persons;
+  const ingLines = document.getElementById('er-ing').value.split('\n').filter(l=>l.trim());
+  r.ingredients = ingLines.map(l=>{
+    const parts = l.split('·');
+    return parts.length>=2
+      ? {ico:'•', qty:parts[0].trim(), name:parts.slice(1).join('·').trim()}
+      : {ico:'•', qty:'', name:l.trim()};
+  });
+  const stepLines = document.getElementById('er-steps').value.split('\n').filter(l=>l.trim());
+  r.steps = stepLines.map(s=>{
+    const parts = s.split(' : ');
+    return {title:parts[0].trim(), desc:parts.length>1?parts.slice(1).join(' : ').trim():parts[0].trim()};
+  });
+  const tipLines = document.getElementById('er-tips').value.split('\n').filter(l=>l.trim());
+  r.tips = tipLines.map(t=>({dot:'#4caf50', text:t}));
+  S.recipes[_editRecipeIdx] = r;
+  save();
+  closeEditModal();
+  renderMyRecipes();
+  showToast('✅ Recette modifiée !');
+}
+
 </script>
 </body>
 </html>
