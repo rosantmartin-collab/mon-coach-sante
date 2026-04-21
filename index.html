@@ -3999,12 +3999,14 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
       _currentUser=session.user;
       document.getElementById('auth-screen').style.display='none';
-      load();
-      await loadFromCloud();
-      ensureWeek();
-      await saveToCloud();
+      load(); // localStorage d'abord
+      await loadFromCloud(); // cloud prime sur localStorage
+      // ensureWeek seulement si pas de repas dans le cloud
+      if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
       showPage(S.page||'home');
       renderPage();
+      // Sauvegarder seulement si on a des données valides
+      if(S.recipes&&S.recipes.length>0||Object.keys(S.meals||{}).length>0) await saveToCloud();
       document.querySelectorAll('.mo').forEach(m=>{
         m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active');});
       });
