@@ -1007,12 +1007,9 @@ let S={
 };
 
 function load(){try{const d=localStorage.getItem('coachv3');if(d){const p=JSON.parse(d);S={...S,...p,profile:{...S.profile,...(p.profile||{})}};if(!S.profile.exclusions)S.profile.exclusions=[];if(!S.recipes)S.recipes=[];if(!S.proposals)S.proposals=[];if(!S.rejectedIds)S.rejectedIds=[];}}catch(e){}}
-let _saveCloudTimer=null;
 function save(){
   try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
-  // Debounce : sauvegarder dans le cloud 2 secondes après la dernière modification
-  clearTimeout(_saveCloudTimer);
-  _saveCloudTimer=setTimeout(()=>saveToCloud(),2000);
+  saveToCloud();
 }
 
 // ============================================================
@@ -3977,13 +3974,12 @@ async function signOut(){
 
 async function forceSyncCloud(){
   if(!_currentUser){showToast('❌ Non connecté !');return;}
-  showToast('☁️ Sauvegarde en cours...');
   await saveToCloud();
+  showToast('✅ Données sauvegardées !');
 }
 
 async function forcePullCloud(){
   if(!_currentUser){showToast('❌ Non connecté !');return;}
-  console.log('⬇️ forcePullCloud déclenché');
   showToast('☁️ Chargement...');
   await loadFromCloud();
   renderPage();
@@ -3991,61 +3987,38 @@ async function forcePullCloud(){
 }
 
 async function saveToCloud(){
-  if(!_currentUser){console.warn('saveToCloud: pas de user connecté');return;}
+  if(!_currentUser)return;
   try{
-    const payload = {user_id:_currentUser.id, data:JSON.stringify(S), updated_at:new Date().toISOString()};
-    console.log('💾 saveToCloud - recettes:',S.recipes?.length,'repas:',Object.keys(S.meals||{}).length,'user:',_currentUser.id.substring(0,8));
-    const {data:result, error} = await supa.from('coach_data').upsert(payload,{onConflict:'user_id'}).select();
-    if(error){
-      console.error('saveToCloud erreur complète:', JSON.stringify(error));
-      showToast('❌ '+error.message);
-    } else {
-      console.log('✅ saveToCloud réussi', result);
-      showToast('✅ Sauvegardé dans le cloud !');
-    }
-  }catch(e){
-    console.error('saveToCloud exception:',e);
-    showToast('❌ Erreur: '+e.message);
-  }
+    await supa.from('coach_data').upsert(
+      {user_id:_currentUser.id, data:JSON.stringify(S), updated_at:new Date().toISOString()},
+      {onConflict:'user_id'}
+    );
+  }catch(e){console.error('saveToCloud:',e);}
 }
 
 async function loadFromCloud(){
-  if(!_currentUser){console.warn('loadFromCloud: pas de user');return;}
-  console.log('📥 loadFromCloud en cours...');
+  if(!_currentUser)return;
   try{
-    // Timeout de 5 secondes
-    const fetchPromise = supa.from('coach_data').select('data').eq('user_id',_currentUser.id).single();
-    const timeoutPromise = new Promise((_,reject)=>setTimeout(()=>reject(new Error('Timeout 5s')),5000));
-    const {data,error} = await Promise.race([fetchPromise, timeoutPromise]);
-    if(error){console.error('loadFromCloud erreur Supabase:',error.message);return;}
-    if(data&&data.data){
-      const p=JSON.parse(data.data);
-      // FUSIONNER les recettes (ne pas écraser)
-      const localRecipeIds=(S.recipes||[]).map(r=>r.id);
-      const cloudRecipes=(p.recipes||[]);
-      const mergedRecipes=[...cloudRecipes];
-      // Ajouter les recettes locales qui ne sont pas dans le cloud
-      (S.recipes||[]).forEach(r=>{
-        if(!mergedRecipes.find(cr=>cr.id===r.id)) mergedRecipes.push(r);
-      });
-      // Prendre le reste depuis le cloud
-      S={...p};
-      S.recipes=mergedRecipes;
-      if(!S.profile)S.profile={name:'',weight:75,height:175,goal:'maintenance',exclusions:[]};
-      if(!S.profile.exclusions)S.profile.exclusions=[];
-      if(!S.proposals)S.proposals=[];
-      if(!S.rejectedIds)S.rejectedIds=[];
-      if(!S.meals)S.meals={};
-      if(!S.workouts)S.workouts=[];
-      if(!S.plan)S.plan={};
-      if(!S.page)S.page='home';
-      if(!S.mealDay)S.mealDay='lundi';
-      try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
-      console.log('✅ Cloud chargé - recettes:',S.recipes.length,'profil:',S.profile.name);
-    } else {
-      console.log('ℹ️ Pas de données cloud pour cet utilisateur');
-    }
-  }catch(e){console.error('loadFromCloud exception:',e);}
+    const {data,error}=await supa.from('coach_data').select('data').eq('user_id',_currentUser.id).single();
+    if(error||!data||!data.data)return;
+    const p=JSON.parse(data.data);
+    // Fusionner les recettes locales et cloud
+    const cloudIds=(p.recipes||[]).map(r=>r.id);
+    const mergedRecipes=[...(p.recipes||[])];
+    (S.recipes||[]).forEach(r=>{if(!cloudIds.includes(r.id))mergedRecipes.push(r);});
+    S={...p, recipes:mergedRecipes};
+    if(!S.profile)S.profile={name:'',weight:75,height:175,goal:'maintenance',exclusions:[]};
+    if(!S.profile.exclusions)S.profile.exclusions=[];
+    if(!S.recipes)S.recipes=[];
+    if(!S.proposals)S.proposals=[];
+    if(!S.rejectedIds)S.rejectedIds=[];
+    if(!S.meals)S.meals={};
+    if(!S.workouts)S.workouts=[];
+    if(!S.plan)S.plan={};
+    if(!S.mealDay)S.mealDay='lundi';
+    try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+    console.log('✅ Cloud chargé - recettes:',S.recipes.length);
+  }catch(e){console.error('loadFromCloud:',e);}
 }
 
 // ============================================================
@@ -4065,8 +4038,8 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
       _currentUser=session.user;
       document.getElementById('auth-screen').style.display='none';
-      load(); // charger localStorage d'abord (rapide)
-      await loadFromCloud(); // puis fusionner avec le cloud
+      load();
+      await loadFromCloud();
       if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
       showPage(S.page||'home');
       renderPage();
