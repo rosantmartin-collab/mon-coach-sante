@@ -618,7 +618,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <!-- PROFILE -->
 <div id="page-profile" class="page">
   <div class="ph">
-    <div style="display:flex;justify-content:space-between;align-items:center;"><div class="pt">⚙️ Profil</div><div style="display:flex;gap:8px;"><button onclick="forceSyncCloud()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;">☁️ Sync</button><button onclick="openAPIKeyModal()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;">🔑 Clé API</button><button onclick="signOut()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;">🚪 Déco</button></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;"><div class="pt">⚙️ Profil</div><div style="display:flex;gap:8px;"><button onclick="forceSyncCloud()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;" title="Sauvegarder vers le cloud">☁️ Sauvegarder</button><button onclick="forcePullCloud()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;" title="Charger depuis le cloud">⬇️ Charger</button><button onclick="openAPIKeyModal()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;">🔑 Clé API</button><button onclick="signOut()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;">🚪 Déco</button></div></div>
     <div class="ps">Personnalise ton expérience</div>
   </div>
   <div class="g2">
@@ -3948,10 +3948,17 @@ async function signOut(){
 
 
 async function forceSyncCloud(){
-  showToast('☁️ Synchronisation...');
+  showToast('☁️ Sauvegarde en cours...');
+  // D'abord sauvegarder les données locales dans le cloud
+  await saveToCloud();
+  showToast('✅ Données sauvegardées dans le cloud !');
+}
+
+async function forcePullCloud(){
+  showToast('☁️ Chargement depuis le cloud...');
   await loadFromCloud();
-  // Recharger complètement la page pour appliquer les données
-  window.location.reload();
+  renderPage();
+  showToast('✅ Données chargées depuis le cloud !');
 }
 
 async function saveToCloud(){
