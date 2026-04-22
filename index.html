@@ -1007,7 +1007,13 @@ let S={
 };
 
 function load(){try{const d=localStorage.getItem('coachv3');if(d){const p=JSON.parse(d);S={...S,...p,profile:{...S.profile,...(p.profile||{})}};if(!S.profile.exclusions)S.profile.exclusions=[];if(!S.recipes)S.recipes=[];if(!S.proposals)S.proposals=[];if(!S.rejectedIds)S.rejectedIds=[];}}catch(e){}}
-function save(){try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}saveToCloud();}
+let _saveCloudTimer=null;
+function save(){
+  try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  // Debounce : sauvegarder dans le cloud 2 secondes après la dernière modification
+  clearTimeout(_saveCloudTimer);
+  _saveCloudTimer=setTimeout(()=>saveToCloud(),2000);
+}
 
 // ============================================================
 // UTILS
@@ -4010,21 +4016,22 @@ async function loadFromCloud(){
 document.addEventListener('DOMContentLoaded',()=>{
   supa.auth.onAuthStateChange(async(event,session)=>{
     if(session&&session.user){
-      // Si l'utilisateur vient de se déconnecter, ignorer la session
+      // Si SIGNED_IN explicite (clic sur bouton), toujours laisser passer
+      if(event==='SIGNED_IN'){
+        localStorage.removeItem('force_logout');
+      }
+      // Si force_logout actif et pas de SIGNED_IN explicite, bloquer
       if(localStorage.getItem('force_logout')==='1'){
         document.getElementById('auth-screen').style.display='flex';
         return;
       }
       _currentUser=session.user;
       document.getElementById('auth-screen').style.display='none';
-      load(); // localStorage d'abord
-      await loadFromCloud(); // cloud prime sur localStorage
-      // ensureWeek seulement si pas de repas dans le cloud
+      await loadFromCloud(); // charger le cloud UNIQUEMENT
       if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
       showPage(S.page||'home');
       renderPage();
-      // Sauvegarder seulement si on a des données valides
-      if(S.recipes&&S.recipes.length>0||Object.keys(S.meals||{}).length>0) await saveToCloud();
+      // NE PAS sauvegarder automatiquement à la connexion
       document.querySelectorAll('.mo').forEach(m=>{
         m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active');});
       });
