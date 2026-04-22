@@ -1007,7 +1007,14 @@ let S={
 };
 
 function load(){try{const d=localStorage.getItem('coachv3');if(d){const p=JSON.parse(d);S={...S,...p,profile:{...S.profile,...(p.profile||{})}};if(!S.profile.exclusions)S.profile.exclusions=[];if(!S.recipes)S.recipes=[];if(!S.proposals)S.proposals=[];if(!S.rejectedIds)S.rejectedIds=[];}}catch(e){}}
-function save(){try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}}
+let _cloudTimer=null;
+function save(){
+  try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  if(_currentUser){
+    clearTimeout(_cloudTimer);
+    _cloudTimer=setTimeout(pushToCloud,3000);
+  }
+}
 
 // ============================================================
 // UTILS
@@ -3952,6 +3959,44 @@ async function signOut(){
 
 
 
+
+// ============================================================
+// SYNC CLOUD (simple et fiable)
+// ============================================================
+async function pushToCloud(){
+  if(!_currentUser)return;
+  try{
+    await supa.from('coach_data').upsert(
+      {user_id:_currentUser.id, data:JSON.stringify(S), updated_at:new Date().toISOString()},
+      {onConflict:'user_id'}
+    );
+  }catch(e){console.warn('pushToCloud:',e.message);}
+}
+
+async function pullFromCloud(){
+  if(!_currentUser)return;
+  try{
+    const {data,error}=await supa.from('coach_data').select('data').eq('user_id',_currentUser.id).single();
+    if(error||!data?.data)return;
+    const p=JSON.parse(data.data);
+    // Fusionner : garder les recettes locales non présentes dans le cloud
+    const cloudIds=new Set((p.recipes||[]).map(r=>r.id));
+    const extraLocal=(S.recipes||[]).filter(r=>!cloudIds.has(r.id));
+    S={...p};
+    S.recipes=[...(p.recipes||[]),...extraLocal];
+    if(!S.profile)S.profile={name:'',weight:75,height:175,goal:'maintenance',exclusions:[]};
+    if(!S.profile.exclusions)S.profile.exclusions=[];
+    if(!S.meals)S.meals={};
+    if(!S.workouts)S.workouts=[];
+    if(!S.plan)S.plan={};
+    if(!S.recipes)S.recipes=[];
+    if(!S.proposals)S.proposals=[];
+    if(!S.rejectedIds)S.rejectedIds=[];
+    if(!S.mealDay)S.mealDay='lundi';
+    try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  }catch(e){console.warn('pullFromCloud:',e.message);}
+}
+
 // ============================================================
 // INIT
 // ============================================================
@@ -3969,10 +4014,14 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
       _currentUser=session.user;
       document.getElementById('auth-screen').style.display='none';
-      load();
-      if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
+      load(); // localStorage rapide
       showPage(S.page||'home');
       renderPage();
+      // Charger le cloud en arrière-plan et rafraîchir
+      pullFromCloud().then(()=>{
+        if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
+        renderPage();
+      });
       document.querySelectorAll('.mo').forEach(m=>{
         m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active');});
       });
