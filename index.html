@@ -3965,12 +3965,13 @@ async function saveToCloud(){
   try{
     const payload = {user_id:_currentUser.id, data:JSON.stringify(S), updated_at:new Date().toISOString()};
     console.log('💾 saveToCloud - recettes:',S.recipes?.length,'repas:',Object.keys(S.meals||{}).length,'user:',_currentUser.id.substring(0,8));
-    const {error} = await supa.from('coach_data').upsert(payload,{onConflict:'user_id'});
+    const {data:result, error} = await supa.from('coach_data').upsert(payload,{onConflict:'user_id'}).select();
     if(error){
-      console.error('saveToCloud erreur:', error);
-      showToast('❌ Erreur sauvegarde: '+error.message);
+      console.error('saveToCloud erreur complète:', JSON.stringify(error));
+      showToast('❌ '+error.message);
     } else {
-      console.log('✅ saveToCloud réussi');
+      console.log('✅ saveToCloud réussi', result);
+      showToast('✅ Sauvegardé dans le cloud !');
     }
   }catch(e){
     console.error('saveToCloud exception:',e);
