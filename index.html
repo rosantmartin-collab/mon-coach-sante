@@ -618,7 +618,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <!-- PROFILE -->
 <div id="page-profile" class="page">
   <div class="ph">
-    <div style="display:flex;justify-content:space-between;align-items:center;"><div class="pt">⚙️ Profil</div><div style="display:flex;gap:8px;"><button onclick="forceSyncCloud()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;" title="Sauvegarder vers le cloud">☁️ Sauvegarder</button><button onclick="forcePullCloud()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;" title="Charger depuis le cloud">⬇️ Charger</button><button onclick="exportData()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;" title="Exporter toutes les données">📤 Export</button><button onclick="openAPIKeyModal()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;">🔑 Clé API</button><button onclick="signOut()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;">🚪 Déco</button></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;"><div class="pt">⚙️ Profil</div><div style="display:flex;gap:8px;"><button onclick="openAPIKeyModal()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;">🔑 Clé API</button><button onclick="signOut()" style="padding:6px 14px;background:var(--bg3);border:none;border-radius:8px;color:var(--text2);font-size:.78rem;cursor:pointer;">🚪 Déco</button></div></div>
     <div class="ps">Personnalise ton expérience</div>
   </div>
   <div class="g2">
@@ -1007,10 +1007,7 @@ let S={
 };
 
 function load(){try{const d=localStorage.getItem('coachv3');if(d){const p=JSON.parse(d);S={...S,...p,profile:{...S.profile,...(p.profile||{})}};if(!S.profile.exclusions)S.profile.exclusions=[];if(!S.recipes)S.recipes=[];if(!S.proposals)S.proposals=[];if(!S.rejectedIds)S.rejectedIds=[];}}catch(e){}}
-function save(){
-  try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
-  saveToCloud();
-}
+function save(){try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}}
 
 // ============================================================
 // UTILS
@@ -3895,26 +3892,6 @@ async function callGemini(systemPrompt, userText, imageB64, imageMime){
 
 
 
-function exportData(){
-  const exportObj = {
-    exportDate: new Date().toISOString(),
-    profile: S.profile,
-    plan: S.plan,
-    meals: S.meals,
-    workouts: S.workouts,
-    recipes: S.recipes,
-    proposals: S.proposals,
-    rejectedIds: S.rejectedIds
-  };
-  const blob = new Blob([JSON.stringify(exportObj, null, 2)], {type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'mon-coach-sante-export-'+new Date().toISOString().split('T')[0]+'.json';
-  a.click();
-  URL.revokeObjectURL(url);
-  showToast('📤 Export téléchargé !');
-}
 
 // ============================================================
 // SUPABASE
@@ -3972,54 +3949,8 @@ async function signOut(){
 }
 
 
-async function forceSyncCloud(){
-  if(!_currentUser){showToast('❌ Non connecté !');return;}
-  await saveToCloud();
-  showToast('✅ Données sauvegardées !');
-}
 
-async function forcePullCloud(){
-  if(!_currentUser){showToast('❌ Non connecté !');return;}
-  showToast('☁️ Chargement...');
-  await loadFromCloud();
-  renderPage();
-  showToast('✅ '+S.recipes.length+' recettes chargées !');
-}
 
-async function saveToCloud(){
-  if(!_currentUser)return;
-  try{
-    await supa.from('coach_data').upsert(
-      {user_id:_currentUser.id, data:JSON.stringify(S), updated_at:new Date().toISOString()},
-      {onConflict:'user_id'}
-    );
-  }catch(e){console.error('saveToCloud:',e);}
-}
-
-async function loadFromCloud(){
-  if(!_currentUser)return;
-  try{
-    const {data,error}=await supa.from('coach_data').select('data').eq('user_id',_currentUser.id).single();
-    if(error||!data||!data.data)return;
-    const p=JSON.parse(data.data);
-    // Fusionner les recettes locales et cloud
-    const cloudIds=(p.recipes||[]).map(r=>r.id);
-    const mergedRecipes=[...(p.recipes||[])];
-    (S.recipes||[]).forEach(r=>{if(!cloudIds.includes(r.id))mergedRecipes.push(r);});
-    S={...p, recipes:mergedRecipes};
-    if(!S.profile)S.profile={name:'',weight:75,height:175,goal:'maintenance',exclusions:[]};
-    if(!S.profile.exclusions)S.profile.exclusions=[];
-    if(!S.recipes)S.recipes=[];
-    if(!S.proposals)S.proposals=[];
-    if(!S.rejectedIds)S.rejectedIds=[];
-    if(!S.meals)S.meals={};
-    if(!S.workouts)S.workouts=[];
-    if(!S.plan)S.plan={};
-    if(!S.mealDay)S.mealDay='lundi';
-    try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
-    console.log('✅ Cloud chargé - recettes:',S.recipes.length);
-  }catch(e){console.error('loadFromCloud:',e);}
-}
 
 // ============================================================
 // INIT
@@ -4039,7 +3970,6 @@ document.addEventListener('DOMContentLoaded',()=>{
       _currentUser=session.user;
       document.getElementById('auth-screen').style.display='none';
       load();
-      await loadFromCloud();
       if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
       showPage(S.page||'home');
       renderPage();
