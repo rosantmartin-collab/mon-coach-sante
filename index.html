@@ -1033,56 +1033,12 @@ function getFilteredMeals(dbKey,type){
   return filtered.length>0?filtered:arr;
 }
 
-// Convertit une recette perso (S.recipes) au format des repas du plan
-function recipeToMeal(r){
-  const ings=(r.ingredients||[]).map(i=>typeof i==='string'?i:(i.name||'')).filter(Boolean);
-  const ex=S.profile.exclusions||[];
-  // Appliquer les exclusions
-  if(ex.length){
-    const txt=(r.name+' '+ings.join(' ')).toLowerCase();
-    if(ex.some(e=>txt.includes(e.toLowerCase().trim()))) return null;
-  }
-  return{
-    n:r.name,
-    k:r.kcal||r.k||0,
-    p:r.protein||r.p||0,
-    c:r.carbs||r.c||0,
-    l:r.fat||r.l||0,
-    flag:r.emoji||'🍽️',
-    ing:ings,
-    fromPersonal:true
-  };
-}
-
-// Retourne les recettes perso compatibles déjeuner/dîner (les deux interchangeables)
-function getPersonalMeals(){
-  const cats=['déjeuner','dîner','plat','lunch','dinner'];
-  return (S.recipes||[])
-    .filter(r=>cats.some(c=>(r.category||'').toLowerCase().includes(c)))
-    .map(recipeToMeal)
-    .filter(Boolean);
-}
-
-// Fusionne recettes DB + recettes perso pour lunch/dinner et tire au sort
-function pickMeal(dbKey,type){
-  const dbPool=getFilteredMeals(dbKey,type);
-  if(dbKey==='lunch'||dbKey==='dinner'){
-    const personal=getPersonalMeals();
-    if(personal.length){
-      // Pool mixte : recettes DB + recettes perso (1 chance sur 3 d'avoir une recette perso)
-      const pool=[...dbPool,...dbPool,...personal];
-      return rand(pool);
-    }
-  }
-  return rand(dbPool);
-}
-
 function genDay(type){
   const t=type||'repos';
   return{
     breakfast:rand(getFilteredMeals('breakfast',t)),
-    lunch:pickMeal('lunch',t),
-    dinner:pickMeal('dinner',t),
+    lunch:rand(getFilteredMeals('lunch',t)),
+    dinner:rand(getFilteredMeals('dinner',t)),
     snack2:rand(getFilteredMeals('snack',t))
   };
 }
@@ -1101,8 +1057,8 @@ function regenerateWeek(){
 function regenMeal(day,slot){
   const type=S.plan[day]||'repos';
   const dbKey=slot.startsWith('snack')?'snack':slot;
-  const meal=pickMeal(dbKey,type);
-  if(meal){S.meals[day][slot]=meal;save();renderMealsDetail();showToast('✨ Repas remplacé !');}
+  const db=getFilteredMeals(dbKey,type);
+  if(db.length){S.meals[day][slot]=rand(db);save();renderMealsDetail();showToast('✨ Repas remplacé !');}
 }
 
 function dayNut(day){
