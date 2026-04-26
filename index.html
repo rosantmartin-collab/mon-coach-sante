@@ -1904,9 +1904,9 @@ function regenerateProposals(){
   const pool=allSuggestions.filter(r=>!approvedIds.includes(r.id)&&!existingIds.includes(r.id)&&recipeMatchesFilters(r));
   // Mélange : max 2 recettes de saison, le reste toutes catégories
   const season=getCurrentSeason();
-  const seasonal=pool.filter(r=>r.seasons&&r.seasons.includes(season)&&!r.seasons.includes('all')).sort(()=>Math.random()-.5).slice(0,2);
+  const seasonal=pool.filter(r=>r.seasons&&r.seasons.includes(season)&&!r.seasons.includes('all')).sort(()=>Math.random()-.5).slice(0,6);
   const seasonalIds=seasonal.map(r=>r.id);
-  const other=pool.filter(r=>!seasonalIds.includes(r.id)).sort(()=>Math.random()-.5).slice(0,4);
+  const other=pool.filter(r=>!seasonalIds.includes(r.id)).sort(()=>Math.random()-.5).slice(0,14);
   const prioritized=[...seasonal,...other].sort(()=>Math.random()-.5);
   S.proposals=[...S.proposals,...prioritized];
   save();renderProposals();showToast('🔄 Nouvelles suggestions !');
