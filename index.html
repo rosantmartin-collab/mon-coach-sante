@@ -1887,29 +1887,26 @@ function generateRecipeProposals(){
   const allSuggestions=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA);
   const approvedIds=S.recipes.map(r=>r.id);
   const existingIds=S.proposals.map(p=>p.id);
-  allSuggestions.forEach(r=>{
-    if(!existingIds.includes(r.id)&&!approvedIds.includes(r.id)&&!(S.rejectedIds||[]).includes(r.id)&&recipeMatchesFilters(r))S.proposals.push(r);
-  });  save();
+  const pool=allSuggestions.filter(r=>!existingIds.includes(r.id)&&!approvedIds.includes(r.id)&&!(S.rejectedIds||[]).includes(r.id));
+  const picked=pool.sort(()=>Math.random()-.5).slice(0,20);
+  picked.forEach(r=>S.proposals.push(r));
+  save();
   document.querySelectorAll('.rtab').forEach((t,i)=>t.classList.toggle('active',i===1));
   document.querySelectorAll('.rpanel').forEach((p,i)=>p.classList.toggle('active',i===1));
-  renderProposals();showToast('✨ Suggestions disponibles !');
+  renderProposals();showToast('✨ '+picked.length+' suggestions disponibles !');
 }
 
 function regenerateProposals(){
+  // Garder seulement les recettes déjà validées
   S.proposals=S.proposals.filter(p=>S.recipes.some(r=>r.id===p.id));
   const allSuggestions=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA);
   const approvedIds=S.recipes.map(r=>r.id);
+  const rejectedIds=S.rejectedIds||[];
   const existingIds=S.proposals.map(p=>p.id);
-  // Filter by exclusions only (pas de filtre saison ici — on propose tout)
-  const pool=allSuggestions.filter(r=>!approvedIds.includes(r.id)&&!existingIds.includes(r.id)&&recipeMatchesFilters(r));
-  // Mélange : max 2 recettes de saison, le reste toutes catégories
-  const season=getCurrentSeason();
-  const seasonal=pool.filter(r=>r.seasons&&r.seasons.includes(season)&&!r.seasons.includes('all')).sort(()=>Math.random()-.5).slice(0,6);
-  const seasonalIds=seasonal.map(r=>r.id);
-  const other=pool.filter(r=>!seasonalIds.includes(r.id)).sort(()=>Math.random()-.5).slice(0,14);
-  const prioritized=[...seasonal,...other].sort(()=>Math.random()-.5);
-  S.proposals=[...S.proposals,...prioritized];
-  save();renderProposals();showToast('🔄 Nouvelles suggestions !');
+  const pool=allSuggestions.filter(r=>!approvedIds.includes(r.id)&&!rejectedIds.includes(r.id)&&!existingIds.includes(r.id));
+  const picked=pool.sort(()=>Math.random()-.5).slice(0,20);
+  S.proposals=[...S.proposals,...picked];
+  save();renderProposals();showToast('🔄 '+picked.length+' nouvelles suggestions !');
 }
 
 function openAddRecipeModal(){
@@ -4453,7 +4450,186 @@ const RECIPE_SUGGESTIONS_EXTRA=[
    ingredients:[{ico:"🌾",qty:"300g",name:"Crozets de Savoie"},{ico:"🧀",qty:"300g",name:"Reblochon"},{ico:"🥓",qty:"150g",name:"Lardons"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🥛",qty:"20cl",name:"Crème fraîche"},{ico:"🧂",qty:"QS",name:"Sel, poivre, muscade"}],
    tips:[{dot:"#f9a825",text:"Crozets légèrement sous-cuits avant le gratin = finissent au four"},{dot:"#4caf50",text:"Reblochon entier coupé en deux = croûte qui dore magnifiquement"}],
    steps:[{title:"Crozets",desc:"Cuire les crozets dans l'eau salée 12 min. Égoutter."},{title:"Base",desc:"Faire revenir lardons et oignons. Mélanger avec les crozets et la crème. Assaisonner."},{title:"Gratin",desc:"Verser dans un plat. Disposer le reblochon coupé en deux croûte sur le dessus. Four à 200°C, 20-25 min."}],
-   errors:["Crozets trop cuits → fondent au four","Pas assez de crème → gratin sec"],variantes:["Avec champignons","Version végétarienne","Avec diots de Savoie"],footer:"Gratin alpin · Savoie",stars:"★★★★★"}
+   errors:["Crozets trop cuits → fondent au four","Pas assez de crème → gratin sec"],variantes:["Avec champignons","Version végétarienne","Avec diots de Savoie"],footer:"Gratin alpin · Savoie",stars:"★★★★★"},
+  {id:"ru01",emoji:"🥞",name:"Omelette soufflée aux herbes",cuisine:"Cuisine Française",persons:1,prep:"5 min",cook:"5 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"petit-déjeuner",seasons:["all"],
+   ingredients:[{ico:"🥚",qty:"3",name:"Œufs"},{ico:"🌿",qty:"QS",name:"Ciboulette, persil, estragon"},{ico:"🧈",qty:"15g",name:"Beurre"},{ico:"🧂",qty:"QS",name:"Sel, poivre"}],
+   tips:[{dot:"#f9a825",text:"Blancs montés incorporés délicatement = omelette aérienne"},{dot:"#4caf50",text:"Cuisson rapide à feu vif = moelleuse à l'intérieur"}],
+   steps:[{title:"Préparer",desc:"Séparer les œufs. Fouetter les jaunes avec sel, poivre et herbes. Monter les blancs en neige ferme. Incorporer délicatement."},{title:"Cuire",desc:"Beurre moussant dans la poêle. Verser l'omelette. Cuire 1 min à feu vif."},{title:"Plier",desc:"Plier et dresser immédiatement. Elle doit être encore baveuse à l'intérieur."}],
+   errors:["Blancs trop serrés → difficile à incorporer","Trop cuire → retombe"],variantes:["Au fromage","Au jambon","Sucrée à la confiture"],footer:"Petit-déjeuner gastronomique",stars:"★★★★★"},
+
+  {id:"ru02",emoji:"🫙",name:"Confiture de fraises maison",cuisine:"Cuisine Française",persons:6,prep:"20 min",cook:"25 min",diff:"Facile ★",color:"#e91e63",colorLight:"#fce4ec",category:"petit-déjeuner",seasons:["spring","summer"],
+   ingredients:[{ico:"🍓",qty:"1 kg",name:"Fraises"},{ico:"🍬",qty:"700g",name:"Sucre à confiture"},{ico:"🍋",qty:"1",name:"Citron"}],
+   tips:[{dot:"#e91e63",text:"Test de la confiture : une goutte sur assiette froide fige → prête"},{dot:"#4caf50",text:"Pots ébouillantés retournés = conservation 1 an"}],
+   steps:[{title:"Macérer",desc:"Mélanger fraises équeutées, sucre et jus de citron. Macérer 1h minimum."},{title:"Cuire",desc:"Porter à ébullition en remuant. Écumer. Cuire 20-25 min à feu vif."},{title:"Mettre en pot",desc:"Tester la prise. Verser dans les pots ébouillantés. Fermer et retourner jusqu'à refroidissement."}],
+   errors:["Pas assez cuire → confiture liquide","Pas écumer → confiture trouble"],variantes:["Fraise-rhubarbe","Fraise-vanille","Fraise-basilic"],footer:"Confiture maison · France",stars:"★★★★★"},
+
+  {id:"ru03",emoji:"🥘",name:"Poêlée de pommes de terre paysanne",cuisine:"Cuisine Française",persons:4,prep:"10 min",cook:"30 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🥔",qty:"1 kg",name:"Pommes de terre"},{ico:"🥓",qty:"200g",name:"Lardons fumés"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🧄",qty:"3 gousses",name:"Ail"},{ico:"🌿",qty:"QS",name:"Thym, romarin, persil"},{ico:"🫒",qty:"3 c.à.s.",name:"Huile ou graisse de canard"}],
+   tips:[{dot:"#f9a825",text:"Pommes de terre précuites à l'eau = plus rapide et moins d'huile"},{dot:"#4caf50",text:"Feu vif en fin = croûte dorée croustillante"}],
+   steps:[{title:"Précuire",desc:"Cuire les pommes de terre 10 min à l'eau bouillante salée. Égoutter et couper en tranches."},{title:"Poêler",desc:"Faire revenir les lardons et les oignons. Ajouter les pommes de terre et l'ail. Cuire à feu moyen 15 min."},{title:"Dorer",desc:"Augmenter le feu les 5 dernières minutes pour bien dorer. Thym, romarin et persil."}],
+   errors:["Pommes de terre crues directement → trop long","Feu trop doux → molles"],variantes:["Avec œufs brouillés","Avec champignons","Sarladaises à la graisse de canard"],footer:"Plat du terroir · France",stars:"★★★★★"},
+
+  {id:"ru04",emoji:"🍫",name:"Mousse au chocolat légère",cuisine:"Cuisine Française",persons:6,prep:"20 min",cook:"5 min",diff:"Facile ★",color:"#4e342e",colorLight:"#efebe9",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🍫",qty:"200g",name:"Chocolat noir 70%"},{ico:"🥚",qty:"6",name:"Œufs"},{ico:"🍬",qty:"30g",name:"Sucre"},{ico:"🧂",qty:"1 pincée",name:"Sel"}],
+   tips:[{dot:"#4e342e",text:"Chocolat tiède (pas chaud) avant les jaunes = ne cuit pas les œufs"},{dot:"#4caf50",text:"Blancs en neige ferme incorporés en 3 fois = mousse aérienne"}],
+   steps:[{title:"Chocolat",desc:"Faire fondre le chocolat au bain-marie. Laisser tiédir. Incorporer les jaunes d'œufs."},{title:"Blancs",desc:"Monter les blancs en neige avec le sel. Ajouter le sucre à la fin."},{title:"Incorporer",desc:"Incorporer 1/3 des blancs vigoureusement pour détendre. Puis le reste délicatement à la maryse. Réfrigérer 3h."}],
+   errors:["Chocolat trop chaud → œufs brouillés","Trop mélanger → mousse qui retombe"],variantes:["Mousse chocolat blanc","Avec café","Avec orange"],footer:"Classique léger · France",stars:"★★★★★"},
+
+  {id:"ru05",emoji:"🥗",name:"Salade de riz thon poivrons",cuisine:"Cuisine Française",persons:4,prep:"15 min",cook:"15 min",diff:"Facile ★",color:"#1565c0",colorLight:"#e3f2fd",category:"déjeuner",seasons:["summer"],
+   ingredients:[{ico:"🍚",qty:"300g cuit",name:"Riz long"},{ico:"🐟",qty:"2 boîtes",name:"Thon au naturel"},{ico:"🫑",qty:"2",name:"Poivrons"},{ico:"🍅",qty:"300g",name:"Tomates cerises"},{ico:"🫒",qty:"100g",name:"Olives vertes"},{ico:"🥚",qty:"3",name:"Œufs durs"},{ico:"🌿",qty:"QS",name:"Vinaigrette, persil, câpres"}],
+   tips:[{dot:"#1565c0",text:"Riz refroidi et assaisonné tiède = salade qui s'imprègne bien"},{dot:"#4caf50",text:"Poivrons grillés = saveur fumée incomparable"}],
+   steps:[{title:"Riz",desc:"Cuire le riz al dente. Refroidir sous eau froide. Assaisonner de vinaigrette encore tiède."},{title:"Poivrons",desc:"Griller les poivrons au four ou à la flamme. Peler et couper en lanières."},{title:"Assembler",desc:"Mélanger tous les ingrédients. Rectifier l'assaisonnement. Réfrigérer 30 min."}],
+   errors:["Riz trop cuit → colle","Pas assez assaisonner → fade"],variantes:["Avec crevettes","Avec maïs","Avec avocat"],footer:"Salade d'été · France",stars:"★★★★★"},
+
+  {id:"ru06",emoji:"🥩",name:"Émincé de poulet sauce curry rapide",cuisine:"Cuisine Fusion",persons:2,prep:"10 min",cook:"15 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🍗",qty:"400g",name:"Blanc de poulet"},{ico:"🌿",qty:"2 c.à.s.",name:"Poudre de curry"},{ico:"🥥",qty:"20cl",name:"Lait de coco"},{ico:"🧅",qty:"1",name:"Oignon"},{ico:"🧄",qty:"2 gousses",name:"Ail"},{ico:"🌿",qty:"QS",name:"Coriandre, citron vert, sel"}],
+   tips:[{dot:"#f57f17",text:"Émincé fin = cuisson rapide en 5 min"},{dot:"#4caf50",text:"Lait de coco en fin de cuisson = sauce crémeuse qui ne tourne pas"}],
+   steps:[{title:"Émincé",desc:"Couper le poulet en fines lamelles. Assaisonner."},{title:"Cuire",desc:"Faire revenir oignon et ail. Ajouter le poulet et le curry 2 min. Verser le lait de coco."},{title:"Finir",desc:"Mijoter 5 min. Jus de citron vert et coriandre. Servir sur riz basmati."}],
+   errors:["Poulet trop épais → pas cuit au centre","Lait de coco bouilli trop longtemps → se sépare"],variantes:["Avec crevettes","Avec tofu","Curry rouge"],footer:"Dîner express · Fusion",stars:"★★★★"},
+
+  {id:"ru07",emoji:"🥐",name:"Toast avocat œuf poché",cuisine:"Cuisine Australienne",persons:2,prep:"10 min",cook:"5 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"petit-déjeuner",seasons:["all"],
+   ingredients:[{ico:"🥑",qty:"2",name:"Avocats mûrs"},{ico:"🍞",qty:"4 tranches",name:"Pain au levain ou complet"},{ico:"🥚",qty:"4",name:"Œufs"},{ico:"🌿",qty:"QS",name:"Flocons de piment, ciboulette"},{ico:"🍋",qty:"1",name:"Citron"},{ico:"🌿",qty:"QS",name:"Fleur de sel, poivre"}],
+   tips:[{dot:"#2e7d32",text:"Eau vinaigrée + tourbillon = œuf poché qui ne s'étale pas"},{dot:"#4caf50",text:"Avocat citronnée = ne noircit pas et goût plus vif"}],
+   steps:[{title:"Avocat",desc:"Écraser les avocats avec jus de citron, sel et poivre. Étaler sur les toasts grillés."},{title:"Œuf poché",desc:"Porter l'eau vinaigrée à frémissement. Créer un tourbillon. Casser l'œuf au centre. Cuire 3 min."},{title:"Dresser",desc:"Poser l'œuf poché sur l'avocat. Flocons de piment, ciboulette et fleur de sel."}],
+   errors:["Eau bouillante → blanc qui s'étale","Avocat pas mûr → texture granuleuse"],variantes:["Avec saumon fumé","Avec tomates rôties","Version végane"],footer:"Brunch · Australie",stars:"★★★★★"},
+
+  {id:"ru08",emoji:"🍲",name:"Velouté de carottes gingembre",cuisine:"Cuisine Française",persons:4,prep:"10 min",cook:"25 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"entrée",seasons:["all"],
+   ingredients:[{ico:"🥕",qty:"800g",name:"Carottes"},{ico:"🌿",qty:"30g",name:"Gingembre frais"},{ico:"🧅",qty:"1",name:"Oignon"},{ico:"🥥",qty:"20cl",name:"Lait de coco"},{ico:"🍲",qty:"80cl",name:"Bouillon de légumes"},{ico:"🍋",qty:"1",name:"Jus d'orange"},{ico:"🌿",qty:"QS",name:"Coriandre, crème"}],
+   tips:[{dot:"#f57f17",text:"Jus d'orange = touche acidulée qui réveille la douceur de la carotte"},{dot:"#4caf50",text:"Lait de coco = onctuosité naturelle et note exotique"}],
+   steps:[{title:"Cuire",desc:"Faire revenir oignon et gingembre râpé. Ajouter carottes en rondelles et bouillon. Cuire 20 min."},{title:"Mixer",desc:"Ajouter lait de coco et jus d'orange. Mixer jusqu'à velouté parfaitement lisse."},{title:"Servir",desc:"Vérifier l'assaisonnement. Servir avec une quenelle de crème fraîche et coriandre."}],
+   errors:["Trop de gingembre → piquant envahissant","Pas assez mixer → texture grossière"],variantes:["Avec curcuma","Velouté potiron gingembre","Froide en version estivale"],footer:"Velouté réconfortant · France",stars:"★★★★★"},
+
+  {id:"ru09",emoji:"🥗",name:"Salade composée printanière",cuisine:"Cuisine Française",persons:4,prep:"15 min",cook:"10 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"déjeuner",seasons:["spring","summer"],
+   ingredients:[{ico:"🥗",qty:"QS",name:"Mesclun"},{ico:"🫛",qty:"200g",name:"Petits pois"},{ico:"🌿",qty:"200g",name:"Asperges vertes"},{ico:"🍓",qty:"100g",name:"Fraises"},{ico:"🧀",qty:"100g",name:"Feta"},{ico:"🌿",qty:"QS",name:"Menthe, basilic"},{ico:"🌿",qty:"QS",name:"Vinaigrette balsamique blanc"}],
+   tips:[{dot:"#2e7d32",text:"Asperges croquantes = blanchies 3 min seulement"},{dot:"#4caf50",text:"Fraises dans une salade salée = accord surprenant et délicieux"}],
+   steps:[{title:"Légumes",desc:"Blanchir asperges et petits pois 3 min. Plonger dans l'eau glacée. Couper les asperges en tronçons."},{title:"Vinaigrette",desc:"Mélanger vinaigre balsamique blanc, moutarde, miel et huile d'olive."},{title:"Assembler",desc:"Mesclun, légumes, fraises, feta émiettée et herbes fraîches. Vinaigrette au service."}],
+   errors:["Légumes trop cuits → mous","Assaisonner trop tôt → salade détrempée"],variantes:["Avec radis","Avec œufs mollets","Version quinoa"],footer:"Salade de printemps · France",stars:"★★★★★"},
+
+  {id:"ru10",emoji:"🍗",name:"Aiguillettes de canard aux cerises",cuisine:"Cuisine Française",persons:2,prep:"10 min",cook:"10 min",diff:"Facile ★★",color:"#c62828",colorLight:"#ffebee",category:"dîner",seasons:["summer"],
+   ingredients:[{ico:"🦆",qty:"300g",name:"Aiguillettes de canard"},{ico:"🍒",qty:"200g",name:"Cerises fraîches"},{ico:"🍷",qty:"10cl",name:"Vin rouge"},{ico:"🌿",qty:"1 c.à.s.",name:"Miel"},{ico:"🧈",qty:"20g",name:"Beurre"},{ico:"🌿",qty:"QS",name:"Thym, sel, poivre"}],
+   tips:[{dot:"#c62828",text:"Aiguillettes cuites 2 min par face = rosées et tendres"},{dot:"#4caf50",text:"Sauce aigre-douce cerise = accord classique avec le canard"}],
+   steps:[{title:"Canard",desc:"Faire sauter les aiguillettes à feu vif 2 min par face. Réserver."},{title:"Sauce",desc:"Déglacer avec le vin rouge. Ajouter cerises dénoyautées et miel. Réduire 3 min."},{title:"Finir",desc:"Monter au beurre hors du feu. Rectifier. Napper les aiguillettes."}],
+   errors:["Trop cuire → canard sec","Sauce trop réduite → trop sucrée"],variantes:["Aux framboises","Aux figues","Au poivre vert"],footer:"Canard aux fruits · France",stars:"★★★★★"},
+
+  {id:"ru11",emoji:"🥮",name:"Sablés bretons pur beurre",cuisine:"Cuisine Bretonne",persons:20,prep:"15 min",cook:"12 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"250g",name:"Farine"},{ico:"🧈",qty:"125g",name:"Beurre demi-sel breton"},{ico:"🍬",qty:"100g",name:"Sucre"},{ico:"🥚",qty:"2 jaunes",name:"Jaunes d'œuf"},{ico:"🌿",qty:"QS",name:"Vanille"},{ico:"🥚",qty:"1 jaune",name:"Pour la dorure"}],
+   tips:[{dot:"#f9a825",text:"Beurre demi-sel = sablés avec une note salée caractéristique"},{dot:"#4caf50",text:"Travailler vite la pâte pour ne pas chauffer le beurre"}],
+   steps:[{title:"Pâte",desc:"Sabler farine et beurre froid. Ajouter sucre, jaunes et vanille. Former une boule. Réfrigérer 30 min."},{title:"Façonner",desc:"Étaler à 5mm d'épaisseur. Découper des ronds avec un emporte-pièce."},{title:"Cuire",desc:"Dorer à la fourchette. Four à 175°C, 12 min jusqu'à dorés."}],
+   errors:["Pâte trop travaillée → sablés durs","Trop fins → trop croustillants"],variantes:["Palets bretons épais","Sablés chocolat","Sablés citron"],footer:"Biscuiterie · Bretagne",stars:"★★★★★"},
+
+  {id:"ru12",emoji:"🥘",name:"Pilaf de chou-fleur épicé",cuisine:"Cuisine Indienne",persons:4,prep:"15 min",cook:"20 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🥦",qty:"1 tête",name:"Chou-fleur"},{ico:"🍚",qty:"200g cuit",name:"Riz basmati"},{ico:"🧅",qty:"1",name:"Oignon"},{ico:"🌿",qty:"QS",name:"Cumin, curcuma, garam masala, ail, gingembre"},{ico:"🥛",qty:"QS",name:"Yaourt pour servir"},{ico:"🌿",qty:"QS",name:"Coriandre, citron"}],
+   tips:[{dot:"#f57f17",text:"Chou-fleur rôti = saveur caramélisée bien supérieure au bouilli"},{dot:"#4caf50",text:"Mélanger riz et chou-fleur en fin = riz qui reste séparé"}],
+   steps:[{title:"Rôtir",desc:"Couper le chou-fleur en fleurettes. Assaisonner de curcuma et huile. Rôtir à 220°C, 20 min."},{title:"Base",desc:"Faire revenir oignon, ail et gingembre avec les épices."},{title:"Assembler",desc:"Mélanger le riz cuit avec la base épicée et le chou-fleur. Yaourt, citron et coriandre."}],
+   errors:["Chou-fleur trop cuit → se défait","Épices pas assez revenues → goût cru"],variantes:["Avec pois chiches","Version aloo gobi","Avec paneer"],footer:"Végétarien épicé · Inde",stars:"★★★★★"},
+
+  {id:"ru13",emoji:"🍰",name:"Fondant au chocolat sans farine",cuisine:"Cuisine Sans Gluten",persons:8,prep:"15 min",cook:"20 min",diff:"Facile ★",color:"#4e342e",colorLight:"#efebe9",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🍫",qty:"200g",name:"Chocolat noir 70%"},{ico:"🧈",qty:"150g",name:"Beurre"},{ico:"🥚",qty:"4",name:"Œufs"},{ico:"🍬",qty:"150g",name:"Sucre"},{ico:"🥜",qty:"80g",name:"Poudre d'amandes"},{ico:"🧂",qty:"1 pincée",name:"Sel"},{ico:"🌿",qty:"QS",name:"Vanille"}],
+   tips:[{dot:"#4e342e",text:"Poudre d'amandes = texture humide et dense naturellement"},{dot:"#4caf50",text:"Sans farine = naturellement sans gluten et plus fondant"}],
+   steps:[{title:"Fondre",desc:"Faire fondre chocolat et beurre. Tiédir."},{title:"Mélanger",desc:"Fouetter œufs et sucre. Incorporer le chocolat puis la poudre d'amandes et la vanille."},{title:"Cuire",desc:"Moule beurré. Four à 170°C, 18-20 min. Centre doit être humide. Refroidir avant de démouler."}],
+   errors:["Trop cuire → perd son fondant","Pas refroidir → s'effondre au démoulage"],variantes:["Avec cœur caramel","Avec framboises","Version pistache"],footer:"Dessert sans gluten · France",stars:"★★★★★"},
+
+  {id:"ru14",emoji:"🥗",name:"Wraps végétariens houmous crudités",cuisine:"Cuisine Végétarienne",persons:2,prep:"15 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"déjeuner",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"2 grandes",name:"Tortillas de blé"},{ico:"🫙",qty:"6 c.à.s.",name:"Houmous"},{ico:"🥗",qty:"QS",name:"Laitue, épinards"},{ico:"🥒",qty:"1",name:"Concombre"},{ico:"🍅",qty:"2",name:"Tomates"},{ico:"🧀",qty:"80g",name:"Feta"},{ico:"🌿",qty:"QS",name:"Olives, herbes, piment doux"}],
+   tips:[{dot:"#2e7d32",text:"Tortilla légèrement chauffée = plus souple à rouler"},{dot:"#4caf50",text:"Houmous généreuse = colle les ingrédients et hydrate le wrap"}],
+   steps:[{title:"Préparer",desc:"Couper tous les légumes en lamelles ou petits morceaux."},{title:"Garnir",desc:"Étaler le houmous généreusement sur la tortilla. Disposer les légumes, la feta et les olives."},{title:"Rouler",desc:"Rouler serré. Couper en diagonal. Maintenir avec une pique si nécessaire."}],
+   errors:["Trop de garniture → ne ferme pas","Tortilla froide → craque"],variantes:["Wrap falafel","Wrap grillé au four","Wrap vegan"],footer:"Lunch express · Végétarien",stars:"★★★★★"},
+
+  {id:"ru15",emoji:"🍜",name:"Soupe de légumes d'hiver",cuisine:"Cuisine Française",persons:6,prep:"15 min",cook:"30 min",diff:"Facile ★",color:"#795548",colorLight:"#efebe9",category:"dîner",seasons:["winter","autumn"],
+   ingredients:[{ico:"🥕",qty:"4",name:"Carottes"},{ico:"🥔",qty:"3",name:"Pommes de terre"},{ico:"🫚",qty:"2",name:"Navets"},{ico:"🥬",qty:"100g",name:"Poireau"},{ico:"🧅",qty:"1",name:"Oignon"},{ico:"🌿",qty:"QS",name:"Thym, laurier, persil"},{ico:"🌿",qty:"QS",name:"Croûtons, gruyère râpé"}],
+   tips:[{dot:"#795548",text:"Soupe mixée partiellement = texture avec des morceaux"},{dot:"#4caf50",text:"Croûtons et fromage râpé = soupe gratinée en 2 min"}],
+   steps:[{title:"Légumes",desc:"Faire revenir l'oignon. Ajouter tous les légumes coupés. Couvrir de bouillon. Mijoter 25 min."},{title:"Mixer",desc:"Mixer la moitié de la soupe pour garder des morceaux ou tout pour un velouté."},{title:"Servir",desc:"Avec persil ciselé, croûtons et gruyère râpé."}],
+   errors:["Légumes pas assez cuits → morceaux durs","Trop de bouillon → soupe trop liquide"],variantes:["Soupe au pistou","Garbure","Minestrone"],footer:"Soupe du quotidien · France",stars:"★★★★★"},
+
+  {id:"ru16",emoji:"🥩",name:"Kebab d'agneau en brochettes",cuisine:"Cuisine Moyen-Orientale",persons:4,prep:"20 min",cook:"10 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"600g",name:"Agneau haché"},{ico:"🧅",qty:"1",name:"Oignon"},{ico:"🌿",qty:"QS",name:"Persil plat, menthe"},{ico:"🌿",qty:"QS",name:"Cumin, paprika, cannelle, ail"},{ico:"🌿",qty:"QS",name:"Sauce yaourt tzatziki"},{ico:"🌾",qty:"QS",name:"Pain pita, tomates"}],
+   tips:[{dot:"#c62828",text:"Viande bien pétrie = brochette qui tient sur le pique"},{dot:"#4caf50",text:"Réfrigérer les brochettes formées = tiennent mieux à la cuisson"}],
+   steps:[{title:"Farce",desc:"Mélanger l'agneau haché avec oignon râpé, herbes hachées et épices. Pétrir 3 min."},{title:"Former",desc:"Façonner autour des piques en cylindres réguliers. Réfrigérer 30 min."},{title:"Griller",desc:"Gril très chaud. Cuire 3-4 min en tournant régulièrement. Servir avec pita et tzatziki."}],
+   errors:["Viande trop humide → tombe du pique","Pas assez pétrir → se défait"],variantes:["Kefta de bœuf","Shish kebab","Version four"],footer:"Grillades · Proche-Orient",stars:"★★★★★"},
+
+  {id:"ru17",emoji:"🍰",name:"Panna cotta fruits de la passion",cuisine:"Cuisine Italienne",persons:6,prep:"15 min",cook:"5 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🥛",qty:"50cl",name:"Crème liquide entière"},{ico:"🍬",qty:"80g",name:"Sucre"},{ico:"🌿",qty:"2",name:"Feuilles de gélatine"},{ico:"🌿",qty:"1 c.à.c.",name:"Vanille"},{ico:"🍑",qty:"6",name:"Fruits de la passion"}],
+   tips:[{dot:"#f57f17",text:"Gélatine bien essorée avant incorporation = panna cotta lisse"},{dot:"#4caf50",text:"Coulis fruit de la passion = acidité qui tranche avec la douceur de la crème"}],
+   steps:[{title:"Gélatine",desc:"Tremper la gélatine dans l'eau froide 5 min. Chauffer la crème avec sucre et vanille. Hors du feu, incorporer la gélatine essorée."},{title:"Verser",desc:"Verser dans des verrines ou ramequins. Réfrigérer minimum 4h."},{title:"Coulis",desc:"Récupérer la pulpe des fruits de la passion. Sucrer légèrement. Verser sur les panna cotta au service."}],
+   errors:["Trop de gélatine → caoutchouteuse","Crème bouillie avec gélatine → ne prend pas"],variantes:["Panna cotta mangue","Panna cotta framboise","Panna cotta café"],footer:"Dessert lacté · Italie",stars:"★★★★★"},
+
+  {id:"ru18",emoji:"🥘",name:"Poulet aux citrons confits olives",cuisine:"Cuisine Marocaine",persons:4,prep:"15 min",cook:"1h",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🍗",qty:"1 poulet découpé",name:""},{ico:"🍋",qty:"2",name:"Citrons confits"},{ico:"🫒",qty:"150g",name:"Olives violettes"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🌿",qty:"QS",name:"Gingembre, curcuma, safran, coriandre"},{ico:"🧄",qty:"4 gousses",name:"Ail"},{ico:"🌿",qty:"QS",name:"Coriandre fraîche, persil"}],
+   tips:[{dot:"#f9a825",text:"Citrons confits en fin de cuisson = ne pas les cuire trop"},{dot:"#4caf50",text:"Olives violettes = plus douces que les noires"}],
+   steps:[{title:"Dorer",desc:"Faire dorer le poulet. Faire revenir oignons, ail et épices avec le safran."},{title:"Mijoter",desc:"Remettre le poulet. Couvrir d'eau. Mijoter 40 min à feu doux."},{title:"Finir",desc:"Ajouter citrons confits coupés et olives. Cuire encore 10 min. Parsemer de coriandre fraîche."}],
+   errors:["Trop cuire les citrons confits → trop salés","Safran insuffisant → couleur et goût manquants"],variantes:["Version agneau","Avec artichauts","Tajine kefta"],footer:"Tajine classique · Maroc",stars:"★★★★★"},
+
+  {id:"ru19",emoji:"🥐",name:"Pain perdu façon Monte-Cristo",cuisine:"Cuisine Américaine",persons:2,prep:"10 min",cook:"10 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"déjeuner",seasons:["all"],
+   ingredients:[{ico:"🍞",qty:"4 tranches épaisses",name:"Pain de mie"},{ico:"🥩",qty:"100g",name:"Jambon"},{ico:"🧀",qty:"80g",name:"Emmental ou gruyère"},{ico:"🥚",qty:"2",name:"Œufs"},{ico:"🥛",qty:"10cl",name:"Lait"},{ico:"🧈",qty:"20g",name:"Beurre"},{ico:"🌿",qty:"QS",name:"Confiture de fraises pour servir"}],
+   tips:[{dot:"#f9a825",text:"Version salée du pain perdu = croque-monsieur version brunch"},{dot:"#4caf50",text:"Confiture sur le salé = association inattendue et délicieuse"}],
+   steps:[{title:"Monter",desc:"Faire un sandwich jambon-fromage entre deux tranches."},{title:"Tremper",desc:"Fouetter œufs et lait. Tremper le sandwich des deux côtés."},{title:"Dorer",desc:"Beurre moussant dans la poêle. Dorer 3 min par face jusqu'à doré et fromage fondu. Servir avec confiture."}],
+   errors:["Pain pas assez trempé → sec","Fromage pas fondu → cuisson insuffisante"],variantes:["Version végétarienne","Avec dinde fumée","Sucré classique"],footer:"Brunch américain · USA",stars:"★★★★★"},
+
+  {id:"ru20",emoji:"🫕",name:"Soupe de poisson méditerranéenne",cuisine:"Cuisine Provençale",persons:4,prep:"20 min",cook:"30 min",diff:"Facile ★★",color:"#e65100",colorLight:"#fff3e0",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🐟",qty:"1 kg",name:"Poissons variés (vive, grondin, saint-pierre)"},{ico:"🍅",qty:"400g",name:"Tomates"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🧄",qty:"4 gousses",name:"Ail"},{ico:"🌿",qty:"1 dose",name:"Safran"},{ico:"🌿",qty:"QS",name:"Fenouil, thym, laurier, huile d'olive"},{ico:"🌿",qty:"QS",name:"Rouille, croûtons, gruyère"}],
+   tips:[{dot:"#e65100",text:"Poissons de roche = base de la vraie soupe de poisson"},{dot:"#4caf50",text:"Rouille maison = ail + jaune + safran + huile en émulsion"}],
+   steps:[{title:"Base",desc:"Faire revenir oignons, fenouil et ail. Ajouter tomates et poissons en morceaux. Suer 5 min."},{title:"Bouillon",desc:"Couvrir d'eau. Safran. Mijoter 20 min. Mixer grossièrement et passer au chinois en pressant bien."},{title:"Servir",desc:"Avec rouille, croûtons et gruyère râpé pour gratiner dans les assiettes."}],
+   errors:["Pas passer au chinois → soupe avec arêtes","Pas assez presser → bouillon fade"],variantes:["Bouillabaisse complète","Soupe de moules","Version express avec fumet"],footer:"Soupe provençale · Méditerranée",stars:"★★★★★"},
+
+  {id:"ru21",emoji:"🥗",name:"Chou kale massé au citron",cuisine:"Cuisine Américaine",persons:4,prep:"15 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"déjeuner",seasons:["winter"],
+   ingredients:[{ico:"🥬",qty:"300g",name:"Chou kale"},{ico:"🥑",qty:"1",name:"Avocat"},{ico:"🍋",qty:"2",name:"Citrons"},{ico:"🧄",qty:"1 gousse",name:"Ail"},{ico:"🫒",qty:"4 c.à.s.",name:"Huile d'olive"},{ico:"🥜",qty:"50g",name:"Graines (courge, tournesol)"},{ico:"🌿",qty:"QS",name:"Parmesan, sel, poivre"}],
+   tips:[{dot:"#2e7d32",text:"Masser le kale 5 min avec le citron et le sel = feuilles tendres"},{dot:"#4caf50",text:"Avocat dans la vinaigrette = onctuosité naturelle"}],
+   steps:[{title:"Masser",desc:"Retirer les tiges du kale. Ciseler finement. Masser énergiquement avec sel et jus de citron 5 min jusqu'à attendri."},{title:"Vinaigrette",desc:"Mixer avocat, citron, ail, huile, sel et poivre jusqu'à crémeux."},{title:"Assembler",desc:"Mélanger le kale avec la vinaigrette. Graines grillées et parmesan. Laisser mariner 10 min."}],
+   errors:["Kale pas massé → coriace et amer","Pas assez de citron → kale fade"],variantes:["Avec cranberries","Avec poulet grillé","Avec quinoa"],footer:"Super food · USA",stars:"★★★★★"},
+
+  {id:"ru22",emoji:"🍮",name:"Crème brûlée à la lavande",cuisine:"Cuisine Provençale",persons:4,prep:"15 min",cook:"45 min",diff:"Facile ★★",color:"#880e4f",colorLight:"#fce4ec",category:"dessert",seasons:["summer"],
+   ingredients:[{ico:"🥛",qty:"40cl",name:"Crème liquide entière"},{ico:"🥚",qty:"4 jaunes",name:"Jaunes d'œuf"},{ico:"🍬",qty:"80g",name:"Sucre"},{ico:"🌸",qty:"1 c.à.s.",name:"Fleurs de lavande séchées"},{ico:"🍬",qty:"4 c.à.s.",name:"Sucre roux pour caraméliser"}],
+   tips:[{dot:"#880e4f",text:"Lavande infusée dans la crème froide = arôme délicat sans amertume"},{dot:"#4caf50",text:"Chalumeau en 3 couches de sucre = croûte épaisse qui craque"}],
+   steps:[{title:"Infuser",desc:"Chauffer la crème avec la lavande. Laisser infuser 15 min. Filtrer."},{title:"Appareil",desc:"Fouetter jaunes et sucre. Verser la crème tiède. Mélanger doucement."},{title:"Cuire",desc:"Verser dans les ramequins. Bain-marie à 150°C, 40-45 min. Réfrigérer 4h. Caraméliser au chalumeau."}],
+   errors:["Trop de lavande → savonné","Appareil bouilli → jaunes cuits"],variantes:["Crème brûlée vanille classique","Au thé Earl Grey","Au romarin"],footer:"Dessert provençal · Provence",stars:"★★★★★"},
+
+  {id:"ru23",emoji:"🥘",name:"Lasagnes végétariennes épinards ricotta",cuisine:"Cuisine Italienne",persons:6,prep:"25 min",cook:"45 min",diff:"Facile ★★",color:"#2e7d32",colorLight:"#e8f5e9",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"12",name:"Feuilles de lasagnes"},{ico:"🌿",qty:"500g",name:"Épinards frais"},{ico:"🧀",qty:"500g",name:"Ricotta"},{ico:"🥚",qty:"2",name:"Œufs"},{ico:"🧀",qty:"200g",name:"Mozzarella"},{ico:"🧀",qty:"80g",name:"Parmesan râpé"},{ico:"🌿",qty:"QS",name:"Noix de muscade, sel, poivre"},{ico:"🥛",qty:"50cl",name:"Béchamel légère"}],
+   tips:[{dot:"#2e7d32",text:"Épinards bien essorés = lasagnes qui ne sont pas détrempées"},{dot:"#4caf50",text:"Ricotta + œufs = garniture qui tient à la coupe"}],
+   steps:[{title:"Garniture",desc:"Faire tomber les épinards. Bien essorer. Mélanger avec ricotta, œufs, muscade, sel et poivre."},{title:"Monter",desc:"Alterner béchamel, feuilles de lasagne et garniture épinards-ricotta. Mozzarella et parmesan sur le dessus."},{title:"Cuire",desc:"Couvrir de papier alu. Four à 180°C, 30 min. Retirer l'alu et gratiner 15 min."}],
+   errors:["Épinards pas essorés → lasagnes détrempées","Pas assez de béchamel → lasagnes sèches"],variantes:["Lasagnes courgettes chèvre","Lasagnes champignons","Version bolognaise classique"],footer:"Lasagne verde · Italie",stars:"★★★★★"},
+
+  {id:"ru24",emoji:"🍖",name:"Ribs de porc sauce miel moutarde",cuisine:"Cuisine Américaine",persons:4,prep:"15 min",cook:"2h30",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"1,5 kg",name:"Ribs de porc"},{ico:"🍯",qty:"4 c.à.s.",name:"Miel"},{ico:"🌿",qty:"3 c.à.s.",name:"Moutarde à l'ancienne"},{ico:"🌿",qty:"QS",name:"Paprika fumé, ail, sel, poivre"},{ico:"🍺",qty:"25cl",name:"Bière ou cidre"}],
+   tips:[{dot:"#c62828",text:"Retirer la membrane = ribs plus tendres"},{dot:"#4caf50",text:"Cuisson lente puis laquage = fondant + caramélisé"}],
+   steps:[{title:"Préparer",desc:"Retirer la membrane des ribs. Frotter avec épices, sel et poivre. Mariner 1h."},{title:"Cuire lentement",desc:"Placer dans un plat avec la bière. Couvrir de papier alu. Four à 150°C, 2h."},{title:"Laquer",desc:"Mélanger miel et moutarde. Badigeonner les ribs. Grill du four 10 min chaque face."}],
+   errors:["Pas retirer la membrane → ribs coriaces","Pas assez de cuisson lente → pas fondants"],variantes:["Sauce BBQ américaine","Version asiatique soja-gingembre","Ribs d'agneau"],footer:"BBQ ribs · USA",stars:"★★★★★"},
+
+  {id:"ru25",emoji:"🥗",name:"Taboulé de chou-fleur raw",cuisine:"Cuisine Végétarienne",persons:4,prep:"20 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"déjeuner",seasons:["all"],
+   ingredients:[{ico:"🥦",qty:"1 tête",name:"Chou-fleur"},{ico:"🍅",qty:"300g",name:"Tomates cerises"},{ico:"🥒",qty:"1",name:"Concombre"},{ico:"🌿",qty:"1 bouquet",name:"Persil plat"},{ico:"🌿",qty:"QS",name:"Menthe, coriandre"},{ico:"🍋",qty:"2",name:"Citrons"},{ico:"🫒",qty:"5 c.à.s.",name:"Huile d'olive"}],
+   tips:[{dot:"#2e7d32",text:"Chou-fleur mixé grossièrement = texture rappelant le boulgour"},{dot:"#4caf50",text:"Mariner 30 min = légumes qui s'imprègnent des herbes et du citron"}],
+   steps:[{title:"Chou-fleur",desc:"Couper le chou-fleur en fleurettes. Mixer par impulsions jusqu'à texture de semoule grossière."},{title:"Légumes",desc:"Couper tomates en deux, concombre en dés. Ciseler finement les herbes."},{title:"Assembler",desc:"Mélanger tout. Citron, huile, sel, poivre. Mariner 30 min au frais."}],
+   errors:["Trop mixer → purée","Pas assez de citron → fade"],variantes:["Avec grenade","Avec avocat","Avec pois chiches"],footer:"Taboulé sans gluten · Végétarien",stars:"★★★★★"},
+
+  {id:"ru26",emoji:"🍫",name:"Tarte au citron bergamote",cuisine:"Cuisine Française",persons:8,prep:"25 min",cook:"25 min",diff:"Facile ★★",color:"#2e7d32",colorLight:"#e8f5e9",category:"dessert",seasons:["winter"],
+   ingredients:[{ico:"🌾",qty:"1",name:"Pâte sablée"},{ico:"🍋",qty:"2",name:"Bergamotes ou citrons"},{ico:"🥚",qty:"3",name:"Œufs"},{ico:"🍬",qty:"150g",name:"Sucre"},{ico:"🧈",qty:"80g",name:"Beurre"},{ico:"🥛",qty:"10cl",name:"Crème"}],
+   tips:[{dot:"#2e7d32",text:"Bergamote = citrus rare et parfumé qui donne au thé Earl Grey son goût"},{dot:"#4caf50",text:"Crème citron lissée à la spatule = surface parfaite"}],
+   steps:[{title:"Fond",desc:"Cuire la pâte à blanc 15 min à 180°C."},{title:"Crème",desc:"Fouetter œufs et sucre. Ajouter jus et zeste de bergamote et crème. Cuire au bain-marie jusqu'à épaississement. Incorporer le beurre."},{title:"Finir",desc:"Verser sur le fond refroidi. Réfrigérer 2h. Décorer de zestes confits."}],
+   errors:["Crème trop cuite → granuleuse","Fond pas refroidi → crème qui fond"],variantes:["Tarte yuzu","Tarte citron vert","Version pamplemousse"],footer:"Tarte d'agrumes · France",stars:"★★★★★"},
+
+  {id:"ru27",emoji:"🥘",name:"Gratin de macaroni au fromage",cuisine:"Cuisine Américaine",persons:6,prep:"15 min",cook:"30 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"400g",name:"Macaroni"},{ico:"🧀",qty:"300g",name:"Cheddar râpé"},{ico:"🧀",qty:"100g",name:"Gruyère râpé"},{ico:"🥛",qty:"50cl",name:"Lait"},{ico:"🧈",qty:"40g",name:"Beurre"},{ico:"🌾",qty:"40g",name:"Farine"},{ico:"🌿",qty:"QS",name:"Moutarde sèche, noix de muscade"},{ico:"🌾",qty:"QS",name:"Chapelure"}],
+   tips:[{dot:"#f9a825",text:"Béchamel épaisse = sauce qui couvre bien les pâtes"},{dot:"#4caf50",text:"Chapelure sur le dessus = croûte croustillante caractéristique"}],
+   steps:[{title:"Pâtes",desc:"Cuire les macaroni al dente. Égoutter."},{title:"Sauce",desc:"Faire une béchamel. Incorporer les fromages râpés hors du feu. Moutarde sèche et muscade."},{title:"Gratin",desc:"Mélanger pâtes et sauce. Verser dans un plat. Chapelure. Four à 200°C, 20 min."}],
+   errors:["Pâtes trop cuites → fondent au four","Sauce trop liquide → gratin noyé"],variantes:["Avec lardons","Version 4 fromages","Mac and cheese au homard"],footer:"Comfort food · USA",stars:"★★★★★"},
+
+  {id:"ru28",emoji:"🥗",name:"Salade de lentilles beluga au saumon",cuisine:"Cuisine Nordique",persons:4,prep:"15 min",cook:"20 min",diff:"Facile ★",color:"#1565c0",colorLight:"#e3f2fd",category:"déjeuner",seasons:["all"],
+   ingredients:[{ico:"🫘",qty:"200g",name:"Lentilles beluga (noires)"},{ico:"🐟",qty:"200g",name:"Saumon fumé"},{ico:"🥒",qty:"1",name:"Concombre"},{ico:"🌿",qty:"QS",name:"Aneth, ciboulette"},{ico:"🍋",qty:"1",name:"Citron"},{ico:"🌿",qty:"3 c.à.s.",name:"Crème fraîche"},{ico:"🌿",qty:"QS",name:"Câpres, huile d'olive"}],
+   tips:[{dot:"#1565c0",text:"Lentilles beluga = tiennent très bien à la cuisson et ne s'écrasent pas"},{dot:"#4caf50",text:"Accord lentilles noires + saumon fumé = élégant et nutritif"}],
+   steps:[{title:"Lentilles",desc:"Cuire les lentilles beluga 20 min dans l'eau froide non salée. Égoutter et assaisonner tiède."},{title:"Préparer",desc:"Couper concombre en dés. Ciseler aneth et ciboulette."},{title:"Assembler",desc:"Lentilles, saumon en lanières, concombre, câpres et herbes. Vinaigrette citron-crème fraîche."}],
+   errors:["Lentilles trop cuites → se défont","Assaisonner froides → n'absorbent pas"],variantes:["Avec truite fumée","Avec hareng mariné","Version végétarienne"],footer:"Salade nordique · Scandinavie",stars:"★★★★★"},
+
+  {id:"ru29",emoji:"🥮",name:"Profiteroles sauce chocolat chaude",cuisine:"Cuisine Française",persons:6,prep:"30 min",cook:"25 min",diff:"Facile ★★",color:"#4e342e",colorLight:"#efebe9",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"💧",qty:"25cl",name:"Eau"},{ico:"🧈",qty:"80g",name:"Beurre"},{ico:"🌾",qty:"120g",name:"Farine"},{ico:"🥚",qty:"4",name:"Œufs"},{ico:"🍦",qty:"1L",name:"Glace vanille"},{ico:"🍫",qty:"200g",name:"Chocolat noir"},{ico:"🥛",qty:"15cl",name:"Crème"}],
+   tips:[{dot:"#4e342e",text:"Choux bien secs au four = ne s'affaissent pas à la sortie"},{dot:"#4caf50",text:"Sauce chocolat versée chaude sur la glace = contraste chaud-froid spectaculaire"}],
+   steps:[{title:"Choux",desc:"Faire la pâte à choux. Former des petites boules à la poche. Cuire à 200°C, 20-25 min sans ouvrir."},{title:"Garnir",desc:"Ouvrir les choux refroidis. Garnir de glace à la vanille. Refermer."},{title:"Sauce",desc:"Fondre le chocolat avec la crème chaude. Verser la sauce chaude sur les choux glacés. Service immédiat."}],
+   errors:["Choux pas assez cuits → mous","Ouvrir le four pendant la cuisson → retombent"],variantes:["Avec glace café","Avec chantilly","Paris-Brest"],footer:"Dessert classique · France",stars:"★★★★★"},
+
+  {id:"ru30",emoji:"🥘",name:"Tajine végétarien pois chiches légumes",cuisine:"Cuisine Marocaine",persons:4,prep:"15 min",cook:"40 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🫘",qty:"400g",name:"Pois chiches cuits"},{ico:"🎃",qty:"400g",name:"Potimarron"},{ico:"🥕",qty:"3",name:"Carottes"},{ico:"🍅",qty:"400g",name:"Tomates concassées"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🌿",qty:"QS",name:"Ras el hanout, cumin, coriandre, cannelle"},{ico:"🍋",qty:"1",name:"Citron confit"}],
+   tips:[{dot:"#f57f17",text:"Ras el hanout = mélange d'épices marocain = âme du tajine"},{dot:"#4caf50",text:"Potimarron = ne pas éplucher, la peau est comestible"}],
+   steps:[{title:"Base",desc:"Faire revenir oignons avec les épices. Ajouter tomates et cuire 5 min."},{title:"Légumes",desc:"Ajouter potimarron en cubes, carottes, pois chiches et citron confit. Couvrir d'eau à mi-hauteur."},{title:"Mijoter",desc:"Cuire 30 min à feu doux. Légumes doivent être fondants. Coriandre fraîche. Servir avec semoule."}],
+   errors:["Légumes trop cuits → purée","Pas assez d'épices → fade"],variantes:["Avec courgettes","Avec aubergines","Version avec merguez"],footer:"Tajine végétarien · Maroc",stars:"★★★★★"}
 
 
 
