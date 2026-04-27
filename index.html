@@ -278,14 +278,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px;}
 
-.rprop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.rprop-grid .rprop{flex-direction:column;text-align:center;border-radius:16px;padding:18px 14px;background:var(--bg3);}
-.rprop-grid .rprop .fb{flex-direction:column;align-items:center;gap:10px;}
-.rprop-grid .rprop .rcat{font-size:.75rem;}
-.rprop-grid .rprop .rname{font-size:.95rem;font-weight:700;line-height:1.3;}
-.rprop-grid .rprop .rmeta{font-size:.72rem;}
-.rprop-grid .rprop .rprop-actions{flex-direction:column;gap:6px;margin-top:12px;}
-.rprop-grid .rprop .rprop-actions .btn{font-size:.75rem;padding:6px 8px;width:100%;}
+.rprop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;width:100%;}
+.rprop-grid .rprop{flex-direction:column;text-align:center;border-radius:16px;padding:20px 16px;background:var(--bg3);width:100%;box-sizing:border-box;}
+.rprop-grid .rprop .fb{flex-direction:column;align-items:center;gap:10px;width:100%;}
+.rprop-grid .rprop .fb > span{font-size:2.4rem;}
+.rprop-grid .rprop .rcat{font-size:.78rem;opacity:.8;}
+.rprop-grid .rprop .rname{font-size:1rem;font-weight:700;line-height:1.3;margin:4px 0;}
+.rprop-grid .rprop .rmeta{font-size:.78rem;opacity:.75;}
+.rprop-grid .rprop .rprop-actions{flex-direction:column;gap:8px;margin-top:14px;width:100%;}
+.rprop-grid .rprop .rprop-actions .btn{font-size:.8rem;padding:8px;width:100%;justify-content:center;}
+@media(max-width:600px){.rprop-grid{grid-template-columns:repeat(2,1fr);}}
 .view-toggle-btn{background:var(--bg3);border:none;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:1.1rem;color:var(--text2);transition:all .2s;}
 .view-toggle-btn.active{background:var(--primary);color:#fff;}
 </style>
@@ -394,7 +396,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
   <div id="my-recipes-list"></div>
 </div>
-  <div id="rpanel-suggestions" class="rpanel">
+  <div id="rpanel-suggestions" class="rpanel" style="width:100%;">
     <div class="fb mb16">
       <div style="font-size:.85rem;color:var(--text2);">Recettes proposées pour toi</div>
       <button class="btn btn-g btn-sm" onclick="regenerateProposals()">🔄 Nouvelles suggestions</button>
@@ -403,7 +405,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
           <button class="view-toggle-btn" id="view-grid-btn" onclick="setProposalView('grid')" title="Vue grille">⊞</button>
         </div>
     </div>
-    <div id="recipe-proposals-list"></div>
+    <div id="recipe-proposals-list" style="width:100%;"></div>
   </div>
 </div>
 
