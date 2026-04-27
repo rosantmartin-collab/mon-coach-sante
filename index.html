@@ -277,6 +277,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 ::-webkit-scrollbar{width:5px;height:5px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px;}
+
+.rprop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;}
+.rprop-grid .rprop{flex-direction:column;text-align:center;border-radius:16px;padding:16px 12px;background:var(--bg3);}
+.rprop-grid .rprop .fb{flex-direction:column;align-items:center;gap:8px;}
+.rprop-grid .rprop .rprop-actions{flex-direction:column;gap:6px;margin-top:10px;}
+.rprop-grid .rprop .rprop-actions .btn{font-size:.72rem;padding:5px 8px;}
+.view-toggle-btn{background:var(--bg3);border:none;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:1.1rem;color:var(--text2);transition:all .2s;}
+.view-toggle-btn.active{background:var(--primary);color:#fff;}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
@@ -387,6 +395,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <div class="fb mb16">
       <div style="font-size:.85rem;color:var(--text2);">Recettes proposées pour toi</div>
       <button class="btn btn-g btn-sm" onclick="regenerateProposals()">🔄 Nouvelles suggestions</button>
+        <div style="display:flex;gap:4px;margin-left:8px;">
+          <button class="view-toggle-btn active" id="view-list-btn" onclick="setProposalView('list')" title="Vue liste">☰</button>
+          <button class="view-toggle-btn" id="view-grid-btn" onclick="setProposalView('grid')" title="Vue grille">⊞</button>
+        </div>
     </div>
     <div id="recipe-proposals-list"></div>
   </div>
@@ -1819,8 +1831,17 @@ function deleteRecipe(idx){
   S.recipes.splice(idx,1);save();renderMyRecipes();showToast('🗑️ Recette supprimée');
 }
 
+let _proposalView='list';
+function setProposalView(v){
+  _proposalView=v;
+  document.getElementById('view-list-btn').classList.toggle('active',v==='list');
+  document.getElementById('view-grid-btn').classList.toggle('active',v==='grid');
+  renderProposals();
+}
+
 function renderProposals(){
   const el=document.getElementById('recipe-proposals-list');
+  el.className=_proposalView==='grid'?'rprop-grid':'';
   const pending=(S.proposals||[]).filter(p=>!S.recipes.some(r=>r.id===p.id));
   if(!pending.length){
     el.innerHTML='<div style="text-align:center;padding:40px;color:var(--text2);"><div style="font-size:3rem;margin-bottom:12px;">✨</div><div style="font-weight:700;margin-bottom:8px;">Pas encore de suggestions</div><div style="font-size:.85rem;margin-bottom:16px;">Clique sur Suggestions IA pour recevoir des idées !</div><button class="btn btn-p" onclick="generateRecipeProposals()">🤖 Générer des suggestions</button></div>';
