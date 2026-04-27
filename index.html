@@ -379,6 +379,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <button class="filter-btn" onclick="filterRecipes('dessert',this)">🍰 Desserts</button>
     <button class="filter-btn" onclick="filterRecipes('collation',this)">🫐 Collations</button>
         <button class="filter-btn" onclick="filterRecipes('apéro',this)">🥂 Apéro</button>
+        <button class="filter-btn" onclick="filterRecipes('préparation',this)">🫙 Préparation</button>
   </div>
   <div id="my-recipes-list"></div>
 </div>
@@ -426,6 +427,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
             <option value="dessert">🍰 Dessert</option>
             <option value="entrée">🥗 Entrée</option>
             <option value="apéro">🥂 Apéro</option>
+            <option value="préparation">🫙 Préparation</option>
           </select>
         </div>
         <div class="fg"><label class="fl">Emoji</label><input class="fi" id="ar-emoji" type="text" placeholder="🍗" maxlength="2"></div>
@@ -542,6 +544,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
           <option value="dessert">🍰 Dessert</option>
           <option value="entrée">🥗 Entrée</option>
           <option value="apéro">🥂 Apéro</option>
+            <option value="préparation">🫙 Préparation</option>
         </select>
       </div>
     </div>
@@ -4629,7 +4632,365 @@ const RECIPE_SUGGESTIONS_EXTRA=[
    ingredients:[{ico:"🫘",qty:"400g",name:"Pois chiches cuits"},{ico:"🎃",qty:"400g",name:"Potimarron"},{ico:"🥕",qty:"3",name:"Carottes"},{ico:"🍅",qty:"400g",name:"Tomates concassées"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🌿",qty:"QS",name:"Ras el hanout, cumin, coriandre, cannelle"},{ico:"🍋",qty:"1",name:"Citron confit"}],
    tips:[{dot:"#f57f17",text:"Ras el hanout = mélange d'épices marocain = âme du tajine"},{dot:"#4caf50",text:"Potimarron = ne pas éplucher, la peau est comestible"}],
    steps:[{title:"Base",desc:"Faire revenir oignons avec les épices. Ajouter tomates et cuire 5 min."},{title:"Légumes",desc:"Ajouter potimarron en cubes, carottes, pois chiches et citron confit. Couvrir d'eau à mi-hauteur."},{title:"Mijoter",desc:"Cuire 30 min à feu doux. Légumes doivent être fondants. Coriandre fraîche. Servir avec semoule."}],
-   errors:["Légumes trop cuits → purée","Pas assez d'épices → fade"],variantes:["Avec courgettes","Avec aubergines","Version avec merguez"],footer:"Tajine végétarien · Maroc",stars:"★★★★★"}
+   errors:["Légumes trop cuits → purée","Pas assez d'épices → fade"],variantes:["Avec courgettes","Avec aubergines","Version avec merguez"],footer:"Tajine végétarien · Maroc",stars:"★★★★★"},
+  {id:"rp01",emoji:"🍓",name:"Confiture de fraises-rhubarbe",cuisine:"Conserve Maison",persons:8,prep:"20 min",cook:"30 min",diff:"Facile ★",color:"#e91e63",colorLight:"#fce4ec",category:"préparation",seasons:["spring","summer"],
+   ingredients:[{ico:"🍓",qty:"500g",name:"Fraises"},{ico:"🌿",qty:"500g",name:"Rhubarbe"},{ico:"🍬",qty:"800g",name:"Sucre à confiture"},{ico:"🍋",qty:"1",name:"Citron"}],
+   tips:[{dot:"#e91e63",text:"Macérer les fruits dans le sucre une nuit = confiture plus parfumée"},{dot:"#4caf50",text:"Pots retournés chauds = stérilisation naturelle — conservation 1 an"}],
+   steps:[{title:"Préparer",desc:"Éplucher et couper la rhubarbe en tronçons. Équeuter les fraises. Mélanger avec le sucre et le citron. Macérer une nuit."},{title:"Cuire",desc:"Porter à ébullition en remuant. Écumer. Maintenir à ébullition vive 25-30 min. Tester la prise sur assiette froide."},{title:"Mettre en pot",desc:"Verser bouillante dans des pots ébouillantés. Fermer et retourner jusqu'à refroidissement complet."}],
+   errors:["Pas assez cuire → confiture liquide","Pots pas ébouillantés → moisissures"],variantes:["Confiture de fraises vanille","Rhubarbe gingembre","Fraise-basilic"],footer:"Conservation 1 an · Maison",stars:"★★★★★"},
+
+  {id:"rp02",emoji:"🍅",name:"Sauce tomate maison en conserve",cuisine:"Conserve Maison",persons:8,prep:"20 min",cook:"1h",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🍅",qty:"3 kg",name:"Tomates mûres"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🧄",qty:"6 gousses",name:"Ail"},{ico:"🫒",qty:"6 c.à.s.",name:"Huile d'olive"},{ico:"🌿",qty:"QS",name:"Basilic, origan, thym, sel, sucre"}],
+   tips:[{dot:"#c62828",text:"Tomates pelées = sauce lisse sans peau désagréable"},{dot:"#4caf50",text:"Un peu de sucre corrige l'acidité des tomates"}],
+   steps:[{title:"Tomates",desc:"Ébouillanter les tomates 1 min. Peler, épépiner et concasser grossièrement."},{title:"Cuire",desc:"Faire revenir oignons et ail. Ajouter tomates et herbes. Cuire à feu doux 45 min en remuant. Mixer si désiré."},{title:"Conserver",desc:"Verser bouillante dans des bocaux stérilisés. Fermer hermétiquement. Stériliser 20 min dans l'eau bouillante."}],
+   errors:["Pas stériliser → ne se conserve pas longtemps","Trop liquide → cuire plus longtemps"],variantes:["Coulis de tomates","Sauce arrabbiata","Sauce bolognaise congelée"],footer:"Conservation 1 an · Maison",stars:"★★★★★"},
+
+  {id:"rp03",emoji:"🥕",name:"Carottes lacto-fermentées",cuisine:"Fermentation Maison",persons:6,prep:"15 min",cook:"0 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥕",qty:"500g",name:"Carottes"},{ico:"🧂",qty:"10g",name:"Sel non iodé (2% du poids)"},{ico:"🌿",qty:"QS",name:"Cumin, coriandre, ail (optionnel)"},{ico:"💧",qty:"QS",name:"Eau non chlorée si nécessaire"}],
+   tips:[{dot:"#f57f17",text:"Sel non iodé obligatoire = l'iode tue les bonnes bactéries"},{dot:"#4caf50",text:"Légumes immergés sous la saumure = fermentation anaérobie réussie"}],
+   steps:[{title:"Préparer",desc:"Éplucher et râper ou couper les carottes en bâtonnets. Peser. Calculer 2% de sel."},{title:"Mélanger",desc:"Masser les carottes avec le sel jusqu'à ce qu'elles rendent leur eau. Ajouter les épices."},{title:"Fermenter",desc:"Tasser dans un bocal propre. Les légumes doivent être immergés dans leur jus. Couvrir d'un linge. Fermenter 3-7 jours à température ambiante."}],
+   errors:["Sel iodé → fermentation ratée","Légumes exposés à l'air → moisissures"],variantes:["Choucroute maison","Kimchi simplifié","Betteraves fermentées"],footer:"Conservation 6 mois au frigo · Maison",stars:"★★★★★"},
+
+  {id:"rp04",emoji:"🫙",name:"Cornichons maison au vinaigre",cuisine:"Conserve Maison",persons:8,prep:"30 min",cook:"10 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🥒",qty:"1 kg",name:"Petits cornichons"},{ico:"🧂",qty:"100g",name:"Gros sel"},{ico:"🌿",qty:"50cl",name:"Vinaigre blanc"},{ico:"💧",qty:"50cl",name:"Eau"},{ico:"🌿",qty:"QS",name:"Estragon, aneth, grains de poivre, laurier, ail"}],
+   tips:[{dot:"#2e7d32",text:"Dégorger au sel 24h = cornichons croustillants"},{dot:"#4caf50",text:"Vinaigre chaud versé sur les cornichons froids = croquants préservés"}],
+   steps:[{title:"Dégorger",desc:"Frotter les cornichons avec le gros sel. Laisser dégorger 24h. Rincer soigneusement."},{title:"Bocaux",desc:"Disposer cornichons et aromates dans les bocaux stérilisés."},{title:"Saumure",desc:"Porter vinaigre et eau à ébullition. Verser chaud sur les cornichons. Fermer. Attendre 1 mois avant dégustation."}],
+   errors:["Pas dégorger → mous","Pas assez attendre → pas assez marinés"],variantes:["Pickles sucrés","Giardiniera italienne","Câpres maison"],footer:"Conservation 1 an · Maison",stars:"★★★★★"},
+
+  {id:"rp05",emoji:"🍋",name:"Citrons confits à la marocaine",cuisine:"Conserve Marocaine",persons:8,prep:"15 min",cook:"0 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🍋",qty:"6",name:"Citrons bio non traités"},{ico:"🧂",qty:"150g",name:"Gros sel"},{ico:"🌿",qty:"QS",name:"Grains de poivre, laurier, coriandre"},{ico:"🍋",qty:"4",name:"Citrons pour le jus"}],
+   tips:[{dot:"#f9a825",text:"Citrons bio obligatoires = on mange la peau"},{dot:"#4caf50",text:"Patience : 4 semaines minimum avant utilisation"}],
+   steps:[{title:"Inciser",desc:"Inciser les citrons en croix sans séparer. Remplir généreusement de sel."},{title:"Bocal",desc:"Tasser dans un bocal stérilisé avec les aromates. Presser pour que les citrons rendent leur jus. Compléter avec le jus des citrons supplémentaires."},{title:"Fermenter",desc:"Fermer le bocal. Garder à température ambiante 4 semaines en tournant de temps en temps."}],
+   errors:["Citrons non bio → pesticides dans la peau","Pas assez de jus → se conserve mal"],variantes:["Citrons au sel sec","Citrons verts confits","Oranges confites"],footer:"Conservation 1 an · Maroc",stars:"★★★★★"},
+
+  {id:"rp06",emoji:"❄️",name:"Bolognaise à congeler",cuisine:"Cuisine Italienne",persons:8,prep:"15 min",cook:"2h",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"1 kg",name:"Bœuf haché"},{ico:"🥓",qty:"150g",name:"Lardons ou pancetta"},{ico:"🍅",qty:"800g",name:"Tomates concassées"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🥕",qty:"2",name:"Carottes"},{ico:"🌿",qty:"20cl",name:"Vin rouge"},{ico:"🌿",qty:"QS",name:"Thym, laurier, ail, sel, poivre"}],
+   tips:[{dot:"#c62828",text:"Préparer en grande quantité = 4 portions congelées"},{dot:"#4caf50",text:"Se congèle parfaitement 3 mois — décongeler au frigo la veille"}],
+   steps:[{title:"Soffritto",desc:"Faire revenir oignons, carottes, céleri et ail. Ajouter les lardons."},{title:"Viande",desc:"Ajouter le bœuf. Faire dorer en remuant. Déglacer au vin rouge. Laisser réduire."},{title:"Mijoter",desc:"Ajouter les tomates et les herbes. Mijoter 1h30 à feu très doux. Refroidir avant de congeler en portions."}],
+   errors:["Congeler encore chaud → cristaux de glace","Pas assez mijoter → sauce trop liquide"],variantes:["Bolognaise de veau","Version végétarienne lentilles","Sauce pour lasagnes"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp07",emoji:"❄️",name:"Soupes à congeler en portions",cuisine:"Batch Cooking",persons:8,prep:"20 min",cook:"30 min",diff:"Facile ★",color:"#1565c0",colorLight:"#e3f2fd",category:"préparation",seasons:["winter"],
+   ingredients:[{ico:"🥕",qty:"6",name:"Carottes"},{ico:"🎃",qty:"800g",name:"Potimarron"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🧄",qty:"4 gousses",name:"Ail"},{ico:"🥥",qty:"40cl",name:"Lait de coco"},{ico:"🌿",qty:"QS",name:"Gingembre, curcuma, bouillon"}],
+   tips:[{dot:"#1565c0",text:"Congeler en portions individuelles = repas prêt en 5 min"},{dot:"#4caf50",text:"Étiqueter avec la date et le contenu = réfrigérateur organisé"}],
+   steps:[{title:"Cuire",desc:"Faire revenir oignons et gingembre. Ajouter légumes et bouillon. Cuire 25 min."},{title:"Mixer",desc:"Ajouter lait de coco. Mixer jusqu'à velouté lisse. Assaisonner."},{title:"Conditionner",desc:"Refroidir rapidement. Verser en portions dans des sachets ou boîtes hermétiques. Étiqueter. Congeler."}],
+   errors:["Congeler chaud → chaîne du froid rompue","Pas étiqueter → mystère au congélateur"],variantes:["Velouté tomate basilic","Soupe minestrone","Velouté champignons"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp08",emoji:"🫙",name:"Pesto basilic en conserve",cuisine:"Cuisine Italienne",persons:6,prep:"15 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🌿",qty:"100g",name:"Basilic frais"},{ico:"🥜",qty:"50g",name:"Pignons de pin"},{ico:"🧀",qty:"50g",name:"Parmesan râpé"},{ico:"🧄",qty:"2 gousses",name:"Ail"},{ico:"🫒",qty:"15cl",name:"Huile d'olive"},{ico:"🧂",qty:"QS",name:"Sel"}],
+   tips:[{dot:"#2e7d32",text:"Mixer par impulsions = pesto avec de la texture"},{dot:"#4caf50",text:"Couvrir d'huile d'olive en surface = conservation jusqu'à 2 semaines au frigo"}],
+   steps:[{title:"Toaster",desc:"Torréfier légèrement les pignons à sec dans une poêle. Refroidir."},{title:"Mixer",desc:"Mixer basilic, pignons, ail et parmesan par impulsions. Incorporer l'huile progressivement. Saler."},{title:"Conserver",desc:"Verser dans des bocaux. Couvrir d'une couche d'huile d'olive. Réfrigérer ou congeler en glaçons."}],
+   errors:["Basilic oxydé → pesto noir","Trop mixer → pesto chaud et oxydé"],variantes:["Pesto roquette","Pesto pistache","Pesto coriandre-noix"],footer:"Conservation 2 sem frigo · 3 mois congélo",stars:"★★★★★"},
+
+  {id:"rp09",emoji:"❄️",name:"Boulettes de viande à congeler",cuisine:"Batch Cooking",persons:8,prep:"20 min",cook:"20 min",diff:"Facile ★",color:"#795548",colorLight:"#efebe9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"1 kg",name:"Bœuf haché (ou mélange porc-veau)"},{ico:"🧅",qty:"1",name:"Oignon"},{ico:"🧄",qty:"3 gousses",name:"Ail"},{ico:"🥚",qty:"2",name:"Œufs"},{ico:"🌾",qty:"50g",name:"Chapelure"},{ico:"🌿",qty:"QS",name:"Persil, sel, poivre, noix de muscade"}],
+   tips:[{dot:"#795548",text:"Cuire avant de congeler = prêtes à réchauffer directement"},{dot:"#4caf50",text:"Congeler d'abord sur une plaque = ne collent pas entre elles"}],
+   steps:[{title:"Mélanger",desc:"Mélanger viande, oignon et ail hachés, œufs, chapelure et herbes. Assaisonner."},{title:"Former",desc:"Former des boulettes de taille égale. Faire dorer à la poêle ou cuire au four à 200°C, 15 min."},{title:"Congeler",desc:"Refroidir. Disposer sur une plaque et congeler 2h. Transférer dans des sachets. Conservation 3 mois."}],
+   errors:["Pas précuire → texture spongieuse à la décongélation","Congeler sans précongeler → bloc impossible à séparer"],variantes:["Boulettes italiennes","Köttbullar suédoises","Keftas agneau"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp10",emoji:"🫙",name:"Huile parfumée aux herbes",cuisine:"Conserve Maison",persons:8,prep:"10 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🫒",qty:"50cl",name:"Huile d'olive extra-vierge"},{ico:"🌿",qty:"QS",name:"Romarin, thym, laurier"},{ico:"🌶️",qty:"2",name:"Piments séchés"},{ico:"🧄",qty:"4 gousses",name:"Ail"},{ico:"🌿",qty:"QS",name:"Poivre en grains, baies roses"}],
+   tips:[{dot:"#2e7d32",text:"Herbes et ail SECS obligatoires = pas d'humidité qui favorise la bactérie botulique"},{dot:"#4caf50",text:"Attendre 2 semaines = huile qui prend tous les arômes"}],
+   steps:[{title:"Sécher",desc:"S'assurer que toutes les herbes et l'ail sont bien secs. Sécher à l'air libre ou au four 50°C si nécessaire."},{title:"Mettre en bouteille",desc:"Introduire herbes, ail, piments et poivres dans une bouteille propre."},{title:"Huile",desc:"Verser l'huile d'olive. Fermer. Laisser infuser 2 semaines à l'abri de la lumière."}],
+   errors:["Ail ou herbes humides → risque botulisme","Bouteille non propre → huile rance"],variantes:["Huile au citron","Huile truffe","Huile basilic"],footer:"Conservation 3 mois · Maison",stars:"★★★★★"},
+
+  {id:"rp11",emoji:"❄️",name:"Curry de pois chiches à congeler",cuisine:"Batch Cooking",persons:8,prep:"15 min",cook:"30 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🫘",qty:"800g",name:"Pois chiches cuits (2 boîtes)"},{ico:"🍅",qty:"800g",name:"Tomates concassées"},{ico:"🥥",qty:"40cl",name:"Lait de coco"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🌿",qty:"QS",name:"Garam masala, cumin, curcuma, gingembre, ail"}],
+   tips:[{dot:"#f57f17",text:"Recette végétarienne = se congèle parfaitement sans altération"},{dot:"#4caf50",text:"Congeler sans le riz = riz frais à chaque repas"}],
+   steps:[{title:"Base",desc:"Faire revenir oignons, ail et gingembre avec les épices."},{title:"Curry",desc:"Ajouter tomates, pois chiches et lait de coco. Mijoter 20 min."},{title:"Conditionner",desc:"Refroidir rapidement. Portion en 4 boîtes de 2 personnes. Étiqueter. Congeler 3 mois."}],
+   errors:["Congeler avec le riz → riz boueux","Pas refroidir avant de congeler → vapeur dans la boîte"],variantes:["Chili végétarien","Lentilles corail","Dhal de légumes"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp12",emoji:"🫙",name:"Tapenade noire maison",cuisine:"Conserve Provençale",persons:6,prep:"10 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🫒",qty:"300g",name:"Olives noires dénoyautées"},{ico:"🐟",qty:"50g",name:"Anchois à l'huile"},{ico:"🫙",qty:"2 c.à.s.",name:"Câpres"},{ico:"🧄",qty:"2 gousses",name:"Ail"},{ico:"🌿",qty:"1 c.à.s.",name:"Thym, herbes de Provence"},{ico:"🫒",qty:"10cl",name:"Huile d'olive"}],
+   tips:[{dot:"#2e7d32",text:"Mixer grossièrement = tapenade avec de la texture et du caractère"},{dot:"#4caf50",text:"Couverte d'huile d'olive = conservation 3 semaines au frigo"}],
+   steps:[{title:"Mixer",desc:"Mixer olives, anchois, câpres, ail et herbes par impulsions. Pas trop lisse."},{title:"Incorporer",desc:"Ajouter l'huile d'olive progressivement en mélangeant."},{title:"Conserver",desc:"Verser dans des bocaux. Couvrir d'huile d'olive. Réfrigérer."}],
+   errors:["Trop mixer → purée sans texture","Anchois en trop → trop salé"],variantes:["Tapenade verte","Avec noix","Avec tomates séchées"],footer:"Conservation 3 semaines · Provence",stars:"★★★★★"},
+
+  {id:"rp13",emoji:"❄️",name:"Hachis parmentier à congeler",cuisine:"Batch Cooking",persons:8,prep:"20 min",cook:"40 min",diff:"Facile ★",color:"#795548",colorLight:"#efebe9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"800g",name:"Bœuf haché"},{ico:"🥔",qty:"1,5 kg",name:"Pommes de terre"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🍅",qty:"400g",name:"Tomates concassées"},{ico:"🧈",qty:"60g",name:"Beurre"},{ico:"🥛",qty:"15cl",name:"Lait"},{ico:"🧀",qty:"100g",name:"Gruyère râpé"}],
+   tips:[{dot:"#795548",text:"Congeler avant de gratiner = gratiner directement sorti du congélateur"},{dot:"#4caf50",text:"Plats individuels = portions pratiques pour la semaine"}],
+   steps:[{title:"Viande",desc:"Faire revenir les oignons et le bœuf. Ajouter les tomates. Assaisonner. Cuire 15 min."},{title:"Purée",desc:"Cuire les pommes de terre. Écraser avec beurre et lait. Assaisonner."},{title:"Monter",desc:"Viande au fond des plats. Purée sur le dessus. Gruyère. Refroidir avant de couvrir et congeler."}],
+   errors:["Purée trop liquide → hachis détrempé à la décongélation","Gratiner avant congélation → gruyère brûlé à la chauffe"],variantes:["Parmentier canard","Parmentier poisson","Parmentier végétarien"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp14",emoji:"🍯",name:"Gelée de pommes maison",cuisine:"Conserve Maison",persons:6,prep:"15 min",cook:"1h",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["autumn"],
+   ingredients:[{ico:"🍎",qty:"2 kg",name:"Pommes variées (avec pépins et peau)"},{ico:"💧",qty:"1L",name:"Eau"},{ico:"🍬",qty:"700g",name:"Sucre à confiture (par litre de jus)"},{ico:"🍋",qty:"1",name:"Citron"}],
+   tips:[{dot:"#f57f17",text:"Ne pas presser le tissu = gelée limpide et claire"},{dot:"#4caf50",text:"Pépins et peau contiennent la pectine naturelle = prise sans gélifiant"}],
+   steps:[{title:"Cuire les pommes",desc:"Couper les pommes en quartiers sans éplucher ni épépiner. Couvrir d'eau. Cuire 30 min jusqu'à fondantes."},{title:"Filtrer",desc:"Verser dans un tissu propre suspendu au-dessus d'un récipient. Égoutter une nuit sans presser."},{title:"Gelée",desc:"Mesurer le jus. Ajouter le même poids en sucre et le citron. Cuire à ébullition vive 20 min. Mettre en pots."}],
+   errors:["Presser le tissu → gelée trouble","Pas assez cuire → gelée liquide"],variantes:["Gelée de coings","Gelée de groseilles","Gelée de menthe"],footer:"Conservation 1 an · Maison",stars:"★★★★★"},
+
+  {id:"rp15",emoji:"❄️",name:"Galettes de légumes à congeler",cuisine:"Batch Cooking",persons:8,prep:"25 min",cook:"20 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥕",qty:"3",name:"Carottes"},{ico:"🫚",qty:"2",name:"Courgettes"},{ico:"🥔",qty:"2",name:"Pommes de terre"},{ico:"🥚",qty:"3",name:"Œufs"},{ico:"🧀",qty:"80g",name:"Parmesan ou feta"},{ico:"🌾",qty:"50g",name:"Farine ou chapelure"},{ico:"🌿",qty:"QS",name:"Herbes, sel, poivre"}],
+   tips:[{dot:"#2e7d32",text:"Légumes bien essorés = galettes qui tiennent à la cuisson"},{dot:"#4caf50",text:"Précuire et congeler → cuire directement au four à la décongélation"}],
+   steps:[{title:"Râper",desc:"Râper tous les légumes. Saler et laisser dégorger 10 min. Presser très fortement dans un torchon."},{title:"Mélanger",desc:"Incorporer œufs, fromage, farine et herbes. Former des galettes."},{title:"Cuire et congeler",desc:"Faire dorer à la poêle 3 min par face. Refroidir. Congeler sur plaque puis en sachets."}],
+   errors:["Légumes pas essorés → galettes molles","Pas précuire → texture altérée à la décongélation"],variantes:["Galettes épinards feta","Galettes champignons","Galettes haricots noirs"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp16",emoji:"🫙",name:"Ketchup maison à l'ancienne",cuisine:"Conserve Maison",persons:8,prep:"20 min",cook:"1h",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🍅",qty:"2 kg",name:"Tomates mûres"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🌿",qty:"10cl",name:"Vinaigre de cidre"},{ico:"🍬",qty:"80g",name:"Sucre de canne"},{ico:"🌿",qty:"QS",name:"Cannelle, clous de girofle, piment doux, sel"}],
+   tips:[{dot:"#c62828",text:"Tomates bien mûres de saison = ketchup naturellement sucré"},{dot:"#4caf50",text:"Réduire longtemps = consistance épaisse naturelle"}],
+   steps:[{title:"Cuire",desc:"Faire revenir les oignons. Ajouter les tomates concassées et les épices. Cuire 30 min."},{title:"Mixer",desc:"Mixer et passer au tamis fin."},{title:"Réduire",desc:"Remettre sur le feu avec le vinaigre et le sucre. Réduire 30 min jusqu'à consistance épaisse. Mettre en bouteilles stérilisées."}],
+   errors:["Pas assez réduire → ketchup liquide","Pas stériliser → conservation courte"],variantes:["Ketchup mangue","Sauce barbecue maison","Coulis de tomates épicé"],footer:"Conservation 6 mois · Maison",stars:"★★★★★"},
+
+  {id:"rp17",emoji:"❄️",name:"Brick de volaille à congeler",cuisine:"Batch Cooking",persons:8,prep:"30 min",cook:"20 min",diff:"Facile ★★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🍗",qty:"400g",name:"Blancs de poulet cuits"},{ico:"🧅",qty:"1",name:"Oignon"},{ico:"🌿",qty:"QS",name:"Coriandre, cumin, cannelle, œuf dur, amandes"},{ico:"🌾",qty:"8 feuilles",name:"Brick"},{ico:"🧈",qty:"50g",name:"Beurre fondu"},{ico:"🍬",qty:"QS",name:"Sucre glace, cannelle pour finition"}],
+   tips:[{dot:"#f57f17",text:"Congeler crus = cuire directement four sans décongélation"},{dot:"#4caf50",text:"Bien beurrer chaque feuille = feuilleté et croustillant"}],
+   steps:[{title:"Farce",desc:"Effilocher le poulet cuit. Mélanger avec oignon, herbes, épices et amandes grillées."},{title:"Rouler",desc:"Disposer la farce sur les feuilles de brick beurrées. Rouler en cigare ou plier en triangle."},{title:"Congeler",desc:"Disposer sur plaque. Congeler 2h. Transférer en sachets. Cuire directement congelés au four 200°C, 20 min."}],
+   errors:["Décongeler avant de cuire → feuilles qui ramollissent","Farce trop humide → brick qui détrempe"],variantes:["Brick épinards feta","Brick thon","Brick merguez"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp18",emoji:"🫙",name:"Vinaigre de framboise maison",cuisine:"Conserve Maison",persons:6,prep:"10 min",cook:"0 min",diff:"Facile ★",color:"#e91e63",colorLight:"#fce4ec",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🍓",qty:"300g",name:"Framboises fraîches"},{ico:"🌿",qty:"50cl",name:"Vinaigre de vin blanc"},{ico:"🍬",qty:"2 c.à.s.",name:"Sucre"}],
+   tips:[{dot:"#e91e63",text:"Macération à froid = couleur rouge vive et arômes préservés"},{dot:"#4caf50",text:"Parfait pour les vinaigrettes et les sauces de canard"}],
+   steps:[{title:"Macérer",desc:"Écraser légèrement les framboises. Les mettre dans un bocal propre. Couvrir de vinaigre de vin blanc."},{title:"Infuser",desc:"Fermer le bocal. Laisser macérer 2 semaines à température ambiante en secouant de temps en temps."},{title:"Filtrer",desc:"Passer au tamis fin. Ajouter le sucre. Mettre en bouteille. Se conserve 1 an."}],
+   errors:["Pas assez macérer → peu parfumé","Pas filtrer → trouble"],variantes:["Vinaigre de mûres","Vinaigre de cerise","Vinaigre à l'estragon"],footer:"Conservation 1 an · Maison",stars:"★★★★★"},
+
+  {id:"rp19",emoji:"❄️",name:"Pancakes congelés pour la semaine",cuisine:"Batch Cooking",persons:8,prep:"15 min",cook:"20 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"400g",name:"Farine"},{ico:"🥚",qty:"4",name:"Œufs"},{ico:"🥛",qty:"50cl",name:"Babeurre ou lait"},{ico:"🍬",qty:"60g",name:"Sucre"},{ico:"🌿",qty:"2 sachets",name:"Levure chimique"},{ico:"🧈",qty:"60g",name:"Beurre fondu"},{ico:"🌿",qty:"QS",name:"Vanille"}],
+   tips:[{dot:"#f9a825",text:"Cuire une grande quantité = petits-déjeuners de la semaine prêts"},{dot:"#4caf50",text:"Réchauffer au grille-pain = comme fraîchement faits"}],
+   steps:[{title:"Pâte",desc:"Mélanger tous les ingrédients sans trop travailler. Des grumeaux sont normaux."},{title:"Cuire",desc:"Faire cuire tous les pancakes. Laisser refroidir complètement sur une grille."},{title:"Congeler",desc:"Intercaler les pancakes avec du papier sulfurisé. Congeler en sachets. Réchauffer au grille-pain ou micro-ondes."}],
+   errors:["Empiler sans papier → colle ensemble","Congeler chauds → humidité"],variantes:["Blueberry pancakes congelés","Pancakes complets","Gaufres congelées"],footer:"Congélation 1 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp20",emoji:"🫙",name:"Moutarde maison à l'ancienne",cuisine:"Conserve Maison",persons:6,prep:"15 min",cook:"0 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🌿",qty:"100g",name:"Graines de moutarde jaune"},{ico:"🌿",qty:"50g",name:"Graines de moutarde noire"},{ico:"🌿",qty:"10cl",name:"Vinaigre de cidre"},{ico:"🌿",qty:"5cl",name:"Vin blanc"},{ico:"🧂",qty:"1 c.à.c.",name:"Sel"},{ico:"🍯",qty:"1 c.à.s.",name:"Miel"}],
+   tips:[{dot:"#f9a825",text:"Graines trempées une nuit = mixage plus facile et moutarde plus douce"},{dot:"#4caf50",text:"Texture à grains = typique de la moutarde à l'ancienne"}],
+   steps:[{title:"Tremper",desc:"Tremper les graines de moutarde dans le vinaigre et le vin une nuit."},{title:"Mixer",desc:"Mixer partiellement selon la texture désirée — à grains = mixer peu, lisse = mixer plus."},{title:"Assaisonner",desc:"Ajouter sel et miel. Mettre en pot. Réfrigérer 48h avant de déguster."}],
+   errors:["Pas tremper → graines qui ne mixent pas bien","Trop mixer → moutarde fade"],variantes:["Moutarde au miel","Moutarde aux herbes","Moutarde de Dijon (graine moulue)"],footer:"Conservation 3 mois au frigo · Maison",stars:"★★★★★"},
+
+  {id:"rp21",emoji:"❄️",name:"Taboulé géant à préparer à l'avance",cuisine:"Batch Cooking",persons:8,prep:"25 min",cook:"15 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🌾",qty:"400g",name:"Semoule fine ou boulgour"},{ico:"🍅",qty:"600g",name:"Tomates"},{ico:"🥒",qty:"2",name:"Concombres"},{ico:"🌿",qty:"2 bouquets",name:"Menthe et persil"},{ico:"🍋",qty:"4",name:"Citrons"},{ico:"🫒",qty:"10cl",name:"Huile d'olive"},{ico:"🧂",qty:"QS",name:"Sel"}],
+   tips:[{dot:"#2e7d32",text:"Se prépare 24h à l'avance = encore meilleur le lendemain"},{dot:"#4caf50",text:"Ajouter les herbes fraîches au moment de servir = couleur préservée"}],
+   steps:[{title:"Semoule",desc:"Cuire ou ébouillanter la semoule. Égrener à la fourchette. Assaisonner d'huile et citron encore tiède."},{title:"Légumes",desc:"Couper tomates et concombres en petits dés. Égoutter l'excès de jus."},{title:"Assembler",desc:"Mélanger semoule et légumes. Réfrigérer. Ajouter herbes fraîches au moment de servir."}],
+   errors:["Herbes ajoutées à l'avance → noircissent","Semoule trop cuite → taboulé pâteux"],variantes:["Taboulé quinoa","Taboulé libanais","Taboulé haricots"],footer:"Conservation 3 jours au frigo",stars:"★★★★★"},
+
+  {id:"rp22",emoji:"🫙",name:"Pickles de légumes rapides",cuisine:"Conserve Maison",persons:6,prep:"15 min",cook:"5 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥕",qty:"2",name:"Carottes"},{ico:"🫑",qty:"1",name:"Poivron"},{ico:"🧅",qty:"1",name:"Oignon rouge"},{ico:"🌿",qty:"20cl",name:"Vinaigre de cidre"},{ico:"💧",qty:"20cl",name:"Eau"},{ico:"🍬",qty:"2 c.à.s.",name:"Sucre"},{ico:"🧂",qty:"1 c.à.s.",name:"Sel"},{ico:"🌿",qty:"QS",name:"Cumin, coriandre, piment"}],
+   tips:[{dot:"#f57f17",text:"Pickles rapides prêts en 30 min — pas de stérilisation"},{dot:"#4caf50",text:"Tranches très fines = pickles croquants et bien marinés"}],
+   steps:[{title:"Légumes",desc:"Couper les légumes en fines tranches ou julienne."},{title:"Saumure",desc:"Porter vinaigre, eau, sucre et sel à ébullition. Ajouter les épices."},{title:"Mariner",desc:"Verser chaud sur les légumes dans les bocaux. Laisser refroidir. Réfrigérer 30 min minimum."}],
+   errors:["Légumes trop épais → pas assez marinés","Saumure froide → légumes crus au goût"],variantes:["Pickles de concombre","Pickles d'oignon rouge","Daikon japonais"],footer:"Conservation 2 semaines frigo",stars:"★★★★★"},
+
+  {id:"rp23",emoji:"❄️",name:"Purée de légumes bébé à congeler",cuisine:"Batch Cooking",persons:6,prep:"15 min",cook:"20 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥕",qty:"500g",name:"Carottes ou patate douce"},{ico:"🥦",qty:"300g",name:"Brocoli ou courgette"},{ico:"💧",qty:"QS",name:"Eau ou bouillon sans sel"},{ico:"🫒",qty:"QS",name:"Un filet d'huile d'olive"}],
+   tips:[{dot:"#f9a825",text:"Congeler en bac à glaçons = portions parfaites pour bébé"},{dot:"#4caf50",text:"Pas de sel pour les bébés = goût naturel des légumes"}],
+   steps:[{title:"Cuire",desc:"Cuire les légumes à la vapeur jusqu'à très fondants (20 min). Pas de sel."},{title:"Mixer",desc:"Mixer finement avec un peu d'eau de cuisson jusqu'à purée très lisse. Filet d'huile d'olive."},{title:"Congeler",desc:"Verser dans des bacs à glaçons. Congeler 4h. Transférer en sachets étiquetés. Conservation 1 mois."}],
+   errors:["Ajouter du sel → dangereux pour les nourrissons","Mixer pas assez → morceaux pour bébé en purée"],variantes:["Purée courgette petit pois","Purée potiron","Purée brocoli pomme de terre"],footer:"Congélation 1 mois · Bébé",stars:"★★★★★"},
+
+  {id:"rp24",emoji:"🫙",name:"Sirop de fleurs de sureau",cuisine:"Conserve Maison",persons:8,prep:"20 min",cook:"20 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["spring"],
+   ingredients:[{ico:"🌸",qty:"20",name:"Ombelles de fleurs de sureau"},{ico:"🍬",qty:"1 kg",name:"Sucre"},{ico:"💧",qty:"1L",name:"Eau"},{ico:"🍋",qty:"2",name:"Citrons"}],
+   tips:[{dot:"#f9a825",text:"Cueillir les fleurs le matin par temps sec = arômes maximaux"},{dot:"#4caf50",text:"Sirop parfumé pour les limonades, sorbets et pâtisseries"}],
+   steps:[{title:"Infuser",desc:"Faire bouillir l'eau et le sucre 5 min. Verser sur les fleurs de sureau et les rondelles de citron. Macérer 24-48h."},{title:"Filtrer",desc:"Filtrer soigneusement à travers un tamis fin ou un linge."},{title:"Embouteiller",desc:"Porter à ébullition 5 min. Embouteiller chaud dans des bouteilles stérilisées. Conservation 1 an."}],
+   errors:["Fleurs avec des insectes → inspecter avant","Pas stériliser → fermentation"],variantes:["Sirop de lavande","Sirop de rose","Sirop de violette"],footer:"Conservation 1 an · Maison",stars:"★★★★★"},
+
+  {id:"rp25",emoji:"❄️",name:"Quiches individuelles à congeler",cuisine:"Batch Cooking",persons:8,prep:"25 min",cook:"30 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"2",name:"Rouleaux de pâte brisée"},{ico:"🥚",qty:"6",name:"Œufs"},{ico:"🥛",qty:"40cl",name:"Crème et lait"},{ico:"🥓",qty:"200g",name:"Lardons"},{ico:"🧀",qty:"150g",name:"Gruyère râpé"},{ico:"🌿",qty:"QS",name:"Sel, poivre, muscade"}],
+   tips:[{dot:"#f9a825",text:"Moules en aluminium = congèlent et passent au four directement"},{dot:"#4caf50",text:"Cuites avant de congeler = réchauffer en 15 min au four"}],
+   steps:[{title:"Préparer",desc:"Foncer 8 moules individuels. Faire revenir les lardons. Fouetter œufs, crème, lait et assaisonnement."},{title:"Remplir",desc:"Disposer lardons et gruyère dans chaque fond. Verser l'appareil. Cuire à 180°C, 25-30 min."},{title:"Congeler",desc:"Refroidir complètement. Filmer chaque quiche. Congeler. Réchauffer four à 180°C, 15-20 min."}],
+   errors:["Décongeler au micro-ondes → pâte molle","Pas refroidir avant congélation → condensation"],variantes:["Quiche saumon épinards","Quiche provençale","Mini-quiches apéro"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp26",emoji:"🫙",name:"Beurre de pomme à la cannelle",cuisine:"Conserve Maison",persons:6,prep:"15 min",cook:"1h30",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["autumn"],
+   ingredients:[{ico:"🍎",qty:"2 kg",name:"Pommes variées"},{ico:"🍬",qty:"200g",name:"Sucre"},{ico:"🌿",qty:"2 c.à.c.",name:"Cannelle"},{ico:"🌿",qty:"QS",name:"Gingembre, cardamome, clous de girofle"},{ico:"🍋",qty:"1",name:"Jus de citron"}],
+   tips:[{dot:"#f57f17",text:"Cuisson longue et douce = beurre de pomme concentré et caramélisé"},{dot:"#4caf50",text:"À tartiner comme un beurre ou utiliser comme garniture"}],
+   steps:[{title:"Cuire",desc:"Éplucher et couper les pommes. Cuire avec le sucre, les épices et le citron à feu doux 30 min."},{title:"Mixer",desc:"Mixer jusqu'à purée très lisse."},{title:"Réduire",desc:"Remettre sur feu doux 1h en remuant souvent jusqu'à pâte épaisse et brillante. Mettre en pots stérilisés."}],
+   errors:["Pas assez réduire → trop liquide","Brûler au fond → remuer constamment"],variantes:["Beurre de poire","Beurre de prune","Beurre de courge"],footer:"Conservation 6 mois · Maison",stars:"★★★★★"},
+
+  {id:"rp27",emoji:"❄️",name:"Sauce pesto congelée en glaçons",cuisine:"Batch Cooking",persons:8,prep:"15 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🌿",qty:"200g",name:"Basilic frais (grande quantité)"},{ico:"🥜",qty:"100g",name:"Pignons de pin"},{ico:"🧀",qty:"100g",name:"Parmesan râpé"},{ico:"🧄",qty:"4 gousses",name:"Ail"},{ico:"🫒",qty:"30cl",name:"Huile d'olive"}],
+   tips:[{dot:"#2e7d32",text:"Congeler sans le parmesan = ajouter frais au moment de servir"},{dot:"#4caf50",text:"Glaçons de pesto = 1 glaçon = 1 portion individuelle"}],
+   steps:[{title:"Mixer",desc:"Mixer basilic, pignons, ail et la moitié de l'huile. Incorporer le reste progressivement. Saler."},{title:"Glaçons",desc:"Verser le pesto dans des bacs à glaçons. Congeler 4h."},{title:"Conserver",desc:"Démouler et transférer dans un sachet. Conservation 6 mois. Sortir 30 min avant ou utiliser directement dans les pâtes chaudes."}],
+   errors:["Parmesan congelé → texture granuleuse","Pas couvrir le bac → pesto qui prend les odeurs du congélateur"],variantes:["Pesto roquette","Pesto coriandre","Pesto persil noix"],footer:"Congélation 6 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp28",emoji:"🫙",name:"Granola maison à conserver",cuisine:"Conserve Maison",persons:8,prep:"10 min",cook:"25 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"300g",name:"Flocons d'avoine"},{ico:"🍯",qty:"80g",name:"Miel ou sirop d'érable"},{ico:"🫒",qty:"60g",name:"Huile de coco ou neutre"},{ico:"🥜",qty:"100g",name:"Fruits secs variés (amandes, noix, noisettes)"},{ico:"🍇",qty:"80g",name:"Raisins secs ou cranberries"},{ico:"🌿",qty:"1 c.à.c.",name:"Cannelle, vanille"}],
+   tips:[{dot:"#f9a825",text:"Ne pas remuer pendant la cuisson = gros clusters croustillants"},{dot:"#4caf50",text:"Se conserve 3 semaines en boîte hermétique = petit-déjeuner quotidien"}],
+   steps:[{title:"Mélanger",desc:"Mélanger flocons, fruits secs, miel fondu avec l'huile de coco, cannelle et vanille. Bien enrober."},{title:"Cuire",desc:"Étaler sur plaque. Four à 160°C, 20-25 min. Ne pas remuer pendant la cuisson. Surveiller la couleur."},{title:"Refroidir",desc:"Laisser refroidir complètement sans toucher. Ajouter les raisins secs. Casser en morceaux. Boîte hermétique."}],
+   errors:["Remuer pendant la cuisson → pas de clusters","Sortir trop tôt du four → pas croustillant"],variantes:["Granola chocolat","Granola tropical","Granola sans sucre ajouté"],footer:"Conservation 3 semaines · Maison",stars:"★★★★★"},
+
+  {id:"rp29",emoji:"❄️",name:"Gratin de légumes à congeler",cuisine:"Batch Cooking",persons:6,prep:"20 min",cook:"45 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🫚",qty:"4",name:"Courgettes"},{ico:"🍆",qty:"2",name:"Aubergines"},{ico:"🍅",qty:"400g",name:"Tomates concassées"},{ico:"🧀",qty:"200g",name:"Mozzarella"},{ico:"🌿",qty:"QS",name:"Herbes de Provence, huile d'olive"},{ico:"🥛",qty:"30cl",name:"Béchamel légère"}],
+   tips:[{dot:"#2e7d32",text:"Légumes grillés avant = moins d'eau dans le gratin"},{dot:"#4caf50",text:"Congeler avant de gratiner le fromage = fromage frais à la décongélation"}],
+   steps:[{title:"Légumes",desc:"Faire griller courgettes et aubergines en tranches. Assaisonner."},{title:"Monter",desc:"Alterner légumes, sauce tomate et béchamel dans les plats. Pas de fromage encore."},{title:"Congeler",desc:"Refroidir. Couvrir hermétiquement. Congeler. Au moment de servir : décongeler, ajouter la mozzarella, gratiner 20 min au four."}],
+   errors:["Congeler avec le fromage → gratiné et fondu à la chauffe","Légumes pas pré-cuits → trop d'eau à la décongélation"],variantes:["Gratin de brocoli","Gratin épinards chèvre","Gratin dauphinois congelé"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rp30",emoji:"🫙",name:"Bouillon maison à congeler",cuisine:"Batch Cooking",persons:8,prep:"15 min",cook:"3h",diff:"Facile ★",color:"#795548",colorLight:"#efebe9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🦴",qty:"1 kg",name:"Carcasse de poulet ou os de bœuf"},{ico:"🥕",qty:"3",name:"Carottes"},{ico:"🫚",qty:"2",name:"Poireaux"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🌿",qty:"QS",name:"Thym, laurier, persil, poivre en grains"},{ico:"💧",qty:"3L",name:"Eau froide"}],
+   tips:[{dot:"#795548",text:"Démarrer à l'eau froide = bouillon clair et savoureux"},{dot:"#4caf50",text:"Congeler en glaçons ou portions = bouillon prêt à l'emploi"}],
+   steps:[{title:"Cuire",desc:"Couvrir carcasse et légumes d'eau froide. Porter à ébullition lentement. Écumer soigneusement. Ajouter herbes. Mijoter 3h à frémissement."},{title:"Filtrer",desc:"Filtrer à travers un tamis fin ou un linge. Laisser refroidir. Dégraisser si nécessaire."},{title:"Congeler",desc:"Verser en portions (500ml ou glaçons). Étiqueter avec la date. Congeler. Conservation 6 mois."}],
+   errors:["Ébullition forte → bouillon trouble","Pas écumer → goût amer"],variantes:["Bouillon de légumes","Bouillon de bœuf","Bouillon de poisson (fumet)"],footer:"Congélation 6 mois · Maison",stars:"★★★★★"},
+  {id:"rq01",emoji:"🍑",name:"Confiture d'abricots à la vanille",cuisine:"Conserve Maison",persons:8,prep:"15 min",cook:"30 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🍑",qty:"1 kg",name:"Abricots mûrs"},{ico:"🍬",qty:"700g",name:"Sucre à confiture"},{ico:"🌿",qty:"1",name:"Gousse de vanille"},{ico:"🍋",qty:"1",name:"Jus de citron"}],
+   tips:[{dot:"#f57f17",text:"Macérer les abricots dans le sucre une nuit = confiture plus épaisse"},{dot:"#4caf50",text:"Pots stérilisés retournés à chaud = conservation 1 an à l'abri de la lumière"}],
+   steps:[{title:"Préparer",desc:"Dénoyauter et couper les abricots en morceaux. Mélanger avec le sucre, la vanille fendue et le citron. Macérer une nuit."},{title:"Cuire",desc:"Porter à ébullition en remuant. Écumer. Cuire à ébullition vive 25 min. Retirer la vanille. Tester la prise sur assiette froide."},{title:"Mettre en pot",desc:"Verser bouillante dans des pots en verre ébouillantés. Fermer et retourner jusqu'à refroidissement. Étiqueter avec la date."}],
+   errors:["Pots pas ébouillantés → moisissures en surface","Pas assez cuire → confiture liquide"],variantes:["Abricot-amande","Abricot-romarin","Abricot-gingembre"],footer:"Conservation 1 an · Stérilisation par retournement",stars:"★★★★★"},
+
+  {id:"rq02",emoji:"🫐",name:"Confiture de myrtilles sauvages",cuisine:"Conserve Maison",persons:6,prep:"10 min",cook:"25 min",diff:"Facile ★",color:"#880e4f",colorLight:"#fce4ec",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🫐",qty:"1 kg",name:"Myrtilles"},{ico:"🍬",qty:"700g",name:"Sucre à confiture"},{ico:"🍋",qty:"1",name:"Jus de citron"},{ico:"🌿",qty:"1 c.à.c.",name:"Vanille"}],
+   tips:[{dot:"#880e4f",text:"Myrtilles sauvages = saveur incomparablement plus intense que les cultivées"},{dot:"#4caf50",text:"Confiture qui épaissit naturellement grâce à la pectine des myrtilles"}],
+   steps:[{title:"Mélanger",desc:"Mélanger myrtilles, sucre, citron et vanille dans la bassine à confiture."},{title:"Cuire",desc:"Porter à ébullition. Écumer. Cuire 20-25 min à ébullition vive. Écraser grossièrement si désiré."},{title:"Mettre en pot",desc:"Tester la prise. Verser dans les pots ébouillantés. Fermer et retourner."}],
+   errors:["Oublier le citron → confiture qui cristallise","Trop cuire → confiture trop ferme"],variantes:["Confiture de mûres","Confiture de cassis","Confiture de framboises"],footer:"Conservation 1 an · Stérilisation par retournement",stars:"★★★★★"},
+
+  {id:"rq03",emoji:"🍐",name:"Poires au sirop en bocaux",cuisine:"Conserve Maison",persons:6,prep:"20 min",cook:"30 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["autumn"],
+   ingredients:[{ico:"🍐",qty:"1,5 kg",name:"Poires Williams ou Conférence"},{ico:"🍬",qty:"400g",name:"Sucre"},{ico:"💧",qty:"1L",name:"Eau"},{ico:"🌿",qty:"1",name:"Gousse de vanille"},{ico:"🍋",qty:"1",name:"Jus de citron"}],
+   tips:[{dot:"#f9a825",text:"Poires légèrement fermes = ne fondent pas à la stérilisation"},{dot:"#4caf50",text:"Stériliser les bocaux fermés 20 min dans l'eau bouillante = conservation 1 an"}],
+   steps:[{title:"Préparer",desc:"Éplucher, vider et citronner les poires aussitôt. Couper en moitiés ou quartiers."},{title:"Sirop",desc:"Porter eau, sucre et vanille à ébullition 5 min."},{title:"Bocaux",desc:"Tasser les poires dans les bocaux stérilisés. Verser le sirop chaud. Fermer. Stériliser 20 min dans l'eau bouillante."}],
+   errors:["Poires trop mûres → fondent à la stérilisation","Pas citronner → poires qui noircissent"],variantes:["Pêches au sirop","Abricots au sirop","Cerises à l'eau-de-vie"],footer:"Conservation 1 an · Stérilisation bain-marie",stars:"★★★★★"},
+
+  {id:"rq04",emoji:"🧅",name:"Oignons caramélisés en grande quantité",cuisine:"Batch Cooking",persons:8,prep:"10 min",cook:"1h",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🧅",qty:"2 kg",name:"Oignons jaunes"},{ico:"🧈",qty:"60g",name:"Beurre"},{ico:"🫒",qty:"3 c.à.s.",name:"Huile d'olive"},{ico:"🍬",qty:"1 c.à.s.",name:"Sucre"},{ico:"🌿",qty:"5cl",name:"Vinaigre balsamique (optionnel)"},{ico:"🧂",qty:"QS",name:"Sel, poivre"}],
+   tips:[{dot:"#f57f17",text:"Feu très doux et patience = oignons fondants et sucrés naturellement"},{dot:"#4caf50",text:"Se congèle par portions = base de nombreux plats en quelques secondes"}],
+   steps:[{title:"Émincer",desc:"Émincer finement tous les oignons. C'est long mais ça vaut le coup !"},{title:"Caraméliser",desc:"Dans une grande poêle, faire fondre beurre et huile. Ajouter les oignons et le sel. Cuire à feu très doux 45-60 min en remuant régulièrement jusqu'à couleur ambrée."},{title:"Conserver",desc:"Refroidir. Congeler en portions de 100g dans des sachets ou bacs à glaçons. Conservation 3 mois."}],
+   errors:["Feu trop fort → oignons brûlés","Pas assez cuire → pas caramélisés"],variantes:["Avec du thym","Avec du vinaigre balsamique","Chutney d'oignons"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq05",emoji:"🥜",name:"Beurre de cacahuète maison",cuisine:"Conserve Maison",persons:6,prep:"5 min",cook:"10 min",diff:"Facile ★",color:"#795548",colorLight:"#efebe9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥜",qty:"400g",name:"Cacahuètes non salées"},{ico:"🌿",qty:"1 c.à.c.",name:"Huile neutre"},{ico:"🧂",qty:"1 pincée",name:"Sel"},{ico:"🍯",qty:"1 c.à.s.",name:"Miel (optionnel)"}],
+   tips:[{dot:"#795548",text:"Torréfier les cacahuètes 10 min au four = saveur incomparable"},{dot:"#4caf50",text:"Mixer longtemps = texture crémeuse naturelle sans huile ajoutée"}],
+   steps:[{title:"Torréfier",desc:"Étaler les cacahuètes sur une plaque. Torréfier à 180°C, 10 min jusqu'à légèrement dorées. Laisser refroidir."},{title:"Mixer",desc:"Mixer 5-10 min en raclant les bords régulièrement. D'abord une poudre, puis une pâte, puis crémeux."},{title:"Assaisonner",desc:"Ajouter sel, huile et miel si désiré. Mixer encore 1 min. Mettre en pot. Frigo ou température ambiante."}],
+   errors:["Pas assez mixer → texture grumeleuse","Cacahuètes salées → trop salé"],variantes:["Beurre d'amande","Beurre de noisette","Beurre de noix de cajou"],footer:"Conservation 1 mois · Maison",stars:"★★★★★"},
+
+  {id:"rq06",emoji:"❄️",name:"Falafels crus à congeler",cuisine:"Batch Cooking",persons:8,prep:"30 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🫘",qty:"500g",name:"Pois chiches crus (trempés 24h)"},{ico:"🧅",qty:"1",name:"Oignon"},{ico:"🧄",qty:"4 gousses",name:"Ail"},{ico:"🌿",qty:"QS",name:"Persil, coriandre, cumin, coriandre moulue"},{ico:"🌿",qty:"1 c.à.c.",name:"Bicarbonate"},{ico:"🧂",qty:"QS",name:"Sel"}],
+   tips:[{dot:"#2e7d32",text:"Congeler crus = frire directement congelés sans décongélation"},{dot:"#4caf50",text:"Pois chiches crus (jamais en boîte) = la règle absolue des falafels qui tiennent"}],
+   steps:[{title:"Mixer",desc:"Mixer pois chiches crus égouttés, oignon, ail, herbes, épices et sel. Texture grumeleuse — pas lisse. Réfrigérer 30 min."},{title:"Former",desc:"Former des boulettes régulières. Disposer sur une plaque recouverte de papier sulfurisé."},{title:"Congeler",desc:"Congeler sur la plaque 2h. Transférer dans des sachets. Se conserve 3 mois. Frire directement congelés à 175°C, 4-5 min."}],
+   errors:["Pois chiches en boîte → s'effondrent à la friture","Décongeler avant friture → trop humides"],variantes:["Falafels betterave","Falafels épinards","Falafels za'atar"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq07",emoji:"🫙",name:"Mayonnaise maison qui se conserve",cuisine:"Conserve Maison",persons:4,prep:"5 min",cook:"0 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥚",qty:"1 jaune",name:"Jaune d'œuf à température ambiante"},{ico:"🌿",qty:"1 c.à.c.",name:"Moutarde de Dijon"},{ico:"🌿",qty:"20cl",name:"Huile neutre (tournesol)"},{ico:"🌿",qty:"1 c.à.s.",name:"Vinaigre de vin blanc"},{ico:"🧂",qty:"QS",name:"Sel, poivre"}],
+   tips:[{dot:"#f9a825",text:"Tous les ingrédients à la même température = émulsion qui prend"},{dot:"#4caf50",text:"Huile versée en filet très fin au début = mayonnaise qui monte à coup sûr"}],
+   steps:[{title:"Base",desc:"Fouetter jaune d'œuf, moutarde, sel et vinaigre dans un bol."},{title:"Monter",desc:"Verser l'huile en filet très fin en fouettant constamment. D'abord goutte à goutte, puis plus vite quand ça prend."},{title:"Rectifier",desc:"Ajuster l'assaisonnement. Conserver au réfrigérateur dans un pot fermé. Consommer sous 3-4 jours."}],
+   errors:["Huile froide → ne monte pas","Huile versée trop vite au début → tourne"],variantes:["Aïoli (avec ail)","Rémoulade","Mayo au citron"],footer:"Conservation 4 jours au frigo",stars:"★★★★★"},
+
+  {id:"rq08",emoji:"❄️",name:"Sauce tomate épicée à congeler",cuisine:"Batch Cooking",persons:8,prep:"15 min",cook:"45 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🍅",qty:"2 kg",name:"Tomates mûres"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🧄",qty:"6 gousses",name:"Ail"},{ico:"🌶️",qty:"2",name:"Piments"},{ico:"🌿",qty:"QS",name:"Cumin, paprika fumé, origan"},{ico:"🫒",qty:"5 c.à.s.",name:"Huile d'olive"}],
+   tips:[{dot:"#c62828",text:"Préparer en été quand les tomates sont goûteuses = base pour toute l'année"},{dot:"#4caf50",text:"Congeler en portions de 200ml = sauce prête pour une pizza ou des pâtes"}],
+   steps:[{title:"Tomates",desc:"Ébouillanter, peler et concasser les tomates."},{title:"Cuire",desc:"Faire revenir oignons, ail et piments. Ajouter tomates et épices. Mijoter 40 min jusqu'à sauce épaisse."},{title:"Congeler",desc:"Refroidir rapidement. Verser en portions dans des sachets à congélation plats. Étiqueter. Congeler 3 mois."}],
+   errors:["Tomates pas mûres → sauce acide","Congeler en gros bloc → difficile à doser"],variantes:["Sauce pizza classique","Sauce tikka masala","Sauce arrabiata"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq09",emoji:"🍎",name:"Compote de pommes maison",cuisine:"Conserve Maison",persons:6,prep:"15 min",cook:"20 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["autumn"],
+   ingredients:[{ico:"🍎",qty:"1,5 kg",name:"Pommes variées"},{ico:"🍬",qty:"100g",name:"Sucre (ou moins selon les pommes)"},{ico:"💧",qty:"5cl",name:"Eau"},{ico:"🌿",qty:"1 c.à.c.",name:"Cannelle"},{ico:"🌿",qty:"1",name:"Gousse de vanille"}],
+   tips:[{dot:"#f57f17",text:"Mélanger pommes acides et sucrées = compote équilibrée naturellement"},{dot:"#4caf50",text:"Se congèle parfaitement en portions — ou met en bocaux stérilisés"}],
+   steps:[{title:"Cuire",desc:"Éplucher et couper les pommes. Mettre dans la casserole avec l'eau, le sucre et les épices. Cuire à feu doux 20 min."},{title:"Écraser",desc:"Écraser à la fourchette pour une compote rustique ou mixer pour une purée lisse."},{title:"Conserver",desc:"En bocaux stérilisés (retournés à chaud) ou en portions congelées. Conservation 1 an en bocaux, 6 mois congelée."}],
+   errors:["Trop de sucre → compote écœurante","Pas assez cuire → pommes pas fondantes"],variantes:["Compote pomme-cannelle","Compote pomme-poire","Compote fraise-rhubarbe"],footer:"Conservation 1 an bocaux · 6 mois congélo",stars:"★★★★★"},
+
+  {id:"rq10",emoji:"🧄",name:"Ail confit à l'huile d'olive",cuisine:"Conserve Maison",persons:6,prep:"10 min",cook:"45 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🧄",qty:"4 têtes",name:"Ail"},{ico:"🫒",qty:"30cl",name:"Huile d'olive"},{ico:"🌿",qty:"QS",name:"Thym, romarin, laurier, poivre en grains"}],
+   tips:[{dot:"#f9a825",text:"Cuisson à très basse température (120°C) = ail fondant et doux, jamais amer"},{dot:"#4caf50",text:"L'huile parfumée récupérée = trésor de la cuisine"}],
+   steps:[{title:"Préparer",desc:"Séparer et éplucher les gousses d'ail."},{title:"Confire",desc:"Disposer l'ail dans un petit plat ou casserole. Couvrir d'huile d'olive avec les herbes et le poivre. Four à 120°C, 45-60 min. L'ail doit être doré et fondant."},{title:"Conserver",desc:"Verser ail et huile dans un bocal stérilisé. Réfrigérer. Utiliser dans les pâtes, purées, toasts. Conservation 2 semaines au frigo."}],
+   errors:["Température trop haute → ail qui brûle","Gousses pas épluchées → difficile à utiliser"],variantes:["Ail confit au four entier","Tomates confites","Poivrons confits"],footer:"Conservation 2 semaines au frigo",stars:"★★★★★"},
+
+  {id:"rq11",emoji:"❄️",name:"Dumplings asiatiques à congeler",cuisine:"Batch Cooking",persons:8,prep:"45 min",cook:"0 min",diff:"Facile ★★",color:"#1565c0",colorLight:"#e3f2fd",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"300g",name:"Porc haché"},{ico:"🥬",qty:"200g",name:"Chou chinois"},{ico:"🌿",qty:"QS",name:"Gingembre, ail, sauce soja, huile sésame, ciboulette"},{ico:"🌾",qty:"40 feuilles",name:"Pâte à gyoza ou wonton"}],
+   tips:[{dot:"#1565c0",text:"Congeler sur plaque sans se toucher = ne collent pas"},{dot:"#4caf50",text:"Cuire directement congelés à la vapeur ou poêlés = pratique en semaine"}],
+   steps:[{title:"Farce",desc:"Hacher finement le chou, saler, presser pour retirer l'eau. Mélanger avec porc, gingembre, ail, sauce soja et sésame. Mélanger vigoureusement."},{title:"Former",desc:"Déposer une cuillère de farce sur chaque feuille. Humidifier les bords. Plier et plisser."},{title:"Congeler",desc:"Disposer sur plaque sans se toucher. Congeler 2h. Transférer en sachets. Cuire congelés : 10 min à la vapeur ou 3 min poêle + 5 min vapeur."}],
+   errors:["Chou pas essoré → farce qui coule","Congeler collés → impossible à séparer"],variantes:["Dumplings crevettes","Dumplings végétariens","Wontons bouillon"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq12",emoji:"🫙",name:"Crème de marrons maison",cuisine:"Conserve Maison",persons:6,prep:"30 min",cook:"1h",diff:"Facile ★★",color:"#795548",colorLight:"#efebe9",category:"préparation",seasons:["autumn","winter"],
+   ingredients:[{ico:"🌰",qty:"1 kg",name:"Marrons"},{ico:"🍬",qty:"500g",name:"Sucre"},{ico:"💧",qty:"25cl",name:"Eau"},{ico:"🌿",qty:"1",name:"Gousse de vanille"}],
+   tips:[{dot:"#795548",text:"Inciser les marrons et les cuire avant d'éplucher = éplucher plus facilement"},{dot:"#4caf50",text:"Texture lisse = passer au moulin à légumes fin"}],
+   steps:[{title:"Cuire les marrons",desc:"Inciser les marrons en croix. Cuire 20 min à l'eau bouillante. Éplucher encore chauds (peau intérieure incluse)."},{title:"Purée",desc:"Mixer ou passer au moulin à légumes fin. Faire un sirop avec eau et sucre. Incorporer à la purée avec la vanille."},{title:"Cuire et mettre en pot",desc:"Cuire à feu doux 30 min en remuant jusqu'à consistance épaisse. Mettre en bocaux stérilisés."}],
+   errors:["Pas éplucher la peau intérieure → crème amère","Pas assez cuire → liquide"],variantes:["Avec rhum","Crème de châtaigne","Pâte de marrons non sucrée"],footer:"Conservation 1 an · Stérilisation",stars:"★★★★★"},
+
+  {id:"rq13",emoji:"❄️",name:"Lasagnes complètes à congeler",cuisine:"Batch Cooking",persons:8,prep:"30 min",cook:"1h",diff:"Facile ★★",color:"#c62828",colorLight:"#ffebee",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"800g",name:"Bœuf haché"},{ico:"🌾",qty:"16 feuilles",name:"Lasagnes"},{ico:"🥛",qty:"80cl",name:"Béchamel"},{ico:"🍅",qty:"800g",name:"Tomates concassées"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🧀",qty:"200g",name:"Gruyère râpé"},{ico:"🌿",qty:"QS",name:"Herbes italiennes"}],
+   tips:[{dot:"#c62828",text:"Congeler en plat individuel = portions pratiques pour toute la semaine"},{dot:"#4caf50",text:"Cuire avant de congeler = réchauffer au four directement en 25 min"}],
+   steps:[{title:"Bolognaise",desc:"Préparer une sauce bolognaise avec bœuf, oignons et tomates. Mijoter 30 min."},{title:"Monter",desc:"Alterner béchamel, feuilles de lasagne, bolognaise. Gruyère sur le dessus."},{title:"Cuire et congeler",desc:"Cuire à 180°C, 35 min. Refroidir complètement. Couper en portions. Filmer. Congeler. Réchauffer four à 180°C, 25 min."}],
+   errors:["Congeler crues → feuilles qui ne cuisent pas uniformément","Pas refroidir → condensation"],variantes:["Lasagnes végétariennes","Lasagnes poulet épinards","Lasagnes saumon"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq14",emoji:"🫙",name:"Sauce barbecue maison fumée",cuisine:"Conserve Maison",persons:8,prep:"10 min",cook:"30 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🍅",qty:"400g",name:"Tomates concassées"},{ico:"🍯",qty:"80g",name:"Miel"},{ico:"🌿",qty:"3 c.à.s.",name:"Vinaigre de cidre"},{ico:"🌿",qty:"2 c.à.s.",name:"Sauce Worcestershire"},{ico:"🌿",qty:"QS",name:"Paprika fumé, ail, oignon, moutarde, piment"},{ico:"🍬",qty:"2 c.à.s.",name:"Cassonade"}],
+   tips:[{dot:"#c62828",text:"Paprika fumé = donne le caractère BBQ sans fumoir"},{dot:"#4caf50",text:"Sauce en bouteilles stérilisées = conservation 6 mois à l'abri de la lumière"}],
+   steps:[{title:"Mélanger",desc:"Mettre tous les ingrédients dans une casserole. Bien mélanger."},{title:"Cuire",desc:"Porter à ébullition en remuant. Réduire à feu doux 25-30 min jusqu'à sauce épaisse et brillante."},{title:"Embouteiller",desc:"Mixer si désiré. Verser chaud dans des bouteilles stérilisées. Fermer. Retourner jusqu'à refroidissement."}],
+   errors:["Pas assez réduire → sauce liquide","Brûler au fond → remuer constamment"],variantes:["BBQ miel moutarde","BBQ mangue piment","BBQ noir à la mélasse"],footer:"Conservation 6 mois · Stérilisation",stars:"★★★★★"},
+
+  {id:"rq15",emoji:"❄️",name:"Crêpes congelées pour le week-end",cuisine:"Batch Cooking",persons:8,prep:"15 min",cook:"30 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"500g",name:"Farine"},{ico:"🥚",qty:"6",name:"Œufs"},{ico:"🥛",qty:"1L",name:"Lait"},{ico:"🧈",qty:"60g",name:"Beurre fondu"},{ico:"🍬",qty:"40g",name:"Sucre"},{ico:"🧂",qty:"1 pincée",name:"Sel"},{ico:"🌸",qty:"QS",name:"Fleur d'oranger ou vanille"}],
+   tips:[{dot:"#f9a825",text:"Intercaler du papier sulfurisé = crêpes qui ne collent pas"},{dot:"#4caf50",text:"Réchauffer à la poêle 30 secondes = comme fraîchement faites"}],
+   steps:[{title:"Pâte",desc:"Mixer tous les ingrédients. Reposer 1h. Cuire toutes les crêpes."},{title:"Refroidir",desc:"Étaler les crêpes sur une grille. Laisser refroidir complètement."},{title:"Congeler",desc:"Empiler les crêpes avec une feuille de papier sulfurisé entre chaque. Emballer dans du film. Congeler. Conservation 2 mois."}],
+   errors:["Crêpes encore chaudes → collent ensemble","Pas de papier entre → impossible à séparer"],variantes:["Crêpes sarrasin congelées","Blinis congelés","Pancakes congelés"],footer:"Congélation 2 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq16",emoji:"🫙",name:"Lemon curd maison",cuisine:"Conserve Maison",persons:6,prep:"10 min",cook:"15 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🍋",qty:"4",name:"Citrons (jus + zeste)"},{ico:"🥚",qty:"4",name:"Œufs"},{ico:"🍬",qty:"200g",name:"Sucre"},{ico:"🧈",qty:"100g",name:"Beurre"}],
+   tips:[{dot:"#f9a825",text:"Cuire au bain-marie en remuant constamment = crème lisse sans grumeaux"},{dot:"#4caf50",text:"Se conserve 3 semaines au frigo = toujours prêt pour garnir tartes et gâteaux"}],
+   steps:[{title:"Mélanger",desc:"Fouetter œufs, sucre, jus et zestes de citron dans un bol résistant à la chaleur."},{title:"Cuire",desc:"Placer au-dessus d'une casserole d'eau frémissante (bain-marie). Cuire en remuant 10-15 min jusqu'à consistance nappe."},{title:"Finir",desc:"Hors du feu, incorporer le beurre en morceaux. Mixer si nécessaire. Verser en pots stérilisés. Réfrigérer."}],
+   errors:["Feu direct → œufs brouillés","Pas assez cuire → trop liquide"],variantes:["Lime curd","Orange curd","Passion curd"],footer:"Conservation 3 semaines au frigo",stars:"★★★★★"},
+
+  {id:"rq17",emoji:"❄️",name:"Chili sin carne à congeler",cuisine:"Batch Cooking",persons:8,prep:"15 min",cook:"45 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🫘",qty:"800g",name:"Haricots rouges et noirs"},{ico:"🌽",qty:"400g",name:"Maïs"},{ico:"🍅",qty:"800g",name:"Tomates concassées"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🫑",qty:"2",name:"Poivrons"},{ico:"🌿",qty:"QS",name:"Cumin, paprika fumé, piment, origan, ail"},{ico:"🍫",qty:"20g",name:"Chocolat noir (secret)"}],
+   tips:[{dot:"#c62828",text:"Recette végétarienne = se congèle parfaitement sans altération"},{dot:"#4caf50",text:"Encore meilleur réchauffé = congeler sans hésiter pour la semaine"}],
+   steps:[{title:"Base",desc:"Faire revenir oignons, poivrons et ail avec les épices."},{title:"Mijoter",desc:"Ajouter tomates, légumineuses, maïs et chocolat. Mijoter 35 min à feu doux."},{title:"Congeler",desc:"Refroidir rapidement. Portionner en 4 boîtes hermétiques. Étiqueter. Congeler 3 mois."}],
+   errors:["Congeler avec du riz → riz boueux","Pas assez d'épices → fade après décongélation"],variantes:["Chili con carne","Chili blanc poulet","Chili indien aux épices"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq18",emoji:"🫙",name:"Tomates séchées à l'huile",cuisine:"Conserve Méditerranéenne",persons:6,prep:"15 min",cook:"3h",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"préparation",seasons:["summer"],
+   ingredients:[{ico:"🍅",qty:"2 kg",name:"Tomates Roma ou cerises"},{ico:"🧂",qty:"QS",name:"Gros sel"},{ico:"🫒",qty:"QS",name:"Huile d'olive"},{ico:"🌿",qty:"QS",name:"Thym, origan, ail, basilic séché"}],
+   tips:[{dot:"#c62828",text:"Tomates séchées au four à basse température = méthode maison fiable"},{dot:"#4caf50",text:"L'huile parfumée récupérée = ingrédient précieux pour cuisiner"}],
+   steps:[{title:"Préparer",desc:"Couper les tomates en deux. Disposer sur une plaque. Saler légèrement. Parsemer d'herbes."},{title:"Sécher",desc:"Four à 100°C, 3-4h selon la taille. Les tomates doivent être fripées mais pas complètement sèches."},{title:"Conserver",desc:"Mettre en bocaux stérilisés. Couvrir généreusement d'huile d'olive avec ail et herbes. Réfrigérer. Conservation 3 semaines."}],
+   errors:["Four trop chaud → tomates brûlées","Pas assez d'huile → tomates qui sèchent dans le pot"],variantes:["Poivrons séchés à l'huile","Champignons séchés","Artichauts marinés"],footer:"Conservation 3 semaines frigo",stars:"★★★★★"},
+
+  {id:"rq19",emoji:"❄️",name:"Pâte à tarte à congeler",cuisine:"Batch Cooking",persons:8,prep:"20 min",cook:"0 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"500g",name:"Farine"},{ico:"🧈",qty:"250g",name:"Beurre froid"},{ico:"💧",qty:"10cl",name:"Eau glacée"},{ico:"🧂",qty:"1 c.à.c.",name:"Sel"},{ico:"🍬",qty:"1 c.à.s.",name:"Sucre (pour version sucrée)"}],
+   tips:[{dot:"#f9a825",text:"Préparer 4 pâtes à la fois = 4 tartes futures en 20 min de travail"},{dot:"#4caf50",text:"Décongeler au frigo une nuit = prête à étaler comme fraîche"}],
+   steps:[{title:"Pâte",desc:"Sabler farine et beurre froid coupé en dés. Ajouter l'eau glacée progressivement. Former une boule. Ne pas trop travailler."},{title:"Diviser",desc:"Diviser en 4 portions. Aplatir légèrement en disque. Filmer individuellement."},{title:"Congeler",desc:"Congeler jusqu'à 3 mois. Décongeler au frigo 12h avant utilisation ou à température ambiante 30 min."}],
+   errors:["Pâte trop travaillée → dure après cuisson","Décongeler trop vite → beurre qui fond"],variantes:["Pâte feuilletée rapide","Pâte sucrée","Pâte sablée aux amandes"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq20",emoji:"🫙",name:"Caramel beurre salé maison",cuisine:"Conserve Maison",persons:6,prep:"5 min",cook:"15 min",diff:"Facile ★★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🍬",qty:"200g",name:"Sucre"},{ico:"🧈",qty:"80g",name:"Beurre demi-sel"},{ico:"🥛",qty:"15cl",name:"Crème liquide entière"},{ico:"🧂",qty:"1 pincée",name:"Fleur de sel"}],
+   tips:[{dot:"#f57f17",text:"Crème chaude = ne fait pas durcir le caramel au contact"},{dot:"#4caf50",text:"Se conserve 3 semaines au frigo = toujours prêt pour les desserts"}],
+   steps:[{title:"Caramel",desc:"Faire fondre le sucre à sec dans une casserole à feu moyen sans remuer. Quand ambré, retirer du feu."},{title:"Crème",desc:"Verser la crème chaude en filet en mélangeant vigoureusement — attention aux éclaboussures."},{title:"Beurre",desc:"Ajouter le beurre en morceaux et la fleur de sel. Mélanger jusqu'à lisse. Verser en pots stérilisés."}],
+   errors:["Crème froide → caramel qui cristallise","Sucre remué → cristallisation"],variantes:["Caramel au miel","Toffee sauce","Dulce de leche"],footer:"Conservation 3 semaines frigo",stars:"★★★★★"},
+
+  {id:"rq21",emoji:"❄️",name:"Muffins salés à congeler",cuisine:"Batch Cooking",persons:12,prep:"20 min",cook:"20 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"300g",name:"Farine"},{ico:"🥚",qty:"3",name:"Œufs"},{ico:"🥛",qty:"20cl",name:"Lait"},{ico:"🫒",qty:"8cl",name:"Huile d'olive"},{ico:"🧀",qty:"100g",name:"Gruyère râpé"},{ico:"🌿",qty:"1 sachet",name:"Levure chimique"},{ico:"🌿",qty:"QS",name:"Olives, tomates séchées, courgette ou lardons"}],
+   tips:[{dot:"#2e7d32",text:"Muffins salés = snack parfait pour les pique-niques et les boîtes repas"},{dot:"#4caf50",text:"Réchauffer 2 min au micro-ondes ou 10 min au four = comme frais"}],
+   steps:[{title:"Pâte",desc:"Mélanger farine, levure, sel et poivre. Incorporer œufs, lait et huile. Ajouter garnitures et fromage."},{title:"Cuire",desc:"Remplir les moules à muffins aux 2/3. Cuire à 180°C, 20 min."},{title:"Congeler",desc:"Refroidir complètement. Emballer individuellement dans du film. Congeler. Conservation 2 mois."}],
+   errors:["Pas assez de garniture → muffins fades","Congeler chauds → humidité"],variantes:["Muffins jambon fromage","Muffins feta épinards","Muffins carotte chèvre"],footer:"Congélation 2 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq22",emoji:"🫙",name:"Pickles de chou rouge",cuisine:"Conserve Maison",persons:6,prep:"20 min",cook:"5 min",diff:"Facile ★",color:"#880e4f",colorLight:"#fce4ec",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥬",qty:"500g",name:"Chou rouge"},{ico:"🌿",qty:"25cl",name:"Vinaigre de cidre"},{ico:"💧",qty:"25cl",name:"Eau"},{ico:"🍬",qty:"3 c.à.s.",name:"Sucre"},{ico:"🧂",qty:"2 c.à.c.",name:"Sel"},{ico:"🌿",qty:"QS",name:"Graines de cumin, coriandre, baies roses"}],
+   tips:[{dot:"#880e4f",text:"Chou rouge = devient rose vif en 24h = présentation magnifique"},{dot:"#4caf50",text:"Parfait pour garnir tacos, burgers, bowls et sandwichs"}],
+   steps:[{title:"Chou",desc:"Émincer le chou rouge très finement."},{title:"Saumure",desc:"Porter vinaigre, eau, sucre, sel et épices à ébullition. Bien dissoudre."},{title:"Verser",desc:"Verser chaud sur le chou dans les bocaux stérilisés. Laisser refroidir. Réfrigérer. Prêt en 24h. Conservation 1 mois."}],
+   errors:["Chou trop épais → pas assez mariné","Saumure froide → chou pas assez ramolli"],variantes:["Pickles de fenouil","Pickles de radis","Kimchi express"],footer:"Conservation 1 mois frigo",stars:"★★★★★"},
+
+  {id:"rq23",emoji:"❄️",name:"Soupe de lentilles corail à congeler",cuisine:"Batch Cooking",persons:8,prep:"10 min",cook:"25 min",diff:"Facile ★",color:"#e65100",colorLight:"#fff3e0",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🫘",qty:"400g",name:"Lentilles corail"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🥕",qty:"3",name:"Carottes"},{ico:"🌿",qty:"QS",name:"Cumin, curcuma, gingembre, ail"},{ico:"🥥",qty:"40cl",name:"Lait de coco"},{ico:"🍲",qty:"1,5L",name:"Bouillon de légumes"}],
+   tips:[{dot:"#e65100",text:"Lentilles corail = pas de trempage, cuisson rapide, parfaites en soupe"},{dot:"#4caf50",text:"Congeler sans le lait de coco = ajouter à la décongélation pour texture fraîche"}],
+   steps:[{title:"Base",desc:"Faire revenir oignons, ail et gingembre avec les épices."},{title:"Cuire",desc:"Ajouter lentilles, carottes et bouillon. Cuire 20 min. Mixer."},{title:"Congeler",desc:"Refroidir. Portionner sans le lait de coco. Congeler. Au réchauffage, ajouter le lait de coco et chauffer doucement."}],
+   errors:["Lait de coco congelé → se sépare","Pas assez d'épices → soupe fade"],variantes:["Soupe pois cassés","Soupe pois chiches","Soupe haricots blancs"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq24",emoji:"🫙",name:"Chutney de mangue au gingembre",cuisine:"Conserve Indienne",persons:8,prep:"20 min",cook:"40 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥭",qty:"3",name:"Mangues mûres"},{ico:"🌿",qty:"30g",name:"Gingembre frais"},{ico:"🌿",qty:"15cl",name:"Vinaigre de cidre"},{ico:"🍬",qty:"150g",name:"Sucre de canne"},{ico:"🌶️",qty:"1",name:"Piment rouge"},{ico:"🌿",qty:"QS",name:"Cumin, coriandre, cannelle, cardamome"}],
+   tips:[{dot:"#f57f17",text:"Chutney = condiment parfait avec les viandes froides, fromages et currys"},{dot:"#4caf50",text:"Stériliser les pots = conservation 6 mois à l'abri de la lumière"}],
+   steps:[{title:"Préparer",desc:"Peler et couper les mangues en dés. Hacher le gingembre et le piment."},{title:"Cuire",desc:"Mettre tous les ingrédients dans une casserole. Porter à ébullition. Réduire à feu doux 35-40 min jusqu'à consistance confiture."},{title:"Embouteiller",desc:"Verser chaud dans des bocaux stérilisés. Fermer et retourner. Conservation 6 mois."}],
+   errors:["Mangues vertes → trop acide","Pas assez réduire → trop liquide"],variantes:["Chutney de tomates","Chutney d'oignons","Chutney ananas"],footer:"Conservation 6 mois · Stérilisation",stars:"★★★★★"},
+
+  {id:"rq25",emoji:"❄️",name:"Pains burger maison à congeler",cuisine:"Batch Cooking",persons:8,prep:"25 min",cook:"15 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"500g",name:"Farine"},{ico:"🌿",qty:"10g",name:"Levure boulangère"},{ico:"🥛",qty:"25cl",name:"Lait tiède"},{ico:"🥚",qty:"2",name:"Œufs"},{ico:"🍬",qty:"30g",name:"Sucre"},{ico:"🧈",qty:"50g",name:"Beurre mou"},{ico:"🌿",qty:"QS",name:"Graines de sésame"}],
+   tips:[{dot:"#f9a825",text:"Congeler une fois refroidis = pains comme frais au bout de 30 min à température ambiante"},{dot:"#4caf50",text:"Faire 8 pains = 4 soirs de burgers sans effort"}],
+   steps:[{title:"Pâte",desc:"Pétrir tous les ingrédients 10 min. Lever 1h. Dégazer. Former 8 boules. Lever encore 30 min."},{title:"Cuire",desc:"Dorer au jaune d'œuf. Graines de sésame. Four à 180°C, 12-15 min."},{title:"Congeler",desc:"Refroidir sur grille. Emballer individuellement. Congeler. Décongeler à température ambiante 30 min ou micro-ondes 1 min."}],
+   errors:["Décongeler au micro-ondes trop longtemps → pain caoutchouteux","Pas refroidir → vapeur dans l'emballage"],variantes:["Pains hot-dog","Pains complets","Bagels congelés"],footer:"Congélation 3 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq26",emoji:"🫙",name:"Pâte de pistaches maison",cuisine:"Conserve Maison",persons:6,prep:"10 min",cook:"5 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🥜",qty:"300g",name:"Pistaches non salées"},{ico:"🍬",qty:"80g",name:"Sucre glace"},{ico:"🌿",qty:"QS",name:"Huile neutre"},{ico:"🌸",qty:"QS",name:"Eau de fleur d'oranger (optionnel)"}],
+   tips:[{dot:"#2e7d32",text:"Pistaches légèrement torréfiées = saveur plus intense"},{dot:"#4caf50",text:"Pâte de pistaches = base pour mousses, crèmes et ganaches"}],
+   steps:[{title:"Torréfier",desc:"Torréfier les pistaches à 160°C, 8 min. Laisser refroidir."},{title:"Mixer",desc:"Mixer les pistaches et le sucre glace jusqu'à poudre fine. Continuer jusqu'à pâte. Ajouter huile si nécessaire."},{title:"Conserver",desc:"Mettre en pot hermétique. Réfrigérer. Conservation 1 mois."}],
+   errors:["Trop torréfier → goût amer","Pistaches salées → pâte trop salée"],variantes:["Pâte de noisette","Praliné amandes-noisettes","Pâte d'amandes"],footer:"Conservation 1 mois frigo",stars:"★★★★★"},
+
+  {id:"rq27",emoji:"❄️",name:"Waffles belges à congeler",cuisine:"Batch Cooking",persons:8,prep:"20 min",cook:"20 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"400g",name:"Farine"},{ico:"🧈",qty:"200g",name:"Beurre mou"},{ico:"🥚",qty:"4",name:"Œufs"},{ico:"🥛",qty:"30cl",name:"Lait"},{ico:"🍬",qty:"60g",name:"Sucre"},{ico:"🌿",qty:"2 sachets",name:"Levure chimique"},{ico:"🍬",qty:"150g",name:"Sucre perlé"}],
+   tips:[{dot:"#f9a825",text:"Congeler avec papier sulfurisé entre chaque = se séparent facilement"},{dot:"#4caf50",text:"Réchauffer au grille-pain = waffles comme sortis du gaufrier"}],
+   steps:[{title:"Pâte",desc:"Fouetter beurre et sucre. Ajouter œufs, lait, farine et levure. Incorporer le sucre perlé en dernier."},{title:"Cuire",desc:"Cuire toutes les gaufres au gaufrier. Laisser refroidir sur grille."},{title:"Congeler",desc:"Intercaler papier sulfurisé entre chaque waffle. Emballer en sachets. Congeler 2 mois."}],
+   errors:["Congeler chaudes → ramollissent","Pas de papier → collent"],variantes:["Waffles salées jambon fromage","Waffles chocolat","Waffles aux myrtilles"],footer:"Congélation 2 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq28",emoji:"🫙",name:"Sel aromatisé maison",cuisine:"Conserve Maison",persons:6,prep:"10 min",cook:"0 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🧂",qty:"200g",name:"Gros sel de mer"},{ico:"🌿",qty:"QS",name:"Romarin, thym, origan séchés"},{ico:"🧄",qty:"2 gousses",name:"Ail séché ou en poudre"},{ico:"🌿",qty:"QS",name:"Zeste de citron séché"},{ico:"🌶️",qty:"QS",name:"Piment d'Espelette"}],
+   tips:[{dot:"#2e7d32",text:"Herbes parfaitement sèches = sel qui ne clumpe pas"},{dot:"#4caf50",text:"Magnifique idée cadeau dans un joli pot"}],
+   steps:[{title:"Mélanger",desc:"Mélanger le sel avec toutes les herbes séchées, l'ail et le piment. Bien incorporer."},{title:"Sécher si nécessaire",desc:"Si les ingrédients contiennent de l'humidité, étaler sur une plaque et sécher au four à 60°C, 30 min."},{title:"Mettre en pot",desc:"Verser dans des pots hermétiques. Conservation 6 mois à température ambiante."}],
+   errors:["Herbes humides → sel qui colle","Trop de piment → sel trop fort"],variantes:["Sel au citron","Sel noir au charbon","Sel fumé aux herbes"],footer:"Conservation 6 mois · Cadeau gourmand",stars:"★★★★★"},
+
+  {id:"rq29",emoji:"❄️",name:"Rouleaux de printemps à congeler",cuisine:"Batch Cooking",persons:8,prep:"40 min",cook:"0 min",diff:"Facile ★★",color:"#2e7d32",colorLight:"#e8f5e9",category:"préparation",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"16 feuilles",name:"Galettes de riz"},{ico:"🥩",qty:"300g",name:"Poulet cuit ou crevettes"},{ico:"🥬",qty:"200g",name:"Vermicelles de riz"},{ico:"🌿",qty:"QS",name:"Carotte, concombre, menthe, coriandre"},{ico:"🐟",qty:"QS",name:"Sauce nuoc-mâm pour servir"}],
+   tips:[{dot:"#2e7d32",text:"Congeler crus après un pré-passage rapide dans l'eau = galette souple"},{dot:"#4caf50",text:"Frire directement congelés = rouleaux croustillants en 5 min"}],
+   steps:[{title:"Garniture",desc:"Cuire les vermicelles. Préparer légumes, protéines et herbes."},{title:"Rouler",desc:"Tremper rapidement chaque galette. Garnir et rouler serré. Disposer sur plaque non collante."},{title:"Congeler",desc:"Congeler sur plaque 2h sans se toucher. Transférer en sachets. Frire directement congelés à 175°C, 4-5 min."}],
+   errors:["Galettes trop trempées → se cassent","Rouler trop lâche → s'ouvrent à la friture"],variantes:["Nems au porc","Rouleaux végétariens","Rouleaux au bœuf"],footer:"Congélation 2 mois · Batch cooking",stars:"★★★★★"},
+
+  {id:"rq30",emoji:"🫙",name:"Marmelade d'oranges amères",cuisine:"Conserve Britannique",persons:8,prep:"30 min",cook:"2h",diff:"Facile ★★",color:"#f57f17",colorLight:"#fff9e6",category:"préparation",seasons:["winter"],
+   ingredients:[{ico:"🍊",qty:"1 kg",name:"Oranges amères (Séville)"},{ico:"🍋",qty:"2",name:"Citrons"},{ico:"🍬",qty:"1,5 kg",name:"Sucre à confiture"},{ico:"💧",qty:"1,5L",name:"Eau"}],
+   tips:[{dot:"#f57f17",text:"Oranges de Séville disponibles janvier-février seulement — ne pas rater la saison"},{dot:"#4caf50",text:"Les pépins contiennent la pectine = source naturelle de gélification"}],
+   steps:[{title:"Préparer",desc:"Presser les oranges et les citrons. Récupérer les pépins dans un tissu. Émincer finement les peaux."},{title:"Cuire lentement",desc:"Mettre peaux, jus, pépins et eau. Cuire 1h jusqu'à peaux fondantes. Retirer les pépins."},{title:"Sucre",desc:"Ajouter le sucre. Cuire à ébullition vive 20-30 min. Tester la prise. Mettre en pots stérilisés."}],
+   errors:["Peaux pas assez cuites avant le sucre → restent dures","Pas retirer les pépins → texture désagréable"],variantes:["Marmelade citron","Marmelade pamplemousse","Marmelade bergamote"],footer:"Conservation 1 an · Stérilisation",stars:"★★★★★"}
 
 
 
