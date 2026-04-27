@@ -787,9 +787,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <div class="toast" id="toast"></div>
 
 <script>
-// ============================================================
-// PROGRAMMES MAISON
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 01 — PROGRAMMES MAISON (plans d'entraînement)
+// ════════════════════════════════════════════════════════════
 const PROGRAMS = [
   {
     id:'fullbody-a',
@@ -898,9 +898,9 @@ const PROGRAMS = [
   },
 ];
 
-// ============================================================
-// MEAL DB
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 02 — MEAL DB (base de données repas)
+// ════════════════════════════════════════════════════════════
 const DAYS=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
 const DKEYS=['lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche'];
 
@@ -1006,9 +1006,9 @@ const TIPS={
 
 const DEFAULT_PLAN={lundi:'musculation',mardi:'musculation',mercredi:'repos',jeudi:'musculation',vendredi:'musculation',samedi:'repos',dimanche:'repos'};
 
-// ============================================================
-// STATE
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 03 — STATE (données globales + localStorage)
+// ════════════════════════════════════════════════════════════
 let S={
   profile:{name:'',weight:75,height:175,goal:'maintenance',exclusions:[]},
   plan:{...DEFAULT_PLAN},
@@ -1031,9 +1031,9 @@ function save(){
   }
 }
 
-// ============================================================
-// UTILS
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 04 — UTILS (fonctions utilitaires : save, toast, saison...)
+// ════════════════════════════════════════════════════════════
 function rand(arr){return arr[Math.floor(Math.random()*arr.length)];}
 function todayKey(){return DKEYS[[6,0,1,2,3,4,5][new Date().getDay()]];}
 
@@ -1097,9 +1097,9 @@ function showToast(msg){
   setTimeout(()=>t.classList.remove('show'),2600);
 }
 
-// ============================================================
-// NAV
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 05 — NAV (navigation entre pages)
+// ════════════════════════════════════════════════════════════
 function showPage(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+page).classList.add('active');
@@ -1122,9 +1122,9 @@ function renderPage(){
   else if(p==='profile')renderProfile();
 }
 
-// ============================================================
-// HOME
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 06 — HOME (affichage page d'accueil)
+// ════════════════════════════════════════════════════════════
 function renderHome(){
   const now=new Date();
   const days=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
@@ -1185,9 +1185,9 @@ function renderHome(){
   document.getElementById('week-home').innerHTML=wh;
 }
 
-// ============================================================
-// MEALS — WEEKLY VIEW
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 07 — MEALS (plan repas hebdomadaire)
+// ════════════════════════════════════════════════════════════
 function renderMeals(){
   // Week label
   const now=new Date();
@@ -1382,9 +1382,9 @@ function saveLog(){
   showToast('🎉 Séance enregistrée !');
 }
 
-// ============================================================
-// STATS
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 08 — STATS (statistiques nutritionnelles)
+// ════════════════════════════════════════════════════════════
 function renderStats(){
   const now=new Date();
   const fom=new Date(now.getFullYear(),now.getMonth(),1);
@@ -1450,9 +1450,9 @@ function renderStats(){
   document.getElementById('chart-prog').innerHTML=pc;
 }
 
-// ============================================================
-// PROFILE + EXCLUSIONS
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 09 — PROFIL (profil utilisateur + exclusions alimentaires)
+// ════════════════════════════════════════════════════════════
 function renderProfile(){
   document.getElementById('p-name').value=S.profile.name||'';
   document.getElementById('p-weight').value=S.profile.weight||'';
@@ -1513,9 +1513,9 @@ function renderExclTags(){
     :'<span style="font-size:.8rem;color:var(--text2);">Aucune exclusion pour le moment.</span>';
 }
 
-// ============================================================
-// SHOPPING
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 10 — SHOPPING (liste de courses)
+// ════════════════════════════════════════════════════════════
 // Quantités approximatives pour 1 personne / semaine
 const QTYS={
   // Viandes & poissons
@@ -1695,9 +1695,9 @@ function generateShoppingList(){
 function closeShModal(){document.getElementById('shmodal').classList.remove('active');}
 
 
-// ============================================================
-// NAV UPDATE
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 11 — NAV UPDATE (mise à jour de la navigation)
+// ════════════════════════════════════════════════════════════
 function showPage(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+page).classList.add('active');
@@ -1710,9 +1710,9 @@ function showPage(page){
   renderPage();
 }
 
-// ============================================================
-// SPORT — TODAY WORKOUT
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 12 — SPORT (séances d'entraînement)
+// ════════════════════════════════════════════════════════════
 const WEEKLY_PLAN_SPORT={
   lundi:'fullbody-a',mardi:'fullbody-b',mercredi:null,
   jeudi:'lower',vendredi:'upper',samedi:'abdos',dimanche:null
@@ -1774,15 +1774,15 @@ function renderWorkoutHistory(){
   document.getElementById('workout-history').innerHTML=hh;
 }
 
-// ============================================================
-// RECETTES
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 13 — RECETTES (gestion des recettes : affichage, ajout, suppression)
+// ════════════════════════════════════════════════════════════
 const TAG_COLORS=['#e8f5e9;color:#2e7d32','#fff9e6;color:#f57f17','#e3f2fd;color:#1565c0','#fce4ec;color:#880e4f','#f3e5f5;color:#6a1b9a','#e0f2f1;color:#00695c','#fff3e0;color:#e65100'];
 
 
-// ============================================================
-// RECIPE FILTER
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 14 — RECIPE FILTER (filtres + suggestions + IA)
+// ════════════════════════════════════════════════════════════
 let _currentRecipeFilter='all';
 function filterRecipes(cat,btn){
   _currentRecipeFilter=cat;
@@ -2050,9 +2050,9 @@ function saveURLRecipe(){
   _urlImportedRecipe=null;
 }
 
-// ============================================================
-// FICHE depuis repas du plan
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 15 — FICHE RECETTE (modale de détail d'une recette)
+// ════════════════════════════════════════════════════════════
 function viewMealFiche(day,slot){
   const m=S.meals[day]?.[slot];if(!m)return;
   const slotMeta={breakfast:{lbl:'Petit-déjeuner',color:'#e65100',colorLight:'#fff3e0',emoji:'🌅',cat:'petit-déjeuner'},lunch:{lbl:'Déjeuner',color:'#1565c0',colorLight:'#e3f2fd',emoji:'☀️',cat:'déjeuner'},snack2:{lbl:'Collation',color:'#2e7d32',colorLight:'#e8f5e9',emoji:'🫐',cat:'collation'},dinner:{lbl:'Dîner',color:'#6a1b9a',colorLight:'#f3e5f5',emoji:'🌙',cat:'dîner'}};
@@ -2084,9 +2084,9 @@ function viewMealFiche(day,slot){
   document.getElementById('fiche-modal').classList.add('active');
 }
 
-// ============================================================
-// EQUIPMENT INFERENCE (pour les recettes sans champ equipment)
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 16 — EQUIPMENT INFERENCE
+// ════════════════════════════════════════════════════════════
 function inferEquipment(r){
   if(r.equipment&&r.equipment.length)return r.equipment;
   const equip=new Set();
@@ -2160,9 +2160,9 @@ function buildFicheHTML(r){
 }
 
 
-// ============================================================
-// MEAL STEPS DATABASE
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 17 — MEAL STEPS DATABASE
+// ════════════════════════════════════════════════════════════
 const MEAL_STEPS={
   "Bol yaourt grec · granola · fruits rouges":{steps:[{title:"Préparer le bol",desc:"Verser le yaourt grec dans un grand bol."},{title:"Ajouter les fruits",desc:"Rincer les fruits rouges et les disposer sur le yaourt."},{title:"Finir",desc:"Saupoudrer de granola et ajouter un filet de miel. Servir immédiatement."}],tips:[{dot:"#4caf50",text:"Yaourt grec entier = meilleure satiété"},{dot:"#1565c0",text:"Granola au dernier moment pour garder le croquant"}],errors:["Granola ajouté trop tôt → ramollit"]},
   "Tartines pain complet · beurre · confiture maison":{steps:[{title:"Toaster",desc:"Faire griller 2 tranches de pain complet."},{title:"Beurrer",desc:"Étaler le beurre sur le pain chaud."},{title:"Garnir",desc:"Recouvrir de confiture. Servir avec thé ou café."}],tips:[{dot:"#4caf50",text:"Pain complet = fibres + énergie durable"}],errors:["Pain blanc → index glycémique trop élevé"]},
@@ -2191,9 +2191,9 @@ const MEAL_STEPS={
   "Pad thaï poulet · cacahuètes · citron vert":{steps:[{title:"Tremper les nouilles",desc:"Faire tremper les nouilles de riz dans l'eau froide 30 min. Égoutter."},{title:"Cuire le poulet",desc:"Dans un wok très chaud huilé, faire sauter le poulet en lamelles à feu vif 3-4 min. Réserver."},{title:"Assembler",desc:"Dans le même wok : œuf battu brouillé, ajouter les nouilles, sauce poisson, sauce soja, sucre de palme. Remettre le poulet. Mélanger rapidement à feu vif."},{title:"Dresser",desc:"Servir avec cacahuètes concassées, germes de soja, ciboule et quartier de citron vert."}],tips:[{dot:"#f57f17",text:"Wok très chaud = parfum fumé typique"}],errors:["Feu pas assez fort → pad thaï bouilli pas sauté"]}
 };
 
-// ============================================================
-// RECIPE SUGGESTIONS (BASE)
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 18 — RECETTES BASE (5 recettes de départ)
+// ════════════════════════════════════════════════════════════
 const RECIPE_SUGGESTIONS=[
   {id:"rs1",emoji:"🍝",name:"Pâtes Carbonara",cuisine:"Cuisine Italienne",persons:4,prep:"10 min",cook:"15 min",diff:"Moyenne ★★★",color:"#c62828",colorLight:"#ffebee",
    ingredients:[{ico:"🍝",qty:"400 g",name:"Spaghetti"},{ico:"🥩",qty:"200 g",name:"Guanciale"},{ico:"🥚",qty:"4 jaunes + 1",name:"Œufs"},{ico:"🧀",qty:"100 g",name:"Pecorino romano"},{ico:"🧂",qty:"généreusement",name:"Poivre noir"}],
@@ -2231,9 +2231,9 @@ const RECIPE_SUGGESTIONS=[
    variantes:["Poulet grillé","Saumon","Riz complet","Légumes de saison"],footer:"Repas musculation · Haute protéine",stars:"★★★★",category:"dîner"}
 ];
 
-// ============================================================
-// RECIPE SUGGESTIONS EXTRA
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 19 — RECETTES EXTRA (catalogue complet ~540 recettes)
+// ════════════════════════════════════════════════════════════
 const RECIPE_SUGGESTIONS_EXTRA=[
   {id:"rex1",emoji:"🥗",name:"Buddha Bowl végétarien",cuisine:"Cuisine Healthy",persons:2,prep:"15 min",cook:"25 min",diff:"Facile ★★",color:"#2e7d32",colorLight:"#e8f5e9",
    ingredients:[{ico:"🌾",qty:"150g",name:"Quinoa"},{ico:"🥑",qty:"1",name:"Avocat"},{ico:"🥕",qty:"2",name:"Carottes rôties"},{ico:"🫘",qty:"200g",name:"Pois chiches rôtis"},{ico:"🥬",qty:"2 poignées",name:"Épinards frais"},{ico:"🧂",qty:"2 c.à.s.",name:"Tahini"}],
@@ -5437,9 +5437,9 @@ const RECIPE_SUGGESTIONS_EXTRA=[
 ];
 
 
-// ============================================================
-// EXERCISE DATABASE — descriptions détaillées
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 20 — EXERCISE DATABASE (exercices de sport détaillés)
+// ════════════════════════════════════════════════════════════
 const EXERCISE_DB={
   "Pompes classiques":{
     emoji:"💪",color:"#8b5cf6",category:"Poitrine · Triceps · Épaules",
@@ -5646,9 +5646,9 @@ function closeExDetail(e){
 }
 
 
-// ============================================================
-// PHOTO -> RECETTE (Vision IA)
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 21 — PHOTO IA (analyse photo → fiche recette)
+// ════════════════════════════════════════════════════════════
 let _photoB64=null,_photoMime='image/jpeg',_photoRecipe=null;
 
 function handlePhotoSelect(input){
@@ -5728,9 +5728,9 @@ function savePhotoRecipe(){
 
 
 
-// ============================================================
-// GEMINI API HELPER
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 22 — API ANTHROPIC (appels API Claude)
+// ════════════════════════════════════════════════════════════
 
 function saveAPIKey(){
   const k=document.getElementById('api-key-input').value.trim();
@@ -5771,9 +5771,9 @@ async function callGemini(systemPrompt, userText, imageB64, imageMime){
 
 
 
-// ============================================================
-// SUPABASE
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 23 — SUPABASE (authentification Google + email)
+// ════════════════════════════════════════════════════════════
 const SUPA_URL='https://zrtxadljjunwxhhmsqss.supabase.co';
 const SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpydHhhZGxqanVud3hoaG1zcXNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1NTE0ODUsImV4cCI6MjA5MjEyNzQ4NX0.8tFM11qAWBjoJXb93v3BZMJn9PgXPT1nnWsRDG5LTCI';
 const supa=supabase.createClient(SUPA_URL,SUPA_KEY);
@@ -5831,9 +5831,9 @@ async function signOut(){
 
 
 
-// ============================================================
-// SYNC CLOUD (simple et fiable)
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 24 — SYNC CLOUD (sauvegarde et chargement Supabase)
+// ════════════════════════════════════════════════════════════
 async function pushToCloud(){
   if(!_currentUser)return;
   try{
@@ -5868,9 +5868,9 @@ async function pullFromCloud(){
   }catch(e){console.warn('pullFromCloud:',e.message);}
 }
 
-// ============================================================
-// INIT
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 25 — INIT (initialisation de l'application)
+// ════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded',()=>{
   supa.auth.onAuthStateChange(async(event,session)=>{
     if(session&&session.user){
@@ -5908,9 +5908,9 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 });
 
-// ============================================================
-// EDIT RECIPE
-// ============================================================
+// ════════════════════════════════════════════════════════════
+// § 26 — EDIT RECIPE (modification des recettes)
+// ════════════════════════════════════════════════════════════
 let _editRecipeIdx = null;
 
 function editRecipe(idx){
