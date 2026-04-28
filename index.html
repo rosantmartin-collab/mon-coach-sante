@@ -1022,6 +1022,7 @@ let S={
   recipes:[],
   proposals:[],
   rejectedIds:[],
+  seenProposalIds:[],
   page:'home',
   mealDay:'lundi'
 };
@@ -1929,11 +1930,23 @@ function regenerateProposals(){
   // Garder seulement les recettes déjà validées
   S.proposals=S.proposals.filter(p=>S.recipes.some(r=>r.id===p.id));
   const allSuggestions=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA);
-  const approvedIds=S.recipes.map(r=>r.id);
-  const rejectedIds=S.rejectedIds||[];
-  const existingIds=S.proposals.map(p=>p.id);
-  const pool=allSuggestions.filter(r=>!approvedIds.includes(r.id)&&!rejectedIds.includes(r.id)&&!existingIds.includes(r.id));
+  const approvedIds=new Set(S.recipes.map(r=>r.id));
+  const rejectedIds=new Set(S.rejectedIds||[]);
+  // Recettes déjà vues = validées + rejetées + déjà dans les proposals actuelles
+  const seenIds=new Set([
+    ...approvedIds,
+    ...rejectedIds,
+    ...(S.seenProposalIds||[])
+  ]);
+  let pool=allSuggestions.filter(r=>!seenIds.has(r.id));
+  // Si on a tout vu, réinitialiser la rotation (sauf validées et rejetées)
+  if(pool.length<20){
+    S.seenProposalIds=[];
+    pool=allSuggestions.filter(r=>!approvedIds.has(r.id)&&!rejectedIds.has(r.id));
+  }
   const picked=pool.sort(()=>Math.random()-.5).slice(0,20);
+  // Mémoriser les recettes vues pour ne pas les reproposer
+  S.seenProposalIds=[...(S.seenProposalIds||[]),...picked.map(r=>r.id)];
   S.proposals=[...S.proposals,...picked];
   save();renderProposals();showToast('🔄 '+picked.length+' nouvelles suggestions !');
 }
