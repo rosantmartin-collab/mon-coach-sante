@@ -5853,13 +5853,14 @@ async function pullFromCloud(){
   if(!_currentUser)return;
   try{
     const {data,error}=await supa.from('coach_data').select('data').eq('user_id',_currentUser.id).single();
-    if(error||!data?.data)return;
+    if(error||!data?.data){
+      // Aucune donnée cloud pour cet utilisateur → profil vierge
+      console.log('Nouvel utilisateur → profil vierge');
+      return;
+    }
+    // Données cloud trouvées → remplacer COMPLÈTEMENT (pas fusionner)
     const p=JSON.parse(data.data);
-    // Fusionner : garder les recettes locales non présentes dans le cloud
-    const cloudIds=new Set((p.recipes||[]).map(r=>r.id));
-    const extraLocal=(S.recipes||[]).filter(r=>!cloudIds.has(r.id));
     S={...p};
-    S.recipes=[...(p.recipes||[]),...extraLocal];
     if(!S.profile)S.profile={name:'',weight:75,height:175,goal:'maintenance',exclusions:[]};
     if(!S.profile.exclusions)S.profile.exclusions=[];
     if(!S.meals)S.meals={};
@@ -5870,6 +5871,7 @@ async function pullFromCloud(){
     if(!S.rejectedIds)S.rejectedIds=[];
     if(!S.mealDay)S.mealDay='lundi';
     try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+    console.log('✅ Données cloud chargées pour',_currentUser.email);
   }catch(e){console.warn('pullFromCloud:',e.message);}
 }
 
@@ -5890,10 +5892,11 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
       _currentUser=session.user;
       document.getElementById('auth-screen').style.display='none';
-      load(); // localStorage rapide
-      showPage(S.page||'home');
+      // Réinitialiser S à vide pour éviter de charger les données d'un autre utilisateur
+      S={profile:{name:'',weight:75,height:175,goal:'maintenance',exclusions:[]},plan:{},meals:{},workouts:[],recipes:[],proposals:[],rejectedIds:[],page:'home',mealDay:'lundi'};
+      showPage('home');
       renderPage();
-      // Charger le cloud en arrière-plan et rafraîchir
+      // Charger UNIQUEMENT les données cloud de cet utilisateur
       pullFromCloud().then(()=>{
         if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
         renderPage();
