@@ -409,8 +409,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       <button class="filter-btn active" onclick="filterProposals('all',this)">🍽️ Toutes</button>
       <button class="filter-btn" onclick="filterProposals('entrée',this)">🥗 Entrées</button>
       <button class="filter-btn" onclick="filterProposals('petit-déjeuner',this)">🌅 Petits-déj.</button>
-      <button class="filter-btn" onclick="filterProposals('déjeuner',this)">☀️ Déjeuners</button>
-      <button class="filter-btn" onclick="filterProposals('dîner',this)">🌙 Dîners</button>
+      <button class="filter-btn" onclick="filterProposals('plat',this)">🍽️ Plats</button>
       <button class="filter-btn" onclick="filterProposals('dessert',this)">🍰 Desserts</button>
       <button class="filter-btn" onclick="filterProposals('collation',this)">🫐 Collations</button>
       <button class="filter-btn" onclick="filterProposals('apéro',this)">🥂 Apéro</button>
@@ -1854,6 +1853,26 @@ function filterProposals(cat, btn){
   _proposalFilter=cat;
   document.querySelectorAll('.filter-row .filter-btn').forEach(b=>b.classList.remove('active'));
   if(btn)btn.classList.add('active');
+  // Si pas assez de suggestions dans cette catégorie, en charger d'autres
+  const allSugg=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA);
+  const approvedIds=new Set((S.recipes||[]).map(r=>r.id));
+  const rejectedIds=new Set(S.rejectedIds||[]);
+  const pending=(S.proposals||[]).filter(p=>!approvedIds.has(p.id));
+  const filtered=pending.filter(p=>_proposalFilter==='all'||((_proposalFilter==='plat')&&(p.category==='déjeuner'||p.category==='dîner'))||(_proposalFilter!=='plat'&&p.category===_proposalFilter));
+  if(filtered.length<20){
+    // Ajouter des suggestions de la catégorie manquante
+    const existingIds=new Set(pending.map(p=>p.id));
+    const pool=allSugg.filter(r=>{
+      if(approvedIds.has(r.id)||rejectedIds.has(r.id)||existingIds.has(r.id))return false;
+      if(_proposalFilter==='all')return true;
+      if(_proposalFilter==='plat')return r.category==='déjeuner'||r.category==='dîner';
+      return r.category===_proposalFilter;
+    });
+    const needed=20-filtered.length;
+    const extra=pool.sort(()=>Math.random()-.5).slice(0,needed);
+    S.proposals=[...(S.proposals||[]),...extra];
+    save();
+  }
   renderProposals();
 }
 function setProposalView(v){
@@ -1866,7 +1885,11 @@ function setProposalView(v){
 function renderProposals(){
   const el=document.getElementById('recipe-proposals-list');
   el.className=_proposalView==='grid'?'rprop-grid':'';
-  const pending=(S.proposals||[]).filter(p=>!S.recipes.some(r=>r.id===p.id)).filter(p=>_proposalFilter==='all'||p.category===_proposalFilter);
+  const pending=(S.proposals||[]).filter(p=>!S.recipes.some(r=>r.id===p.id)).filter(p=>{
+    if(_proposalFilter==='all')return true;
+    if(_proposalFilter==='plat')return p.category==='déjeuner'||p.category==='dîner';
+    return p.category===_proposalFilter;
+  });
   if(!pending.length){
     el.innerHTML='<div style="text-align:center;padding:40px;color:var(--text2);"><div style="font-size:3rem;margin-bottom:12px;">✨</div><div style="font-weight:700;margin-bottom:8px;">Pas encore de suggestions</div><div style="font-size:.85rem;margin-bottom:16px;">Clique sur Suggestions IA pour recevoir des idées !</div><button class="btn btn-p" onclick="generateRecipeProposals()">🤖 Générer des suggestions</button></div>';
     return;
