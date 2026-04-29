@@ -2122,14 +2122,23 @@ function viewMealFiche(day,slot){
       // Chercher la recette complète dans la bibliothèque (comparaison souple)
       const allRecipes=[...RECIPE_SUGGESTIONS,...RECIPE_SUGGESTIONS_EXTRA,...(S.recipes||[])];
       const mName=(m.n||'').toLowerCase().trim();
+      const normalize=s=>s.toLowerCase().trim().replace(/[àâä]/g,'a').replace(/[éèêë]/g,'e').replace(/[îï]/g,'i').replace(/[ôö]/g,'o').replace(/[ùûü]/g,'u');
+      const mNorm=normalize(mName);
       const found=allRecipes.find(r=>{
-        const rName=(r.name||'').toLowerCase().trim();
-        return rName===mName || mName.includes(rName) || rName.includes(mName);
+        const rNorm=normalize(r.name||'');
+        return rNorm===mNorm||mNorm.includes(rNorm)||rNorm.includes(mNorm)||
+          mNorm.split(' ').filter(w=>w.length>4).every(w=>rNorm.includes(w));
       });
       if(found&&found.ingredients&&found.ingredients.length){
-        return found.ingredients;
+        // Ouvrir directement la vraie fiche si la recette est trouvée
+        document.getElementById('fiche-modal-content').innerHTML=buildFicheHTML(found);
+        const alreadySaved=(S.recipes||[]).some(r=>r.id===found.id);
+        const addBtn=document.getElementById('fiche-add-btn');
+        addBtn.style.display=alreadySaved?'none':'inline-block';
+        _ficheAddCallback=()=>{if(!S.recipes.some(r=>r.id===found.id)){S.recipes.push({...found});save();}addBtn.style.display='none';showToast('✅ Recette ajoutée !');};
+        document.getElementById('fiche-modal').classList.add('active');
+        return;
       }
-      // Sinon afficher les ingrédients du plan avec quantité vide
       return (m.ing||[]).map(i=>({ico:'•',qty:'',name:i}));
     })(),
     tips:detailed?[...detailed.tips,{dot:'#8b5cf6',text:'<strong>'+m.k+' kcal</strong> · P: '+m.p+'g · G: '+m.c+'g · L: '+m.l+'g'}]:[{dot:'#4caf50',text:'<strong>'+m.k+' kcal</strong>'},{dot:'#1565c0',text:'Protéines : <strong>'+m.p+'g</strong>'},{dot:'#f57f17',text:'Glucides : <strong>'+m.c+'g</strong>'},{dot:'#c62828',text:'Lipides : <strong>'+m.l+'g</strong>'}],
@@ -6099,7 +6108,186 @@ const RECIPE_SUGGESTIONS_EXTRA=[
    ingredients:[{ico:"🍗",qty:"400g",name:"Blanc de poulet rôti ou cuit"},{ico:"🧀",qty:"150g",name:"Philadelphia ou fromage frais"},{ico:"🍋",qty:"1",name:"Jus et zeste de citron"},{ico:"🌿",qty:"QS",name:"Estragon, ciboulette, persil"},{ico:"🌿",qty:"1 c.à.c.",name:"Moutarde"},{ico:"🧂",qty:"QS",name:"Sel, poivre blanc"}],
    tips:[{dot:"#f9a825",text:"Version légère des rillettes classiques = moins de gras, plus de fraîcheur"},{dot:"#4caf50",text:"Délicieux en sandwich, sur crackers ou en entrée"}],
    steps:[{title:"Effilocher",desc:"Effilocher finement le poulet à la fourchette."},{title:"Mélanger",desc:"Incorporer le fromage frais, citron, moutarde et herbes ciselées."},{title:"Assaisonner",desc:"Sel et poivre blanc. Mettre en pot. Réfrigérer 2h avant de servir."}],
-   errors:["Poulet grossièrement effiloché → texture désagréable","Trop de citron → masque le poulet"],variantes:["Rillettes de dinde aux herbes","Avec du curry","Rillettes de lapin"],footer:"Conservation 3 jours frigo",stars:"★★★★★"}
+   errors:["Poulet grossièrement effiloché → texture désagréable","Trop de citron → masque le poulet"],variantes:["Rillettes de dinde aux herbes","Avec du curry","Rillettes de lapin"],footer:"Conservation 3 jours frigo",stars:"★★★★★"},
+  {id:"ri01",emoji:"🥗",name:"Salade César au poulet grillé",cuisine:"Cuisine Américaine",persons:4,prep:"15 min",cook:"10 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"déjeuner",seasons:["all"],
+   ingredients:[{ico:"🥬",qty:"1",name:"Romaine"},{ico:"🍗",qty:"2 blancs",name:"Poulet grillé"},{ico:"🧀",qty:"60g",name:"Parmesan râpé"},{ico:"🍞",qty:"4 tranches",name:"Pain pour croûtons"},{ico:"🐟",qty:"4 filets",name:"Anchois"},{ico:"🫒",qty:"10cl",name:"Huile d'olive"},{ico:"🥚",qty:"1 jaune",name:"Jaune d'œuf"},{ico:"🍋",qty:"1",name:"Citron"}],
+   tips:[{dot:"#2e7d32",text:"Sauce césar maison = infiniment meilleure que la bouteille"},{dot:"#4caf50",text:"Poulet encore chaud sur la salade = contrast chaud-froid agréable"}],
+   steps:[{title:"Sauce",desc:"Mixer jaune d'œuf, anchois, citron, ail. Incorporer huile en filet. Parmesan."},{title:"Croûtons",desc:"Pain en cubes, huile d'olive, four 200°C 8 min."},{title:"Dresser",desc:"Romaine, poulet tranché, sauce, croûtons, copeaux de parmesan."}],
+   errors:["Poulet pas reposé → jus perdu","Sauce trop épaisse → diluer avec eau froide"],variantes:["César aux crevettes","Version végétarienne","Wrap césar"],footer:"Salad classique · USA",stars:"★★★★★"},
+
+  {id:"ri02",emoji:"🍲",name:"Soupe de légumes maison complète",cuisine:"Cuisine Française",persons:6,prep:"15 min",cook:"35 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"dîner",seasons:["winter"],
+   ingredients:[{ico:"🥕",qty:"3",name:"Carottes"},{ico:"🥔",qty:"3",name:"Pommes de terre"},{ico:"🫚",qty:"2",name:"Poireaux"},{ico:"🧅",qty:"1",name:"Oignon"},{ico:"🌿",qty:"1 branche",name:"Céleri"},{ico:"🫘",qty:"200g",name:"Haricots verts"},{ico:"🌿",qty:"QS",name:"Thym, laurier, persil, sel, poivre"}],
+   tips:[{dot:"#2e7d32",text:"Légumes variés = soupe nutritive et colorée"},{dot:"#4caf50",text:"Mixer partiellement = texture avec des morceaux agréables"}],
+   steps:[{title:"Légumes",desc:"Couper tous les légumes en morceaux réguliers. Faire revenir l'oignon dans le beurre."},{title:"Cuire",desc:"Ajouter tous les légumes et couvrir de bouillon. Mijoter 30 min."},{title:"Finir",desc:"Mixer partiellement. Persil ciselé. Servir avec du pain grillé."}],
+   errors:["Trop mixer → trop homogène","Pas assez d'eau → brûle au fond"],variantes:["Avec des lardons","Potée complète","Soupe au pistou"],footer:"Soupe nourrissante · France",stars:"★★★★★"},
+
+  {id:"ri03",emoji:"🍗",name:"Poulet rôti citron thym classique",cuisine:"Cuisine Française",persons:4,prep:"10 min",cook:"1h20",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🍗",qty:"1 entier 1.8kg",name:"Poulet fermier"},{ico:"🍋",qty:"2",name:"Citrons"},{ico:"🌿",qty:"QS",name:"Thym, romarin"},{ico:"🧈",qty:"50g",name:"Beurre"},{ico:"🧄",qty:"1 tête",name:"Ail"},{ico:"🫒",qty:"3 c.à.s.",name:"Huile d'olive"},{ico:"🧂",qty:"QS",name:"Sel, poivre"}],
+   tips:[{dot:"#f57f17",text:"Beurre sous la peau = chair moelleuse et peau croustillante"},{dot:"#4caf50",text:"Arroser toutes les 20 min = poulet doré uniformément"}],
+   steps:[{title:"Préparer",desc:"Glisser beurre mou sous la peau. Farcir avec citrons et herbes. Huiler et assaisonner."},{title:"Rôtir",desc:"Four à 220°C, 20 min puis 180°C, 1h. Arroser régulièrement."},{title:"Reposer",desc:"Couvrir d'alu 15 min. Déglacer le plat pour la sauce."}],
+   errors:["Pas arroser → peau sèche","Pas reposer → jus perdu"],variantes:["Poulet au vin blanc","Poulet à la moutarde","Coquelet rôti"],footer:"Dimanche classique · France",stars:"★★★★★"},
+
+  {id:"ri04",emoji:"🥩",name:"Bœuf sauté aux poivrons",cuisine:"Cuisine Asiatique",persons:4,prep:"15 min",cook:"10 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"400g",name:"Bœuf (filet ou rumsteck)"},{ico:"🫑",qty:"3",name:"Poivrons tricolores"},{ico:"🧅",qty:"1",name:"Oignon"},{ico:"🧄",qty:"3 gousses",name:"Ail"},{ico:"🌿",qty:"3 c.à.s.",name:"Sauce soja"},{ico:"🌿",qty:"1 c.à.s.",name:"Huile de sésame"},{ico:"🌿",qty:"1 c.à.s.",name:"Maïzena"}],
+   tips:[{dot:"#c62828",text:"Bœuf émincé très fin = cuisson éclair et tendre"},{dot:"#4caf50",text:"Wok très chaud = légumes qui restent croquants"}],
+   steps:[{title:"Mariner",desc:"Émincer le bœuf finement. Mariner 10 min dans soja, maïzena et sésame."},{title:"Poivrons",desc:"Wok très chaud. Sauter poivrons et oignon 3 min. Réserver."},{title:"Bœuf",desc:"Bœuf à feu maximum 2 min. Remettre les légumes. Servir sur riz."}],
+   errors:["Wok pas assez chaud → légumes bouillent","Bœuf coupé épais → dur"],variantes:["Poulet aux poivrons","Crevettes sautées","Version végétarienne tofu"],footer:"Stir-fry · Asie",stars:"★★★★★"},
+
+  {id:"ri05",emoji:"🍝",name:"Tagliatelles au saumon crème",cuisine:"Cuisine Italienne",persons:4,prep:"10 min",cook:"15 min",diff:"Facile ★",color:"#e91e63",colorLight:"#fce4ec",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"400g",name:"Tagliatelles"},{ico:"🐟",qty:"300g",name:"Saumon frais ou fumé"},{ico:"🥛",qty:"25cl",name:"Crème fraîche"},{ico:"🧅",qty:"1",name:"Échalote"},{ico:"🌿",qty:"QS",name:"Aneth, citron, sel, poivre"},{ico:"🌿",qty:"10cl",name:"Vin blanc"}],
+   tips:[{dot:"#e91e63",text:"Saumon frais poêlé = incomparable avec le fumé"},{dot:"#4caf50",text:"Aneth en finition = herbe naturelle du saumon"}],
+   steps:[{title:"Saumon",desc:"Faire revenir l'échalote. Ajouter le saumon en cubes. Déglacer au vin blanc. Crème. Mijoter 5 min."},{title:"Pâtes",desc:"Cuire les tagliatelles al dente."},{title:"Mélanger",desc:"Incorporer les pâtes à la sauce. Aneth et jus de citron."}],
+   errors:["Saumon trop cuit → sec","Crème bouillie trop longtemps → tourne"],variantes:["Avec des crevettes","Sauce légère sans crème","Pappardelle saumon épinards"],footer:"Pasta al salmone · Italie",stars:"★★★★★"},
+
+  {id:"ri06",emoji:"🥘",name:"Chili végétarien haricots",cuisine:"Cuisine Végétarienne",persons:6,prep:"10 min",cook:"40 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🫘",qty:"800g",name:"Haricots rouges et noirs"},{ico:"🌽",qty:"200g",name:"Maïs"},{ico:"🍅",qty:"800g",name:"Tomates concassées"},{ico:"🫑",qty:"2",name:"Poivrons"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🌿",qty:"QS",name:"Cumin, paprika fumé, piment, origan, ail"},{ico:"🍫",qty:"20g",name:"Chocolat noir"}],
+   tips:[{dot:"#c62828",text:"Chocolat en fin = profondeur et rondeur"},{dot:"#4caf50",text:"Encore meilleur réchauffé le lendemain"}],
+   steps:[{title:"Base",desc:"Faire revenir oignons, poivrons et ail avec les épices."},{title:"Mijoter",desc:"Ajouter tomates, légumineuses et maïs. Cuire 35 min."},{title:"Finir",desc:"Incorporer le chocolat. Rectifier. Riz, crème fraîche et coriandre."}],
+   errors:["Pas assez d'épices → fade","Chocolat oublié → manque de profondeur"],variantes:["Chili con carne","Chili blanc poulet","Version avec lentilles"],footer:"Comfort food végétarien",stars:"★★★★★"},
+
+  {id:"ri07",emoji:"🍰",name:"Fondant coulant chocolat",cuisine:"Cuisine Française",persons:4,prep:"10 min",cook:"12 min",diff:"Facile ★★",color:"#4e342e",colorLight:"#efebe9",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🍫",qty:"150g",name:"Chocolat noir 70%"},{ico:"🧈",qty:"100g",name:"Beurre"},{ico:"🥚",qty:"3",name:"Œufs + 1 jaune"},{ico:"🍬",qty:"100g",name:"Sucre"},{ico:"🌾",qty:"50g",name:"Farine"},{ico:"🧂",qty:"1 pincée",name:"Sel"}],
+   tips:[{dot:"#4e342e",text:"Moules au congélateur 30 min = choc thermique pour le cœur coulant"},{dot:"#4caf50",text:"12 min exactement = extérieur pris, cœur encore liquide"}],
+   steps:[{title:"Fondre",desc:"Fondre chocolat et beurre. Fouetter avec sucre, œufs et jaune. Incorporer farine et sel."},{title:"Préparer",desc:"Remplir les ramequins beurrés et cacaotés aux 3/4. Réfrigérer 30 min minimum."},{title:"Cuire",desc:"Four à 200°C, 11-12 min. Démouler immédiatement. Servir avec glace vanille."}],
+   errors:["Trop cuire → plus de cœur coulant","Pas congeler → cœur pas assez liquide"],variantes:["Coulant caramel","Coulant pistache","Version sans gluten"],footer:"Dessert restaurant maison",stars:"★★★★★"},
+
+  {id:"ri08",emoji:"🥗",name:"Salade thaïe au poulet effiloché",cuisine:"Cuisine Thaïlandaise",persons:4,prep:"20 min",cook:"15 min",diff:"Facile ★",color:"#f57f17",colorLight:"#fff9e6",category:"déjeuner",seasons:["all"],
+   ingredients:[{ico:"🍗",qty:"400g",name:"Poulet cuit effiloché"},{ico:"🥬",qty:"1/2",name:"Chou chinois"},{ico:"🥕",qty:"2",name:"Carottes râpées"},{ico:"🌿",qty:"QS",name:"Menthe, coriandre, cacahuètes"},{ico:"🐟",qty:"3 c.à.s.",name:"Sauce poisson"},{ico:"🍋",qty:"2",name:"Citrons verts"},{ico:"🌿",qty:"1 c.à.s.",name:"Sucre, piment"}],
+   tips:[{dot:"#f57f17",text:"Sauce sucrée-salée-acide = équilibre thaï parfait"},{dot:"#4caf50",text:"Cacahuètes grillées = croquant indispensable"}],
+   steps:[{title:"Sauce",desc:"Mélanger sauce poisson, citron vert, sucre et piment."},{title:"Salade",desc:"Émincer le chou, râper les carottes. Ajouter le poulet effiloché."},{title:"Dresser",desc:"Arroser de sauce. Menthe, coriandre et cacahuètes concassées."}],
+   errors:["Sauce trop sucrée → déséquilibrée","Chou trop épais → texture désagréable"],variantes:["Yam woon sen","Avec des crevettes","Version végétarienne tofu"],footer:"Salade asiatique · Thaïlande",stars:"★★★★★"},
+
+  {id:"ri09",emoji:"🍜",name:"Gratin de légumes d'été",cuisine:"Cuisine Provençale",persons:4,prep:"20 min",cook:"45 min",diff:"Facile ★",color:"#e65100",colorLight:"#fff3e0",category:"dîner",seasons:["summer"],
+   ingredients:[{ico:"🍆",qty:"2",name:"Aubergines"},{ico:"🫚",qty:"3",name:"Courgettes"},{ico:"🍅",qty:"4",name:"Tomates"},{ico:"🧄",qty:"4 gousses",name:"Ail"},{ico:"🧀",qty:"150g",name:"Gruyère ou mozzarella"},{ico:"🌿",qty:"QS",name:"Herbes de Provence, huile d'olive"}],
+   tips:[{dot:"#e65100",text:"Légumes disposés en rosace = présentation élégante"},{dot:"#4caf50",text:"Huile d'olive généreuse = légumes confits au four"}],
+   steps:[{title:"Légumes",desc:"Trancher finement tous les légumes à la mandoline."},{title:"Disposer",desc:"Alterner les tranches en rosace dans le plat huilé. Ail haché entre les couches. Herbes."},{title:"Cuire",desc:"Huile d'olive, gruyère. Four à 180°C, 40-45 min."}],
+   errors:["Tranches trop épaisses → pas cuites","Pas assez d'huile → légumes secs"],variantes:["Tian provençal pur","Sans fromage","Avec du jambon"],footer:"Gratin estival · Provence",stars:"★★★★★"},
+
+  {id:"ri10",emoji:"🥮",name:"Tarte fine aux tomates cerises",cuisine:"Cuisine Française",persons:6,prep:"10 min",cook:"25 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"déjeuner",seasons:["summer"],
+   ingredients:[{ico:"🌾",qty:"1 rouleau",name:"Pâte feuilletée"},{ico:"🍅",qty:"400g",name:"Tomates cerises variées"},{ico:"🌿",qty:"3 c.à.s.",name:"Moutarde à l'ancienne"},{ico:"🧀",qty:"100g",name:"Parmesan ou gruyère"},{ico:"🌿",qty:"QS",name:"Basilic, thym, huile d'olive, sel, poivre"}],
+   tips:[{dot:"#c62828",text:"Moutarde sous les tomates = humidité absorbée et goût en plus"},{dot:"#4caf50",text:"Tomates cerises entières = moins de jus et présentation jolie"}],
+   steps:[{title:"Base",desc:"Étaler la pâte. Piquer. Étaler la moutarde. Saupoudrer de fromage."},{title:"Tomates",desc:"Disposer les tomates cerises en les coupant en deux. Assaisonner."},{title:"Cuire",desc:"Thym, huile d'olive. Four à 200°C, 22-25 min. Basilic frais à la sortie."}],
+   errors:["Pâte pas piquée → se soulève","Tomates entières grosses → rendent trop de jus"],variantes:["Tarte fine courgettes","Oignons-tomates","Avec du chèvre"],footer:"Tarte express · France",stars:"★★★★★"},
+
+  {id:"ri11",emoji:"🥘",name:"Lotte à l'armoricaine",cuisine:"Cuisine Bretonne",persons:4,prep:"15 min",cook:"30 min",diff:"Facile ★★",color:"#c62828",colorLight:"#ffebee",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🐟",qty:"800g",name:"Queue de lotte"},{ico:"🍅",qty:"400g",name:"Tomates concassées"},{ico:"🧅",qty:"2",name:"Échalotes"},{ico:"🌿",qty:"15cl",name:"Vin blanc"},{ico:"🌿",qty:"5cl",name:"Cognac"},{ico:"🌿",qty:"QS",name:"Estragon, safran, beurre, sel, poivre"}],
+   tips:[{dot:"#c62828",text:"Flamber au cognac = profondeur aromatique"},{dot:"#4caf50",text:"Lotte ferme = ne pas trop cuire pour rester moelleuse"}],
+   steps:[{title:"Saisir",desc:"Faire dorer la lotte. Flamber au cognac. Réserver."},{title:"Sauce",desc:"Faire revenir échalotes. Déglacer au vin blanc. Ajouter tomates et safran. Cuire 15 min."},{title:"Finir",desc:"Remettre la lotte dans la sauce. Cuire 8-10 min. Beurre et estragon."}],
+   errors:["Lotte trop cuite → caoutchouteuse","Pas flamber → alcool résiduel"],variantes:["Homard à l'armoricaine","Crevettes sauce armoricaine","Langoustines"],footer:"Classique breton · France",stars:"★★★★★"},
+
+  {id:"ri12",emoji:"🍰",name:"Bavarois vanille coulis fruits",cuisine:"Cuisine Française",persons:8,prep:"30 min",cook:"10 min",diff:"Facile ★★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🥛",qty:"50cl",name:"Crème liquide entière"},{ico:"🥛",qty:"25cl",name:"Lait"},{ico:"🥚",qty:"4 jaunes",name:"Jaunes d'œuf"},{ico:"🍬",qty:"100g",name:"Sucre"},{ico:"🌿",qty:"2",name:"Gousses de vanille"},{ico:"🌿",qty:"4 feuilles",name:"Gélatine"},{ico:"🍓",qty:"200g",name:"Coulis framboise ou fraise"}],
+   tips:[{dot:"#f9a825",text:"Bavarois = crème anglaise + gélatine + chantilly = légèreté absolue"},{dot:"#4caf50",text:"Préparer la veille = dessert de fête sans stress"}],
+   steps:[{title:"Crème anglaise",desc:"Fouetter jaunes et sucre. Verser lait chaud. Cuire à 82°C. Gélatine essorée hors du feu."},{title:"Refroidir",desc:"Filmer. Laisser prendre à moitié au frigo."},{title:"Monter",desc:"Incorporer la chantilly délicatement. Verser dans un moule. Réfrigérer 6h. Servir avec le coulis."}],
+   errors:["Gélatine pas assez → ne tient pas","Chantilly incorporée trop chaude → mousse qui retombe"],variantes:["Bavarois chocolat","Charlotte aux fraises","Entremet fruits"],footer:"Dessert de fête · France",stars:"★★★★★"},
+
+  {id:"ri13",emoji:"🥗",name:"Salade de poulpe aux agrumes",cuisine:"Cuisine Méditerranéenne",persons:4,prep:"20 min",cook:"45 min",diff:"Facile ★",color:"#1565c0",colorLight:"#e3f2fd",category:"entrée",seasons:["all"],
+   ingredients:[{ico:"🐙",qty:"800g",name:"Poulpe"},{ico:"🍊",qty:"2",name:"Oranges"},{ico:"🍋",qty:"1",name:"Citron"},{ico:"🫒",qty:"100g",name:"Olives noires"},{ico:"🌿",qty:"QS",name:"Persil, câpres, fenouil"},{ico:"🫒",qty:"6 c.à.s.",name:"Huile d'olive"}],
+   tips:[{dot:"#1565c0",text:"Poulpe congelé = attendri naturellement sans avoir à le battre"},{dot:"#4caf50",text:"Agrumes + olives + poulpe = trio méditerranéen parfait"}],
+   steps:[{title:"Poulpe",desc:"Cuire le poulpe 40-45 min dans l'eau. Tester avec une fourchette. Laisser refroidir."},{title:"Couper",desc:"Trancher en rondelles. Peler les oranges à vif."},{title:"Dresser",desc:"Mélanger poulpe, oranges, olives, câpres et fenouil. Vinaigrette citron-huile d'olive."}],
+   errors:["Poulpe trop cuit → caoutchouteux","Pas laisser refroidir → se déchire"],variantes:["Poulpe grillé au barbecue","Carpaccio de poulpe","Salade de fruits de mer"],footer:"Salade de la mer · Méditerranée",stars:"★★★★★"},
+
+  {id:"ri14",emoji:"🥘",name:"Rôti de veau à la moutarde",cuisine:"Cuisine Française",persons:4,prep:"10 min",cook:"50 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"900g",name:"Rôti de veau ficelé"},{ico:"🌿",qty:"3 c.à.s.",name:"Moutarde à l'ancienne"},{ico:"🌿",qty:"15cl",name:"Vin blanc"},{ico:"🥛",qty:"15cl",name:"Crème fraîche"},{ico:"🧅",qty:"2",name:"Échalotes"},{ico:"🧈",qty:"30g",name:"Beurre"},{ico:"🌿",qty:"QS",name:"Thym, sel, poivre"}],
+   tips:[{dot:"#f9a825",text:"Enduire généreusement de moutarde = croûte parfumée"},{dot:"#4caf50",text:"Reposer 15 min = jus qui se redistribue"}],
+   steps:[{title:"Préparer",desc:"Enduire le rôti de moutarde. Saler et poivrer. Faire dorer dans le beurre."},{title:"Rôtir",desc:"Ajouter échalotes et vin blanc. Four à 180°C, 40 min. Arroser régulièrement."},{title:"Sauce",desc:"Retirer le rôti. Déglacer avec la crème. Réduire 3 min."}],
+   errors:["Pas reposer → jus perdu","Sauce trop réduite → trop épaisse"],variantes:["Rôti de porc moutarde","Filet de veau en croûte","Escalopes à la crème"],footer:"Rôti classique · France",stars:"★★★★★"},
+
+  {id:"ri15",emoji:"🍜",name:"Soupe won ton maison",cuisine:"Cuisine Cantonaise",persons:4,prep:"35 min",cook:"15 min",diff:"Facile ★★",color:"#1565c0",colorLight:"#e3f2fd",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🥩",qty:"200g",name:"Porc haché"},{ico:"🦐",qty:"150g",name:"Crevettes hachées"},{ico:"🌿",qty:"QS",name:"Gingembre, sauce soja, huile de sésame"},{ico:"🌾",qty:"24",name:"Feuilles wonton"},{ico:"🍲",qty:"1,5L",name:"Bouillon de poulet"},{ico:"🌿",qty:"QS",name:"Oignons verts, coriandre"}],
+   tips:[{dot:"#1565c0",text:"Farce bien pétrie = wontons qui restent fermés"},{dot:"#4caf50",text:"Bouillon clair et parfumé = âme de la soupe"}],
+   steps:[{title:"Wontons",desc:"Mélanger porc, crevettes, gingembre, soja et sésame. Plier les wontons en triangle."},{title:"Bouillon",desc:"Porter le bouillon à frémissement avec gingembre et oignon."},{title:"Cuire",desc:"Pocher les wontons 5-6 min. Servir avec oignons verts et coriandre."}],
+   errors:["Wontons qui s'ouvrent → humidifier les bords","Bouillon bouillant trop fort → wontons qui se défont"],variantes:["Dumplings poêlés","Wontons frits","Soupe de ravioles"],footer:"Soupe wontons · Canton",stars:"★★★★★"},
+
+  {id:"ri16",emoji:"🥮",name:"Charlotte aux framboises",cuisine:"Cuisine Française",persons:8,prep:"30 min",cook:"0 min",diff:"Facile ★★",color:"#e91e63",colorLight:"#fce4ec",category:"dessert",seasons:["summer"],
+   ingredients:[{ico:"🌾",qty:"24",name:"Biscuits cuillère"},{ico:"🍓",qty:"400g",name:"Framboises"},{ico:"🧀",qty:"250g",name:"Mascarpone"},{ico:"🥛",qty:"20cl",name:"Crème liquide"},{ico:"🍬",qty:"80g",name:"Sucre glace"},{ico:"🌿",qty:"1 c.à.c.",name:"Vanille"},{ico:"💧",qty:"10cl",name:"Sirop pour imbiber"}],
+   tips:[{dot:"#e91e63",text:"Charlotte = dessert élégant sans cuisson = parfait pour les grandes occasions"},{dot:"#4caf50",text:"Biscuits légèrement trempés = tiennent mais fondants"}],
+   steps:[{title:"Moule",desc:"Chemiser le moule de biscuits légèrement imbibés de sirop."},{title:"Crème",desc:"Fouetter mascarpone, crème, sucre glace et vanille. Incorporer les framboises écrasées."},{title:"Monter",desc:"Couches de crème et framboises entre des biscuits. Fermer. Réfrigérer 6h. Démouler."}],
+   errors:["Biscuits trop trempés → s'effondrent","Pas assez réfrigérer → ne se démoule pas"],variantes:["Charlotte aux fraises","Charlotte au chocolat","Version aux poires"],footer:"Dessert classique · France",stars:"★★★★★"},
+
+  {id:"ri17",emoji:"🥗",name:"Salade de homard avocat",cuisine:"Cuisine Fine",persons:2,prep:"20 min",cook:"15 min",diff:"Facile ★★",color:"#e65100",colorLight:"#fff3e0",category:"entrée",seasons:["all"],
+   ingredients:[{ico:"🦞",qty:"1",name:"Homard cuit"},{ico:"🥑",qty:"2",name:"Avocats"},{ico:"🌿",qty:"QS",name:"Cerfeuil, estragon, ciboulette"},{ico:"🌿",qty:"QS",name:"Vinaigrette citronnée au safran"},{ico:"🌿",qty:"QS",name:"Laitue, radis"}],
+   tips:[{dot:"#e65100",text:"Homard décortiqué à l'avance = service sans effort"},{dot:"#4caf50",text:"Sauce safranée = luxe accessible qui magnifie le homard"}],
+   steps:[{title:"Homard",desc:"Décortiquer le homard. Couper la chair en médaillons."},{title:"Avocat",desc:"Couper en tranches. Citronner."},{title:"Dresser",desc:"Laitue, avocat, médaillons de homard. Vinaigrette safranée. Herbes fines."}],
+   errors:["Homard froid → insipide","Avocat noirci → citronner immédiatement"],variantes:["Salade de langoustines","Avec des crevettes royales","Avec Saint-Jacques"],footer:"Entrée de fête",stars:"★★★★★"},
+
+  {id:"ri18",emoji:"🥘",name:"Poulet à l'estragon",cuisine:"Cuisine Française",persons:4,prep:"10 min",cook:"40 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🍗",qty:"1 poulet découpé",name:""},{ico:"🌿",qty:"1 bouquet",name:"Estragon frais"},{ico:"🌿",qty:"20cl",name:"Vin blanc sec"},{ico:"🥛",qty:"20cl",name:"Crème fraîche"},{ico:"🧅",qty:"2",name:"Échalotes"},{ico:"🧈",qty:"40g",name:"Beurre"}],
+   tips:[{dot:"#2e7d32",text:"Estragon = herbe signature des grandes sauces françaises"},{dot:"#4caf50",text:"Crème ajoutée en fin = sauce onctueuse sans tourner"}],
+   steps:[{title:"Poulet",desc:"Faire dorer le poulet dans le beurre. Faire revenir les échalotes."},{title:"Cuire",desc:"Déglacer au vin blanc. Estragon. Couvrir et cuire 30 min."},{title:"Sauce",desc:"Retirer le poulet. Réduire la sauce. Crème fraîche. Estragon frais ciselé."}],
+   errors:["Estragon cuit trop longtemps → amer","Crème bouillie → tourne"],variantes:["Poulet à l'oseille","Veau à l'estragon","Avec des champignons"],footer:"Classique · France",stars:"★★★★★"},
+
+  {id:"ri19",emoji:"🍮",name:"Pudding de semoule à la vanille",cuisine:"Cuisine Française",persons:6,prep:"10 min",cook:"20 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🌾",qty:"150g",name:"Semoule fine"},{ico:"🥛",qty:"1L",name:"Lait entier"},{ico:"🍬",qty:"80g",name:"Sucre"},{ico:"🥚",qty:"2",name:"Œufs"},{ico:"🌿",qty:"1",name:"Gousse de vanille"},{ico:"🧈",qty:"30g",name:"Beurre"}],
+   tips:[{dot:"#f9a825",text:"Cuire lentement en remuant = pas de grumeaux"},{dot:"#4caf50",text:"Servir tiède avec coulis de caramel ou fruits rouges"}],
+   steps:[{title:"Semoule",desc:"Porter le lait à ébullition avec vanille. Verser la semoule en pluie. Cuire 5 min en remuant."},{title:"Enrichir",desc:"Hors du feu, ajouter sucre, beurre et œufs battus. Mélanger vigoureusement."},{title:"Servir",desc:"Verser dans des ramequins. Laisser tiédir. Démouler ou servir dans les ramequins."}],
+   errors:["Semoule versée trop vite → grumeaux","Œufs dans lait trop chaud → brouillés"],variantes:["Gâteau de semoule à la fleur d'oranger","Avec des raisins secs","Galette de semoule"],footer:"Dessert simple · France",stars:"★★★★★"},
+
+  {id:"ri20",emoji:"🥩",name:"Magret de canard sauce cerise",cuisine:"Cuisine Gasconne",persons:2,prep:"10 min",cook:"20 min",diff:"Facile ★★",color:"#c62828",colorLight:"#ffebee",category:"dîner",seasons:["summer"],
+   ingredients:[{ico:"🦆",qty:"1",name:"Magret de canard"},{ico:"🍒",qty:"200g",name:"Cerises fraîches ou surgelées"},{ico:"🍷",qty:"10cl",name:"Porto ou vin rouge"},{ico:"🌿",qty:"1 c.à.s.",name:"Miel"},{ico:"🧈",qty:"20g",name:"Beurre"},{ico:"🌿",qty:"QS",name:"Thym, sel, poivre"}],
+   tips:[{dot:"#c62828",text:"Quadriller la peau au couteau = gras qui se rend progressivement"},{dot:"#4caf50",text:"Reposer le magret = jus qui se redistribue"}],
+   steps:[{title:"Magret",desc:"Quadriller la peau. Cuire côté peau à froid 8-10 min. Retourner 4 min. Reposer 5 min sous alu."},{title:"Sauce",desc:"Vider l'excès de graisse. Faire revenir cerises avec miel et porto. Réduire 5 min."},{title:"Trancher",desc:"Trancher finement le magret. Napper de sauce aux cerises."}],
+   errors:["Peau pas quadrillée → gras pas rendu","Pas reposer → jus qui coule"],variantes:["Sauce à l'orange","Aux figues","Aux framboises"],footer:"Canard aux fruits · Gascogne",stars:"★★★★★"},
+
+  {id:"ri21",emoji:"🥗",name:"Salade de lentilles aux herbes fraîches",cuisine:"Cuisine Française",persons:4,prep:"15 min",cook:"25 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"déjeuner",seasons:["all"],
+   ingredients:[{ico:"🫘",qty:"250g",name:"Lentilles du Puy"},{ico:"🌿",qty:"QS",name:"Persil, menthe, coriandre, ciboulette"},{ico:"🧅",qty:"1",name:"Oignon rouge"},{ico:"🍅",qty:"2",name:"Tomates"},{ico:"🌿",qty:"QS",name:"Vinaigrette moutarde-citron"},{ico:"🥚",qty:"2",name:"Œufs mollets"}],
+   tips:[{dot:"#2e7d32",text:"Assaisonner les lentilles encore tièdes = absorbent mieux"},{dot:"#4caf50",text:"Beaucoup d'herbes fraîches = salade parfumée et verte"}],
+   steps:[{title:"Lentilles",desc:"Cuire les lentilles à l'eau froide non salée 25 min. Assaisonner tiède."},{title:"Préparer",desc:"Ciseler généreusement toutes les herbes. Couper les tomates et l'oignon rouge."},{title:"Dresser",desc:"Mélanger lentilles, légumes et herbes. Vinaigrette. Œufs mollets."}],
+   errors:["Lentilles salées trop tôt → durcissent","Herbes ajoutées froides → n'infusent pas"],variantes:["Avec du chèvre","Avec du saumon fumé","Version beluga"],footer:"Salade protéinée · France",stars:"★★★★★"},
+
+  {id:"ri22",emoji:"🍝",name:"Rigatoni alla norma",cuisine:"Cuisine Sicilienne",persons:4,prep:"15 min",cook:"30 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"dîner",seasons:["summer"],
+   ingredients:[{ico:"🍆",qty:"2",name:"Aubergines"},{ico:"🌾",qty:"400g",name:"Rigatoni"},{ico:"🍅",qty:"800g",name:"Tomates San Marzano"},{ico:"🧄",qty:"4 gousses",name:"Ail"},{ico:"🧀",qty:"80g",name:"Ricotta salata"},{ico:"🌿",qty:"QS",name:"Basilic, huile d'olive, sel"}],
+   tips:[{dot:"#c62828",text:"Aubergines frites puis ajoutées = texture incomparable"},{dot:"#4caf50",text:"Ricotta salata = fromage sicilien salé, remplaçable par de la feta"}],
+   steps:[{title:"Aubergines",desc:"Couper en cubes. Frire dans l'huile à 175°C jusqu'à dorées. Égoutter."},{title:"Sauce",desc:"Faire revenir l'ail dans l'huile. Ajouter tomates concassées. Cuire 20 min. Basilic."},{title:"Pâtes",desc:"Cuire al dente. Mélanger avec la sauce. Aubergines et ricotta salata râpée."}],
+   errors:["Aubergines pas frites → texture molle","Ricotta salata remplacée par fraîche → trop douce"],variantes:["Pasta alla norma légère (four)","Avec du parmesan","Norma végane"],footer:"Pasta siciliana · Sicile",stars:"★★★★★"},
+
+  {id:"ri23",emoji:"🥘",name:"Navarin d'agneau printanier",cuisine:"Cuisine Française",persons:6,prep:"20 min",cook:"1h30",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"dîner",seasons:["spring"],
+   ingredients:[{ico:"🥩",qty:"1 kg",name:"Épaule d'agneau"},{ico:"🥕",qty:"4",name:"Carottes nouvelles"},{ico:"🫛",qty:"200g",name:"Petits pois frais"},{ico:"🌿",qty:"200g",name:"Haricots verts"},{ico:"🥔",qty:"8",name:"Pommes de terre nouvelles"},{ico:"🌿",qty:"QS",name:"Thym, laurier, ail, farine"}],
+   tips:[{dot:"#2e7d32",text:"Navarin = le plat de printemps français par excellence"},{dot:"#4caf50",text:"Légumes primeurs ajoutés en fin = restent verts et croquants"}],
+   steps:[{title:"Agneau",desc:"Fariner et dorer l'agneau en morceaux. Ajouter tomates, ail et bouillon. Mijoter 45 min."},{title:"Légumes",desc:"Ajouter carottes et pommes de terre 20 min avant la fin."},{title:"Finir",desc:"Petits pois et haricots les 8 dernières minutes. Rectifier."}],
+   errors:["Petits pois ajoutés trop tôt → perdent leur vert","Agneau pas assez mijoté → dur"],variantes:["Avec des asperges","Navarin de veau","Version cocotte minute"],footer:"Plat de printemps · France",stars:"★★★★★"},
+
+  {id:"ri24",emoji:"🍰",name:"Entremets chocolat framboise",cuisine:"Cuisine Française",persons:8,prep:"45 min",cook:"15 min",diff:"Moyenne ★★★",color:"#e91e63",colorLight:"#fce4ec",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🍫",qty:"200g",name:"Chocolat noir"},{ico:"🥛",qty:"30cl",name:"Crème pour mousse chocolat"},{ico:"🍓",qty:"300g",name:"Purée framboises"},{ico:"🌿",qty:"4 feuilles",name:"Gélatine"},{ico:"🍬",qty:"80g",name:"Sucre"},{ico:"🥛",qty:"20cl",name:"Crème pour mousse framboise"},{ico:"🌾",qty:"QS",name:"Génoise au chocolat"}],
+   tips:[{dot:"#e91e63",text:"Deux mousses = deux textures, deux saveurs = dessert spectaculaire"},{dot:"#4caf50",text:"Réfrigérer une nuit = coupe nette et présentation parfaite"}],
+   steps:[{title:"Génoise",desc:"Cuire la génoise chocolat. Refroidir. Placer en cercle."},{title:"Mousse chocolat",desc:"Fondre le chocolat. Incorporer la chantilly. Verser sur la génoise. Prendre 30 min."},{title:"Mousse framboise",desc:"Chauffer purée + sucre + gélatine. Refroidir. Incorporer chantilly. Verser. Réfrigérer une nuit."}],
+   errors:["Couches pas prises avant la suivante → marbrures","Mousse trop chaude → fond la précédente"],variantes:["Chocolat-mangue","Chocolat-passion","Tout chocolat"],footer:"Entremet bicolore · France",stars:"★★★★★"},
+
+  {id:"ri25",emoji:"🥗",name:"Salade composée complète",cuisine:"Cuisine Française",persons:4,prep:"20 min",cook:"10 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"déjeuner",seasons:["all"],
+   ingredients:[{ico:"🥗",qty:"150g",name:"Laitue et mesclun"},{ico:"🥚",qty:"4",name:"Œufs durs"},{ico:"🐟",qty:"200g",name:"Thon"},{ico:"🍅",qty:"300g",name:"Tomates cerises"},{ico:"🫒",qty:"100g",name:"Olives vertes"},{ico:"🥔",qty:"300g",name:"Pommes de terre cuites"},{ico:"🌿",qty:"QS",name:"Anchois, vinaigrette, persil"}],
+   tips:[{dot:"#2e7d32",text:"Salade complète = repas équilibré en une seule assiette"},{dot:"#4caf50",text:"Assaisonner chaque élément séparément avant de dresser"}],
+   steps:[{title:"Préparer",desc:"Cuire les œufs et les pommes de terre. Préparer tous les éléments."},{title:"Vinaigrette",desc:"Moutarde, vinaigre, huile, anchois émincés. Fouetter."},{title:"Dresser",desc:"Laitue au fond. Chaque élément en section. Vinaigrette. Persil."}],
+   errors:["Tout mélangé → perd la présentation","Pas assez assaisonner → fade"],variantes:["Salade niçoise","Salade du chef","Salade César complète"],footer:"Repas complet · France",stars:"★★★★★"},
+
+  {id:"ri26",emoji:"🥘",name:"Saumon en croûte d'herbes",cuisine:"Cuisine Française",persons:4,prep:"15 min",cook:"20 min",diff:"Facile ★",color:"#2e7d32",colorLight:"#e8f5e9",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🐟",qty:"4 pavés",name:"Saumon épais"},{ico:"🌿",qty:"QS",name:"Persil, aneth, ciboulette, estragon"},{ico:"🌾",qty:"80g",name:"Chapelure"},{ico:"🧀",qty:"30g",name:"Parmesan"},{ico:"🫒",qty:"3 c.à.s.",name:"Huile d'olive"},{ico:"🧄",qty:"2 gousses",name:"Ail"}],
+   tips:[{dot:"#2e7d32",text:"Croûte d'herbes = une technique simple pour un résultat de restaurant"},{dot:"#4caf50",text:"Saumon cuit avec la croûte = restes humide à l'intérieur"}],
+   steps:[{title:"Croûte",desc:"Mélanger herbes hachées, chapelure, parmesan, ail et huile d'olive."},{title:"Appliquer",desc:"Déposer le saumon dans un plat. Étaler la croûte d'herbes généreusement dessus en appuyant."},{title:"Cuire",desc:"Four à 200°C, 15-18 min. La croûte doit être dorée. Servir immédiatement."}],
+   errors:["Croûte trop épaisse → pas croustillante","Saumon trop cuit → sec"],variantes:["Croûte noix-moutarde","Pavé de lieu pané","Filet de bar en croûte"],footer:"Poisson en croûte · France",stars:"★★★★★"},
+
+  {id:"ri27",emoji:"🍰",name:"Moelleux au citron glacé",cuisine:"Cuisine Française",persons:8,prep:"15 min",cook:"30 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🍋",qty:"3",name:"Citrons (jus + zeste)"},{ico:"🧈",qty:"150g",name:"Beurre mou"},{ico:"🍬",qty:"200g",name:"Sucre"},{ico:"🥚",qty:"4",name:"Œufs"},{ico:"🌾",qty:"220g",name:"Farine"},{ico:"🌿",qty:"1 sachet",name:"Levure chimique"},{ico:"🍬",qty:"100g",name:"Sucre glace pour le glaçage"}],
+   tips:[{dot:"#f9a825",text:"Sirop de citron versé sur le gâteau chaud = s'imprègne et reste moelleux"},{dot:"#4caf50",text:"Glaçage citron = finition brillante et acidulée"}],
+   steps:[{title:"Pâte",desc:"Fouetter beurre et sucre. Ajouter œufs, zestes, jus. Incorporer farine et levure."},{title:"Cuire",desc:"Moule à cake beurré. Four à 175°C, 30 min. Vérifier avec une lame."},{title:"Glacer",desc:"Mélanger sucre glace et jus de citron. Verser sur le gâteau encore chaud."}],
+   errors:["Glaçage sur gâteau froid → coule","Trop cuire → sec"],variantes:["Cake citron graines de pavot","Version orange","Moelleux citron-framboise"],footer:"Cake citron moelleux · France",stars:"★★★★★"},
+
+  {id:"ri28",emoji:"🥘",name:"Poulet basquaise aux poivrons",cuisine:"Cuisine Basque",persons:4,prep:"15 min",cook:"50 min",diff:"Facile ★",color:"#c62828",colorLight:"#ffebee",category:"dîner",seasons:["summer"],
+   ingredients:[{ico:"🍗",qty:"1 poulet découpé",name:""},{ico:"🫑",qty:"4",name:"Poivrons (rouges et verts)"},{ico:"🍅",qty:"400g",name:"Tomates concassées"},{ico:"🧅",qty:"2",name:"Oignons"},{ico:"🧄",qty:"4 gousses",name:"Ail"},{ico:"🌿",qty:"QS",name:"Piment d'Espelette, thym, bayonne"}],
+   tips:[{dot:"#c62828",text:"Piment d'Espelette = signature basque incontournable"},{dot:"#4caf50",text:"Poivrons fondants = cœur du plat"}],
+   steps:[{title:"Poulet",desc:"Faire dorer le poulet de toutes parts. Réserver."},{title:"Poivrons",desc:"Faire revenir oignons, poivrons et ail à feu doux 15 min jusqu'à fondants."},{title:"Cuire",desc:"Ajouter tomates, piment d'Espelette et poulet. Mijoter 35 min."}],
+   errors:["Poivrons pas assez fondus → texture crue","Trop de piment → imbuvable"],variantes:["Thon basquaise","Merlu koskera","Axoa de veau"],footer:"Plat du Pays Basque · France",stars:"★★★★★"},
+
+  {id:"ri29",emoji:"🍮",name:"Crème renversée au caramel",cuisine:"Cuisine Française",persons:6,prep:"15 min",cook:"45 min",diff:"Facile ★",color:"#f9a825",colorLight:"#fffde7",category:"dessert",seasons:["all"],
+   ingredients:[{ico:"🍬",qty:"150g",name:"Sucre pour le caramel"},{ico:"🥛",qty:"75cl",name:"Lait entier"},{ico:"🥚",qty:"4",name:"Œufs + 2 jaunes"},{ico:"🍬",qty:"100g",name:"Sucre"},{ico:"🌿",qty:"1",name:"Gousse de vanille"}],
+   tips:[{dot:"#f9a825",text:"Caramel dans le moule froid = caramel qui durcit et se conserve"},{dot:"#4caf50",text:"Bain-marie = cuisson douce sans que les œufs ne cuisent trop vite"}],
+   steps:[{title:"Caramel",desc:"Faire un caramel à sec. Verser dans les moules. Laisser durcir."},{title:"Crème",desc:"Fouetter œufs et sucre. Verser lait chaud et vanille. Filtrer."},{title:"Cuire",desc:"Verser dans les moules sur le caramel. Bain-marie à 150°C, 40-45 min. Réfrigérer 4h. Démouler."}],
+   errors:["Pas de bain-marie → crème granuleuse","Trop cuire → trous dans la crème"],variantes:["Flan pâtissier","Crème brûlée","Œufs au lait"],footer:"Dessert classique · France",stars:"★★★★★"},
+
+  {id:"ri30",emoji:"🥘",name:"Bourride provençale au poisson",cuisine:"Cuisine Provençale",persons:4,prep:"20 min",cook:"30 min",diff:"Facile ★★",color:"#f9a825",colorLight:"#fffde7",category:"dîner",seasons:["all"],
+   ingredients:[{ico:"🐟",qty:"800g",name:"Poisson blanc (lotte, merlu, dorade)"},{ico:"🥔",qty:"4",name:"Pommes de terre"},{ico:"🌿",qty:"1 dose",name:"Safran"},{ico:"🌿",qty:"QS",name:"Fenouil, thym, ail, huile d'olive"},{ico:"🌿",qty:"QS",name:"Aïoli maison pour servir"},{ico:"🍲",qty:"1L",name:"Fumet de poisson ou bouillon"}],
+   tips:[{dot:"#f9a825",text:"Bourride = bouillabaisse simplifiée avec de l'aïoli dans le bouillon"},{dot:"#4caf50",text:"Aïoli incorporé au bouillon = sauce veloutée incomparable"}],
+   steps:[{title:"Bouillon",desc:"Faire revenir fenouil, ail et safran dans l'huile. Ajouter fumet et pommes de terre. Cuire 15 min."},{title:"Poisson",desc:"Ajouter le poisson en morceaux. Cuire 12-15 min à frémissement."},{title:"Aïoli",desc:"Retirer le poisson. Incorporer l'aïoli dans le bouillon hors du feu. Napper."}],
+   errors:["Bouillon bouillant avec aïoli → tourne","Poisson trop cuit → sec"],variantes:["Bouillabaisse complète","Soupe de poisson à l'aïoli","Caldo de peixe portugais"],footer:"Plat provençal · Provence",stars:"★★★★★"}
 
 
 
