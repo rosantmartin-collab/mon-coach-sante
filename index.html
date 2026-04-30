@@ -2299,7 +2299,8 @@ async function loadRecipes() {
     RECIPE_SUGGESTIONS = all.slice(0, 5);
     RECIPE_SUGGESTIONS_EXTRA = all.slice(5);
     console.log('✅ ' + all.length + ' recettes chargées');
-    _autoGenerateProposals();
+    // Ne pas générer ici car S n'est pas encore chargé depuis le cloud
+    // _autoGenerateProposals sera appelé après pullFromCloud
   } catch(e) {
     console.warn('recettes.json non disponible:', e.message);
     // Afficher un message dans les suggestions
@@ -2768,7 +2769,6 @@ async function pullFromCloud(){
 // § 25 — INIT (initialisation de l'application)
 // ════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded',()=>{
-  loadRecipes(); // Charger les recettes depuis recettes.json
   supa.auth.onAuthStateChange(async(event,session)=>{
     if(session&&session.user){
       // Si SIGNED_IN explicite (clic sur bouton), toujours laisser passer
@@ -2787,9 +2787,14 @@ document.addEventListener('DOMContentLoaded',()=>{
       showPage('home');
       renderPage();
       // Charger UNIQUEMENT les données cloud de cet utilisateur
-      pullFromCloud().then(()=>{
+      // Attendre que recettes.json ET le cloud soient chargés
+      Promise.all([
+        loadRecipes(),
+        pullFromCloud()
+      ]).then(()=>{
         if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
         renderPage();
+        _autoGenerateProposals();
       });
       document.querySelectorAll('.mo').forEach(m=>{
         m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active');});
