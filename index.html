@@ -2290,19 +2290,45 @@ const MEAL_STEPS={
 let RECIPE_SUGGESTIONS = [];
 let RECIPE_SUGGESTIONS_EXTRA = [];
 
+
 async function loadRecipes() {
   try {
     const res = await fetch('recettes.json');
+    if(!res.ok) throw new Error('HTTP ' + res.status);
     const all = await res.json();
     RECIPE_SUGGESTIONS = all.slice(0, 5);
     RECIPE_SUGGESTIONS_EXTRA = all.slice(5);
     console.log('✅ ' + all.length + ' recettes chargées');
-    // Rafraîchir les suggestions si on est sur l'onglet recettes
-    if(typeof renderProposals === 'function') renderProposals();
-    if(typeof renderMyRecipes === 'function') renderMyRecipes();
+    _autoGenerateProposals();
   } catch(e) {
     console.warn('recettes.json non disponible:', e.message);
+    // Afficher un message dans les suggestions
+    const el = document.getElementById('recipe-proposals-list');
+    if(el) el.innerHTML = '<div style="text-align:center;padding:30px;color:var(--text2);">⚠️ recettes.json introuvable sur le serveur.<br><small>Vérifie que le fichier est uploadé sur GitHub.</small></div>';
   }
+}
+
+
+function _autoGenerateProposals(){
+  const all=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA);
+  if(!all.length)return;
+  const approvedIds=new Set((S.recipes||[]).map(r=>r.id));
+  const rejectedIds=new Set(S.rejectedIds||[]);
+  const existingIds=new Set((S.proposals||[]).map(p=>p.id));
+  // Filtrer les recettes disponibles
+  const pool=all.filter(r=>!approvedIds.has(r.id)&&!rejectedIds.has(r.id)&&!existingIds.has(r.id));
+  if(pool.length===0)return;
+  // Si pas assez de suggestions visibles (hors déjà validées), en ajouter
+  const visible=(S.proposals||[]).filter(p=>!approvedIds.has(p.id));
+  if(visible.length<20){
+    const needed=20-visible.length;
+    const picked=pool.sort(()=>Math.random()-.5).slice(0,needed);
+    S.proposals=[...(S.proposals||[]),...picked];
+    try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  }
+  // Rafraîchir l'affichage
+  if(typeof renderProposals==='function')renderProposals();
+  if(typeof renderMyRecipes==='function')renderMyRecipes();
 }
 
 // ════════════════════════════════════════════════════════════
