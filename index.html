@@ -2132,8 +2132,8 @@ function saveURLRecipe(){
 function viewMealFiche(day,slot){
   const m=S.meals[day]?.[slot];if(!m)return;
 
-  // 1. Chercher la recette dans toute la bibliothèque
-  const allRecipes=[...RECIPE_SUGGESTIONS,...RECIPE_SUGGESTIONS_EXTRA,...(S.recipes||[])];
+  // 1. Chercher la recette dans toute la bibliothèque (filtrer les nulls)
+  const allRecipes=[...RECIPE_SUGGESTIONS,...RECIPE_SUGGESTIONS_EXTRA,...(S.recipes||[])].filter(r=>r&&r.name);
   const mName=(m.n||'').toLowerCase().trim();
   const normalize=s=>s.toLowerCase().trim()
     .replace(/[àâä]/g,'a').replace(/[éèêë]/g,'e')
