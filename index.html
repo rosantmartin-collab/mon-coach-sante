@@ -1964,7 +1964,8 @@ function recipeMatchesFilters(r){
   return true;
 }
 
-function generateRecipeProposals(){
+async function generateRecipeProposals(){
+  if(RECIPE_SUGGESTIONS.length===0&&RECIPE_SUGGESTIONS_EXTRA.length===0) await loadRecipes();
   const allSuggestions=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA);
   const approvedIds=S.recipes.map(r=>r.id);
   const existingIds=S.proposals.map(p=>p.id);
@@ -1977,7 +1978,8 @@ function generateRecipeProposals(){
   renderProposals();showToast('✨ '+picked.length+' suggestions disponibles !');
 }
 
-function regenerateProposals(){
+async function regenerateProposals(){
+  if(RECIPE_SUGGESTIONS.length===0&&RECIPE_SUGGESTIONS_EXTRA.length===0) await loadRecipes();
   // Garder seulement les recettes déjà validées
   S.proposals=S.proposals.filter(p=>S.recipes.some(r=>r.id===p.id));
   const allSuggestions=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA);
@@ -2290,14 +2292,16 @@ let RECIPE_SUGGESTIONS_EXTRA = [];
 
 async function loadRecipes() {
   try {
-    const res = await fetch('recettes.json?v=' + Date.now());
+    const res = await fetch('recettes.json');
     const all = await res.json();
-    // Les 5 premières sont la base, le reste est extra
     RECIPE_SUGGESTIONS = all.slice(0, 5);
     RECIPE_SUGGESTIONS_EXTRA = all.slice(5);
-    console.log('✅ ' + all.length + ' recettes chargées depuis recettes.json');
+    console.log('✅ ' + all.length + ' recettes chargées');
+    // Rafraîchir les suggestions si on est sur l'onglet recettes
+    if(typeof renderProposals === 'function') renderProposals();
+    if(typeof renderMyRecipes === 'function') renderMyRecipes();
   } catch(e) {
-    console.warn('recettes.json non disponible, pas de suggestions');
+    console.warn('recettes.json non disponible:', e.message);
   }
 }
 
