@@ -1854,7 +1854,7 @@ function filterProposals(cat, btn){
   document.querySelectorAll('.filter-row .filter-btn').forEach(b=>b.classList.remove('active'));
   if(btn)btn.classList.add('active');
   // Si pas assez de suggestions dans cette catégorie, en charger d'autres
-  const allSugg=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA);
+  const allSugg=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA).filter(r=>r&&r.id);
   const approvedIds=new Set((S.recipes||[]).map(r=>r.id));
   const rejectedIds=new Set(S.rejectedIds||[]);
   const pending=(S.proposals||[]).filter(p=>!approvedIds.has(p.id));
@@ -1885,7 +1885,7 @@ function setProposalView(v){
 function renderProposals(){
   const el=document.getElementById('recipe-proposals-list');
   el.className=_proposalView==='grid'?'rprop-grid':'';
-  const pending=(S.proposals||[]).filter(p=>!S.recipes.some(r=>r.id===p.id)).filter(p=>{
+  const pending=(S.proposals||[]).filter(p=>p&&p.id).filter(p=>!S.recipes.some(r=>r.id===p.id)).filter(p=>{
     if(_proposalFilter==='all')return true;
     if(_proposalFilter==='plat')return p.category==='déjeuner'||p.category==='dîner';
     return p.category===_proposalFilter;
@@ -1980,9 +1980,11 @@ async function generateRecipeProposals(){
 
 async function regenerateProposals(){
   if(RECIPE_SUGGESTIONS.length===0&&RECIPE_SUGGESTIONS_EXTRA.length===0) await loadRecipes();
+  // Nettoyer les nulls/undefined de proposals
+  S.proposals=(S.proposals||[]).filter(p=>p&&p.id);
   // Garder seulement les recettes déjà validées
   S.proposals=S.proposals.filter(p=>S.recipes.some(r=>r.id===p.id));
-  const allSuggestions=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA);
+  const allSuggestions=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA).filter(r=>r&&r.id);
   const approvedIds=new Set(S.recipes.map(r=>r.id));
   const rejectedIds=new Set(S.rejectedIds||[]);
   // Recettes déjà vues = validées + rejetées + déjà dans les proposals actuelles
@@ -2311,11 +2313,13 @@ async function loadRecipes() {
 
 
 function _autoGenerateProposals(){
-  const all=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA);
+  const all=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA).filter(r=>r&&r.id);
   if(!all.length)return;
-  const approvedIds=new Set((S.recipes||[]).map(r=>r.id));
+  // Nettoyer les nulls
+  S.proposals=(S.proposals||[]).filter(p=>p&&p.id);
+  const approvedIds=new Set((S.recipes||[]).filter(r=>r&&r.id).map(r=>r.id));
   const rejectedIds=new Set(S.rejectedIds||[]);
-  const existingIds=new Set((S.proposals||[]).map(p=>p.id));
+  const existingIds=new Set(S.proposals.map(p=>p.id));
   // Filtrer les recettes disponibles
   const pool=all.filter(r=>!approvedIds.has(r.id)&&!rejectedIds.has(r.id)&&!existingIds.has(r.id));
   if(pool.length===0)return;
