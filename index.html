@@ -2786,17 +2786,16 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
       _currentUser=session.user;
       document.getElementById('auth-screen').style.display='none';
-      // Réinitialiser S à vide pour éviter de charger les données d'un autre utilisateur
-      S={profile:{name:'',weight:75,height:175,goal:'maintenance',exclusions:[]},plan:{},meals:{},workouts:[],recipes:[],proposals:[],rejectedIds:[],page:'home',mealDay:'lundi'};
-      showPage('home');
-      renderPage();
-      // Charger UNIQUEMENT les données cloud de cet utilisateur
-      // Attendre que recettes.json ET le cloud soient chargés
+      // Réinitialiser S à vide
+      S={profile:{name:'',weight:75,height:175,goal:'maintenance',exclusions:[]},plan:{},meals:{},workouts:[],recipes:[],proposals:[],rejectedIds:[],seenProposalIds:[],page:'home',mealDay:'lundi'};
+      // Charger recettes + cloud AVANT d'afficher quoi que ce soit
       Promise.all([
         loadRecipes(),
         pullFromCloud()
       ]).then(()=>{
         if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
+        // Afficher la page seulement quand les données sont prêtes
+        showPage(S.page||'home');
         renderPage();
         _autoGenerateProposals();
       });
