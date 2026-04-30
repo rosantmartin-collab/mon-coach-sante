@@ -56422,5 +56422,3876 @@
     ],
     "footer": "Plat provençal · Provence",
     "stars": "★★★★★"
+  },
+  {
+    "id": "new001",
+    "emoji": "🍽️",
+    "name": "Carpaccio de betterave",
+    "cuisine": "Cuisine variée",
+    "persons": 2,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "entrée",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour carpaccio de betterave."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de carpaccio de betterave."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir carpaccio de betterave."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Carpaccio de betterave",
+    "stars": 4.5
+  },
+  {
+    "id": "new002",
+    "emoji": "🍽️",
+    "name": "Tartare de saumon à l’avocat",
+    "cuisine": "Cuisine variée",
+    "persons": 2,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "entrée",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour tartare de saumon à l’avocat."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de tartare de saumon à l’avocat."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir tartare de saumon à l’avocat."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Tartare de saumon à l’avocat",
+    "stars": 4.5
+  },
+  {
+    "id": "new003",
+    "emoji": "🍽️",
+    "name": "Velouté de petits pois",
+    "cuisine": "Cuisine variée",
+    "persons": 2,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "entrée",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour velouté de petits pois."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de velouté de petits pois."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir velouté de petits pois."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Velouté de petits pois",
+    "stars": 4.5
+  },
+  {
+    "id": "new004",
+    "emoji": "🍽️",
+    "name": "Œufs cocotte au chèvre",
+    "cuisine": "Cuisine variée",
+    "persons": 2,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "entrée",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour œufs cocotte au chèvre."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de œufs cocotte au chèvre."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir œufs cocotte au chèvre."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Œufs cocotte au chèvre",
+    "stars": 4.5
+  },
+  {
+    "id": "new005",
+    "emoji": "🍽️",
+    "name": "Salade de fenouil orange",
+    "cuisine": "Cuisine variée",
+    "persons": 2,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "entrée",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour salade de fenouil orange."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de salade de fenouil orange."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir salade de fenouil orange."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Salade de fenouil orange",
+    "stars": 4.5
+  },
+  {
+    "id": "new006",
+    "emoji": "🍽️",
+    "name": "Gaspacho concombre",
+    "cuisine": "Cuisine variée",
+    "persons": 2,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "entrée",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour gaspacho concombre."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de gaspacho concombre."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir gaspacho concombre."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Gaspacho concombre",
+    "stars": 4.5
+  },
+  {
+    "id": "new007",
+    "emoji": "🍽️",
+    "name": "Rillettes de thon",
+    "cuisine": "Cuisine variée",
+    "persons": 2,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "entrée",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour rillettes de thon."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de rillettes de thon."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir rillettes de thon."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Rillettes de thon",
+    "stars": 4.5
+  },
+  {
+    "id": "new008",
+    "emoji": "🍽️",
+    "name": "Soupe froide courgette",
+    "cuisine": "Cuisine variée",
+    "persons": 2,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "entrée",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour soupe froide courgette."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de soupe froide courgette."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir soupe froide courgette."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Soupe froide courgette",
+    "stars": 4.5
+  },
+  {
+    "id": "new009",
+    "emoji": "🍽️",
+    "name": "Tartine ricotta miel",
+    "cuisine": "Cuisine variée",
+    "persons": 2,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "entrée",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour tartine ricotta miel."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de tartine ricotta miel."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir tartine ricotta miel."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Tartine ricotta miel",
+    "stars": 4.5
+  },
+  {
+    "id": "new010",
+    "emoji": "🍽️",
+    "name": "Salade pois chiches",
+    "cuisine": "Cuisine variée",
+    "persons": 2,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "entrée",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour salade pois chiches."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de salade pois chiches."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir salade pois chiches."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Salade pois chiches",
+    "stars": 4.5
+  },
+  {
+    "id": "new012",
+    "emoji": "🍽️",
+    "name": "Filet mignon moutarde",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour filet mignon moutarde."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de filet mignon moutarde."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir filet mignon moutarde."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Filet mignon moutarde",
+    "stars": 4.5
+  },
+  {
+    "id": "new013",
+    "emoji": "🍽️",
+    "name": "Parmentier de canard",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour parmentier de canard."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de parmentier de canard."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir parmentier de canard."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Parmentier de canard",
+    "stars": 4.5
+  },
+  {
+    "id": "new014",
+    "emoji": "🍽️",
+    "name": "Saumon en croûte",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour saumon en croûte."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de saumon en croûte."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir saumon en croûte."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Saumon en croûte",
+    "stars": 4.5
+  },
+  {
+    "id": "new015",
+    "emoji": "🍽️",
+    "name": "Couscous végétarien",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour couscous végétarien."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de couscous végétarien."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir couscous végétarien."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Couscous végétarien",
+    "stars": 4.5
+  },
+  {
+    "id": "new016",
+    "emoji": "🍽️",
+    "name": "Pad thaï poulet",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour pad thaï poulet."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de pad thaï poulet."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir pad thaï poulet."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Pad thaï poulet",
+    "stars": 4.5
+  },
+  {
+    "id": "new017",
+    "emoji": "🍽️",
+    "name": "Bibimbap",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour bibimbap."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de bibimbap."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir bibimbap."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Bibimbap",
+    "stars": 4.5
+  },
+  {
+    "id": "new018",
+    "emoji": "🍽️",
+    "name": "Curry crevettes",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour curry crevettes."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de curry crevettes."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir curry crevettes."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Curry crevettes",
+    "stars": 4.5
+  },
+  {
+    "id": "new019",
+    "emoji": "🍽️",
+    "name": "Dahl lentilles",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour dahl lentilles."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de dahl lentilles."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir dahl lentilles."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Dahl lentilles",
+    "stars": 4.5
+  },
+  {
+    "id": "new020",
+    "emoji": "🍽️",
+    "name": "Tian légumes",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour tian légumes."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de tian légumes."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir tian légumes."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Tian légumes",
+    "stars": 4.5
+  },
+  {
+    "id": "new021",
+    "emoji": "🍽️",
+    "name": "Aubergines farcies",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour aubergines farcies."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de aubergines farcies."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir aubergines farcies."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Aubergines farcies",
+    "stars": 4.5
+  },
+  {
+    "id": "new022",
+    "emoji": "🍽️",
+    "name": "Poivrons farcis",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour poivrons farcis."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de poivrons farcis."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir poivrons farcis."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Poivrons farcis",
+    "stars": 4.5
+  },
+  {
+    "id": "new023",
+    "emoji": "🍽️",
+    "name": "Burger maison",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour burger maison."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de burger maison."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir burger maison."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Burger maison",
+    "stars": 4.5
+  },
+  {
+    "id": "new024",
+    "emoji": "🍽️",
+    "name": "Fish and chips",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour fish and chips."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de fish and chips."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir fish and chips."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Fish and chips",
+    "stars": 4.5
+  },
+  {
+    "id": "new025",
+    "emoji": "🍽️",
+    "name": "Nouilles sautées",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour nouilles sautées."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de nouilles sautées."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir nouilles sautées."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Nouilles sautées",
+    "stars": 4.5
+  },
+  {
+    "id": "new026",
+    "emoji": "🍽️",
+    "name": "Poulet tikka masala",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour poulet tikka masala."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de poulet tikka masala."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir poulet tikka masala."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Poulet tikka masala",
+    "stars": 4.5
+  },
+  {
+    "id": "new027",
+    "emoji": "🍽️",
+    "name": "Risotto safran",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour risotto safran."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de risotto safran."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir risotto safran."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Risotto safran",
+    "stars": 4.5
+  },
+  {
+    "id": "new028",
+    "emoji": "🍽️",
+    "name": "Tagliatelles fruits de mer",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour tagliatelles fruits de mer."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de tagliatelles fruits de mer."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir tagliatelles fruits de mer."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Tagliatelles fruits de mer",
+    "stars": 4.5
+  },
+  {
+    "id": "new029",
+    "emoji": "🍽️",
+    "name": "Gratin courgettes",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour gratin courgettes."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de gratin courgettes."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir gratin courgettes."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Gratin courgettes",
+    "stars": 4.5
+  },
+  {
+    "id": "new030",
+    "emoji": "🍽️",
+    "name": "Tortilla espagnole",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "plat",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour tortilla espagnole."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de tortilla espagnole."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir tortilla espagnole."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Tortilla espagnole",
+    "stars": 4.5
+  },
+  {
+    "id": "new031",
+    "emoji": "🍽️",
+    "name": "Panna cotta",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour panna cotta."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de panna cotta."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir panna cotta."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Panna cotta",
+    "stars": 4.5
+  },
+  {
+    "id": "new032",
+    "emoji": "🍽️",
+    "name": "Cheesecake citron",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour cheesecake citron."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de cheesecake citron."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir cheesecake citron."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Cheesecake citron",
+    "stars": 4.5
+  },
+  {
+    "id": "new033",
+    "emoji": "🍽️",
+    "name": "Fondant chocolat",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour fondant chocolat."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de fondant chocolat."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir fondant chocolat."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Fondant chocolat",
+    "stars": 4.5
+  },
+  {
+    "id": "new034",
+    "emoji": "🍽️",
+    "name": "Crumble pomme",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour crumble pomme."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de crumble pomme."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir crumble pomme."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Crumble pomme",
+    "stars": 4.5
+  },
+  {
+    "id": "new035",
+    "emoji": "🍽️",
+    "name": "Riz au lait",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour riz au lait."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de riz au lait."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir riz au lait."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Riz au lait",
+    "stars": 4.5
+  },
+  {
+    "id": "new036",
+    "emoji": "🍽️",
+    "name": "Flan pâtissier",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour flan pâtissier."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de flan pâtissier."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir flan pâtissier."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Flan pâtissier",
+    "stars": 4.5
+  },
+  {
+    "id": "new037",
+    "emoji": "🍽️",
+    "name": "Tarte citron meringuée",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour tarte citron meringuée."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de tarte citron meringuée."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir tarte citron meringuée."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Tarte citron meringuée",
+    "stars": 4.5
+  },
+  {
+    "id": "new038",
+    "emoji": "🍽️",
+    "name": "Pavlova",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour pavlova."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de pavlova."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir pavlova."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Pavlova",
+    "stars": 4.5
+  },
+  {
+    "id": "new039",
+    "emoji": "🍽️",
+    "name": "Banana bread",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour banana bread."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de banana bread."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir banana bread."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Banana bread",
+    "stars": 4.5
+  },
+  {
+    "id": "new040",
+    "emoji": "🍽️",
+    "name": "Moelleux amandes",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour moelleux amandes."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de moelleux amandes."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir moelleux amandes."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Moelleux amandes",
+    "stars": 4.5
+  },
+  {
+    "id": "new041",
+    "emoji": "🍽️",
+    "name": "Overnight oats",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "petit déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour overnight oats."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de overnight oats."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir overnight oats."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Overnight oats",
+    "stars": 4.5
+  },
+  {
+    "id": "new042",
+    "emoji": "🍽️",
+    "name": "Smoothie bowl",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "petit déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour smoothie bowl."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de smoothie bowl."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir smoothie bowl."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Smoothie bowl",
+    "stars": 4.5
+  },
+  {
+    "id": "new043",
+    "emoji": "🍽️",
+    "name": "Pain perdu",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "petit déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour pain perdu."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de pain perdu."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir pain perdu."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Pain perdu",
+    "stars": 4.5
+  },
+  {
+    "id": "new044",
+    "emoji": "🍽️",
+    "name": "Muffins banane",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "collation",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour muffins banane."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de muffins banane."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir muffins banane."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Muffins banane",
+    "stars": 4.5
+  },
+  {
+    "id": "new045",
+    "emoji": "🍽️",
+    "name": "Barres énergétiques",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "collation",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour barres énergétiques."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de barres énergétiques."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir barres énergétiques."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Barres énergétiques",
+    "stars": 4.5
+  },
+  {
+    "id": "new046",
+    "emoji": "🍽️",
+    "name": "Tapenade",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "apéro",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour tapenade."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de tapenade."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir tapenade."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Tapenade",
+    "stars": 4.5
+  },
+  {
+    "id": "new047",
+    "emoji": "🍽️",
+    "name": "Feuilletés fromage",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "apéro",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour feuilletés fromage."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de feuilletés fromage."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir feuilletés fromage."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Feuilletés fromage",
+    "stars": 4.5
+  },
+  {
+    "id": "new048",
+    "emoji": "🍽️",
+    "name": "Brochettes tomate mozzarella",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "apéro",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour brochettes tomate mozzarella."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de brochettes tomate mozzarella."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir brochettes tomate mozzarella."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Brochettes tomate mozzarella",
+    "stars": 4.5
+  },
+  {
+    "id": "new049",
+    "emoji": "🍽️",
+    "name": "Popcorn maison",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "apéro",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour popcorn maison."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de popcorn maison."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir popcorn maison."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Popcorn maison",
+    "stars": 4.5
+  },
+  {
+    "id": "new050",
+    "emoji": "🍽️",
+    "name": "Chips patate douce",
+    "cuisine": "Cuisine variée",
+    "persons": 4,
+    "prep": 15,
+    "cook": 25,
+    "diff": "Facile",
+    "category": "apéro",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": 2,
+        "unit": "pièce",
+        "name": "ingrédient principal"
+      },
+      {
+        "ico": "🧅",
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": 1,
+        "unit": "càs",
+        "name": "huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": 1,
+        "unit": "pincée",
+        "name": "sel"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation",
+        "desc": "Préparer les ingrédients pour chips patate douce."
+      },
+      {
+        "title": "Cuisson",
+        "desc": "Cuire selon la recette de chips patate douce."
+      },
+      {
+        "title": "Service",
+        "desc": "Servir chips patate douce."
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#ff7043",
+        "text": "Goûter avant de servir"
+      }
+    ],
+    "errors": [
+      "Surcuisson"
+    ],
+    "variantes": [
+      "Version végétarienne possible"
+    ],
+    "batch": {
+      "freeze": true,
+      "conserve": false,
+      "duration": "2 mois"
+    },
+    "nutrition": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 40,
+      "fat": 15
+    },
+    "footer": "Chips patate douce",
+    "stars": 4.5
   }
 ]
