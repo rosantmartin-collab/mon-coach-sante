@@ -1929,7 +1929,17 @@ function approveProposal(idx){
   renderMyRecipes();renderProposals();
 }
 
-function rejectProposal(idx){const r=S.proposals[idx];if(r&&!S.rejectedIds.includes(r.id))S.rejectedIds.push(r.id);S.proposals.splice(idx,1);save();renderProposals();showToast('🗑️ Suggestion retirée');}
+function rejectProposal(idx){
+  const r=S.proposals[idx];
+  if(r&&!S.rejectedIds.includes(r.id))S.rejectedIds.push(r.id);
+  S.proposals.splice(idx,1);
+  // Sauvegarder immédiatement (sans debounce) pour ne pas perdre les rejets
+  try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  clearTimeout(_cloudTimer);
+  pushToCloud(); // push immédiat
+  renderProposals();
+  showToast('🗑️ Suggestion retirée');
+}
 
 function closeFicheModal(){document.getElementById('fiche-modal').classList.remove('active');_ficheAddCallback=null;}
 
@@ -1989,7 +1999,10 @@ function regenerateProposals(){
   // Mémoriser les recettes vues pour ne pas les reproposer
   S.seenProposalIds=[...(S.seenProposalIds||[]),...picked.map(r=>r.id)];
   S.proposals=[...S.proposals,...picked];
-  save();renderProposals();showToast('🔄 '+picked.length+' nouvelles suggestions !');
+  try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  clearTimeout(_cloudTimer);
+  pushToCloud();
+  renderProposals();showToast('🔄 '+picked.length+' nouvelles suggestions !');
 }
 
 function openAddRecipeModal(){
@@ -2114,33 +2127,42 @@ function saveURLRecipe(){
 // ════════════════════════════════════════════════════════════
 function viewMealFiche(day,slot){
   const m=S.meals[day]?.[slot];if(!m)return;
+
+  // 1. Chercher la recette dans toute la bibliothèque
+  const allRecipes=[...RECIPE_SUGGESTIONS,...RECIPE_SUGGESTIONS_EXTRA,...(S.recipes||[])];
+  const mName=(m.n||'').toLowerCase().trim();
+  const normalize=s=>s.toLowerCase().trim()
+    .replace(/[àâä]/g,'a').replace(/[éèêë]/g,'e')
+    .replace(/[îï]/g,'i').replace(/[ôö]/g,'o').replace(/[ùûü]/g,'u');
+  const mNorm=normalize(mName);
+  const found=allRecipes.find(r=>{
+    const rNorm=normalize(r.name||'');
+    return rNorm===mNorm
+      ||mNorm.includes(rNorm)||rNorm.includes(mNorm)
+      ||mNorm.split(' ').filter(w=>w.length>4).every(w=>rNorm.includes(w));
+  });
+
+  // 2. Si recette trouvée → ouvrir la vraie fiche
+  if(found&&found.ingredients&&found.ingredients.length){
+    document.getElementById('fiche-modal-content').innerHTML=buildFicheHTML(found);
+    const alreadySaved=(S.recipes||[]).some(r=>r.id===found.id);
+    const addBtn=document.getElementById('fiche-add-btn');
+    addBtn.style.display=alreadySaved?'none':'inline-block';
+    _ficheAddCallback=()=>{
+      if(!S.recipes.some(r=>r.id===found.id)){S.recipes.push({...found});save();}
+      addBtn.style.display='none';
+      showToast('✅ Recette ajoutée !');
+    };
+    document.getElementById('fiche-modal').classList.add('active');
+    return; // ← sortir de viewMealFiche, pas de l'IIFE
+  }
+
+  // 3. Sinon → fiche générique avec les infos nutritionnelles du plan
   const slotMeta={breakfast:{lbl:'Petit-déjeuner',color:'#e65100',colorLight:'#fff3e0',emoji:'🌅',cat:'petit-déjeuner'},lunch:{lbl:'Déjeuner',color:'#1565c0',colorLight:'#e3f2fd',emoji:'☀️',cat:'déjeuner'},snack2:{lbl:'Collation',color:'#2e7d32',colorLight:'#e8f5e9',emoji:'🫐',cat:'collation'},dinner:{lbl:'Dîner',color:'#6a1b9a',colorLight:'#f3e5f5',emoji:'🌙',cat:'dîner'}};
   const meta=slotMeta[slot]||{lbl:'Repas',color:'#37474f',colorLight:'#eceff1',emoji:'🍽️',cat:'repas'};
   const detailed=MEAL_STEPS[m.n]||null;
   const ficheData={emoji:m.flag||meta.emoji,name:m.n,cuisine:meta.lbl,category:meta.cat,persons:1,prep:'~15 min',cook:'~20 min',diff:'',color:meta.color,colorLight:meta.colorLight,
-    ingredients:(()=>{
-      // Chercher la recette complète dans la bibliothèque (comparaison souple)
-      const allRecipes=[...RECIPE_SUGGESTIONS,...RECIPE_SUGGESTIONS_EXTRA,...(S.recipes||[])];
-      const mName=(m.n||'').toLowerCase().trim();
-      const normalize=s=>s.toLowerCase().trim().replace(/[àâä]/g,'a').replace(/[éèêë]/g,'e').replace(/[îï]/g,'i').replace(/[ôö]/g,'o').replace(/[ùûü]/g,'u');
-      const mNorm=normalize(mName);
-      const found=allRecipes.find(r=>{
-        const rNorm=normalize(r.name||'');
-        return rNorm===mNorm||mNorm.includes(rNorm)||rNorm.includes(mNorm)||
-          mNorm.split(' ').filter(w=>w.length>4).every(w=>rNorm.includes(w));
-      });
-      if(found&&found.ingredients&&found.ingredients.length){
-        // Ouvrir directement la vraie fiche si la recette est trouvée
-        document.getElementById('fiche-modal-content').innerHTML=buildFicheHTML(found);
-        const alreadySaved=(S.recipes||[]).some(r=>r.id===found.id);
-        const addBtn=document.getElementById('fiche-add-btn');
-        addBtn.style.display=alreadySaved?'none':'inline-block';
-        _ficheAddCallback=()=>{if(!S.recipes.some(r=>r.id===found.id)){S.recipes.push({...found});save();}addBtn.style.display='none';showToast('✅ Recette ajoutée !');};
-        document.getElementById('fiche-modal').classList.add('active');
-        return;
-      }
-      return (m.ing||[]).map(i=>({ico:'•',qty:'',name:i}));
-    })(),
+    ingredients:(m.ing||[]).map(i=>({ico:'•',qty:'',name:i})),
     tips:detailed?[...detailed.tips,{dot:'#8b5cf6',text:'<strong>'+m.k+' kcal</strong> · P: '+m.p+'g · G: '+m.c+'g · L: '+m.l+'g'}]:[{dot:'#4caf50',text:'<strong>'+m.k+' kcal</strong>'},{dot:'#1565c0',text:'Protéines : <strong>'+m.p+'g</strong>'},{dot:'#f57f17',text:'Glucides : <strong>'+m.c+'g</strong>'},{dot:'#c62828',text:'Lipides : <strong>'+m.l+'g</strong>'}],
     steps:detailed?detailed.steps:[{title:'Préparer',desc:'Réunir tous les ingrédients : '+(m.ing||[]).join(', ')+'.'},{title:'Cuisson',desc:'Cuire selon ta méthode habituelle. Assaisonner.'},{title:'Dresser',desc:'Servir immédiatement.'}],
     errors:detailed?(detailed.errors||[]):[],variantes:[],footer:'Plan repas · '+meta.lbl,stars:'★★★★'};
