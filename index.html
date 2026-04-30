@@ -2795,7 +2795,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       ]).then(()=>{
         if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
         // Afficher la page seulement quand les données sont prêtes
-        showPage(S.page||'home');
+        showPage('home');
         renderPage();
         _autoGenerateProposals();
       });
