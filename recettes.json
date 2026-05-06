@@ -64243,5 +64243,4220 @@
     },
     "footer": "Mousse citron",
     "stars": 4.5
+  },
+  {
+    "id": "raa01",
+    "emoji": "🥗",
+    "name": "Salade de chou-rave cru",
+    "cuisine": "Cuisine Simple",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌿",
+        "qty": "2",
+        "name": "Choux-raves"
+      },
+      {
+        "ico": "🥕",
+        "qty": "2",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Ciboulette, persil"
+      },
+      {
+        "ico": "🌿",
+        "qty": "3 c.à.s.",
+        "name": "Huile d'olive"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1",
+        "name": "Citron"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel, poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#2e7d32",
+        "text": "Chou-rave râpé finement = texture croquante agréable"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Légume méconnu = surprendra tes convives"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Râper",
+        "desc": "Éplucher et râper finement les choux-raves et les carottes."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Mélanger avec huile d'olive, jus de citron, sel et poivre."
+      },
+      {
+        "title": "Herbes",
+        "desc": "Ciboulette et persil ciselés. Laisser mariner 15 min avant de servir."
+      }
+    ],
+    "errors": [
+      "Chou-rave pas épluché → peau coriace",
+      "Trop mariné → perd son croquant"
+    ],
+    "variantes": [
+      "Avec du yaourt grec",
+      "Avec des graines de cumin",
+      "Avec de la feta"
+    ],
+    "footer": "Légume oublié · Simple",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa02",
+    "emoji": "🍳",
+    "name": "Tortilla espagnole classique",
+    "cuisine": "Cuisine Espagnole",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "25 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥚",
+        "qty": "6",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥔",
+        "qty": "4",
+        "name": "Pommes de terre"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🫒",
+        "qty": "15cl",
+        "name": "Huile d'olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Pommes de terre confites dans l'huile = tortilla fondante"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Retourner avec une assiette = technique espagnole classique"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Confire",
+        "desc": "Cuire pommes de terre et oignon en tranches fines dans l'huile à feu doux 15 min."
+      },
+      {
+        "title": "Œufs",
+        "desc": "Égoutter et mélanger avec les œufs battus salés. Laisser reposer 5 min."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Verser dans une poêle huilée. Cuire 5 min à feu moyen. Retourner avec une assiette. Cuire 3 min. Servir tiède."
+      }
+    ],
+    "errors": [
+      "Pommes de terre pas assez confites → texture crue",
+      "Feu trop fort → brûlée"
+    ],
+    "variantes": [
+      "Avec des poivrons",
+      "Tortilla au chorizo",
+      "Version légère au four"
+    ],
+    "footer": "Tortilla de patatas · Espagne",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa03",
+    "emoji": "🥘",
+    "name": "Soupe aux orties et pommes de terre",
+    "cuisine": "Cuisine Sauvage",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "20 min",
+    "diff": "Facile ★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "dîner",
+    "seasons": [
+      "spring"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌿",
+        "qty": "200g",
+        "name": "Jeunes orties (gants !)"
+      },
+      {
+        "ico": "🥔",
+        "qty": "3",
+        "name": "Pommes de terre"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🧈",
+        "qty": "30g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🍲",
+        "qty": "80cl",
+        "name": "Bouillon de légumes"
+      },
+      {
+        "ico": "🥛",
+        "qty": "10cl",
+        "name": "Crème fraîche"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#2e7d32",
+        "text": "Blanchir les orties 1 min = piquant neutralisé"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Saveur proche des épinards mais plus intense"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Orties",
+        "desc": "Cueillir les jeunes pousses avec des gants. Blanchir 1 min. Égoutter."
+      },
+      {
+        "title": "Soupe",
+        "desc": "Faire revenir oignon dans le beurre. Ajouter pommes de terre et bouillon. Cuire 15 min."
+      },
+      {
+        "title": "Mixer",
+        "desc": "Ajouter les orties blanchies et la crème. Mixer. Rectifier."
+      }
+    ],
+    "errors": [
+      "Orties pas blanchies → piquant en bouche",
+      "Trop vieilles orties → dures"
+    ],
+    "variantes": [
+      "Soupe d'épinards",
+      "Soupe de cresson",
+      "Avec des lardons"
+    ],
+    "footer": "Cueillette sauvage · Printemps",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa04",
+    "emoji": "🍰",
+    "name": "Tarte aux nectarines amandine",
+    "cuisine": "Cuisine Française",
+    "persons": 8,
+    "prep": "20 min",
+    "cook": "40 min",
+    "diff": "Facile ★",
+    "color": "#f57f17",
+    "colorLight": "#fff9e6",
+    "category": "dessert",
+    "seasons": [
+      "summer"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "1",
+        "name": "Pâte sablée"
+      },
+      {
+        "ico": "🍑",
+        "qty": "5",
+        "name": "Nectarines"
+      },
+      {
+        "ico": "🥜",
+        "qty": "150g",
+        "name": "Poudre d'amandes"
+      },
+      {
+        "ico": "🧈",
+        "qty": "100g",
+        "name": "Beurre mou"
+      },
+      {
+        "ico": "🍬",
+        "qty": "100g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🥚",
+        "qty": "2",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Rhum"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f57f17",
+        "text": "Nectarines en quartiers sur la crème crue = cuisson parfaite"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Crème d'amandes absorbée par les fruits = fondant incomparable"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Crème",
+        "desc": "Fouetter beurre et sucre. Ajouter œufs, poudre d'amandes et rhum."
+      },
+      {
+        "title": "Monter",
+        "desc": "Pâte précuite 10 min. Étaler la crème. Nectarines en quartiers par-dessus."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Four à 180°C, 35 min. Lustrer de confiture d'abricot chauffée."
+      }
+    ],
+    "errors": [
+      "Crème trop épaisse → déborde",
+      "Nectarines trop mûres → s'effondrent"
+    ],
+    "variantes": [
+      "Aux pêches",
+      "Aux abricots",
+      "Aux prunes"
+    ],
+    "footer": "Tarte estivale · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa05",
+    "emoji": "🥩",
+    "name": "Piccata de veau au citron câpres",
+    "cuisine": "Cuisine Italienne",
+    "persons": 2,
+    "prep": "10 min",
+    "cook": "10 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥩",
+        "qty": "4 fines",
+        "name": "Escalopes de veau"
+      },
+      {
+        "ico": "🌾",
+        "qty": "QS",
+        "name": "Farine"
+      },
+      {
+        "ico": "🍋",
+        "qty": "2",
+        "name": "Citrons"
+      },
+      {
+        "ico": "🫙",
+        "qty": "2 c.à.s.",
+        "name": "Câpres"
+      },
+      {
+        "ico": "🧈",
+        "qty": "60g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Persil plat, sel, poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Escalopes très fines = cuisson 2 min par face"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Beurre monté hors du feu = sauce soyeuse et brillante"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Veau",
+        "desc": "Fariner les escalopes. Dorer dans le beurre 2 min par face. Réserver."
+      },
+      {
+        "title": "Sauce",
+        "desc": "Déglacer avec le jus de citron. Ajouter les câpres. Réduire 1 min."
+      },
+      {
+        "title": "Finir",
+        "desc": "Monter au beurre froid hors du feu. Persil. Napper les escalopes."
+      }
+    ],
+    "errors": [
+      "Escalopes trop épaisses → pas cuites",
+      "Sauce pas montée au beurre → trop acide"
+    ],
+    "variantes": [
+      "Piccata de poulet",
+      "Avec des anchois",
+      "Sole piccata"
+    ],
+    "footer": "Piccata al limone · Italie",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa06",
+    "emoji": "🫙",
+    "name": "Pâte à tartiner noisette-cacao",
+    "cuisine": "Conserve Maison",
+    "persons": 8,
+    "prep": "15 min",
+    "cook": "10 min",
+    "diff": "Facile ★",
+    "color": "#795548",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥜",
+        "qty": "300g",
+        "name": "Noisettes"
+      },
+      {
+        "ico": "🍫",
+        "qty": "100g",
+        "name": "Chocolat au lait"
+      },
+      {
+        "ico": "🍬",
+        "qty": "50g",
+        "name": "Sucre glace"
+      },
+      {
+        "ico": "🥥",
+        "qty": "2 c.à.s.",
+        "name": "Huile de coco"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Vanille"
+      },
+      {
+        "ico": "🧂",
+        "qty": "1 pincée",
+        "name": "Sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#795548",
+        "text": "Torréfier les noisettes = saveur 10x plus intense"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Conservation 3 semaines à température ambiante"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Torréfier",
+        "desc": "Noisettes au four 180°C, 12 min. Frotter dans un torchon pour enlever la peau."
+      },
+      {
+        "title": "Mixer",
+        "desc": "Mixer 8-10 min jusqu'à pâte crémeuse. Ajouter chocolat fondu, sucre, huile et sel."
+      },
+      {
+        "title": "Pot",
+        "desc": "Mettre en pot hermétique. Conservation 3 semaines."
+      }
+    ],
+    "errors": [
+      "Noisettes pas torréfiées → fade",
+      "Pas assez mixer → granuleux"
+    ],
+    "variantes": [
+      "Version vegan",
+      "Sans sucre ajouté",
+      "Avec du cacao pur"
+    ],
+    "footer": "Conservation 3 semaines · Maison",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa07",
+    "emoji": "🍜",
+    "name": "Soupe miso aux légumes d'hiver",
+    "cuisine": "Cuisine Japonaise",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "15 min",
+    "diff": "Facile ★",
+    "color": "#795548",
+    "colorLight": "#efebe9",
+    "category": "dîner",
+    "seasons": [
+      "winter"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌿",
+        "qty": "4 c.à.s.",
+        "name": "Pâte miso"
+      },
+      {
+        "ico": "💧",
+        "qty": "1,2L",
+        "name": "Eau"
+      },
+      {
+        "ico": "🥬",
+        "qty": "100g",
+        "name": "Chou chinois"
+      },
+      {
+        "ico": "🥕",
+        "qty": "2",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🍄",
+        "qty": "100g",
+        "name": "Champignons shiitake"
+      },
+      {
+        "ico": "🧀",
+        "qty": "150g",
+        "name": "Tofu ferme"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Oignons verts, wakamé"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#795548",
+        "text": "Miso jamais bouilli = propriétés préservées"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Soupe repas complète et réconfortante en 15 min"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Bouillon",
+        "desc": "Chauffer l'eau avec légumes et champignons 10 min à frémissement."
+      },
+      {
+        "title": "Tofu",
+        "desc": "Ajouter le tofu en dés et le wakamé réhydraté 2 min."
+      },
+      {
+        "title": "Miso",
+        "desc": "Hors du feu, diluer le miso. Oignons verts. Servir immédiatement."
+      }
+    ],
+    "errors": [
+      "Miso bouilli → perd ses bienfaits",
+      "Trop de miso → trop salé"
+    ],
+    "variantes": [
+      "Miso aux palourdes",
+      "Version dashi",
+      "Avec des nouilles soba"
+    ],
+    "footer": "Soupe réconfortante · Japon",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa08",
+    "emoji": "🥗",
+    "name": "Salade de blé au poulet rôti",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "15 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "200g cuit",
+        "name": "Blé ou épeautre"
+      },
+      {
+        "ico": "🍗",
+        "qty": "300g",
+        "name": "Poulet rôti effiloché"
+      },
+      {
+        "ico": "🍅",
+        "qty": "200g",
+        "name": "Tomates cerises"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Basilic, persil"
+      },
+      {
+        "ico": "🫒",
+        "qty": "80g",
+        "name": "Olives vertes"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Vinaigrette citron-moutarde"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Blé assaisonné tiède = absorbe mieux la vinaigrette"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Poulet rôti du commerce = recette sans cuisson"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Blé",
+        "desc": "Cuire le blé selon le paquet. Assaisonner encore tiède."
+      },
+      {
+        "title": "Garnitures",
+        "desc": "Effilocher le poulet. Couper les tomates. Ciseler les herbes."
+      },
+      {
+        "title": "Assembler",
+        "desc": "Mélanger tout avec la vinaigrette. Olives et basilic."
+      }
+    ],
+    "errors": [
+      "Blé froid → n'absorbe pas",
+      "Trop de vinaigrette → détrempé"
+    ],
+    "variantes": [
+      "Avec du farro",
+      "Salade d'orge",
+      "Avec des pois chiches"
+    ],
+    "footer": "Salade de céréales · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa09",
+    "emoji": "🍰",
+    "name": "Gâteau aux carottes orange",
+    "cuisine": "Cuisine Végétarienne",
+    "persons": 8,
+    "prep": "20 min",
+    "cook": "40 min",
+    "diff": "Facile ★",
+    "color": "#f57f17",
+    "colorLight": "#fff9e6",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": "250g",
+        "name": "Carottes râpées"
+      },
+      {
+        "ico": "🍊",
+        "qty": "1",
+        "name": "Orange (zeste + jus)"
+      },
+      {
+        "ico": "🌾",
+        "qty": "220g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🥚",
+        "qty": "3",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🍬",
+        "qty": "180g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🫒",
+        "qty": "12cl",
+        "name": "Huile neutre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 sachet",
+        "name": "Levure + cannelle"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f57f17",
+        "text": "Orange = fraîcheur qui allège la carotte"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Gâteau naturellement humide qui se conserve bien"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Pâte",
+        "desc": "Fouetter œufs et sucre. Ajouter huile, zeste et jus d'orange. Carottes râpées, farine, levure et cannelle."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Moule beurré. Four à 175°C, 35-40 min."
+      },
+      {
+        "title": "Glaçage",
+        "desc": "Glaçage cream cheese optionnel ou juste sucre glace."
+      }
+    ],
+    "errors": [
+      "Carottes trop humides → gâteau qui s'affaisse",
+      "Trop cuire → sec"
+    ],
+    "variantes": [
+      "Gâteau courgette-citron",
+      "Version chocolat-betterave",
+      "Sans gluten"
+    ],
+    "footer": "Carrot cake revisité · Simple",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa10",
+    "emoji": "🥘",
+    "name": "Feijoada brésilienne simplifiée",
+    "cuisine": "Cuisine Brésilienne",
+    "persons": 6,
+    "prep": "15 min",
+    "cook": "1h",
+    "diff": "Facile ★",
+    "color": "#795548",
+    "colorLight": "#efebe9",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🫘",
+        "qty": "800g",
+        "name": "Haricots noirs"
+      },
+      {
+        "ico": "🥩",
+        "qty": "400g",
+        "name": "Porc (saucisse, lardons, jarret)"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🧄",
+        "qty": "6 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🍊",
+        "qty": "1",
+        "name": "Orange"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Laurier, sel, poivre"
+      },
+      {
+        "ico": "🍚",
+        "qty": "QS",
+        "name": "Riz blanc, chou émincé"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#795548",
+        "text": "Orange dans la cocotte = coupe le gras et parfume"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Plat national brésilien = saveur riche et profonde"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Base",
+        "desc": "Faire revenir oignons et ail. Ajouter les viandes et les haricots. Couvrir d'eau."
+      },
+      {
+        "title": "Mijoter",
+        "desc": "Ajouter laurier et orange coupée. Cuire 45 min à feu doux."
+      },
+      {
+        "title": "Servir",
+        "desc": "Avec riz blanc, chou sauté et orange en tranches."
+      }
+    ],
+    "errors": [
+      "Pas assez cuire → haricots durs",
+      "Trop de sel → viandes déjà salées"
+    ],
+    "variantes": [
+      "Version végétarienne",
+      "Avec de la couenne",
+      "Feijoada légère"
+    ],
+    "footer": "Plat national · Brésil",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa11",
+    "emoji": "🥞",
+    "name": "Blinis au sarrasin saumon",
+    "cuisine": "Cuisine Russe",
+    "persons": 6,
+    "prep": "20 min",
+    "cook": "20 min",
+    "diff": "Facile ★",
+    "color": "#795548",
+    "colorLight": "#efebe9",
+    "category": "apéro",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "150g",
+        "name": "Farine de sarrasin"
+      },
+      {
+        "ico": "🌾",
+        "qty": "50g",
+        "name": "Farine blanche"
+      },
+      {
+        "ico": "🥛",
+        "qty": "25cl",
+        "name": "Lait tiède"
+      },
+      {
+        "ico": "🥚",
+        "qty": "2",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🌿",
+        "qty": "5g",
+        "name": "Levure boulangère"
+      },
+      {
+        "ico": "🐟",
+        "qty": "200g",
+        "name": "Saumon fumé"
+      },
+      {
+        "ico": "🧀",
+        "qty": "200g",
+        "name": "Crème fraîche"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#795548",
+        "text": "Pâte levée 1h = blinis aériens"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Servir les blinis chauds avec les garnitures froides = contraste parfait"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Pâte",
+        "desc": "Mélanger farines, levure, lait et jaunes. Lever 1h. Incorporer les blancs en neige."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Poêle beurrée à feu moyen. Petites louches. 2 min par face."
+      },
+      {
+        "title": "Garnir",
+        "desc": "Crème fraîche, saumon fumé, aneth et un peu de citron."
+      }
+    ],
+    "errors": [
+      "Pas lever → blinis plats",
+      "Feu trop fort → brûlés"
+    ],
+    "variantes": [
+      "Avec du caviar",
+      "Blinis au cream cheese",
+      "Version sucrée"
+    ],
+    "footer": "Apéro festif · Russie",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa12",
+    "emoji": "🫙",
+    "name": "Vinaigre de cidre aux framboises",
+    "cuisine": "Conserve Maison",
+    "persons": 6,
+    "prep": "5 min",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#e91e63",
+    "colorLight": "#fce4ec",
+    "category": "préparation",
+    "seasons": [
+      "summer"
+    ],
+    "ingredients": [
+      {
+        "ico": "🍓",
+        "qty": "200g",
+        "name": "Framboises fraîches"
+      },
+      {
+        "ico": "🌿",
+        "qty": "50cl",
+        "name": "Vinaigre de cidre"
+      },
+      {
+        "ico": "🍬",
+        "qty": "1 c.à.s.",
+        "name": "Sucre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#e91e63",
+        "text": "Macérer 2 semaines = vinaigre rose parfumé"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Idéal pour les vinaigrettes et les marinades"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Écraser",
+        "desc": "Écraser légèrement les framboises dans un bocal propre."
+      },
+      {
+        "title": "Vinaigre",
+        "desc": "Verser le vinaigre de cidre et le sucre. Fermer."
+      },
+      {
+        "title": "Macérer",
+        "desc": "2 semaines à l'abri de la lumière. Filtrer. Mettre en bouteille stérilisée."
+      }
+    ],
+    "errors": [
+      "Pas assez macérer → peu parfumé",
+      "Bocal pas propre → moisissures"
+    ],
+    "variantes": [
+      "Vinaigre de mûres",
+      "Vinaigre de cerises",
+      "Vinaigre de sureau"
+    ],
+    "footer": "Conservation 1 an · Maison",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa13",
+    "emoji": "🍲",
+    "name": "Crème de pois cassés à la menthe",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "45 min",
+    "diff": "Facile ★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "dîner",
+    "seasons": [
+      "winter"
+    ],
+    "ingredients": [
+      {
+        "ico": "🫘",
+        "qty": "300g",
+        "name": "Pois cassés"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🥕",
+        "qty": "2",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🧈",
+        "qty": "30g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🍲",
+        "qty": "1,5L",
+        "name": "Bouillon de légumes"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Menthe fraîche, crème, sel, poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#2e7d32",
+        "text": "Pois cassés = pas de trempage nécessaire"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Menthe en finition = note fraîche qui tranche avec la douceur"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Base",
+        "desc": "Faire revenir oignon dans le beurre. Ajouter pois cassés, carottes et bouillon."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Mijoter 40 min jusqu'à pois cassés fondants."
+      },
+      {
+        "title": "Mixer",
+        "desc": "Mixer jusqu'à velouté. Crème et menthe fraîche hors du feu."
+      }
+    ],
+    "errors": [
+      "Pois cassés pas assez cuits → grumeaux",
+      "Menthe cuite → amère"
+    ],
+    "variantes": [
+      "Avec des lardons",
+      "Soupe aux lentilles",
+      "Version indienne"
+    ],
+    "footer": "Velouté hivernal · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa14",
+    "emoji": "🥩",
+    "name": "Poulet laqué au miel soja",
+    "cuisine": "Cuisine Asiatique",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "30 min",
+    "diff": "Facile ★",
+    "color": "#f57f17",
+    "colorLight": "#fff9e6",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🍗",
+        "qty": "8 pilons",
+        "name": "Pilons de poulet"
+      },
+      {
+        "ico": "🍯",
+        "qty": "3 c.à.s.",
+        "name": "Miel"
+      },
+      {
+        "ico": "🌿",
+        "qty": "3 c.à.s.",
+        "name": "Sauce soja"
+      },
+      {
+        "ico": "🧄",
+        "qty": "3 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Gingembre râpé"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Huile de sésame"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f57f17",
+        "text": "Marinade 2h minimum = poulet laqué jusqu'à l'os"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Four chaud en fin = laque brillante et caramélisée"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Mariner",
+        "desc": "Mélanger miel, soja, ail, gingembre et sésame. Enduire les pilons. Mariner 2h."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Four à 200°C, 25 min en retournant à mi-cuisson."
+      },
+      {
+        "title": "Laquer",
+        "desc": "Badigeonner de marinade restante. Gril 5 min pour laquer."
+      }
+    ],
+    "errors": [
+      "Pas assez mariner → pas de laque",
+      "Gril pas surveillé → brûlé"
+    ],
+    "variantes": [
+      "Ailes de poulet",
+      "Avec du miso",
+      "Poulet teriyaki"
+    ],
+    "footer": "Poulet laqué · Asie",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa15",
+    "emoji": "🥮",
+    "name": "Tarte au sucre de canne",
+    "cuisine": "Cuisine Simple",
+    "persons": 8,
+    "prep": "15 min",
+    "cook": "25 min",
+    "diff": "Facile ★",
+    "color": "#795548",
+    "colorLight": "#efebe9",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "250g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🧈",
+        "qty": "100g",
+        "name": "Beurre froid"
+      },
+      {
+        "ico": "🥚",
+        "qty": "1",
+        "name": "Œuf"
+      },
+      {
+        "ico": "🍬",
+        "qty": "150g",
+        "name": "Cassonade"
+      },
+      {
+        "ico": "🥛",
+        "qty": "20cl",
+        "name": "Crème fraîche épaisse"
+      },
+      {
+        "ico": "🧈",
+        "qty": "50g",
+        "name": "Beurre fondu pour la garniture"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#795548",
+        "text": "Cassonade + crème + beurre = garniture fondante qui caramélise"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Tarte simple mais addictive"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Pâte",
+        "desc": "Sabler farine et beurre froid. Ajouter œuf. Former une boule. Réfrigérer 20 min. Foncer le moule."
+      },
+      {
+        "title": "Garniture",
+        "desc": "Mélanger cassonade, crème et beurre fondu. Verser sur le fond cru."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Four à 190°C, 22-25 min. La garniture doit être légèrement tremblotante. Refroidir."
+      }
+    ],
+    "errors": [
+      "Trop cuire → garniture qui durcit",
+      "Fond cru → bien précuire si fond épais"
+    ],
+    "variantes": [
+      "Avec de la cannelle",
+      "Tarte au sucre belge",
+      "Avec des noix de pécan"
+    ],
+    "footer": "Tarte caramel · Simple",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa16",
+    "emoji": "🥗",
+    "name": "Salade de haricots verts amandes",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "5 min",
+    "diff": "Facile ★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "entrée",
+    "seasons": [
+      "summer"
+    ],
+    "ingredients": [
+      {
+        "ico": "🫛",
+        "qty": "500g",
+        "name": "Haricots verts fins"
+      },
+      {
+        "ico": "🥜",
+        "qty": "50g",
+        "name": "Amandes effilées"
+      },
+      {
+        "ico": "🧄",
+        "qty": "2 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Persil, basilic"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Vinaigrette moutarde"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Fleur de sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#2e7d32",
+        "text": "Haricots blanchis 3 min = croquants et verts"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Amandes grillées = croquant et saveur en plus"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Haricots",
+        "desc": "Blanchir 3 min à l'eau bouillante salée. Refroidir à l'eau glacée. Égoutter."
+      },
+      {
+        "title": "Amandes",
+        "desc": "Torréfier les amandes à sec 2 min."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Haricots, amandes, herbes fraîches et vinaigrette. Fleur de sel."
+      }
+    ],
+    "errors": [
+      "Haricots trop cuits → mous",
+      "Amandes brûlées → amères"
+    ],
+    "variantes": [
+      "Avec du parmesan",
+      "Haricots aux câpres",
+      "Avec des anchois"
+    ],
+    "footer": "Salade estivale · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa17",
+    "emoji": "🍳",
+    "name": "Pâtes aux anchois et chapelure",
+    "cuisine": "Cuisine Sicilienne",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "15 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "400g",
+        "name": "Spaghetti"
+      },
+      {
+        "ico": "🐟",
+        "qty": "8 filets",
+        "name": "Anchois à l'huile"
+      },
+      {
+        "ico": "🌾",
+        "qty": "60g",
+        "name": "Chapelure"
+      },
+      {
+        "ico": "🧄",
+        "qty": "4 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌶️",
+        "qty": "1",
+        "name": "Piment rouge"
+      },
+      {
+        "ico": "🫒",
+        "qty": "8 c.à.s.",
+        "name": "Huile d'olive"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Anchois fondus dans l'huile = se dissolvent et parfument tout"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Chapelure grillée = le parmesan du pauvre sicilien"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Chapelure",
+        "desc": "Faire griller la chapelure à sec avec un peu d'huile jusqu'à dorée. Réserver."
+      },
+      {
+        "title": "Sauce",
+        "desc": "Faire fondre anchois, ail et piment dans l'huile à feu doux. Les anchois doivent se dissoudre."
+      },
+      {
+        "title": "Pâtes",
+        "desc": "Cuire al dente. Mélanger avec la sauce. Chapelure grillée sur le dessus."
+      }
+    ],
+    "errors": [
+      "Chapelure brûlée → amère",
+      "Ail brûlé → tout recommencer"
+    ],
+    "variantes": [
+      "Avec des câpres",
+      "Pasta con le sarde",
+      "Version végétarienne"
+    ],
+    "footer": "Pasta c'anciova · Sicile",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa18",
+    "emoji": "🥘",
+    "name": "Gratin de topinambours",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "45 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "dîner",
+    "seasons": [
+      "winter"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌿",
+        "qty": "700g",
+        "name": "Topinambours"
+      },
+      {
+        "ico": "🥛",
+        "qty": "30cl",
+        "name": "Crème fraîche"
+      },
+      {
+        "ico": "🧀",
+        "qty": "100g",
+        "name": "Gruyère râpé"
+      },
+      {
+        "ico": "🧄",
+        "qty": "2 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Thym, sel, poivre, muscade"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Topinambour = légume oublié à la saveur d'artichaut"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Précuire à l'eau 10 min = gratin plus rapide et uniforme"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Topinambours",
+        "desc": "Éplucher et trancher en rondelles. Blanchir 10 min. Égoutter."
+      },
+      {
+        "title": "Monter",
+        "desc": "Disposer dans un plat frotté à l'ail avec thym. Crème assaisonnée. Gruyère."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Four à 180°C, 30-35 min jusqu'à doré."
+      }
+    ],
+    "errors": [
+      "Pas précuire → topinambours crus",
+      "Trop cuire → fondent complètement"
+    ],
+    "variantes": [
+      "Gratin de panais",
+      "Topinambours rôtis",
+      "Purée de topinambour"
+    ],
+    "footer": "Légume oublié · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa19",
+    "emoji": "🍰",
+    "name": "Semifreddo au caramel",
+    "cuisine": "Cuisine Italienne",
+    "persons": 8,
+    "prep": "30 min",
+    "cook": "10 min",
+    "diff": "Facile ★★",
+    "color": "#f57f17",
+    "colorLight": "#fff9e6",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🍬",
+        "qty": "150g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🥛",
+        "qty": "40cl",
+        "name": "Crème liquide entière"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4 jaunes",
+        "name": "Jaunes d'œuf"
+      },
+      {
+        "ico": "🍬",
+        "qty": "80g",
+        "name": "Sucre pour les jaunes"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Vanille"
+      },
+      {
+        "ico": "🧂",
+        "qty": "1 pincée",
+        "name": "Fleur de sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f57f17",
+        "text": "Semifreddo = glace sans sorbetière italienne"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Congeler dans un moule à cake chemisé = démoulage facile"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Caramel",
+        "desc": "Faire un caramel au sel. Laisser refroidir légèrement."
+      },
+      {
+        "title": "Sabayon",
+        "desc": "Fouetter jaunes et sucre au bain-marie jusqu'à ruban. Incorporer le caramel."
+      },
+      {
+        "title": "Monter",
+        "desc": "Incorporer la chantilly. Verser en moule. Congeler 6h minimum."
+      }
+    ],
+    "errors": [
+      "Caramel trop foncé → amer",
+      "Chantilly trop ferme → semifreddo dense"
+    ],
+    "variantes": [
+      "Semifreddo pistache",
+      "Semifreddo framboise",
+      "Semifreddo café"
+    ],
+    "footer": "Glace sans sorbetière · Italie",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa20",
+    "emoji": "🥩",
+    "name": "Pot-au-feu de légumes racines",
+    "cuisine": "Cuisine Française",
+    "persons": 6,
+    "prep": "15 min",
+    "cook": "1h",
+    "diff": "Facile ★",
+    "color": "#795548",
+    "colorLight": "#efebe9",
+    "category": "dîner",
+    "seasons": [
+      "winter"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": "4",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🫘",
+        "qty": "3",
+        "name": "Navets"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2",
+        "name": "Poireaux"
+      },
+      {
+        "ico": "🥔",
+        "qty": "4",
+        "name": "Pommes de terre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Céleri-rave"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Thym, laurier, gros sel, poivre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Sauce gribiche ou vinaigrette moutarde"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#795548",
+        "text": "Légumes entiers ou en gros morceaux = tiennent à la cuisson"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Bouillon parfumé servi en entrée = 2 plats en 1"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Bouillon",
+        "desc": "Porter à ébullition l'eau avec les herbes et le sel. Ajouter les légumes racines."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Mijoter 50 min à frémissement. Les légumes doivent être tendres."
+      },
+      {
+        "title": "Servir",
+        "desc": "Bouillon d'abord dans des bols. Puis légumes avec gribiche ou moutarde."
+      }
+    ],
+    "errors": [
+      "Légumes trop petits → fondent",
+      "Ébullition trop forte → bouillon trouble"
+    ],
+    "variantes": [
+      "Avec des os à moelle",
+      "Pot-au-feu de volaille",
+      "Version avec saucisses"
+    ],
+    "footer": "Pot-au-feu végétarien · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa21",
+    "emoji": "🫙",
+    "name": "Cornichons à la russe",
+    "cuisine": "Conserve Russe",
+    "persons": 8,
+    "prep": "20 min",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "préparation",
+    "seasons": [
+      "summer"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥒",
+        "qty": "1 kg",
+        "name": "Petits concombres"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Aneth frais, feuilles de raifort"
+      },
+      {
+        "ico": "🧄",
+        "qty": "6 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🧂",
+        "qty": "2 c.à.s.",
+        "name": "Sel non iodé"
+      },
+      {
+        "ico": "💧",
+        "qty": "1L",
+        "name": "Eau"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Grains de poivre, feuilles de cassis"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#2e7d32",
+        "text": "Lacto-fermentation naturelle = cornichons croquants et probiotiques"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Feuilles de raifort et cassis = secret du croquant russe"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Bocaux",
+        "desc": "Disposer aneth, ail, feuilles de raifort et cassis dans les bocaux. Ajouter les concombres debout."
+      },
+      {
+        "title": "Saumure",
+        "desc": "Dissoudre le sel dans l'eau froide. Verser sur les concombres."
+      },
+      {
+        "title": "Fermenter",
+        "desc": "Laisser à température ambiante 3-5 jours. Réfrigérer. Prêts après 1 semaine."
+      }
+    ],
+    "errors": [
+      "Sel iodé → fermentation ratée",
+      "Concombres exposés à l'air → moisissures"
+    ],
+    "variantes": [
+      "Cornichons lacto-fermentés",
+      "Pickles rapides",
+      "Gherkins au vinaigre"
+    ],
+    "footer": "Conservation 3 mois frigo",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa22",
+    "emoji": "🥗",
+    "name": "Salade de roquette parmesan poires",
+    "cuisine": "Cuisine Italienne",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "entrée",
+    "seasons": [
+      "autumn"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥗",
+        "qty": "150g",
+        "name": "Roquette"
+      },
+      {
+        "ico": "🍐",
+        "qty": "2",
+        "name": "Poires Williams"
+      },
+      {
+        "ico": "🧀",
+        "qty": "80g",
+        "name": "Parmesan en copeaux"
+      },
+      {
+        "ico": "🥜",
+        "qty": "50g",
+        "name": "Noix"
+      },
+      {
+        "ico": "🍯",
+        "qty": "2 c.à.s.",
+        "name": "Miel"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Vinaigre balsamique, huile d'olive"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#2e7d32",
+        "text": "Roquette poivrée + poire sucrée = accord classique italien"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Parmesan en copeaux = plus élégant que râpé"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Poires",
+        "desc": "Couper les poires en quartiers fins. Citronner."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Roquette, poires, copeaux de parmesan, noix."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Vinaigre balsamique, huile d'olive et miel en filet. Poivre du moulin."
+      }
+    ],
+    "errors": [
+      "Poires froides → insipides",
+      "Balsamique en excès → masque tout"
+    ],
+    "variantes": [
+      "Avec du gorgonzola",
+      "Avec des figues",
+      "Roquette-parmesan-bresaola"
+    ],
+    "footer": "Insalata · Italie",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa23",
+    "emoji": "🍜",
+    "name": "Udon sauté au bœuf",
+    "cuisine": "Cuisine Japonaise",
+    "persons": 2,
+    "prep": "10 min",
+    "cook": "10 min",
+    "diff": "Facile ★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "400g",
+        "name": "Nouilles udon fraîches"
+      },
+      {
+        "ico": "🥩",
+        "qty": "200g",
+        "name": "Bœuf émincé"
+      },
+      {
+        "ico": "🌿",
+        "qty": "100g",
+        "name": "Pousses de soja"
+      },
+      {
+        "ico": "🌿",
+        "qty": "3 c.à.s.",
+        "name": "Sauce soja"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Sauce oyster"
+      },
+      {
+        "ico": "🧄",
+        "qty": "2 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Oignons verts, sésame"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#c62828",
+        "text": "Udon fraîches = texture fondante incomparable"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Wok très chaud = saveur fumée caractéristique"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Bœuf",
+        "desc": "Wok très chaud. Saisir le bœuf 2 min. Réserver."
+      },
+      {
+        "title": "Udon",
+        "desc": "Faire sauter les udon avec ail, soja et sauce oyster 3 min."
+      },
+      {
+        "title": "Finir",
+        "desc": "Remettre le bœuf et les pousses de soja. Oignons verts et sésame."
+      }
+    ],
+    "errors": [
+      "Udon pas séparées → collent",
+      "Wok pas assez chaud → pâtes molles"
+    ],
+    "variantes": [
+      "Udon végétarien tofu",
+      "Yaki udon au poulet",
+      "Udon en soupe"
+    ],
+    "footer": "Yaki udon · Japon",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa24",
+    "emoji": "🥮",
+    "name": "Brioche tressée moelleuse",
+    "cuisine": "Cuisine Française",
+    "persons": 10,
+    "prep": "30 min",
+    "cook": "30 min",
+    "diff": "Facile ★★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "petit-déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "500g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🧈",
+        "qty": "150g",
+        "name": "Beurre mou"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "10cl",
+        "name": "Lait tiède"
+      },
+      {
+        "ico": "🌿",
+        "qty": "10g",
+        "name": "Levure boulangère"
+      },
+      {
+        "ico": "🍬",
+        "qty": "60g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌸",
+        "qty": "QS",
+        "name": "Fleur d'oranger, sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Pétrir longuement = brioche filante et aérienne"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Lever une nuit au frigo = mie encore plus moelleuse"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Pâte",
+        "desc": "Pétrir farine, levure, sucre, sel, œufs, lait et fleur d'oranger 10 min. Incorporer le beurre mou progressivement. Lever 2h."
+      },
+      {
+        "title": "Tresser",
+        "desc": "Diviser en 3 boudins. Tresser. Poser sur plaque. Lever 1h."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Dorer au jaune d'œuf. Four à 170°C, 25-30 min."
+      }
+    ],
+    "errors": [
+      "Pas assez pétrir → pas de filant",
+      "Beurre trop froid → grumeleuse"
+    ],
+    "variantes": [
+      "Brioche Nanterre",
+      "Brioche Parisienne",
+      "Kouglof"
+    ],
+    "footer": "Viennoiserie · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa25",
+    "emoji": "🥘",
+    "name": "Poêlée de gnocchi épinards gorgonzola",
+    "cuisine": "Cuisine Italienne",
+    "persons": 4,
+    "prep": "5 min",
+    "cook": "10 min",
+    "diff": "Facile ★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥔",
+        "qty": "500g",
+        "name": "Gnocchi frais"
+      },
+      {
+        "ico": "🌿",
+        "qty": "200g",
+        "name": "Épinards frais"
+      },
+      {
+        "ico": "🧀",
+        "qty": "100g",
+        "name": "Gorgonzola"
+      },
+      {
+        "ico": "🥛",
+        "qty": "10cl",
+        "name": "Crème fraîche"
+      },
+      {
+        "ico": "🧄",
+        "qty": "2 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Noix de muscade, sel, poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#2e7d32",
+        "text": "Gnocchi poêlés à sec = croustillants dehors fondants dedans"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Gorgonzola fondu dans la crème = sauce divine en 3 min"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Gnocchi",
+        "desc": "Faire dorer les gnocchi dans une poêle beurrée sans les cuire d'abord. 3-4 min par face."
+      },
+      {
+        "title": "Sauce",
+        "desc": "Dans la même poêle, faire fondre gorgonzola et crème avec l'ail. Ajouter les épinards."
+      },
+      {
+        "title": "Finir",
+        "desc": "Remettre les gnocchi. Muscade. Servir immédiatement."
+      }
+    ],
+    "errors": [
+      "Gnocchi trop mouillés → éclaboussures",
+      "Gorgonzola trop fort → écrase tout"
+    ],
+    "variantes": [
+      "Avec du roquefort",
+      "Gnocchi épinards ricotta",
+      "Version sans fromage bleu"
+    ],
+    "footer": "Gnocchi sautés · Italie",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa26",
+    "emoji": "🫙",
+    "name": "Confiture de coings à la vanille",
+    "cuisine": "Conserve Maison",
+    "persons": 8,
+    "prep": "20 min",
+    "cook": "1h",
+    "diff": "Facile ★",
+    "color": "#f57f17",
+    "colorLight": "#fff9e6",
+    "category": "préparation",
+    "seasons": [
+      "autumn"
+    ],
+    "ingredients": [
+      {
+        "ico": "🍑",
+        "qty": "1,5 kg",
+        "name": "Coings"
+      },
+      {
+        "ico": "🍬",
+        "qty": "900g",
+        "name": "Sucre à confiture"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Gousse de vanille"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1",
+        "name": "Jus de citron"
+      },
+      {
+        "ico": "💧",
+        "qty": "20cl",
+        "name": "Eau"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f57f17",
+        "text": "Coings cuisent longtemps = confiture qui prend bien naturellement"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Couleur rose-orangée spectaculaire après cuisson"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Coings",
+        "desc": "Éplucher, épépiner et couper en morceaux. Cuire 20 min avec l'eau."
+      },
+      {
+        "title": "Sucre",
+        "desc": "Ajouter sucre, vanille et citron. Cuire à ébullition vive 35-40 min."
+      },
+      {
+        "title": "Pot",
+        "desc": "Tester la prise. Mettre en bocaux stérilisés. Retourner."
+      }
+    ],
+    "errors": [
+      "Coings pas assez cuits avant sucre → confiture qui ne prend pas",
+      "Pots pas stérilisés → moisissures"
+    ],
+    "variantes": [
+      "Pâte de coings",
+      "Gelée de coings",
+      "Coings au four"
+    ],
+    "footer": "Conservation 1 an · Stérilisation",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa27",
+    "emoji": "🍳",
+    "name": "Soufflé au jambon fromage",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "20 min",
+    "cook": "25 min",
+    "diff": "Facile ★★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🧀",
+        "qty": "100g",
+        "name": "Gruyère râpé"
+      },
+      {
+        "ico": "🥓",
+        "qty": "100g",
+        "name": "Jambon en dés"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs séparés"
+      },
+      {
+        "ico": "🥛",
+        "qty": "25cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🧈",
+        "qty": "30g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌾",
+        "qty": "30g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Muscade, sel, poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Ramequins bien chemisés = soufflé qui monte droit"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Servir immédiatement = ne pas faire attendre"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Béchamel",
+        "desc": "Faire une béchamel épaisse. Hors du feu, incorporer les jaunes, le gruyère et le jambon."
+      },
+      {
+        "title": "Blancs",
+        "desc": "Monter les blancs en neige ferme. Incorporer délicatement en 3 fois."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Ramequins beurrés et chemisés. Remplir aux 3/4. Four à 200°C, 20-22 min sans ouvrir."
+      }
+    ],
+    "errors": [
+      "Ouvrir le four → retombe",
+      "Blancs pas fermes → soufflé plat"
+    ],
+    "variantes": [
+      "Soufflé au fromage pur",
+      "Avec des épinards",
+      "Soufflé au saumon"
+    ],
+    "footer": "Grand classique · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa28",
+    "emoji": "🥗",
+    "name": "Salade tabulé grenade menthe",
+    "cuisine": "Cuisine Libanaise",
+    "persons": 4,
+    "prep": "20 min",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#e91e63",
+    "colorLight": "#fce4ec",
+    "category": "déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "150g",
+        "name": "Boulgour fin"
+      },
+      {
+        "ico": "🍑",
+        "qty": "1",
+        "name": "Grenade (graines)"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 bouquets",
+        "name": "Persil plat"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Menthe fraîche"
+      },
+      {
+        "ico": "🍅",
+        "qty": "2",
+        "name": "Tomates"
+      },
+      {
+        "ico": "🍋",
+        "qty": "3",
+        "name": "Citrons"
+      },
+      {
+        "ico": "🫒",
+        "qty": "6 c.à.s.",
+        "name": "Huile d'olive"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#e91e63",
+        "text": "Grenade = note acidulée et couleur festive"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Vrai taboulé libanais = 80% herbes, 20% boulgour"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Boulgour",
+        "desc": "Verser eau bouillante sur le boulgour. Couvrir 10 min. Égrener. Refroidir."
+      },
+      {
+        "title": "Préparer",
+        "desc": "Ciseler généreusement persil et menthe. Couper les tomates. Extraire les graines de grenade."
+      },
+      {
+        "title": "Mélanger",
+        "desc": "Tout mélanger. Citron très généreux, huile d'olive. Assaisonner."
+      }
+    ],
+    "errors": [
+      "Trop de boulgour → pas libanais",
+      "Pas assez de citron → fade"
+    ],
+    "variantes": [
+      "Avec du quinoa",
+      "Fattouch libanais",
+      "Taboulé aux herbes sauvages"
+    ],
+    "footer": "Taboulé authentique · Liban",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa29",
+    "emoji": "🍰",
+    "name": "Tarte aux prunes italiennes",
+    "cuisine": "Cuisine Italienne",
+    "persons": 8,
+    "prep": "15 min",
+    "cook": "40 min",
+    "diff": "Facile ★",
+    "color": "#880e4f",
+    "colorLight": "#fce4ec",
+    "category": "dessert",
+    "seasons": [
+      "autumn"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "1",
+        "name": "Pâte sablée"
+      },
+      {
+        "ico": "🍑",
+        "qty": "800g",
+        "name": "Prunes italiennes"
+      },
+      {
+        "ico": "🍬",
+        "qty": "80g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Cannelle"
+      },
+      {
+        "ico": "🥜",
+        "qty": "50g",
+        "name": "Poudre d'amandes"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Sucre glace"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#880e4f",
+        "text": "Prunes italiennes allongées = moins juteuses, parfaites pour les tartes"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Poudre d'amandes sous les prunes = absorbe le jus"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Fond",
+        "desc": "Étaler la pâte. Saupoudrer de poudre d'amandes."
+      },
+      {
+        "title": "Prunes",
+        "desc": "Couper en deux, dénoyauter. Disposer en rosace côté coupé en haut."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Sucre et cannelle sur les prunes. Four à 190°C, 35-40 min. Sucre glace."
+      }
+    ],
+    "errors": [
+      "Prunes trop juteuses → tarte détrempée",
+      "Poudre d'amandes oubliée → fond humide"
+    ],
+    "variantes": [
+      "Tarte quetsches",
+      "Tarte mirabelles",
+      "Tarte reine-claude"
+    ],
+    "footer": "Crostata di prugne · Italie",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa30",
+    "emoji": "🥩",
+    "name": "Lapin à la moutarde classique",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "50 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🐰",
+        "qty": "1 lapin découpé",
+        "name": ""
+      },
+      {
+        "ico": "🌿",
+        "qty": "3 c.à.s.",
+        "name": "Moutarde de Dijon"
+      },
+      {
+        "ico": "🥛",
+        "qty": "20cl",
+        "name": "Crème fraîche"
+      },
+      {
+        "ico": "🌿",
+        "qty": "15cl",
+        "name": "Vin blanc"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Échalotes"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Thym, estragon, sel, poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Enduire le lapin de moutarde avant cuisson = croûte parfumée"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Sauce crème-moutarde en fin = onctuosité et piquant"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Lapin",
+        "desc": "Enduire généreusement de moutarde. Faire dorer dans le beurre."
+      },
+      {
+        "title": "Mijoter",
+        "desc": "Ajouter échalotes, vin blanc et herbes. Couvrir. Cuire 35 min."
+      },
+      {
+        "title": "Sauce",
+        "desc": "Retirer le lapin. Crème fraîche dans le jus de cuisson. Réduire 3 min. Estragon frais."
+      }
+    ],
+    "errors": [
+      "Lapin trop cuit → sec",
+      "Sauce bouillie après crème → tourne"
+    ],
+    "variantes": [
+      "Lapin au cidre",
+      "Lapin aux olives",
+      "Lapin chasseur"
+    ],
+    "footer": "Plat classique · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa31",
+    "emoji": "🫙",
+    "name": "Rillettes de sardines maison",
+    "cuisine": "Charcuterie Marine",
+    "persons": 6,
+    "prep": "10 min",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#1565c0",
+    "colorLight": "#e3f2fd",
+    "category": "préparation",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🐟",
+        "qty": "3 boîtes",
+        "name": "Sardines à l'huile"
+      },
+      {
+        "ico": "🧀",
+        "qty": "100g",
+        "name": "Beurre mou"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1",
+        "name": "Jus et zeste de citron"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Persil, ciboulette"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Moutarde"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Poivre noir, piment de Cayenne"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#1565c0",
+        "text": "Sardines de qualité = rillettes qui méritent le détour"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Beurre mou = texture crémeuse qui s'étale facilement"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Égoutter les sardines. Retirer les arêtes principales si désiré."
+      },
+      {
+        "title": "Mélanger",
+        "desc": "Écraser les sardines avec le beurre mou, citron, moutarde et herbes."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Poivre noir généreux et piment. Mettre en pot. Réfrigérer 1h."
+      }
+    ],
+    "errors": [
+      "Beurre froid → texture grumeleuse",
+      "Sardines de mauvaise qualité → rillettes médiocres"
+    ],
+    "variantes": [
+      "Avec du mascarpone",
+      "Rillettes maquereau-curry",
+      "Version citron-câpres"
+    ],
+    "footer": "Conservation 3 jours frigo",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa32",
+    "emoji": "🍲",
+    "name": "Bouillon thaï coco citronnelle",
+    "cuisine": "Cuisine Thaïlandaise",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "20 min",
+    "diff": "Facile ★",
+    "color": "#f57f17",
+    "colorLight": "#fff9e6",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥥",
+        "qty": "40cl",
+        "name": "Lait de coco"
+      },
+      {
+        "ico": "🍲",
+        "qty": "80cl",
+        "name": "Bouillon de légumes"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 tiges",
+        "name": "Citronnelle"
+      },
+      {
+        "ico": "🌿",
+        "qty": "20g",
+        "name": "Gingembre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Feuilles de kaffir, nam pla"
+      },
+      {
+        "ico": "🌾",
+        "qty": "200g",
+        "name": "Nouilles de riz"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Menthe, coriandre, citron vert"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f57f17",
+        "text": "Citronnelle tapée avant d'infuser = arômes libérés"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Ne pas bouillir après le lait de coco = soupe crémeuse"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Infusion",
+        "desc": "Chauffer bouillon avec citronnelle tapée, gingembre et kaffir. Infuser 10 min."
+      },
+      {
+        "title": "Lait de coco",
+        "desc": "Ajouter le lait de coco et le nam pla. Chauffer sans bouillir."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Nouilles dans les bols. Bouillon. Herbes fraîches et citron vert."
+      }
+    ],
+    "errors": [
+      "Bouillon bouillant après coco → se sépare",
+      "Citronnelle pas tapée → peu parfumé"
+    ],
+    "variantes": [
+      "Tom kha gai",
+      "Avec des crevettes",
+      "Bouillon miso-coco"
+    ],
+    "footer": "Soupe aromatique · Thaïlande",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa33",
+    "emoji": "🥗",
+    "name": "Salade d'artichauts crus",
+    "cuisine": "Cuisine Italienne",
+    "persons": 4,
+    "prep": "20 min",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "entrée",
+    "seasons": [
+      "spring"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌿",
+        "qty": "6",
+        "name": "Petits artichauts violets"
+      },
+      {
+        "ico": "🧀",
+        "qty": "60g",
+        "name": "Parmesan en copeaux"
+      },
+      {
+        "ico": "🍋",
+        "qty": "2",
+        "name": "Citrons"
+      },
+      {
+        "ico": "🫒",
+        "qty": "5 c.à.s.",
+        "name": "Huile d'olive"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Menthe fraîche, sel, poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#2e7d32",
+        "text": "Artichauts violets tendres = mangés crus, tranches très fines"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Citron immédiatement = ne noircissent pas"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Retirer les feuilles extérieures dures. Couper le dessus. Citronner aussitôt."
+      },
+      {
+        "title": "Trancher",
+        "desc": "Émincer très finement à la mandoline. Citronner à nouveau."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Huile d'olive, sel, poivre, parmesan et menthe fraîche."
+      }
+    ],
+    "errors": [
+      "Artichauts pas citronnés → noircissent instantanément",
+      "Variété trop grande → trop fibreuse crue"
+    ],
+    "variantes": [
+      "Avec des câpres",
+      "Artichaut-roquette-bresaola",
+      "Carpaccio d'artichauts"
+    ],
+    "footer": "Carciofi crudi · Italie",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa34",
+    "emoji": "🍰",
+    "name": "Beignets de pommes à la cannelle",
+    "cuisine": "Cuisine Française",
+    "persons": 6,
+    "prep": "15 min",
+    "cook": "15 min",
+    "diff": "Facile ★",
+    "color": "#f57f17",
+    "colorLight": "#fff9e6",
+    "category": "dessert",
+    "seasons": [
+      "autumn"
+    ],
+    "ingredients": [
+      {
+        "ico": "🍎",
+        "qty": "4",
+        "name": "Pommes golden"
+      },
+      {
+        "ico": "🌾",
+        "qty": "200g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🥚",
+        "qty": "2",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "25cl",
+        "name": "Bière ou lait"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Levure chimique"
+      },
+      {
+        "ico": "🍬",
+        "qty": "QS",
+        "name": "Sucre + cannelle"
+      },
+      {
+        "ico": "🫒",
+        "qty": "QS",
+        "name": "Huile de friture"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f57f17",
+        "text": "Pâte à la bière = beignets plus légers et croustillants"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Sucre-cannelle saupoudré chaud = adhère parfaitement"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Pâte",
+        "desc": "Mélanger farine, levure, œufs et bière jusqu'à pâte lisse. Laisser reposer 20 min."
+      },
+      {
+        "title": "Pommes",
+        "desc": "Éplucher et couper en rondelles épaisses. Retirer le cœur."
+      },
+      {
+        "title": "Frire",
+        "desc": "Tremper dans la pâte. Frire à 175°C, 3-4 min. Sucre-cannelle chaud."
+      }
+    ],
+    "errors": [
+      "Huile pas assez chaude → beignets gras",
+      "Pâte trop épaisse → pas cuits à cœur"
+    ],
+    "variantes": [
+      "Beignets poires",
+      "Bugnes lyonnaises",
+      "Churros"
+    ],
+    "footer": "Dessert de fête · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa35",
+    "emoji": "🥘",
+    "name": "Risotto au citron et basilic",
+    "cuisine": "Cuisine Italienne",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "25 min",
+    "diff": "Facile ★★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "dîner",
+    "seasons": [
+      "summer"
+    ],
+    "ingredients": [
+      {
+        "ico": "🍚",
+        "qty": "300g",
+        "name": "Riz arborio"
+      },
+      {
+        "ico": "🍋",
+        "qty": "2",
+        "name": "Citrons (jus + zeste)"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Basilic frais"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🌿",
+        "qty": "15cl",
+        "name": "Vin blanc"
+      },
+      {
+        "ico": "🍲",
+        "qty": "1,2L",
+        "name": "Bouillon de légumes chaud"
+      },
+      {
+        "ico": "🧀",
+        "qty": "60g",
+        "name": "Parmesan"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40g",
+        "name": "Beurre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Bouillon chaud ajouté louche par louche = risotto crémeux"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Citron en finition = fraîcheur qui transforme le risotto"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Soffritto",
+        "desc": "Faire revenir l'oignon. Ajouter le riz. Nacrer 2 min. Déglacer au vin blanc."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Ajouter le bouillon chaud louche par louche en remuant constamment. 18 min."
+      },
+      {
+        "title": "Mantecare",
+        "desc": "Hors du feu, beurre froid, parmesan, jus et zeste de citron. Basilic."
+      }
+    ],
+    "errors": [
+      "Bouillon froid → cuisson inégale",
+      "Pas remuer → risotto qui colle"
+    ],
+    "variantes": [
+      "Risotto aux asperges",
+      "Risotto saumon-citron",
+      "Risotto végétarien"
+    ],
+    "footer": "Risotto estival · Italie",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa36",
+    "emoji": "🫙",
+    "name": "Sauce romesco maison",
+    "cuisine": "Cuisine Catalane",
+    "persons": 6,
+    "prep": "15 min",
+    "cook": "20 min",
+    "diff": "Facile ★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "préparation",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🫑",
+        "qty": "3",
+        "name": "Poivrons rouges grillés"
+      },
+      {
+        "ico": "🍅",
+        "qty": "2",
+        "name": "Tomates"
+      },
+      {
+        "ico": "🥜",
+        "qty": "60g",
+        "name": "Amandes grillées"
+      },
+      {
+        "ico": "🥜",
+        "qty": "30g",
+        "name": "Noisettes grillées"
+      },
+      {
+        "ico": "🧄",
+        "qty": "4 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌶️",
+        "qty": "1",
+        "name": "Piment séché"
+      },
+      {
+        "ico": "🌿",
+        "qty": "6 c.à.s.",
+        "name": "Huile d'olive"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Vinaigre de Xérès"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#c62828",
+        "text": "Sauce catalane = accompagne poissons, viandes et légumes grillés"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Se conserve 2 semaines au frigo couverte d'huile"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Griller",
+        "desc": "Faire noircir les poivrons et les tomates sous le gril. Éplucher."
+      },
+      {
+        "title": "Mixer",
+        "desc": "Mixer poivrons, tomates, amandes, noisettes, ail et piment."
+      },
+      {
+        "title": "Huile",
+        "desc": "Incorporer l'huile progressivement. Vinaigre. Assaisonner. Mettre en pot."
+      }
+    ],
+    "errors": [
+      "Amandes pas grillées → sauce fade",
+      "Trop de vinaigre → trop acide"
+    ],
+    "variantes": [
+      "Muhammara",
+      "Sauce harissa",
+      "Pesto rouge"
+    ],
+    "footer": "Conservation 2 semaines frigo",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa37",
+    "emoji": "🍳",
+    "name": "Œufs bénédicte sauce hollandaise",
+    "cuisine": "Cuisine Américaine",
+    "persons": 2,
+    "prep": "20 min",
+    "cook": "15 min",
+    "diff": "Moyenne ★★★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "petit-déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥓",
+        "qty": "4 tranches",
+        "name": "Bacon ou jambon"
+      },
+      {
+        "ico": "🌾",
+        "qty": "2",
+        "name": "Muffins anglais"
+      },
+      {
+        "ico": "🥚",
+        "qty": "3 jaunes",
+        "name": "Sauce hollandaise"
+      },
+      {
+        "ico": "🧈",
+        "qty": "150g",
+        "name": "Beurre clarifié"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1",
+        "name": "Citron"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Ciboulette, sel, poivre de Cayenne"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Hollandaise au bain-marie = émulsion stable"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Brunch de fête qui impressionne"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Hollandaise",
+        "desc": "Fouetter jaunes et jus de citron au bain-marie jusqu'à ruban. Incorporer le beurre clarifié en filet. Assaisonner."
+      },
+      {
+        "title": "Œufs pochés",
+        "desc": "Pocher les œufs dans l'eau vinaigrée 3 min."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Muffin grillé → bacon → œuf poché → hollandaise → ciboulette."
+      }
+    ],
+    "errors": [
+      "Hollandaise trop chaude → œufs brouillés",
+      "Œufs trop cuits → jaunes durs"
+    ],
+    "variantes": [
+      "Eggs Florentine (épinards)",
+      "Avec du saumon fumé",
+      "Sauce maltaise"
+    ],
+    "footer": "Brunch classique · USA",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa38",
+    "emoji": "🥘",
+    "name": "Coq au Riesling alsacien",
+    "cuisine": "Cuisine Alsacienne",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "1h",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🍗",
+        "qty": "1 poulet découpé",
+        "name": ""
+      },
+      {
+        "ico": "🍷",
+        "qty": "75cl",
+        "name": "Riesling d'Alsace"
+      },
+      {
+        "ico": "🍄",
+        "qty": "300g",
+        "name": "Champignons"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🥛",
+        "qty": "20cl",
+        "name": "Crème fraîche"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Thym, laurier, sel, poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Riesling = vin fruité et sec idéal pour la cuisson"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Crème alsacienne épaisse = sauce onctueuse caractéristique"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Poulet",
+        "desc": "Faire dorer le poulet dans le beurre. Faire revenir oignons et champignons."
+      },
+      {
+        "title": "Riesling",
+        "desc": "Verser le Riesling. Herbes. Mijoter 45 min à couvert."
+      },
+      {
+        "title": "Sauce",
+        "desc": "Retirer le poulet. Réduire le jus. Crème fraîche. Lier."
+      }
+    ],
+    "errors": [
+      "Vin trop sucré → sauce écoeurante",
+      "Pas assez réduire → sauce liquide"
+    ],
+    "variantes": [
+      "Coq au vin rouge",
+      "Poulet à la bière",
+      "Version avec des knepfle"
+    ],
+    "footer": "Plat alsacien · Alsace",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa39",
+    "emoji": "🥗",
+    "name": "Salade de figues au bleu",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#880e4f",
+    "colorLight": "#fce4ec",
+    "category": "entrée",
+    "seasons": [
+      "autumn"
+    ],
+    "ingredients": [
+      {
+        "ico": "🍑",
+        "qty": "8",
+        "name": "Figues fraîches mûres"
+      },
+      {
+        "ico": "🧀",
+        "qty": "100g",
+        "name": "Bleu d'Auvergne ou roquefort"
+      },
+      {
+        "ico": "🥗",
+        "qty": "QS",
+        "name": "Roquette"
+      },
+      {
+        "ico": "🥜",
+        "qty": "40g",
+        "name": "Noix"
+      },
+      {
+        "ico": "🍯",
+        "qty": "2 c.à.s.",
+        "name": "Miel d'acacia"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Thym frais, vinaigre balsamique"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#880e4f",
+        "text": "Figues et bleu = accord sucré-salé indémodable"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Figues rôties 5 min au four = caramélisées et encore plus savoureuses"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Figues",
+        "desc": "Couper les figues en deux ou en quartiers. Optionnel : griller 5 min au four avec miel."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Roquette. Figues. Bleu émietté. Noix."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Miel, vinaigre balsamique et thym frais. Poivre du moulin."
+      }
+    ],
+    "errors": [
+      "Figues pas mûres → trop fermes",
+      "Bleu trop abondant → masque les figues"
+    ],
+    "variantes": [
+      "Avec du jambon cru",
+      "Figues-chèvre-miel",
+      "Avec du gorgonzola"
+    ],
+    "footer": "Entrée d'automne · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa40",
+    "emoji": "🍰",
+    "name": "Pain de Gênes aux amandes",
+    "cuisine": "Cuisine Française",
+    "persons": 8,
+    "prep": "20 min",
+    "cook": "35 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥜",
+        "qty": "200g",
+        "name": "Pâte d'amandes 50%"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🧈",
+        "qty": "100g",
+        "name": "Beurre fondu"
+      },
+      {
+        "ico": "🌾",
+        "qty": "60g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Kirsch ou rhum"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 sachet",
+        "name": "Levure chimique"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Pâte d'amandes = gâteau naturellement humide et parfumé"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Texture dense mais moelleuse = se conserve 5 jours"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Pâte d'amandes",
+        "desc": "Détendre la pâte d'amandes avec les œufs un par un au batteur."
+      },
+      {
+        "title": "Incorporer",
+        "desc": "Ajouter le kirsch, le beurre fondu tiède, la farine et la levure."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Moule beurré. Four à 170°C, 30-35 min. Refroidir avant de démouler."
+      }
+    ],
+    "errors": [
+      "Beurre trop chaud → cuire les œufs",
+      "Pâte d'amandes trop froide → grumeaux"
+    ],
+    "variantes": [
+      "Avec des framboises",
+      "Financier géant",
+      "Version pistache"
+    ],
+    "footer": "Gâteau pâtissier · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa41",
+    "emoji": "🥩",
+    "name": "Côte de bœuf au poivre vert",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "5 min",
+    "cook": "20 min",
+    "diff": "Facile ★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥩",
+        "qty": "1,2 kg",
+        "name": "Côte de bœuf"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Poivre vert en grains"
+      },
+      {
+        "ico": "🥛",
+        "qty": "15cl",
+        "name": "Crème fraîche"
+      },
+      {
+        "ico": "🌿",
+        "qty": "5cl",
+        "name": "Cognac"
+      },
+      {
+        "ico": "🧈",
+        "qty": "30g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel, poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#c62828",
+        "text": "Côte à température ambiante = cuisson uniforme"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Sauce poivre vert = la grande classique des steakhouses"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Côte",
+        "desc": "Saisir à feu vif 4-5 min par face. Reposer 15 min sous alu."
+      },
+      {
+        "title": "Sauce",
+        "desc": "Flamber au cognac dans la même poêle. Ajouter poivre vert écrasé et crème."
+      },
+      {
+        "title": "Réduire",
+        "desc": "Cuire 3 min. Monter au beurre. Napper la côte tranchée."
+      }
+    ],
+    "errors": [
+      "Côte froide → cuisson inégale",
+      "Cognac trop chauffé → amer"
+    ],
+    "variantes": [
+      "Entrecôte bordelaise",
+      "Steak au poivre",
+      "Avec sauce béarnaise"
+    ],
+    "footer": "Classique brasserie · France",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa42",
+    "emoji": "🫙",
+    "name": "Gelée de groseilles maison",
+    "cuisine": "Conserve Maison",
+    "persons": 8,
+    "prep": "15 min",
+    "cook": "30 min",
+    "diff": "Facile ★",
+    "color": "#e91e63",
+    "colorLight": "#fce4ec",
+    "category": "préparation",
+    "seasons": [
+      "summer"
+    ],
+    "ingredients": [
+      {
+        "ico": "🍓",
+        "qty": "1,5 kg",
+        "name": "Groseilles rouges"
+      },
+      {
+        "ico": "💧",
+        "qty": "20cl",
+        "name": "Eau"
+      },
+      {
+        "ico": "🍬",
+        "qty": "700g",
+        "name": "Sucre par litre de jus"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1",
+        "name": "Jus de citron"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#e91e63",
+        "text": "Groseilles naturellement riches en pectine = gelée sans gélifiant"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Couleur rouge rubis spectaculaire"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Cuire",
+        "desc": "Faire cuire les groseilles avec l'eau 15 min jusqu'à éclatement."
+      },
+      {
+        "title": "Filtrer",
+        "desc": "Passer au chinois ou torchon sans presser. Récupérer le jus."
+      },
+      {
+        "title": "Gelée",
+        "desc": "Même poids de jus en sucre + citron. Cuire à ébullition vive 15-20 min. Tester. Mettre en pots."
+      }
+    ],
+    "errors": [
+      "Presser le torchon → gelée trouble",
+      "Pas assez cuire → ne prend pas"
+    ],
+    "variantes": [
+      "Gelée de cassis",
+      "Gelée de mûres",
+      "Confiture de groseilles"
+    ],
+    "footer": "Conservation 1 an · Stérilisation",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa43",
+    "emoji": "🥞",
+    "name": "Porridge avoine banane",
+    "cuisine": "Petit-déjeuner",
+    "persons": 2,
+    "prep": "5 min",
+    "cook": "5 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "petit-déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "100g",
+        "name": "Flocons d'avoine"
+      },
+      {
+        "ico": "🥛",
+        "qty": "30cl",
+        "name": "Lait ou lait végétal"
+      },
+      {
+        "ico": "🍌",
+        "qty": "1",
+        "name": "Banane"
+      },
+      {
+        "ico": "🍯",
+        "qty": "1 c.à.s.",
+        "name": "Miel"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Cannelle"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Noix, graines, fruits frais"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Banane cuite dans le porridge = sucrée et crémeuse naturellement"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Petit-déjeuner rassasiant pour toute la matinée"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Cuire",
+        "desc": "Porter lait à frémissement. Ajouter flocons et cannelle. Cuire 4-5 min en remuant."
+      },
+      {
+        "title": "Banane",
+        "desc": "Incorporer la banane écrasée. Mélanger."
+      },
+      {
+        "title": "Garnir",
+        "desc": "Miel, noix et fruits frais sur le dessus. Servir immédiatement."
+      }
+    ],
+    "errors": [
+      "Trop cuire → collant",
+      "Lait pas assez → trop épais"
+    ],
+    "variantes": [
+      "Porridge chocolat",
+      "Porridge pomme-cannelle",
+      "Version salée"
+    ],
+    "footer": "Petit-déjeuner healthy · UK",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa44",
+    "emoji": "🥘",
+    "name": "Curry de crevettes thaï rapide",
+    "cuisine": "Cuisine Thaïlandaise",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "15 min",
+    "diff": "Facile ★",
+    "color": "#f57f17",
+    "colorLight": "#fff9e6",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🦐",
+        "qty": "400g",
+        "name": "Crevettes"
+      },
+      {
+        "ico": "🥥",
+        "qty": "40cl",
+        "name": "Lait de coco"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Pâte de curry rouge"
+      },
+      {
+        "ico": "🫑",
+        "qty": "1",
+        "name": "Poivron rouge"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Basilic thaï, citron vert"
+      },
+      {
+        "ico": "🐟",
+        "qty": "2 c.à.s.",
+        "name": "Sauce poisson"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f57f17",
+        "text": "Pâte curry revenue dans le gras du coco = saveur décuplée"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Crevettes cuites en 3 min = ne pas trop cuire"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Curry",
+        "desc": "Faire revenir la pâte de curry dans 3 c.à.s. de lait de coco épais 2 min."
+      },
+      {
+        "title": "Légumes",
+        "desc": "Ajouter poivron et reste du lait de coco. Mijoter 8 min."
+      },
+      {
+        "title": "Crevettes",
+        "desc": "Ajouter les crevettes. Cuire 3 min. Sauce poisson, citron vert et basilic thaï."
+      }
+    ],
+    "errors": [
+      "Pâte pas revenue → goût cru",
+      "Crevettes trop cuites → caoutchouteuses"
+    ],
+    "variantes": [
+      "Curry vert poulet",
+      "Curry jaune légumes",
+      "Massaman crevettes"
+    ],
+    "footer": "Curry express · Thaïlande",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa45",
+    "emoji": "🥗",
+    "name": "Salade de quinoa betterave feta",
+    "cuisine": "Cuisine Végétarienne",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "15 min",
+    "diff": "Facile ★",
+    "color": "#880e4f",
+    "colorLight": "#fce4ec",
+    "category": "déjeuner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "200g cuit",
+        "name": "Quinoa"
+      },
+      {
+        "ico": "🫑",
+        "qty": "3",
+        "name": "Betteraves cuites"
+      },
+      {
+        "ico": "🧀",
+        "qty": "100g",
+        "name": "Feta"
+      },
+      {
+        "ico": "🥜",
+        "qty": "40g",
+        "name": "Noix"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Roquette, menthe"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Vinaigrette balsamique"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#880e4f",
+        "text": "Betterave + quinoa = salad bowl nutritif et coloré"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Quinoa assaisonné tiède = absorbe mieux la vinaigrette"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Quinoa",
+        "desc": "Cuire le quinoa. Assaisonner tiède avec huile et vinaigre balsamique."
+      },
+      {
+        "title": "Betteraves",
+        "desc": "Couper en dés ou en tranches."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Quinoa, betterave, feta émiettée, noix, roquette et menthe. Vinaigrette."
+      }
+    ],
+    "errors": [
+      "Quinoa froid → n'absorbe pas",
+      "Betterave crue → trop dure"
+    ],
+    "variantes": [
+      "Avec des oranges",
+      "Bowl avocat-quinoa",
+      "Avec des pois chiches"
+    ],
+    "footer": "Bowl nutritif · Végétarien",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa46",
+    "emoji": "🍰",
+    "name": "Baba au rhum revisité à la mangue",
+    "cuisine": "Cuisine Fusion",
+    "persons": 8,
+    "prep": "25 min",
+    "cook": "20 min",
+    "diff": "Facile ★★",
+    "color": "#f57f17",
+    "colorLight": "#fff9e6",
+    "category": "dessert",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "200g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🌿",
+        "qty": "7g",
+        "name": "Levure boulangère"
+      },
+      {
+        "ico": "🥚",
+        "qty": "3",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🧈",
+        "qty": "80g",
+        "name": "Beurre mou"
+      },
+      {
+        "ico": "🍬",
+        "qty": "20g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🥭",
+        "qty": "2",
+        "name": "Mangues"
+      },
+      {
+        "ico": "🌿",
+        "qty": "10cl",
+        "name": "Rhum blanc"
+      },
+      {
+        "ico": "🍬",
+        "qty": "150g",
+        "name": "Sucre sirop"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f57f17",
+        "text": "Mangue en coulis = modernise le baba classique"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Rhum versé chaud sur baba chaud = absorption maximale"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Baba",
+        "desc": "Faire la pâte à baba. Lever 1h. Cuire 180°C, 18 min."
+      },
+      {
+        "title": "Sirop mangue",
+        "desc": "Sirop sucre + rhum. Coulis de mangue mixée avec citron vert."
+      },
+      {
+        "title": "Imbiber",
+        "desc": "Plonger les babas chauds dans le sirop. Servir avec le coulis de mangue."
+      }
+    ],
+    "errors": [
+      "Sirop trop fort en alcool → étouffant",
+      "Baba sec → pas assez imbibé"
+    ],
+    "variantes": [
+      "Baba classique rhum",
+      "Savarin",
+      "Baba passion"
+    ],
+    "footer": "Pâtisserie revisitée · Fusion",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa47",
+    "emoji": "🥩",
+    "name": "Travers de porc caramélisés four",
+    "cuisine": "Cuisine Américaine",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "2h",
+    "diff": "Facile ★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥩",
+        "qty": "1,5 kg",
+        "name": "Travers de porc"
+      },
+      {
+        "ico": "🍯",
+        "qty": "4 c.à.s.",
+        "name": "Miel"
+      },
+      {
+        "ico": "🌿",
+        "qty": "3 c.à.s.",
+        "name": "Sauce soja"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Vinaigre de cidre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Paprika, ail, gingembre, sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#c62828",
+        "text": "Cuisson lente 1h30 puis laquage = fondant et caramélisé"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Retirer la membrane des ribs = plus tendres"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Cuire",
+        "desc": "Frotter les travers d'épices. Couvrir de papier alu. Four à 150°C, 1h30."
+      },
+      {
+        "title": "Laque",
+        "desc": "Mélanger miel, soja et vinaigre."
+      },
+      {
+        "title": "Laquer",
+        "desc": "Retirer l'alu. Badigeonner de laque. Gril 15 min en retournant et badigeonnant souvent."
+      }
+    ],
+    "errors": [
+      "Membrane pas retirée → moins tendres",
+      "Pas assez de laquage → pas caramélisés"
+    ],
+    "variantes": [
+      "Ribs sauce BBQ",
+      "Travers de porc asiatiques",
+      "Côtes d'agneau"
+    ],
+    "footer": "BBQ ribs au four · USA",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa48",
+    "emoji": "🫙",
+    "name": "Miel aux épices à offrir",
+    "cuisine": "Conserve Maison",
+    "persons": 8,
+    "prep": "10 min",
+    "cook": "10 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "préparation",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🍯",
+        "qty": "500g",
+        "name": "Miel liquide de qualité"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 bâton",
+        "name": "Cannelle"
+      },
+      {
+        "ico": "🌿",
+        "qty": "3",
+        "name": "Étoiles de badiane"
+      },
+      {
+        "ico": "🌿",
+        "qty": "5",
+        "name": "Clous de girofle"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Cardamome"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Poivre long, vanille"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Miel chauffé max 40°C pour ne pas tuer les enzymes"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Cadeau gourmand original dans un joli pot avec étiquette"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Épices",
+        "desc": "Chauffer doucement le miel à 40°C (tiède, pas chaud). Ajouter toutes les épices."
+      },
+      {
+        "title": "Infuser",
+        "desc": "Laisser infuser 1h à température ambiante en remuant de temps en temps."
+      },
+      {
+        "title": "Filtrer",
+        "desc": "Filtrer si désiré ou garder les épices en décoration. Mettre en pot hermétique."
+      }
+    ],
+    "errors": [
+      "Miel trop chauffé → perd ses propriétés",
+      "Épices de mauvaise qualité → peu parfumé"
+    ],
+    "variantes": [
+      "Miel à la lavande",
+      "Miel truffé",
+      "Miel au piment"
+    ],
+    "footer": "Conservation 1 an · Cadeau gourmand",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa49",
+    "emoji": "🥘",
+    "name": "Soupe de maïs mexicaine",
+    "cuisine": "Cuisine Mexicaine",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "20 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "dîner",
+    "seasons": [
+      "summer"
+    ],
+    "ingredients": [
+      {
+        "ico": "🌽",
+        "qty": "400g",
+        "name": "Maïs en boîte ou frais"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🧄",
+        "qty": "2 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🥥",
+        "qty": "20cl",
+        "name": "Lait de coco"
+      },
+      {
+        "ico": "🍲",
+        "qty": "50cl",
+        "name": "Bouillon de légumes"
+      },
+      {
+        "ico": "🌶️",
+        "qty": "1",
+        "name": "Piment doux"
+      },
+      {
+        "ico": "🌿",
+        "qty": "QS",
+        "name": "Coriandre, citron vert, crème"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Maïs grillé à la poêle avant = saveur fumée incomparable"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Lait de coco + maïs = douceur naturelle sans sucre ajouté"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Maïs",
+        "desc": "Poêler le maïs à sec jusqu'à légèrement doré. Réserver quelques grains pour la garniture."
+      },
+      {
+        "title": "Soupe",
+        "desc": "Faire revenir oignon, ail et piment. Ajouter maïs, bouillon et lait de coco. Cuire 10 min."
+      },
+      {
+        "title": "Mixer",
+        "desc": "Mixer. Rectifier. Coriandre, crème et citron vert au service."
+      }
+    ],
+    "errors": [
+      "Maïs pas poêlé → moins savoureux",
+      "Trop mixer → perd les morceaux de maïs"
+    ],
+    "variantes": [
+      "Chowder de maïs",
+      "Elote soup",
+      "Avec des crevettes"
+    ],
+    "footer": "Soupe dorée · Mexique",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "raa50",
+    "emoji": "🥮",
+    "name": "Financiers noisette beurre noisette",
+    "cuisine": "Cuisine Française",
+    "persons": 12,
+    "prep": "15 min",
+    "cook": "12 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "collation",
+    "seasons": [
+      "all"
+    ],
+    "ingredients": [
+      {
+        "ico": "🥚",
+        "qty": "5 blancs",
+        "name": "Blancs d'œuf"
+      },
+      {
+        "ico": "🧈",
+        "qty": "150g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🥜",
+        "qty": "100g",
+        "name": "Poudre de noisettes"
+      },
+      {
+        "ico": "🥜",
+        "qty": "50g",
+        "name": "Poudre d'amandes"
+      },
+      {
+        "ico": "🍬",
+        "qty": "180g",
+        "name": "Sucre glace"
+      },
+      {
+        "ico": "🌾",
+        "qty": "60g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Vanille"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#f9a825",
+        "text": "Beurre noisette = âme des financiers"
+      },
+      {
+        "dot": "#4caf50",
+        "text": "Poudre de noisettes = saveur plus intense que les amandes seules"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Beurre noisette",
+        "desc": "Cuire le beurre jusqu'à couleur noisette et odeur caramel. Filtrer. Refroidir."
+      },
+      {
+        "title": "Pâte",
+        "desc": "Mélanger noisettes, amandes, sucre glace, farine et blancs. Incorporer le beurre noisette tiède."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Moules à financiers beurrés remplis aux 3/4. Four à 200°C, 10-12 min. Servir tièdes."
+      }
+    ],
+    "errors": [
+      "Beurre brûlé → amer",
+      "Moules trop remplis → débordent"
+    ],
+    "variantes": [
+      "Financiers chocolat",
+      "Avec des framboises",
+      "Financiers matcha"
+    ],
+    "footer": "Petit gâteau · Paris",
+    "stars": "★★★★★"
   }
 ]
