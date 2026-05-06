@@ -114505,5 +114505,4395 @@
     ],
     "footer": "Cuisine Brunch · Petit-déjeuner",
     "stars": "★★★★"
+  },
+  {
+    "id": "prepplus001",
+    "emoji": "🍎",
+    "name": "Compote pomme coing cannelle en bocaux",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "25 min",
+    "cook": "45 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍎",
+        "qty": "1,2 kg",
+        "name": "Pommes"
+      },
+      {
+        "ico": "🍐",
+        "qty": "800 g",
+        "name": "Coings"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Cannelle"
+      },
+      {
+        "ico": "🍋",
+        "qty": "2 c.à.s.",
+        "name": "Jus de citron"
+      },
+      {
+        "ico": "💧",
+        "qty": "15 cl",
+        "name": "Eau"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée ; congélateur Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé ; conserve Bocaux ou pots stérilisés : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de compote pomme coing cannelle en bocaux en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée",
+      "congelateur": "Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé",
+      "conserve": "Bocaux ou pots stérilisés : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus002",
+    "emoji": "🍑",
+    "name": "Compote pêche abricot vanille",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "30 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍑",
+        "qty": "1 kg",
+        "name": "Pêches"
+      },
+      {
+        "ico": "🍑",
+        "qty": "700 g",
+        "name": "Abricots"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Gousse de vanille"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      },
+      {
+        "ico": "💧",
+        "qty": "10 cl",
+        "name": "Eau"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée ; congélateur Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé ; conserve Bocaux ou pots stérilisés : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de compote pêche abricot vanille en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée",
+      "congelateur": "Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé",
+      "conserve": "Bocaux ou pots stérilisés : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus003",
+    "emoji": "🍓",
+    "name": "Confiture fraise rhubarbe allégée",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "25 min",
+    "cook": "35 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍓",
+        "qty": "800 g",
+        "name": "Fraises"
+      },
+      {
+        "ico": "🥬",
+        "qty": "700 g",
+        "name": "Rhubarbe"
+      },
+      {
+        "ico": "🍬",
+        "qty": "600 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1",
+        "name": "Jus de citron"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée ; congélateur Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé ; conserve Bocaux ou pots stérilisés : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de confiture fraise rhubarbe allégée en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée",
+      "congelateur": "Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé",
+      "conserve": "Bocaux ou pots stérilisés : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus004",
+    "emoji": "🍒",
+    "name": "Cerises au sirop en bocaux",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "30 min",
+    "cook": "25 min + stérilisation",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍒",
+        "qty": "1,5 kg",
+        "name": "Cerises"
+      },
+      {
+        "ico": "💧",
+        "qty": "1 L",
+        "name": "Eau"
+      },
+      {
+        "ico": "🍬",
+        "qty": "350 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée ; congélateur Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé ; conserve Bocaux ou pots stérilisés : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de cerises au sirop en bocaux en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée",
+      "congelateur": "Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé",
+      "conserve": "Bocaux ou pots stérilisés : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus005",
+    "emoji": "🍅",
+    "name": "Chutney tomates vertes oignons",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "25 min",
+    "cook": "1 h",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍅",
+        "qty": "1,2 kg",
+        "name": "Tomates vertes"
+      },
+      {
+        "ico": "🧅",
+        "qty": "400 g",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🍎",
+        "qty": "2",
+        "name": "Pommes"
+      },
+      {
+        "ico": "🍚",
+        "qty": "30 cl",
+        "name": "Vinaigre de cidre"
+      },
+      {
+        "ico": "🍬",
+        "qty": "250 g",
+        "name": "Sucre roux"
+      },
+      {
+        "ico": "🫚",
+        "qty": "1 c.à.s.",
+        "name": "Gingembre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 8 semaines en bocal fermé selon acidité ou fermentation ; congélateur Déconseillé ; conserve Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les légumes",
+        "desc": "Laver et couper finement les légumes ou fruits de chutney tomates vertes oignons."
+      },
+      {
+        "title": "Préparer la saumure",
+        "desc": "Faire chauffer ou mélanger vinaigre, eau, sel, sucre et épices selon la recette."
+      },
+      {
+        "title": "Mettre en bocal",
+        "desc": "Tasser dans des bocaux propres puis couvrir entièrement avec la saumure ou le jus rendu."
+      },
+      {
+        "title": "Reposer",
+        "desc": "Fermer, laisser refroidir ou fermenter, puis placer au frais selon le résultat souhaité."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 8 semaines en bocal fermé selon acidité ou fermentation",
+      "congelateur": "Déconseillé",
+      "conserve": "Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée"
+    }
+  },
+  {
+    "id": "prepplus006",
+    "emoji": "🍏",
+    "name": "Gelée pomme menthe en pots",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "25 min",
+    "cook": "1 h",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍎",
+        "qty": "2 kg",
+        "name": "Pommes"
+      },
+      {
+        "ico": "💧",
+        "qty": "1,5 L",
+        "name": "Eau"
+      },
+      {
+        "ico": "🍬",
+        "qty": "750 g par litre",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1",
+        "name": "Jus de citron"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 bouquet",
+        "name": "Menthe"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée ; congélateur Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé ; conserve Bocaux ou pots stérilisés : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de gelée pomme menthe en pots en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée",
+      "congelateur": "Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé",
+      "conserve": "Bocaux ou pots stérilisés : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus007",
+    "emoji": "🍊",
+    "name": "Oranges confites en sirop",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "1 h 30",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍊",
+        "qty": "5",
+        "name": "Oranges bio"
+      },
+      {
+        "ico": "💧",
+        "qty": "1 L",
+        "name": "Eau"
+      },
+      {
+        "ico": "🍬",
+        "qty": "700 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée ; congélateur Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé ; conserve Bocaux ou pots stérilisés : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de oranges confites en sirop en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée",
+      "congelateur": "Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé",
+      "conserve": "Bocaux ou pots stérilisés : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus008",
+    "emoji": "🍐",
+    "name": "Compote poire pruneau épices",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "15 min",
+    "cook": "30 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍐",
+        "qty": "1,5 kg",
+        "name": "Poires"
+      },
+      {
+        "ico": "🍇",
+        "qty": "250 g",
+        "name": "Pruneaux"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Cannelle"
+      },
+      {
+        "ico": "⭐",
+        "qty": "1",
+        "name": "Badiane"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée ; congélateur Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé ; conserve Bocaux ou pots stérilisés : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de compote poire pruneau épices en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "5 à 7 jours en bocal fermé, 2 à 3 semaines après ouverture pour confiture/gelée",
+      "congelateur": "Jusqu’à 6 mois en portions, sauf confiture où c’est déconseillé",
+      "conserve": "Bocaux ou pots stérilisés : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus009",
+    "emoji": "🐟",
+    "name": "Rillettes de sardines citron estragon",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "12 min",
+    "cook": "0 min + repos",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🐟",
+        "qty": "2 boîtes",
+        "name": "Sardines à l’huile"
+      },
+      {
+        "ico": "🥛",
+        "qty": "120 g",
+        "name": "Fromage frais"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Estragon"
+      },
+      {
+        "ico": "🥒",
+        "qty": "1 c.à.s.",
+        "name": "Câpres"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 2 à 3 jours en récipient fermé ; congélateur Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de rillettes de sardines citron estragon selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "2 à 3 jours en récipient fermé",
+      "congelateur": "Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus010",
+    "emoji": "🐟",
+    "name": "Rillettes de saumon frais et fumé",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "8 min + repos",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🐟",
+        "qty": "300 g",
+        "name": "Saumon frais"
+      },
+      {
+        "ico": "🐟",
+        "qty": "150 g",
+        "name": "Saumon fumé"
+      },
+      {
+        "ico": "🥛",
+        "qty": "120 g",
+        "name": "Crème fraîche"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Aneth"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 2 à 3 jours en récipient fermé ; congélateur Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de rillettes de saumon frais et fumé selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "2 à 3 jours en récipient fermé",
+      "congelateur": "Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus011",
+    "emoji": "🐖",
+    "name": "Rillettes de porc maison en pots",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "30 min",
+    "cook": "4 h",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🐖",
+        "qty": "1,5 kg",
+        "name": "Épaule de porc"
+      },
+      {
+        "ico": "🥓",
+        "qty": "500 g",
+        "name": "Poitrine fraîche"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2",
+        "name": "Feuilles de laurier"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 branches",
+        "name": "Thym"
+      },
+      {
+        "ico": "🧂",
+        "qty": "18 g",
+        "name": "Sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes ; congélateur Jusqu’à 3 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de rillettes de porc maison en pots selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes",
+      "congelateur": "Jusqu’à 3 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé"
+    }
+  },
+  {
+    "id": "prepplus012",
+    "emoji": "🦆",
+    "name": "Rillettes de canard confit",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "20 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🦆",
+        "qty": "4 cuisses",
+        "name": "Canard confit"
+      },
+      {
+        "ico": "🦆",
+        "qty": "4 c.à.s.",
+        "name": "Graisse de canard"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Échalote"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 branche",
+        "name": "Thym"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes ; congélateur Jusqu’à 3 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de rillettes de canard confit selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes",
+      "congelateur": "Jusqu’à 3 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé"
+    }
+  },
+  {
+    "id": "prepplus013",
+    "emoji": "🐔",
+    "name": "Rillettes de poulet rôti anti-gaspi",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "15 min",
+    "cook": "5 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍗",
+        "qty": "350 g",
+        "name": "Restes de poulet rôti"
+      },
+      {
+        "ico": "🥛",
+        "qty": "120 g",
+        "name": "Fromage frais"
+      },
+      {
+        "ico": "🫙",
+        "qty": "1 c.à.c.",
+        "name": "Moutarde"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Ciboulette"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.c.",
+        "name": "Jus de citron"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 2 à 3 jours en récipient fermé ; congélateur Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de rillettes de poulet rôti anti-gaspi selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "2 à 3 jours en récipient fermé",
+      "congelateur": "Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus014",
+    "emoji": "🐖",
+    "name": "Pâté de campagne en terrine",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "40 min",
+    "cook": "1 h 30 + repos",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🐖",
+        "qty": "700 g",
+        "name": "Échine de porc"
+      },
+      {
+        "ico": "🐖",
+        "qty": "300 g",
+        "name": "Foie de porc"
+      },
+      {
+        "ico": "🥓",
+        "qty": "300 g",
+        "name": "Poitrine fraîche"
+      },
+      {
+        "ico": "🥚",
+        "qty": "2",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Échalotes"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Quatre-épices"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes ; congélateur Jusqu’à 3 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de pâté de campagne en terrine selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes",
+      "congelateur": "Jusqu’à 3 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé"
+    }
+  },
+  {
+    "id": "prepplus015",
+    "emoji": "🐔",
+    "name": "Pâté de foie de volaille",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "15 min + repos",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🐔",
+        "qty": "500 g",
+        "name": "Foies de volaille"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Échalotes"
+      },
+      {
+        "ico": "🧈",
+        "qty": "120 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🍷",
+        "qty": "5 cl",
+        "name": "Porto facultatif"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 branche",
+        "name": "Thym"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes ; congélateur Jusqu’à 3 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de pâté de foie de volaille selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes",
+      "congelateur": "Jusqu’à 3 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé"
+    }
+  },
+  {
+    "id": "prepplus016",
+    "emoji": "🥬",
+    "name": "Pâté végétal lentilles champignons noix",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "25 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🫘",
+        "qty": "250 g",
+        "name": "Lentilles cuites"
+      },
+      {
+        "ico": "🍄",
+        "qty": "300 g",
+        "name": "Champignons"
+      },
+      {
+        "ico": "🌰",
+        "qty": "80 g",
+        "name": "Noix"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🧄",
+        "qty": "1 gousse",
+        "name": "Ail"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes ; congélateur Jusqu’à 3 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de pâté végétal lentilles champignons noix selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes",
+      "congelateur": "Jusqu’à 3 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé"
+    }
+  },
+  {
+    "id": "prepplus017",
+    "emoji": "🥕",
+    "name": "Terrine de légumes carotte courgette",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "25 min",
+    "cook": "45 min + repos",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": "400 g",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🥒",
+        "qty": "400 g",
+        "name": "Courgettes"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "20 cl",
+        "name": "Crème"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Herbes fraîches"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes ; congélateur Jusqu’à 3 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de terrine de légumes carotte courgette selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes",
+      "congelateur": "Jusqu’à 3 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé"
+    }
+  },
+  {
+    "id": "prepplus018",
+    "emoji": "🍅",
+    "name": "Sauce bolognaise légumes cachés",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "25 min",
+    "cook": "1 h",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🥩",
+        "qty": "700 g",
+        "name": "Bœuf haché"
+      },
+      {
+        "ico": "🍅",
+        "qty": "1 kg",
+        "name": "Tomates concassées"
+      },
+      {
+        "ico": "🥕",
+        "qty": "3",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🥒",
+        "qty": "1",
+        "name": "Courgette"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de sauce bolognaise légumes cachés en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus019",
+    "emoji": "🍅",
+    "name": "Sauce tomate arrabbiata en bocaux",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "15 min",
+    "cook": "45 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍅",
+        "qty": "2 kg",
+        "name": "Tomates mûres"
+      },
+      {
+        "ico": "🧄",
+        "qty": "4 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌶️",
+        "qty": "2",
+        "name": "Piments rouges"
+      },
+      {
+        "ico": "🫒",
+        "qty": "4 c.à.s.",
+        "name": "Huile d’olive"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Origan"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de sauce tomate arrabbiata en bocaux en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus020",
+    "emoji": "🫑",
+    "name": "Sauce poivron rouge grillé",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "30 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🫑",
+        "qty": "6",
+        "name": "Poivrons rouges"
+      },
+      {
+        "ico": "🧄",
+        "qty": "2 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🫒",
+        "qty": "4 c.à.s.",
+        "name": "Huile d’olive"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Vinaigre"
+      },
+      {
+        "ico": "🌶️",
+        "qty": "1 pincée",
+        "name": "Paprika fumé"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de sauce poivron rouge grillé en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus021",
+    "emoji": "🍄",
+    "name": "Sauce champignons crème à congeler",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "15 min",
+    "cook": "25 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍄",
+        "qty": "800 g",
+        "name": "Champignons"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Échalotes"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🍷",
+        "qty": "10 cl",
+        "name": "Vin blanc"
+      },
+      {
+        "ico": "🥛",
+        "qty": "25 cl",
+        "name": "Crème"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 2 à 3 jours en récipient fermé ; congélateur Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, sécher, couper ou peser précisément les ingrédients de sauce champignons crème à congeler."
+      },
+      {
+        "title": "Mixer ou cuire",
+        "desc": "Mixer par impulsions ou cuire doucement pour obtenir une texture lisse, stable et bien liée."
+      },
+      {
+        "title": "Ajuster",
+        "desc": "Goûter puis ajuster sel, acidité, huile, épices ou texture avant de conditionner."
+      },
+      {
+        "title": "Portionner",
+        "desc": "Mettre en bocal propre ou en petits moules à glaçons selon le mode de conservation choisi."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "2 à 3 jours en récipient fermé",
+      "congelateur": "Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus022",
+    "emoji": "🧀",
+    "name": "Sauce fromagère comté emmental",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "10 min",
+    "cook": "12 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🧀",
+        "qty": "150 g",
+        "name": "Comté râpé"
+      },
+      {
+        "ico": "🧀",
+        "qty": "150 g",
+        "name": "Emmental râpé"
+      },
+      {
+        "ico": "🥛",
+        "qty": "40 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🧈",
+        "qty": "30 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌾",
+        "qty": "30 g",
+        "name": "Farine"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 2 à 3 jours en récipient fermé ; congélateur Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, sécher, couper ou peser précisément les ingrédients de sauce fromagère comté emmental."
+      },
+      {
+        "title": "Mixer ou cuire",
+        "desc": "Mixer par impulsions ou cuire doucement pour obtenir une texture lisse, stable et bien liée."
+      },
+      {
+        "title": "Ajuster",
+        "desc": "Goûter puis ajuster sel, acidité, huile, épices ou texture avant de conditionner."
+      },
+      {
+        "title": "Portionner",
+        "desc": "Mettre en bocal propre ou en petits moules à glaçons selon le mode de conservation choisi."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "2 à 3 jours en récipient fermé",
+      "congelateur": "Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus023",
+    "emoji": "🌿",
+    "name": "Sauce verte persil câpres cornichons",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "10 min",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🌿",
+        "qty": "1 bouquet",
+        "name": "Persil"
+      },
+      {
+        "ico": "🥒",
+        "qty": "4",
+        "name": "Cornichons"
+      },
+      {
+        "ico": "🥒",
+        "qty": "1 c.à.s.",
+        "name": "Câpres"
+      },
+      {
+        "ico": "🫙",
+        "qty": "1 c.à.c.",
+        "name": "Moutarde"
+      },
+      {
+        "ico": "🫒",
+        "qty": "8 cl",
+        "name": "Huile d’olive"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 7 jours avec une fine couche d’huile en surface ; congélateur Jusqu’à 3 mois en petits glaçons ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, sécher, couper ou peser précisément les ingrédients de sauce verte persil câpres cornichons."
+      },
+      {
+        "title": "Mixer ou cuire",
+        "desc": "Mixer par impulsions ou cuire doucement pour obtenir une texture lisse, stable et bien liée."
+      },
+      {
+        "title": "Ajuster",
+        "desc": "Goûter puis ajuster sel, acidité, huile, épices ou texture avant de conditionner."
+      },
+      {
+        "title": "Portionner",
+        "desc": "Mettre en bocal propre ou en petits moules à glaçons selon le mode de conservation choisi."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 7 jours avec une fine couche d’huile en surface",
+      "congelateur": "Jusqu’à 3 mois en petits glaçons",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus024",
+    "emoji": "🥜",
+    "name": "Sauce satay cacahuète coco",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "10 min",
+    "cook": "8 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🥜",
+        "qty": "120 g",
+        "name": "Beurre de cacahuète"
+      },
+      {
+        "ico": "🥥",
+        "qty": "200 ml",
+        "name": "Lait de coco"
+      },
+      {
+        "ico": "🫙",
+        "qty": "2 c.à.s.",
+        "name": "Sauce soja"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Citron vert"
+      },
+      {
+        "ico": "🍯",
+        "qty": "1 c.à.c.",
+        "name": "Miel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 2 à 3 jours en récipient fermé ; congélateur Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, sécher, couper ou peser précisément les ingrédients de sauce satay cacahuète coco."
+      },
+      {
+        "title": "Mixer ou cuire",
+        "desc": "Mixer par impulsions ou cuire doucement pour obtenir une texture lisse, stable et bien liée."
+      },
+      {
+        "title": "Ajuster",
+        "desc": "Goûter puis ajuster sel, acidité, huile, épices ou texture avant de conditionner."
+      },
+      {
+        "title": "Portionner",
+        "desc": "Mettre en bocal propre ou en petits moules à glaçons selon le mode de conservation choisi."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "2 à 3 jours en récipient fermé",
+      "congelateur": "Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus025",
+    "emoji": "🍛",
+    "name": "Base curry tomate coco à congeler",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "15 min",
+    "cook": "30 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍅",
+        "qty": "600 g",
+        "name": "Tomates concassées"
+      },
+      {
+        "ico": "🥥",
+        "qty": "400 ml",
+        "name": "Lait de coco"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🧄",
+        "qty": "3 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Curry doux"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de base curry tomate coco à congeler en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus026",
+    "emoji": "🧅",
+    "name": "Sauce oignon balsamique pour burger",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "15 min",
+    "cook": "45 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🧅",
+        "qty": "1 kg",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🍋",
+        "qty": "8 cl",
+        "name": "Vinaigre balsamique"
+      },
+      {
+        "ico": "🍬",
+        "qty": "1 c.à.s.",
+        "name": "Sucre roux"
+      },
+      {
+        "ico": "🫙",
+        "qty": "10 cl",
+        "name": "Bouillon"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 7 jours avec une fine couche d’huile en surface ; congélateur Jusqu’à 3 mois en petits glaçons ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, sécher, couper ou peser précisément les ingrédients de sauce oignon balsamique pour burger."
+      },
+      {
+        "title": "Mixer ou cuire",
+        "desc": "Mixer par impulsions ou cuire doucement pour obtenir une texture lisse, stable et bien liée."
+      },
+      {
+        "title": "Ajuster",
+        "desc": "Goûter puis ajuster sel, acidité, huile, épices ou texture avant de conditionner."
+      },
+      {
+        "title": "Portionner",
+        "desc": "Mettre en bocal propre ou en petits moules à glaçons selon le mode de conservation choisi."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 7 jours avec une fine couche d’huile en surface",
+      "congelateur": "Jusqu’à 3 mois en petits glaçons",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus027",
+    "emoji": "🍋",
+    "name": "Sauce citron aneth pour poisson",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "10 min",
+    "cook": "5 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍋",
+        "qty": "2",
+        "name": "Citrons"
+      },
+      {
+        "ico": "🥛",
+        "qty": "20 cl",
+        "name": "Crème liquide"
+      },
+      {
+        "ico": "🧈",
+        "qty": "20 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Aneth"
+      },
+      {
+        "ico": "🫙",
+        "qty": "1 c.à.c.",
+        "name": "Moutarde"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 2 à 3 jours en récipient fermé ; congélateur Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, sécher, couper ou peser précisément les ingrédients de sauce citron aneth pour poisson."
+      },
+      {
+        "title": "Mixer ou cuire",
+        "desc": "Mixer par impulsions ou cuire doucement pour obtenir une texture lisse, stable et bien liée."
+      },
+      {
+        "title": "Ajuster",
+        "desc": "Goûter puis ajuster sel, acidité, huile, épices ou texture avant de conditionner."
+      },
+      {
+        "title": "Portionner",
+        "desc": "Mettre en bocal propre ou en petits moules à glaçons selon le mode de conservation choisi."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "2 à 3 jours en récipient fermé",
+      "congelateur": "Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus028",
+    "emoji": "🌶️",
+    "name": "Sauce barbecue pruneau paprika",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "10 min",
+    "cook": "35 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍅",
+        "qty": "350 g",
+        "name": "Coulis de tomate"
+      },
+      {
+        "ico": "🍇",
+        "qty": "120 g",
+        "name": "Pruneaux dénoyautés"
+      },
+      {
+        "ico": "🍋",
+        "qty": "6 cl",
+        "name": "Vinaigre de cidre"
+      },
+      {
+        "ico": "🍬",
+        "qty": "40 g",
+        "name": "Sucre roux"
+      },
+      {
+        "ico": "🌶️",
+        "qty": "1 c.à.c.",
+        "name": "Paprika fumé"
+      },
+      {
+        "ico": "🧄",
+        "qty": "1 gousse",
+        "name": "Ail"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de sauce barbecue pruneau paprika en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus029",
+    "emoji": "🥫",
+    "name": "Coulis de poivron tomate en bocaux",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "45 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🫑",
+        "qty": "1 kg",
+        "name": "Poivrons rouges"
+      },
+      {
+        "ico": "🍅",
+        "qty": "1 kg",
+        "name": "Tomates"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🧄",
+        "qty": "2 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🫒",
+        "qty": "4 c.à.s.",
+        "name": "Huile d’olive"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de coulis de poivron tomate en bocaux en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus030",
+    "emoji": "🧄",
+    "name": "Ail des ours à l’huile en pâte",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "15 min",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🌿",
+        "qty": "200 g",
+        "name": "Ail des ours"
+      },
+      {
+        "ico": "🫒",
+        "qty": "15 cl",
+        "name": "Huile d’olive"
+      },
+      {
+        "ico": "🧂",
+        "qty": "1 c.à.c.",
+        "name": "Sel"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 7 jours avec une fine couche d’huile en surface ; congélateur Jusqu’à 3 mois en petits glaçons ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, sécher, couper ou peser précisément les ingrédients de ail des ours à l’huile en pâte."
+      },
+      {
+        "title": "Mixer ou cuire",
+        "desc": "Mixer par impulsions ou cuire doucement pour obtenir une texture lisse, stable et bien liée."
+      },
+      {
+        "title": "Ajuster",
+        "desc": "Goûter puis ajuster sel, acidité, huile, épices ou texture avant de conditionner."
+      },
+      {
+        "title": "Portionner",
+        "desc": "Mettre en bocal propre ou en petits moules à glaçons selon le mode de conservation choisi."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 7 jours avec une fine couche d’huile en surface",
+      "congelateur": "Jusqu’à 3 mois en petits glaçons",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus031",
+    "emoji": "🥒",
+    "name": "Pickles de courgettes au curry",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "5 min + repos",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🥒",
+        "qty": "1 kg",
+        "name": "Courgettes"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🍚",
+        "qty": "50 cl",
+        "name": "Vinaigre de cidre"
+      },
+      {
+        "ico": "💧",
+        "qty": "30 cl",
+        "name": "Eau"
+      },
+      {
+        "ico": "🍬",
+        "qty": "120 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Curry"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 8 semaines en bocal fermé selon acidité ou fermentation ; congélateur Déconseillé ; conserve Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les légumes",
+        "desc": "Laver et couper finement les légumes ou fruits de pickles de courgettes au curry."
+      },
+      {
+        "title": "Préparer la saumure",
+        "desc": "Faire chauffer ou mélanger vinaigre, eau, sel, sucre et épices selon la recette."
+      },
+      {
+        "title": "Mettre en bocal",
+        "desc": "Tasser dans des bocaux propres puis couvrir entièrement avec la saumure ou le jus rendu."
+      },
+      {
+        "title": "Reposer",
+        "desc": "Fermer, laisser refroidir ou fermenter, puis placer au frais selon le résultat souhaité."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 8 semaines en bocal fermé selon acidité ou fermentation",
+      "congelateur": "Déconseillé",
+      "conserve": "Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée"
+    }
+  },
+  {
+    "id": "prepplus032",
+    "emoji": "🍆",
+    "name": "Ratatouille en bocaux à stériliser",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "35 min",
+    "cook": "1 h + stérilisation",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍆",
+        "qty": "1 kg",
+        "name": "Aubergines"
+      },
+      {
+        "ico": "🥒",
+        "qty": "1 kg",
+        "name": "Courgettes"
+      },
+      {
+        "ico": "🫑",
+        "qty": "700 g",
+        "name": "Poivrons"
+      },
+      {
+        "ico": "🍅",
+        "qty": "1,5 kg",
+        "name": "Tomates"
+      },
+      {
+        "ico": "🧅",
+        "qty": "3",
+        "name": "Oignons"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de ratatouille en bocaux à stériliser en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus033",
+    "emoji": "🫘",
+    "name": "Pois chiches cuits en bocaux",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "12 h trempage",
+    "cook": "1 h 30 + stérilisation",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🫘",
+        "qty": "1 kg",
+        "name": "Pois chiches secs"
+      },
+      {
+        "ico": "💧",
+        "qty": "QS",
+        "name": "Eau"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2",
+        "name": "Feuilles de laurier"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de pois chiches cuits en bocaux en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus034",
+    "emoji": "🫘",
+    "name": "Lentilles cuisinées en bocaux",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "15 min",
+    "cook": "40 min + stérilisation",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🫘",
+        "qty": "800 g",
+        "name": "Lentilles vertes"
+      },
+      {
+        "ico": "🥕",
+        "qty": "3",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2",
+        "name": "Feuilles de laurier"
+      },
+      {
+        "ico": "🫙",
+        "qty": "1,5 L",
+        "name": "Bouillon"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de lentilles cuisinées en bocaux en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus035",
+    "emoji": "🥕",
+    "name": "Carottes vichy en bocaux",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "25 min + stérilisation",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": "1,5 kg",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🍬",
+        "qty": "1 c.à.c.",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Persil"
+      },
+      {
+        "ico": "💧",
+        "qty": "50 cl",
+        "name": "Eau"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de carottes vichy en bocaux en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus036",
+    "emoji": "🍄",
+    "name": "Champignons à l’huile et vinaigre",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "10 min + repos",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍄",
+        "qty": "1 kg",
+        "name": "Petits champignons"
+      },
+      {
+        "ico": "🍚",
+        "qty": "20 cl",
+        "name": "Vinaigre blanc"
+      },
+      {
+        "ico": "🫒",
+        "qty": "25 cl",
+        "name": "Huile d’olive"
+      },
+      {
+        "ico": "🧄",
+        "qty": "3 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Thym"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 8 semaines en bocal fermé selon acidité ou fermentation ; congélateur Déconseillé ; conserve Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les légumes",
+        "desc": "Laver et couper finement les légumes ou fruits de champignons à l’huile et vinaigre."
+      },
+      {
+        "title": "Préparer la saumure",
+        "desc": "Faire chauffer ou mélanger vinaigre, eau, sel, sucre et épices selon la recette."
+      },
+      {
+        "title": "Mettre en bocal",
+        "desc": "Tasser dans des bocaux propres puis couvrir entièrement avec la saumure ou le jus rendu."
+      },
+      {
+        "title": "Reposer",
+        "desc": "Fermer, laisser refroidir ou fermenter, puis placer au frais selon le résultat souhaité."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 8 semaines en bocal fermé selon acidité ou fermentation",
+      "congelateur": "Déconseillé",
+      "conserve": "Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée"
+    }
+  },
+  {
+    "id": "prepplus037",
+    "emoji": "🥬",
+    "name": "Chou blanc lacto-fermenté express",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "25 min",
+    "cook": "0 min + fermentation",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🥬",
+        "qty": "1 kg",
+        "name": "Chou blanc"
+      },
+      {
+        "ico": "🧂",
+        "qty": "20 g",
+        "name": "Sel non iodé"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Graines de carvi facultatives"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 8 semaines en bocal fermé selon acidité ou fermentation ; congélateur Déconseillé ; conserve Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les légumes",
+        "desc": "Laver et couper finement les légumes ou fruits de chou blanc lacto-fermenté express."
+      },
+      {
+        "title": "Préparer la saumure",
+        "desc": "Faire chauffer ou mélanger vinaigre, eau, sel, sucre et épices selon la recette."
+      },
+      {
+        "title": "Mettre en bocal",
+        "desc": "Tasser dans des bocaux propres puis couvrir entièrement avec la saumure ou le jus rendu."
+      },
+      {
+        "title": "Reposer",
+        "desc": "Fermer, laisser refroidir ou fermenter, puis placer au frais selon le résultat souhaité."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 8 semaines en bocal fermé selon acidité ou fermentation",
+      "congelateur": "Déconseillé",
+      "conserve": "Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée"
+    }
+  },
+  {
+    "id": "prepplus038",
+    "emoji": "🌶️",
+    "name": "Harissa douce maison en bocal",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "20 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🌶️",
+        "qty": "700 g",
+        "name": "Piments doux ou poivrons rouges"
+      },
+      {
+        "ico": "🧄",
+        "qty": "3 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Cumin"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Coriandre"
+      },
+      {
+        "ico": "🫒",
+        "qty": "8 cl",
+        "name": "Huile d’olive"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 7 jours avec une fine couche d’huile en surface ; congélateur Jusqu’à 3 mois en petits glaçons ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, sécher, couper ou peser précisément les ingrédients de harissa douce maison en bocal."
+      },
+      {
+        "title": "Mixer ou cuire",
+        "desc": "Mixer par impulsions ou cuire doucement pour obtenir une texture lisse, stable et bien liée."
+      },
+      {
+        "title": "Ajuster",
+        "desc": "Goûter puis ajuster sel, acidité, huile, épices ou texture avant de conditionner."
+      },
+      {
+        "title": "Portionner",
+        "desc": "Mettre en bocal propre ou en petits moules à glaçons selon le mode de conservation choisi."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 7 jours avec une fine couche d’huile en surface",
+      "congelateur": "Jusqu’à 3 mois en petits glaçons",
+      "conserve": "Non adaptée à une conserve classique"
+    }
+  },
+  {
+    "id": "prepplus039",
+    "emoji": "🍅",
+    "name": "Tomates séchées marinées maison",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "3 h",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍅",
+        "qty": "1,5 kg",
+        "name": "Tomates allongées"
+      },
+      {
+        "ico": "🧄",
+        "qty": "3 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🫒",
+        "qty": "30 cl",
+        "name": "Huile d’olive"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Origan"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 8 semaines en bocal fermé selon acidité ou fermentation ; congélateur Déconseillé ; conserve Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les légumes",
+        "desc": "Laver et couper finement les légumes ou fruits de tomates séchées marinées maison."
+      },
+      {
+        "title": "Préparer la saumure",
+        "desc": "Faire chauffer ou mélanger vinaigre, eau, sel, sucre et épices selon la recette."
+      },
+      {
+        "title": "Mettre en bocal",
+        "desc": "Tasser dans des bocaux propres puis couvrir entièrement avec la saumure ou le jus rendu."
+      },
+      {
+        "title": "Reposer",
+        "desc": "Fermer, laisser refroidir ou fermenter, puis placer au frais selon le résultat souhaité."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 8 semaines en bocal fermé selon acidité ou fermentation",
+      "congelateur": "Déconseillé",
+      "conserve": "Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée"
+    }
+  },
+  {
+    "id": "prepplus040",
+    "emoji": "🧅",
+    "name": "Pickles d’échalotes au vin rouge",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "15 min",
+    "cook": "5 min + repos",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🧅",
+        "qty": "500 g",
+        "name": "Échalotes"
+      },
+      {
+        "ico": "🍷",
+        "qty": "20 cl",
+        "name": "Vin rouge"
+      },
+      {
+        "ico": "🍚",
+        "qty": "20 cl",
+        "name": "Vinaigre de vin"
+      },
+      {
+        "ico": "🍬",
+        "qty": "2 c.à.s.",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Laurier"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 8 semaines en bocal fermé selon acidité ou fermentation ; congélateur Déconseillé ; conserve Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les légumes",
+        "desc": "Laver et couper finement les légumes ou fruits de pickles d’échalotes au vin rouge."
+      },
+      {
+        "title": "Préparer la saumure",
+        "desc": "Faire chauffer ou mélanger vinaigre, eau, sel, sucre et épices selon la recette."
+      },
+      {
+        "title": "Mettre en bocal",
+        "desc": "Tasser dans des bocaux propres puis couvrir entièrement avec la saumure ou le jus rendu."
+      },
+      {
+        "title": "Reposer",
+        "desc": "Fermer, laisser refroidir ou fermenter, puis placer au frais selon le résultat souhaité."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 8 semaines en bocal fermé selon acidité ou fermentation",
+      "congelateur": "Déconseillé",
+      "conserve": "Possible plusieurs mois avec saumure/vinaigre et stérilisation adaptée"
+    }
+  },
+  {
+    "id": "prepplus041",
+    "emoji": "🍲",
+    "name": "Base de légumes pour couscous à congeler",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "30 min",
+    "cook": "50 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": "5",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🥒",
+        "qty": "4",
+        "name": "Courgettes"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🫘",
+        "qty": "300 g",
+        "name": "Pois chiches"
+      },
+      {
+        "ico": "🍅",
+        "qty": "500 g",
+        "name": "Tomates concassées"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.c.",
+        "name": "Ras el-hanout"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de base de légumes pour couscous à congeler en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus042",
+    "emoji": "🍛",
+    "name": "Base de curry légumes pois chiches",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "25 min",
+    "cook": "40 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🫘",
+        "qty": "600 g",
+        "name": "Pois chiches cuits"
+      },
+      {
+        "ico": "🥕",
+        "qty": "3",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🍠",
+        "qty": "2",
+        "name": "Patates douces"
+      },
+      {
+        "ico": "🥥",
+        "qty": "400 ml",
+        "name": "Lait de coco"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Curry"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de base de curry légumes pois chiches en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus043",
+    "emoji": "🥩",
+    "name": "Base hachis viande légumes à congeler",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "35 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🥩",
+        "qty": "800 g",
+        "name": "Bœuf haché"
+      },
+      {
+        "ico": "🥕",
+        "qty": "3",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🍄",
+        "qty": "300 g",
+        "name": "Champignons"
+      },
+      {
+        "ico": "🍅",
+        "qty": "400 g",
+        "name": "Tomates concassées"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de base hachis viande légumes à congeler en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus044",
+    "emoji": "🐟",
+    "name": "Brandade de poisson blanc à congeler",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "25 min",
+    "cook": "30 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🐟",
+        "qty": "700 g",
+        "name": "Poisson blanc"
+      },
+      {
+        "ico": "🥔",
+        "qty": "800 g",
+        "name": "Pommes de terre"
+      },
+      {
+        "ico": "🧄",
+        "qty": "2 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🥛",
+        "qty": "15 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🫒",
+        "qty": "8 cl",
+        "name": "Huile d’olive"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de brandade de poisson blanc à congeler en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus045",
+    "emoji": "🥣",
+    "name": "Base soupe minestrone en bocaux",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "25 min",
+    "cook": "45 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🥕",
+        "qty": "3",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🥒",
+        "qty": "2",
+        "name": "Courgettes"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🍅",
+        "qty": "600 g",
+        "name": "Tomates concassées"
+      },
+      {
+        "ico": "🫘",
+        "qty": "300 g",
+        "name": "Haricots blancs"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de base soupe minestrone en bocaux en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus046",
+    "emoji": "🌯",
+    "name": "Garniture fajitas poulet poivrons",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "25 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍗",
+        "qty": "800 g",
+        "name": "Poulet émincé"
+      },
+      {
+        "ico": "🫑",
+        "qty": "4",
+        "name": "Poivrons"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🌶️",
+        "qty": "2 c.à.c.",
+        "name": "Épices mexicaines"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Citron vert"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours en bocal fermé après ouverture ; congélateur Jusqu’à 3 à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, éplucher ou couper les ingrédients de garniture fajitas poulet poivrons en morceaux réguliers."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire à feu doux en remuant régulièrement jusqu’à obtenir une texture fondante, nappante ou prête à mettre en bocal."
+      },
+      {
+        "title": "Conditionner",
+        "desc": "Verser chaud dans des bocaux propres et stérilisés ou laisser refroidir avant de portionner pour le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter avec la date puis stocker selon les indications frigo, congélateur ou conserve."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours en bocal fermé après ouverture",
+      "congelateur": "Jusqu’à 3 à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "prepplus047",
+    "emoji": "🧆",
+    "name": "Palets pois chiches coriandre à congeler",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "20 min + trempage",
+    "cook": "0 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🫘",
+        "qty": "500 g",
+        "name": "Pois chiches secs trempés"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🧄",
+        "qty": "2 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 bouquet",
+        "name": "Coriandre fraîche"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.c.",
+        "name": "Cumin"
+      },
+      {
+        "ico": "🌾",
+        "qty": "2 c.à.s.",
+        "name": "Farine"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes ; congélateur Jusqu’à 3 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de palets pois chiches coriandre à congeler selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes",
+      "congelateur": "Jusqu’à 3 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé"
+    }
+  },
+  {
+    "id": "prepplus048",
+    "emoji": "🥞",
+    "name": "Pâte à crêpes salées sarrasin",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "10 min",
+    "cook": "0 min + repos",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "330 g",
+        "name": "Farine de sarrasin"
+      },
+      {
+        "ico": "🥚",
+        "qty": "1",
+        "name": "Œuf"
+      },
+      {
+        "ico": "💧",
+        "qty": "75 cl",
+        "name": "Eau froide"
+      },
+      {
+        "ico": "🧂",
+        "qty": "1 c.à.c.",
+        "name": "Sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes ; congélateur Jusqu’à 3 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de pâte à crêpes salées sarrasin selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes",
+      "congelateur": "Jusqu’à 3 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé"
+    }
+  },
+  {
+    "id": "prepplus049",
+    "emoji": "🍕",
+    "name": "Pâte à pizza longue conservation frigo",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "15 min",
+    "cook": "0 min + pousse",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "500 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "💧",
+        "qty": "32 cl",
+        "name": "Eau"
+      },
+      {
+        "ico": "🧂",
+        "qty": "10 g",
+        "name": "Sel"
+      },
+      {
+        "ico": "🧁",
+        "qty": "3 g",
+        "name": "Levure boulangère sèche"
+      },
+      {
+        "ico": "🫒",
+        "qty": "2 c.à.s.",
+        "name": "Huile d’olive"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes ; congélateur Jusqu’à 3 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la base",
+        "desc": "Cuire, égoutter, effilocher ou hacher les éléments principaux de pâte à pizza longue conservation frigo selon la recette."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter les aromates, le liant, les herbes et le poivre, puis mélanger en gardant une texture légèrement rustique."
+      },
+      {
+        "title": "Mettre en pot",
+        "desc": "Tasser dans un bocal ou une terrine propre en évitant les poches d’air."
+      },
+      {
+        "title": "Reposer et conserver",
+        "desc": "Laisser refroidir ou reposer au frais avant dégustation, puis conserver selon les indications."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "4 à 7 jours bien couvert, jusqu’à 2 semaines sous graisse pour rillettes",
+      "congelateur": "Jusqu’à 3 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois si procédé maîtrisé"
+    }
+  },
+  {
+    "id": "prepplus050",
+    "emoji": "🥣",
+    "name": "Béchamel en portions à congeler",
+    "cuisine": "Cuisine Préparation",
+    "persons": 1,
+    "prep": "10 min",
+    "cook": "12 min",
+    "diff": "Facile ★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🧈",
+        "qty": "80 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌾",
+        "qty": "80 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🥛",
+        "qty": "1 L",
+        "name": "Lait"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 pincée",
+        "name": "Muscade"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Préparer des contenants propres, secs et étiquetés avant de commencer."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Laisser refroidir complètement avant de placer au frigo ou au congélateur."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 2 à 3 jours en récipient fermé ; congélateur Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire ; conserve Non adaptée à une conserve classique."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, sécher, couper ou peser précisément les ingrédients de béchamel en portions à congeler."
+      },
+      {
+        "title": "Mixer ou cuire",
+        "desc": "Mixer par impulsions ou cuire doucement pour obtenir une texture lisse, stable et bien liée."
+      },
+      {
+        "title": "Ajuster",
+        "desc": "Goûter puis ajuster sel, acidité, huile, épices ou texture avant de conditionner."
+      },
+      {
+        "title": "Portionner",
+        "desc": "Mettre en bocal propre ou en petits moules à glaçons selon le mode de conservation choisi."
+      }
+    ],
+    "errors": [
+      "Contenant mal nettoyé → conservation moins sûre",
+      "Préparation stockée chaude au froid → condensation et texture dégradée"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "En petites portions"
+    ],
+    "footer": "Préparation · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "2 à 3 jours en récipient fermé",
+      "congelateur": "Déconseillé ou jusqu’à 2 mois si la texture n’est pas prioritaire",
+      "conserve": "Non adaptée à une conserve classique"
+    }
   }
 ]
