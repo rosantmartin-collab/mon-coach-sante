@@ -395,6 +395,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
         <button class="filter-btn" onclick="filterRecipes('apéro',this)">🥂 Apéro</button>
         <button class="filter-btn" onclick="filterRecipes('préparation',this)">🫙 Préparation</button>
   </div>
+  <div style="position:relative;margin-bottom:12px;">
+    <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:1rem;pointer-events:none;">🔍</span>
+    <input type="text" id="recipe-search" placeholder="Rechercher une recette..." oninput="searchRecipes(this.value)"
+      style="width:100%;padding:10px 16px 10px 38px;border-radius:12px;border:1.5px solid var(--bg4);background:var(--bg2);color:var(--text);font-size:.9rem;outline:none;transition:border-color .2s;"
+      onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--bg4)'">
+    <button id="recipe-search-clear" onclick="clearRecipeSearch()" style="display:none;position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--text2);font-size:1rem;padding:4px;">✕</button>
+  </div>
   <div id="my-recipes-list"></div>
 </div>
   <div id="rpanel-suggestions" class="rpanel" style="width:100%;">
@@ -1803,7 +1810,29 @@ const TAG_COLORS=['#e8f5e9;color:#2e7d32','#fff9e6;color:#f57f17','#e3f2fd;color
 // § 14 — RECIPE FILTER (filtres + suggestions + IA)
 // ════════════════════════════════════════════════════════════
 let _currentRecipeFilter='all';
+let _recipeSearchQuery='';
+
+function searchRecipes(q){
+  _recipeSearchQuery=q.trim().toLowerCase();
+  const clearBtn=document.getElementById('recipe-search-clear');
+  if(clearBtn) clearBtn.style.display=_recipeSearchQuery?'block':'none';
+  renderMyRecipes();
+}
+
+function clearRecipeSearch(){
+  _recipeSearchQuery='';
+  const inp=document.getElementById('recipe-search');
+  if(inp) inp.value='';
+  const clearBtn=document.getElementById('recipe-search-clear');
+  if(clearBtn) clearBtn.style.display='none';
+  renderMyRecipes();
+}
 function filterRecipes(cat,btn){
+  _recipeSearchQuery='';
+  const inp=document.getElementById('recipe-search');
+  if(inp) inp.value='';
+  const clearBtn=document.getElementById('recipe-search-clear');
+  if(clearBtn) clearBtn.style.display='none';
   _currentRecipeFilter=cat;
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
@@ -1821,7 +1850,14 @@ function switchRecipeTab(tab,btn){
 
 function renderMyRecipes(){
   const el=document.getElementById('my-recipes-list');
-  const filtered=(S.recipes||[]).filter(r=>_currentRecipeFilter==='all'||((_currentRecipeFilter==='plat')&&(r.category==='déjeuner'||r.category==='dîner'))||(_currentRecipeFilter!=='plat'&&r.category===_currentRecipeFilter));
+  const normalize=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const filtered=(S.recipes||[]).filter(r=>{
+    const catOk=_currentRecipeFilter==='all'||((_currentRecipeFilter==='plat')&&(r.category==='déjeuner'||r.category==='dîner'))||(_currentRecipeFilter!=='plat'&&r.category===_currentRecipeFilter);
+    if(!catOk) return false;
+    if(!_recipeSearchQuery) return true;
+    const q=normalize(_recipeSearchQuery);
+    return normalize(r.name).includes(q)||normalize(r.cuisine||'').includes(q)||normalize(r.category).includes(q);
+  });
   if(!S.recipes||!S.recipes.length){
     el.innerHTML='<div style="text-align:center;padding:40px;color:var(--text2);"><div style="font-size:3rem;margin-bottom:12px;">📖</div><div style="font-weight:700;margin-bottom:8px;">Aucune recette pour le moment</div><div style="font-size:.85rem;">Ajoute tes propres recettes ou valide des suggestions IA !</div></div>';
     return;
