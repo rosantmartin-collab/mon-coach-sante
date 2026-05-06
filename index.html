@@ -1848,6 +1848,18 @@ function switchRecipeTab(tab,btn){
   document.getElementById('rpanel-'+tab).classList.add('active');
 }
 
+
+function getCatEmojiColor(r){
+  const cat=(r.category||'').toLowerCase();
+  if(cat==='dessert') return '#fce4ec';
+  if(cat==='préparation') return '#e8f5e9';
+  if(cat==='petit-déjeuner') return '#fff9e6';
+  if(cat==='collation') return '#f3e5f5';
+  if(cat==='apéro') return '#e8eaf6';
+  if(cat==='entrée') return '#e0f7fa';
+  if(cat==='déjeuner'||cat==='dîner') return '#fbe9e7';
+  return '#f0e6da';
+}
 function renderMyRecipes(){
   const el=document.getElementById('my-recipes-list');
   const normalize=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
@@ -1867,7 +1879,7 @@ function renderMyRecipes(){
   let h='';
   filtered.forEach((r)=>{const i=S.recipes.indexOf(r);
     const cc=catColors[r.category]||'#e8f5e9;color:#333';
-    h+='<div class="my-recipe-item" onclick="viewRecipe('+i+')"><div class="my-recipe-emoji" style="background:'+(r.colorLight||'var(--bg3)')+';font-size:2.3rem;">'+(r.emoji||'🍽️')+'</div><div class="my-recipe-info"><div class="my-recipe-name">'+r.name+'</div><div class="my-recipe-meta">'+(r.prep?'⏱ '+r.prep+' prép. ':'')+(r.cook?'🔥 '+r.cook+' cuisson':'')+(r.persons?' · 👥 '+r.persons+' pers.':'')+'</div><div style="margin-top:4px;"><span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:'+cc+';">'+r.category+'</span>'+(r.source==='ia'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8eaf6;color:#3949ab;">🤖 IA</span>':r.source==='repas'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8f5e9;color:#2e7d32;">📋 Plan</span>':'')+'</div></div><div style="display:flex;gap:4px;"><button onclick="event.stopPropagation();editRecipe('+i+')" style="background:none;border:none;color:var(--primary);cursor:pointer;font-size:1.1rem;padding:4px;" title="Modifier">✏️</button><button onclick="event.stopPropagation();deleteRecipe('+i+')" style="background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.1rem;padding:4px;" title="Supprimer">🗑️</button></div></div>';
+    h+='<div class="my-recipe-item" onclick="viewRecipe('+i+')"><div class="my-recipe-emoji" style="background:'+getCatEmojiColor(r)+';font-size:2.3rem;">'+(r.emoji||'🍽️')+'</div><div class="my-recipe-info"><div class="my-recipe-name">'+r.name+'</div><div class="my-recipe-meta">'+(r.prep?'⏱ '+r.prep+' prép. ':'')+(r.cook?'🔥 '+r.cook+' cuisson':'')+(r.persons?' · 👥 '+r.persons+' pers.':'')+'</div><div style="margin-top:4px;"><span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:'+cc+';">'+r.category+'</span>'+(r.source==='ia'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8eaf6;color:#3949ab;">🤖 IA</span>':r.source==='repas'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8f5e9;color:#2e7d32;">📋 Plan</span>':'')+'</div></div><div style="display:flex;gap:4px;"><button onclick="event.stopPropagation();editRecipe('+i+')" style="background:none;border:none;color:var(--primary);cursor:pointer;font-size:1.1rem;padding:4px;" title="Modifier">✏️</button><button onclick="event.stopPropagation();deleteRecipe('+i+')" style="background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.1rem;padding:4px;" title="Supprimer">🗑️</button></div></div>';
   });
   el.innerHTML=h;
 }
@@ -1937,7 +1949,7 @@ function renderProposals(){
   let h='';
   pending.forEach(r=>{
     const idx=S.proposals.indexOf(r);
-    h+='<div class="rprop" style="margin-bottom:10px;"><div class="fb"><div style="display:flex;align-items:center;gap:12px;"><span style="font-size:2.4rem;width:66px;height:66px;display:flex;align-items:center;justify-content:center;border-radius:18px;flex-shrink:0;background:'+(r.colorLight||'var(--bg3)')+';">'+r.emoji+'</span><div><div class="rcat">'+(catIco[r.category]||'🍽️')+' '+r.category+' · '+r.cuisine+'</div><div class="rname">'+r.name+'</div><div class="rmeta">⏱ '+r.prep+' · 🔥 '+r.cook+' · 👥 '+(r.persons||2)+' pers.</div></div></div></div><div class="rprop-actions"><button class="btn btn-g btn-sm" onclick="previewProposal('+idx+')">👁️ Voir la fiche</button><button class="btn btn-p btn-sm" onclick="approveProposal('+idx+')">✅ Valider</button><button class="btn btn-g btn-sm" onclick="rejectProposal('+idx+')" style="color:var(--danger);">✕</button></div></div>';
+    h+='<div class="rprop" style="margin-bottom:10px;"><div class="fb"><div style="display:flex;align-items:center;gap:12px;"><span style="font-size:2.4rem;width:66px;height:66px;display:flex;align-items:center;justify-content:center;border-radius:18px;flex-shrink:0;background:'+getCatEmojiColor(r)+';">'+r.emoji+'</span><div><div class="rcat">'+(catIco[r.category]||'🍽️')+' '+r.category+' · '+r.cuisine+'</div><div class="rname">'+r.name+'</div><div class="rmeta">⏱ '+r.prep+' · 🔥 '+r.cook+' · 👥 '+(r.persons||2)+' pers.</div></div></div></div><div class="rprop-actions"><button class="btn btn-g btn-sm" onclick="previewProposal('+idx+')">👁️ Voir la fiche</button><button class="btn btn-p btn-sm" onclick="approveProposal('+idx+')">✅ Valider</button><button class="btn btn-g btn-sm" onclick="rejectProposal('+idx+')" style="color:var(--danger);">✕</button></div></div>';
   });
   el.innerHTML=h;
 }
