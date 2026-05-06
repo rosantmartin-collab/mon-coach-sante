@@ -2795,7 +2795,9 @@ document.addEventListener('DOMContentLoaded',()=>{
       ]).then(()=>{
         if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
         // Afficher la page seulement quand les données sont prêtes
-        showPage('home');
+        // Restaurer la dernière page visitée
+        const lastPage = (()=>{try{return localStorage.getItem('coachv3_lastpage')||'home';}catch(e){return 'home';}})();
+        showPage(lastPage);
         renderPage();
         _autoGenerateProposals();
       });
