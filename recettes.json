@@ -93258,5 +93258,4412 @@
       "congelateur": "Jusqu’à 3 mois en portions",
       "conserve": "Non adaptée à une conserve classique"
     }
+  },
+  {
+    "id": "frtrad001",
+    "emoji": "🧀",
+    "name": "Gougères bourguignonnes au comté",
+    "cuisine": "Cuisine Bourguignonne",
+    "persons": 6,
+    "prep": "20 min",
+    "cook": "25 min",
+    "diff": "Facile ★★",
+    "color": "#e65100",
+    "colorLight": "#fff3e0",
+    "category": "apéro",
+    "ingredients": [
+      {
+        "ico": "💧",
+        "qty": "25 cl",
+        "name": "Eau"
+      },
+      {
+        "ico": "🧈",
+        "qty": "80 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌾",
+        "qty": "150 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🧀",
+        "qty": "120 g",
+        "name": "Comté râpé"
+      },
+      {
+        "ico": "🧂",
+        "qty": "1 pincée",
+        "name": "Sel"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 pincée",
+        "name": "Muscade"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Ajouter les œufs un par un permet de contrôler la texture de la pâte à choux."
+      },
+      {
+        "dot": "#e65100",
+        "text": "Ne pas ouvrir le four pendant la cuisson évite que les gougères retombent."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la panade",
+        "desc": "Porter l’eau, le beurre et le sel à ébullition, puis ajouter la farine d’un coup et dessécher la pâte 2 min sur feu doux."
+      },
+      {
+        "title": "Ajouter les œufs",
+        "desc": "Hors du feu, incorporer les œufs un par un jusqu’à obtenir une pâte souple et brillante."
+      },
+      {
+        "title": "Incorporer le fromage",
+        "desc": "Ajouter le comté râpé et une pincée de muscade, puis mélanger sans trop travailler."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Dresser des petits tas sur plaque et cuire 22 à 25 min à 180°C jusqu’à ce qu’ils soient gonflés et dorés."
+      }
+    ],
+    "errors": [
+      "Four ouvert trop tôt → gougères affaissées",
+      "Pâte pas assez desséchée → gougères lourdes"
+    ],
+    "variantes": [
+      "Avec gruyère",
+      "Avec mimolette",
+      "Avec poivre noir"
+    ],
+    "footer": "Apéritif traditionnel · Bourgogne",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "frtrad002",
+    "emoji": "🥖",
+    "name": "Rillettes de maquereau à la moutarde ancienne",
+    "cuisine": "Cuisine Française",
+    "persons": 6,
+    "prep": "15 min",
+    "cook": "0 min + repos",
+    "diff": "Très facile ★",
+    "color": "#e65100",
+    "colorLight": "#fff3e0",
+    "category": "apéro",
+    "ingredients": [
+      {
+        "ico": "🐟",
+        "qty": "250 g",
+        "name": "Maquereau fumé"
+      },
+      {
+        "ico": "🥛",
+        "qty": "120 g",
+        "name": "Fromage frais"
+      },
+      {
+        "ico": "🫙",
+        "qty": "1 c.à.s.",
+        "name": "Moutarde à l’ancienne"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Ciboulette"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1 petite",
+        "name": "Échalote"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Écraser à la fourchette garde une texture de rillettes plus agréable."
+      },
+      {
+        "dot": "#e65100",
+        "text": "Un repos au frais de 30 min permet aux saveurs de se mélanger."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer le poisson",
+        "desc": "Retirer soigneusement la peau et les éventuelles arêtes du maquereau fumé."
+      },
+      {
+        "title": "Émietter",
+        "desc": "Émietter le maquereau dans un bol avec une fourchette sans le réduire en purée."
+      },
+      {
+        "title": "Mélanger",
+        "desc": "Ajouter fromage frais, moutarde, citron, échalote ciselée, ciboulette et poivre."
+      },
+      {
+        "title": "Réserver",
+        "desc": "Placer au frais 30 min et servir avec pain de campagne grillé ou crudités."
+      }
+    ],
+    "errors": [
+      "Poisson mal désarêté → texture désagréable",
+      "Trop de fromage frais → goût du maquereau masqué"
+    ],
+    "variantes": [
+      "Avec sardines",
+      "Avec aneth",
+      "Avec câpres"
+    ],
+    "footer": "Tartinade française · Apéro",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad003",
+    "emoji": "🫒",
+    "name": "Cake salé olives jambon emmental",
+    "cuisine": "Cuisine Familiale Française",
+    "persons": 8,
+    "prep": "15 min",
+    "cook": "40 min",
+    "diff": "Facile ★",
+    "color": "#e65100",
+    "colorLight": "#fff3e0",
+    "category": "apéro",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "200 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🥚",
+        "qty": "3",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "10 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🫒",
+        "qty": "10 cl",
+        "name": "Huile neutre"
+      },
+      {
+        "ico": "🧀",
+        "qty": "100 g",
+        "name": "Emmental râpé"
+      },
+      {
+        "ico": "🥓",
+        "qty": "150 g",
+        "name": "Jambon en dés"
+      },
+      {
+        "ico": "🫒",
+        "qty": "100 g",
+        "name": "Olives vertes"
+      },
+      {
+        "ico": "🧁",
+        "qty": "1 sachet",
+        "name": "Levure chimique"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Fariner légèrement les olives et le jambon évite qu’ils tombent au fond."
+      },
+      {
+        "dot": "#e65100",
+        "text": "Laisser tiédir avant de découper donne de belles tranches."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la pâte",
+        "desc": "Fouetter les œufs avec le lait et l’huile, puis incorporer farine et levure."
+      },
+      {
+        "title": "Ajouter la garniture",
+        "desc": "Incorporer emmental, jambon et olives coupées en rondelles."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Verser dans un moule à cake beurré et cuire 40 min à 180°C."
+      },
+      {
+        "title": "Servir",
+        "desc": "Laisser tiédir puis couper en cubes ou en tranches pour l’apéritif."
+      }
+    ],
+    "errors": [
+      "Pâte trop mélangée → cake dense",
+      "Découpe trop chaude → tranches cassées"
+    ],
+    "variantes": [
+      "Avec tomates séchées",
+      "Avec lardons",
+      "Avec chèvre"
+    ],
+    "footer": "Apéro familial · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad004",
+    "emoji": "🥔",
+    "name": "Pommes dauphine apéritives",
+    "cuisine": "Cuisine Française",
+    "persons": 6,
+    "prep": "30 min",
+    "cook": "25 min",
+    "diff": "Moyenne ★★★",
+    "color": "#e65100",
+    "colorLight": "#fff3e0",
+    "category": "apéro",
+    "ingredients": [
+      {
+        "ico": "🥔",
+        "qty": "500 g",
+        "name": "Pommes de terre"
+      },
+      {
+        "ico": "💧",
+        "qty": "12 cl",
+        "name": "Eau"
+      },
+      {
+        "ico": "🧈",
+        "qty": "50 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌾",
+        "qty": "75 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🥚",
+        "qty": "3",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 pincée",
+        "name": "Muscade"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      },
+      {
+        "ico": "🫒",
+        "qty": "QS",
+        "name": "Huile de friture"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Une purée bien sèche aide les pommes dauphine à tenir."
+      },
+      {
+        "dot": "#e65100",
+        "text": "La friture doit être chaude mais non fumante pour éviter une pâte grasse."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Faire la purée",
+        "desc": "Cuire les pommes de terre, les égoutter soigneusement puis les écraser en purée sèche."
+      },
+      {
+        "title": "Préparer la pâte à choux",
+        "desc": "Porter eau et beurre à ébullition, ajouter la farine puis dessécher 2 min."
+      },
+      {
+        "title": "Assembler",
+        "desc": "Incorporer les œufs à la pâte à choux, puis mélanger avec la purée, muscade, sel et poivre."
+      },
+      {
+        "title": "Frire",
+        "desc": "Former de petites boules et les frire jusqu’à ce qu’elles soient gonflées et dorées."
+      }
+    ],
+    "errors": [
+      "Purée trop humide → boules qui éclatent",
+      "Huile trop froide → pommes dauphine grasses"
+    ],
+    "variantes": [
+      "Au four",
+      "Avec fromage",
+      "Avec herbes"
+    ],
+    "footer": "Bouchée traditionnelle · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad005",
+    "emoji": "🥓",
+    "name": "Pruneaux au lard façon bistrot",
+    "cuisine": "Cuisine Française",
+    "persons": 6,
+    "prep": "10 min",
+    "cook": "12 min",
+    "diff": "Très facile ★",
+    "color": "#e65100",
+    "colorLight": "#fff3e0",
+    "category": "apéro",
+    "ingredients": [
+      {
+        "ico": "🍇",
+        "qty": "18",
+        "name": "Pruneaux dénoyautés"
+      },
+      {
+        "ico": "🥓",
+        "qty": "9 tranches",
+        "name": "Lard fumé fin"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 pincée",
+        "name": "Thym"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Utiliser du lard fin permet une cuisson rapide et croustillante."
+      },
+      {
+        "dot": "#e65100",
+        "text": "Maintenir avec un petit pic évite que les bouchées s’ouvrent."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer le lard",
+        "desc": "Couper les tranches de lard en deux dans la longueur."
+      },
+      {
+        "title": "Enrouler",
+        "desc": "Enrouler chaque pruneau dans un morceau de lard et maintenir avec un pic."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Ajouter un peu de poivre et une pincée de thym."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Passer au four 10 à 12 min à 200°C jusqu’à ce que le lard soit doré."
+      }
+    ],
+    "errors": [
+      "Lard trop épais → cuisson irrégulière",
+      "Cuisson trop longue → pruneaux secs"
+    ],
+    "variantes": [
+      "Avec abricots secs",
+      "Avec fromage bleu",
+      "Avec romarin"
+    ],
+    "footer": "Classique apéritif · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad006",
+    "emoji": "🧅",
+    "name": "Mini pissaladières niçoises",
+    "cuisine": "Cuisine Niçoise",
+    "persons": 6,
+    "prep": "25 min",
+    "cook": "35 min",
+    "diff": "Facile ★★",
+    "color": "#e65100",
+    "colorLight": "#fff3e0",
+    "category": "apéro",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "1",
+        "name": "Pâte à pain ou pâte à pizza"
+      },
+      {
+        "ico": "🧅",
+        "qty": "700 g",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🐟",
+        "qty": "8 filets",
+        "name": "Anchois"
+      },
+      {
+        "ico": "🫒",
+        "qty": "60 g",
+        "name": "Olives noires"
+      },
+      {
+        "ico": "🫒",
+        "qty": "3 c.à.s.",
+        "name": "Huile d’olive"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Thym"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Les oignons doivent compoter doucement sans brunir."
+      },
+      {
+        "dot": "#e65100",
+        "text": "Saler peu car anchois et olives apportent déjà du sel."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Compoter les oignons",
+        "desc": "Émincer les oignons et les cuire 25 min avec huile d’olive et thym jusqu’à texture fondante."
+      },
+      {
+        "title": "Préparer la pâte",
+        "desc": "Étaler la pâte et découper de petits rectangles ou cercles."
+      },
+      {
+        "title": "Garnir",
+        "desc": "Répartir les oignons, ajouter anchois et olives noires."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Enfourner 12 à 15 min à 210°C jusqu’à ce que les bords soient dorés."
+      }
+    ],
+    "errors": [
+      "Oignons saisis trop fort → goût amer",
+      "Trop de sel → anchois déjà salés"
+    ],
+    "variantes": [
+      "Sans anchois",
+      "Avec pâte feuilletée",
+      "Format grande tarte"
+    ],
+    "footer": "Apéro traditionnel · Nice",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad007",
+    "emoji": "🥚",
+    "name": "Mini œufs mimosa cornichon persil",
+    "cuisine": "Cuisine Française",
+    "persons": 6,
+    "prep": "15 min",
+    "cook": "10 min",
+    "diff": "Très facile ★",
+    "color": "#e65100",
+    "colorLight": "#fff3e0",
+    "category": "apéro",
+    "ingredients": [
+      {
+        "ico": "🥚",
+        "qty": "6",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🫙",
+        "qty": "2 c.à.s.",
+        "name": "Mayonnaise"
+      },
+      {
+        "ico": "🥒",
+        "qty": "3",
+        "name": "Cornichons"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Persil"
+      },
+      {
+        "ico": "🫙",
+        "qty": "1 c.à.c.",
+        "name": "Moutarde"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Refroidir les œufs dans l’eau froide facilite l’écalage."
+      },
+      {
+        "dot": "#e65100",
+        "text": "Hacher les cornichons très finement donne une garniture régulière."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Cuire les œufs",
+        "desc": "Cuire les œufs 10 min dans l’eau bouillante puis les refroidir complètement."
+      },
+      {
+        "title": "Préparer les jaunes",
+        "desc": "Écaler les œufs, les couper en deux et retirer les jaunes."
+      },
+      {
+        "title": "Faire la farce",
+        "desc": "Écraser les jaunes avec mayonnaise, moutarde, cornichons hachés, persil et poivre."
+      },
+      {
+        "title": "Garnir",
+        "desc": "Remplir les blancs avec la farce et servir frais."
+      }
+    ],
+    "errors": [
+      "Œufs trop cuits → jaune grisâtre",
+      "Cornichons trop gros → farce irrégulière"
+    ],
+    "variantes": [
+      "Avec paprika",
+      "Avec thon",
+      "Avec ciboulette"
+    ],
+    "footer": "Apéro rétro · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad008",
+    "emoji": "🥖",
+    "name": "Toasts cervelle de canut",
+    "cuisine": "Cuisine Lyonnaise",
+    "persons": 6,
+    "prep": "15 min",
+    "cook": "0 min + repos",
+    "diff": "Très facile ★",
+    "color": "#e65100",
+    "colorLight": "#fff3e0",
+    "category": "apéro",
+    "ingredients": [
+      {
+        "ico": "🥛",
+        "qty": "300 g",
+        "name": "Fromage blanc égoutté"
+      },
+      {
+        "ico": "🥛",
+        "qty": "100 g",
+        "name": "Fromage frais"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Échalote"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Ciboulette"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Persil"
+      },
+      {
+        "ico": "🧄",
+        "qty": "1 petite gousse",
+        "name": "Ail"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Vinaigre de vin"
+      },
+      {
+        "ico": "🥖",
+        "qty": "QS",
+        "name": "Pain grillé"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Égoutter le fromage blanc donne une texture plus ferme."
+      },
+      {
+        "dot": "#e65100",
+        "text": "Un repos au frais arrondit le goût de l’ail et de l’échalote."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les aromates",
+        "desc": "Ciseler finement échalote, ciboulette et persil, puis presser l’ail."
+      },
+      {
+        "title": "Mélanger",
+        "desc": "Mélanger fromage blanc, fromage frais, vinaigre, ail, échalote et herbes."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Saler, poivrer et ajuster le vinaigre selon le goût."
+      },
+      {
+        "title": "Servir",
+        "desc": "Réserver 30 min au frais puis servir sur des toasts de pain grillé."
+      }
+    ],
+    "errors": [
+      "Fromage blanc non égoutté → texture liquide",
+      "Ail trop gros → goût dominant"
+    ],
+    "variantes": [
+      "Avec noix",
+      "Avec radis",
+      "Avec pommes de terre vapeur"
+    ],
+    "footer": "Spécialité lyonnaise · Apéro",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad009",
+    "emoji": "🥬",
+    "name": "Salade lyonnaise traditionnelle",
+    "cuisine": "Cuisine Lyonnaise",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "15 min",
+    "diff": "Facile ★★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "entrée",
+    "ingredients": [
+      {
+        "ico": "🥬",
+        "qty": "1",
+        "name": "Frisée ou salade croquante"
+      },
+      {
+        "ico": "🥓",
+        "qty": "180 g",
+        "name": "Lardons fumés"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🍞",
+        "qty": "80 g",
+        "name": "Croûtons"
+      },
+      {
+        "ico": "🫙",
+        "qty": "1 c.à.c.",
+        "name": "Moutarde"
+      },
+      {
+        "ico": "🍋",
+        "qty": "2 c.à.s.",
+        "name": "Vinaigre de vin"
+      },
+      {
+        "ico": "🫒",
+        "qty": "4 c.à.s.",
+        "name": "Huile"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Pocher les œufs dans une eau frémissante vinaigrée aide le blanc à se tenir."
+      },
+      {
+        "dot": "#2e7d32",
+        "text": "Assaisonner la salade juste avant le service garde son croquant."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la salade",
+        "desc": "Laver et essorer la frisée, puis préparer une vinaigrette avec moutarde, vinaigre et huile."
+      },
+      {
+        "title": "Cuire les lardons",
+        "desc": "Faire dorer les lardons à la poêle et réserver la graisse rendue si besoin."
+      },
+      {
+        "title": "Pocher les œufs",
+        "desc": "Pocher les œufs 3 min dans une eau frémissante vinaigrée puis les égoutter."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Mélanger salade, vinaigrette, lardons et croûtons, puis déposer un œuf poché sur chaque assiette."
+      }
+    ],
+    "errors": [
+      "Eau bouillante trop forte → œufs dispersés",
+      "Salade assaisonnée trop tôt → feuilles molles"
+    ],
+    "variantes": [
+      "Avec noix",
+      "Avec pommes de terre",
+      "Avec vinaigre balsamique"
+    ],
+    "footer": "Entrée de bouchon · Lyon",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "frtrad010",
+    "emoji": "🥧",
+    "name": "Quiche lorraine classique",
+    "cuisine": "Cuisine Lorraine",
+    "persons": 6,
+    "prep": "20 min",
+    "cook": "40 min",
+    "diff": "Facile ★★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "entrée",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "1",
+        "name": "Pâte brisée"
+      },
+      {
+        "ico": "🥓",
+        "qty": "200 g",
+        "name": "Lardons fumés"
+      },
+      {
+        "ico": "🥚",
+        "qty": "3",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "25 cl",
+        "name": "Crème fraîche"
+      },
+      {
+        "ico": "🥛",
+        "qty": "10 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 pincée",
+        "name": "Muscade"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Précuire légèrement les lardons évite qu’ils rendent trop de gras dans l’appareil."
+      },
+      {
+        "dot": "#2e7d32",
+        "text": "Ne pas trop saler car les lardons le sont déjà."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer le fond",
+        "desc": "Foncer un moule avec la pâte brisée et piquer le fond à la fourchette."
+      },
+      {
+        "title": "Cuire les lardons",
+        "desc": "Faire revenir les lardons 3 à 4 min puis les égoutter sur papier absorbant."
+      },
+      {
+        "title": "Faire l’appareil",
+        "desc": "Battre œufs, crème, lait, muscade et poivre."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Répartir les lardons sur la pâte, verser l’appareil et cuire 35 à 40 min à 180°C."
+      }
+    ],
+    "errors": [
+      "Appareil trop salé → lardons déjà salés",
+      "Pâte non piquée → fond qui gonfle"
+    ],
+    "variantes": [
+      "Avec fromage râpé",
+      "Avec oignons",
+      "Version mini"
+    ],
+    "footer": "Tradition lorraine · Entrée",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad011",
+    "emoji": "🍄",
+    "name": "Croûte aux champignons jurassienne",
+    "cuisine": "Cuisine Franc-Comtoise",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "20 min",
+    "diff": "Facile ★★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "entrée",
+    "ingredients": [
+      {
+        "ico": "🍞",
+        "qty": "4 tranches",
+        "name": "Pain de campagne"
+      },
+      {
+        "ico": "🍄",
+        "qty": "500 g",
+        "name": "Champignons variés"
+      },
+      {
+        "ico": "🧈",
+        "qty": "30 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Échalote"
+      },
+      {
+        "ico": "🥛",
+        "qty": "15 cl",
+        "name": "Crème"
+      },
+      {
+        "ico": "🍷",
+        "qty": "5 cl",
+        "name": "Vin blanc du Jura"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Persil"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Faire évaporer l’eau des champignons avant la crème concentre le goût."
+      },
+      {
+        "dot": "#2e7d32",
+        "text": "Toaster le pain évite qu’il ramollisse sous la sauce."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les champignons",
+        "desc": "Nettoyer les champignons et les émincer régulièrement."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Faire revenir échalote et champignons dans le beurre jusqu’à évaporation de l’eau."
+      },
+      {
+        "title": "Crémer",
+        "desc": "Déglacer au vin blanc, ajouter la crème et laisser épaissir quelques minutes."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Déposer les champignons crémeux sur le pain grillé et parsemer de persil."
+      }
+    ],
+    "errors": [
+      "Champignons lavés à grande eau → texture spongieuse",
+      "Pain non grillé → croûte détrempée"
+    ],
+    "variantes": [
+      "Avec morilles",
+      "Avec comté",
+      "Sans vin"
+    ],
+    "footer": "Entrée régionale · Jura",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad012",
+    "emoji": "🥣",
+    "name": "Velouté Dubarry au chou-fleur",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "15 min",
+    "cook": "30 min",
+    "diff": "Facile ★★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "entrée",
+    "ingredients": [
+      {
+        "ico": "🥦",
+        "qty": "1",
+        "name": "Chou-fleur"
+      },
+      {
+        "ico": "🫛",
+        "qty": "1 blanc",
+        "name": "Poireau"
+      },
+      {
+        "ico": "🥔",
+        "qty": "1 petite",
+        "name": "Pomme de terre"
+      },
+      {
+        "ico": "🧈",
+        "qty": "25 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🫙",
+        "qty": "800 ml",
+        "name": "Bouillon de volaille ou légumes"
+      },
+      {
+        "ico": "🥛",
+        "qty": "15 cl",
+        "name": "Crème liquide"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel, poivre et muscade"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Cuire le chou-fleur doucement garde une saveur délicate."
+      },
+      {
+        "dot": "#2e7d32",
+        "text": "Mixer longuement donne la texture lisse typique du velouté Dubarry."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les légumes",
+        "desc": "Détailler le chou-fleur en fleurettes, émincer le blanc de poireau et couper la pomme de terre en dés."
+      },
+      {
+        "title": "Faire suer",
+        "desc": "Faire fondre le beurre puis faire revenir le poireau sans coloration pendant 4 à 5 min."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Ajouter chou-fleur, pomme de terre et bouillon, puis laisser frémir 25 min jusqu’à tendreté."
+      },
+      {
+        "title": "Mixer",
+        "desc": "Ajouter la crème, mixer finement, rectifier sel, poivre et muscade puis servir chaud."
+      }
+    ],
+    "errors": [
+      "Poireau coloré → goût trop marqué",
+      "Mixage trop court → velouté granuleux"
+    ],
+    "variantes": [
+      "Avec croûtons",
+      "Avec huile de noisette",
+      "Avec éclats de chou-fleur rôti"
+    ],
+    "footer": "Entrée classique · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad013",
+    "emoji": "🥔",
+    "name": "Salade tiède de lentilles du Puy",
+    "cuisine": "Cuisine Auvergnate",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "25 min",
+    "diff": "Facile ★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "entrée",
+    "ingredients": [
+      {
+        "ico": "🫘",
+        "qty": "250 g",
+        "name": "Lentilles vertes du Puy"
+      },
+      {
+        "ico": "🥕",
+        "qty": "1",
+        "name": "Carotte"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Échalote"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Feuille de laurier"
+      },
+      {
+        "ico": "🫙",
+        "qty": "1 c.à.c.",
+        "name": "Moutarde"
+      },
+      {
+        "ico": "🍋",
+        "qty": "2 c.à.s.",
+        "name": "Vinaigre de vin"
+      },
+      {
+        "ico": "🫒",
+        "qty": "4 c.à.s.",
+        "name": "Huile de noix"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Démarrer les lentilles à l’eau froide assure une cuisson régulière."
+      },
+      {
+        "dot": "#2e7d32",
+        "text": "Assaisonner tiède permet aux lentilles d’absorber la vinaigrette."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Cuire les lentilles",
+        "desc": "Mettre lentilles, carotte en dés et laurier dans l’eau froide, puis cuire 20 à 25 min."
+      },
+      {
+        "title": "Préparer la vinaigrette",
+        "desc": "Mélanger moutarde, vinaigre, huile, échalote ciselée, sel et poivre."
+      },
+      {
+        "title": "Égoutter",
+        "desc": "Égoutter les lentilles encore légèrement fermes et retirer le laurier."
+      },
+      {
+        "title": "Assembler",
+        "desc": "Mélanger les lentilles tièdes avec la vinaigrette et servir."
+      }
+    ],
+    "errors": [
+      "Lentilles trop cuites → salade pâteuse",
+      "Sel ajouté trop tôt → lentilles fermes"
+    ],
+    "variantes": [
+      "Avec lardons",
+      "Avec œuf mollet",
+      "Avec noix"
+    ],
+    "footer": "Entrée traditionnelle · Auvergne",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad014",
+    "emoji": "🐟",
+    "name": "Terrine de saumon aux herbes",
+    "cuisine": "Cuisine Française",
+    "persons": 8,
+    "prep": "25 min",
+    "cook": "45 min + repos",
+    "diff": "Moyenne ★★★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "entrée",
+    "ingredients": [
+      {
+        "ico": "🐟",
+        "qty": "600 g",
+        "name": "Saumon frais"
+      },
+      {
+        "ico": "🥚",
+        "qty": "3",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "20 cl",
+        "name": "Crème liquide"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 c.à.s.",
+        "name": "Aneth et ciboulette"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Cuire au bain-marie donne une terrine plus moelleuse."
+      },
+      {
+        "dot": "#2e7d32",
+        "text": "Un repos au frais d’une nuit facilite la découpe."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Mixer la farce",
+        "desc": "Mixer le saumon avec œufs, crème, citron, sel et poivre sans trop chauffer la préparation."
+      },
+      {
+        "title": "Ajouter les herbes",
+        "desc": "Incorporer les herbes ciselées délicatement."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Verser dans un moule chemisé et cuire au bain-marie 40 à 45 min à 160°C."
+      },
+      {
+        "title": "Refroidir",
+        "desc": "Laisser refroidir puis placer au frais plusieurs heures avant de trancher."
+      }
+    ],
+    "errors": [
+      "Mixage trop long → texture élastique",
+      "Démoulage trop tôt → terrine fragile"
+    ],
+    "variantes": [
+      "Avec poisson blanc",
+      "Avec épinards",
+      "Avec sauce citron"
+    ],
+    "footer": "Entrée froide · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad015",
+    "emoji": "🥬",
+    "name": "Poireaux vinaigrette à l’ancienne",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "20 min",
+    "diff": "Très facile ★",
+    "color": "#2e7d32",
+    "colorLight": "#e8f5e9",
+    "category": "entrée",
+    "ingredients": [
+      {
+        "ico": "🫛",
+        "qty": "6",
+        "name": "Poireaux"
+      },
+      {
+        "ico": "🫙",
+        "qty": "1 c.à.c.",
+        "name": "Moutarde à l’ancienne"
+      },
+      {
+        "ico": "🍋",
+        "qty": "2 c.à.s.",
+        "name": "Vinaigre de vin"
+      },
+      {
+        "ico": "🫒",
+        "qty": "4 c.à.s.",
+        "name": "Huile"
+      },
+      {
+        "ico": "🥚",
+        "qty": "1",
+        "name": "Œuf dur facultatif"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Persil"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Bien égoutter les poireaux évite de diluer la vinaigrette."
+      },
+      {
+        "dot": "#2e7d32",
+        "text": "Servir tiède ou froid selon la saison."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les poireaux",
+        "desc": "Retirer le vert dur, fendre les poireaux et les laver soigneusement."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire les poireaux 15 à 20 min à la vapeur ou dans l’eau frémissante salée."
+      },
+      {
+        "title": "Faire la vinaigrette",
+        "desc": "Mélanger moutarde, vinaigre, huile, persil, sel et poivre."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Égoutter les poireaux, napper de vinaigrette et ajouter l’œuf dur haché si souhaité."
+      }
+    ],
+    "errors": [
+      "Poireaux mal lavés → sable en bouche",
+      "Égouttage insuffisant → sauce diluée"
+    ],
+    "variantes": [
+      "Avec câpres",
+      "Avec échalote",
+      "Avec noix"
+    ],
+    "footer": "Entrée bistrot · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad016",
+    "emoji": "🥩",
+    "name": "Daube provençale au vin rouge",
+    "cuisine": "Cuisine Provençale",
+    "persons": 6,
+    "prep": "25 min + marinade",
+    "cook": "3 h",
+    "diff": "Moyenne ★★★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "ingredients": [
+      {
+        "ico": "🥩",
+        "qty": "1,2 kg",
+        "name": "Bœuf à braiser"
+      },
+      {
+        "ico": "🍷",
+        "qty": "75 cl",
+        "name": "Vin rouge"
+      },
+      {
+        "ico": "🥕",
+        "qty": "3",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🧄",
+        "qty": "3 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🍊",
+        "qty": "1 bande",
+        "name": "Zeste d’orange"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 bouquet",
+        "name": "Thym, laurier, persil"
+      },
+      {
+        "ico": "🫒",
+        "qty": "2 c.à.s.",
+        "name": "Huile d’olive"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Une marinade d’une nuit donne une viande plus parfumée."
+      },
+      {
+        "dot": "#c62828",
+        "text": "Cuire très doucement évite une viande sèche."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Mariner",
+        "desc": "Mettre le bœuf en morceaux avec vin, carottes, oignons, ail, zeste et bouquet garni pendant une nuit."
+      },
+      {
+        "title": "Saisir",
+        "desc": "Égoutter la viande, la faire dorer dans l’huile puis ajouter les légumes de marinade."
+      },
+      {
+        "title": "Mijoter",
+        "desc": "Verser la marinade filtrée, couvrir et cuire 2 h 30 à 3 h à feu très doux."
+      },
+      {
+        "title": "Servir",
+        "desc": "Rectifier l’assaisonnement et servir avec pâtes fraîches ou pommes vapeur."
+      }
+    ],
+    "errors": [
+      "Cuisson trop forte → viande dure",
+      "Marinade non filtrée → sauce trouble"
+    ],
+    "variantes": [
+      "Avec olives noires",
+      "Avec joue de bœuf",
+      "Avec pâtes fraîches"
+    ],
+    "footer": "Plat mijoté · Provence",
+    "stars": "★★★★★"
+  },
+  {
+    "id": "frtrad017",
+    "emoji": "🍖",
+    "name": "Petit salé aux lentilles vertes",
+    "cuisine": "Cuisine Auvergnate",
+    "persons": 6,
+    "prep": "20 min",
+    "cook": "1 h 45",
+    "diff": "Facile ★★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "ingredients": [
+      {
+        "ico": "🐖",
+        "qty": "800 g",
+        "name": "Palette ou petit salé"
+      },
+      {
+        "ico": "🫘",
+        "qty": "500 g",
+        "name": "Lentilles vertes"
+      },
+      {
+        "ico": "🥕",
+        "qty": "3",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon piqué de clou de girofle"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Bouquet garni"
+      },
+      {
+        "ico": "🌭",
+        "qty": "4",
+        "name": "Saucisses fumées"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Dessaler la viande si nécessaire évite un plat trop salé."
+      },
+      {
+        "dot": "#c62828",
+        "text": "Ajouter les lentilles après une première cuisson de la viande garde leur tenue."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Cuire la viande",
+        "desc": "Mettre le petit salé dans une cocotte d’eau froide avec bouquet garni et cuire 1 h."
+      },
+      {
+        "title": "Ajouter les lentilles",
+        "desc": "Ajouter lentilles, carottes et oignon puis poursuivre 35 à 40 min."
+      },
+      {
+        "title": "Ajouter les saucisses",
+        "desc": "Mettre les saucisses fumées les 20 dernières minutes de cuisson."
+      },
+      {
+        "title": "Servir",
+        "desc": "Égoutter légèrement et servir bien chaud avec moutarde à l’ancienne."
+      }
+    ],
+    "errors": [
+      "Viande non dessalée → plat trop salé",
+      "Lentilles trop cuites → purée"
+    ],
+    "variantes": [
+      "Avec jarret",
+      "Avec lard fumé",
+      "Avec persil"
+    ],
+    "footer": "Plat traditionnel · Auvergne",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad018",
+    "emoji": "🐔",
+    "name": "Poule au pot façon Henri IV",
+    "cuisine": "Cuisine Française",
+    "persons": 6,
+    "prep": "30 min",
+    "cook": "2 h",
+    "diff": "Moyenne ★★★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "ingredients": [
+      {
+        "ico": "🐔",
+        "qty": "1",
+        "name": "Poule fermière"
+      },
+      {
+        "ico": "🥕",
+        "qty": "4",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🫛",
+        "qty": "3",
+        "name": "Poireaux"
+      },
+      {
+        "ico": "🥔",
+        "qty": "4",
+        "name": "Navets ou pommes de terre"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon piqué"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 bouquet",
+        "name": "Bouquet garni"
+      },
+      {
+        "ico": "🍚",
+        "qty": "200 g",
+        "name": "Riz"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Démarrer à froid donne un bouillon plus parfumé."
+      },
+      {
+        "dot": "#c62828",
+        "text": "Écumer régulièrement garde un bouillon clair."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Démarrer le bouillon",
+        "desc": "Placer la poule dans une grande marmite avec eau froide, oignon, bouquet garni, sel et poivre."
+      },
+      {
+        "title": "Cuire doucement",
+        "desc": "Porter à frémissement, écumer puis cuire 1 h 15 à feu doux."
+      },
+      {
+        "title": "Ajouter les légumes",
+        "desc": "Ajouter les légumes coupés et poursuivre 35 à 45 min."
+      },
+      {
+        "title": "Servir",
+        "desc": "Servir la poule découpée avec légumes, riz cuit dans le bouillon et un peu de bouillon chaud."
+      }
+    ],
+    "errors": [
+      "Bouillon bouilli trop fort → trouble",
+      "Légumes ajoutés trop tôt → trop cuits"
+    ],
+    "variantes": [
+      "Avec sauce suprême",
+      "Avec farce",
+      "Avec vermicelles"
+    ],
+    "footer": "Grand classique · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad019",
+    "emoji": "🐟",
+    "name": "Brandade de morue nîmoise",
+    "cuisine": "Cuisine Nîmoise",
+    "persons": 6,
+    "prep": "25 min + dessalage",
+    "cook": "35 min",
+    "diff": "Moyenne ★★★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "ingredients": [
+      {
+        "ico": "🐟",
+        "qty": "700 g",
+        "name": "Morue dessalée"
+      },
+      {
+        "ico": "🥔",
+        "qty": "600 g",
+        "name": "Pommes de terre"
+      },
+      {
+        "ico": "🧄",
+        "qty": "3 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🥛",
+        "qty": "15 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🫒",
+        "qty": "12 cl",
+        "name": "Huile d’olive"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.s.",
+        "name": "Persil"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Dessaler la morue 24 h en changeant l’eau plusieurs fois est essentiel."
+      },
+      {
+        "dot": "#c62828",
+        "text": "Monter à l’huile doucement donne une texture onctueuse."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Cuire les pommes de terre",
+        "desc": "Cuire les pommes de terre à l’eau puis les écraser grossièrement."
+      },
+      {
+        "title": "Pocher la morue",
+        "desc": "Pocher la morue dessalée 8 à 10 min dans le lait frémissant avec l’ail."
+      },
+      {
+        "title": "Émietter",
+        "desc": "Retirer les arêtes, émietter la morue puis mélanger avec la purée."
+      },
+      {
+        "title": "Monter",
+        "desc": "Incorporer l’huile d’olive progressivement, poivrer et gratiner 15 min si souhaité."
+      }
+    ],
+    "errors": [
+      "Morue mal dessalée → plat trop salé",
+      "Huile ajoutée trop vite → texture grasse"
+    ],
+    "variantes": [
+      "Avec chapelure",
+      "Sans pommes de terre",
+      "Avec citron"
+    ],
+    "footer": "Tradition nîmoise · Plat",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad020",
+    "emoji": "🥘",
+    "name": "Sauté de veau Marengo",
+    "cuisine": "Cuisine Française",
+    "persons": 6,
+    "prep": "20 min",
+    "cook": "1 h 30",
+    "diff": "Facile ★★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "ingredients": [
+      {
+        "ico": "🐄",
+        "qty": "900 g",
+        "name": "Veau à mijoter"
+      },
+      {
+        "ico": "🍅",
+        "qty": "500 g",
+        "name": "Tomates concassées"
+      },
+      {
+        "ico": "🍄",
+        "qty": "250 g",
+        "name": "Champignons"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🧄",
+        "qty": "2 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🍷",
+        "qty": "15 cl",
+        "name": "Vin blanc"
+      },
+      {
+        "ico": "🌾",
+        "qty": "1 c.à.s.",
+        "name": "Farine"
+      },
+      {
+        "ico": "🫒",
+        "qty": "2 c.à.s.",
+        "name": "Huile"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Singer légèrement la viande aide à lier la sauce."
+      },
+      {
+        "dot": "#c62828",
+        "text": "Ajouter les champignons en cours de cuisson garde leur texture."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Dorer la viande",
+        "desc": "Faire dorer le veau en morceaux dans l’huile sur toutes les faces."
+      },
+      {
+        "title": "Faire la base",
+        "desc": "Ajouter oignon et ail, saupoudrer de farine puis mélanger."
+      },
+      {
+        "title": "Mijoter",
+        "desc": "Verser vin blanc et tomates, couvrir et mijoter 1 h."
+      },
+      {
+        "title": "Ajouter les champignons",
+        "desc": "Ajouter les champignons émincés et poursuivre 25 à 30 min."
+      }
+    ],
+    "errors": [
+      "Viande pas dorée → sauce moins goûteuse",
+      "Farine mal mélangée → grumeaux"
+    ],
+    "variantes": [
+      "Avec olives",
+      "Avec carottes",
+      "Avec riz"
+    ],
+    "footer": "Plat mijoté · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad021",
+    "emoji": "🦆",
+    "name": "Canard aux navets façon grand-mère",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "20 min",
+    "cook": "1 h 15",
+    "diff": "Moyenne ★★★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "ingredients": [
+      {
+        "ico": "🦆",
+        "qty": "4 cuisses",
+        "name": "Canard"
+      },
+      {
+        "ico": "🥔",
+        "qty": "800 g",
+        "name": "Navets"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🫙",
+        "qty": "30 cl",
+        "name": "Bouillon de volaille"
+      },
+      {
+        "ico": "🍯",
+        "qty": "1 c.à.c.",
+        "name": "Miel"
+      },
+      {
+        "ico": "🧈",
+        "qty": "20 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 branche",
+        "name": "Thym"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Dégraisser partiellement le canard évite un plat trop lourd."
+      },
+      {
+        "dot": "#c62828",
+        "text": "Glacer les navets séparément leur donne une belle brillance."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Dorer le canard",
+        "desc": "Faire dorer les cuisses côté peau puis retirer l’excès de graisse."
+      },
+      {
+        "title": "Mijoter",
+        "desc": "Ajouter oignon, thym et bouillon, couvrir et cuire 50 min à feu doux."
+      },
+      {
+        "title": "Préparer les navets",
+        "desc": "Cuire les navets avec beurre, miel et un fond d’eau jusqu’à tendreté."
+      },
+      {
+        "title": "Assembler",
+        "desc": "Ajouter les navets autour du canard et poursuivre 10 min avant de servir."
+      }
+    ],
+    "errors": [
+      "Canard non dégraissé → sauce lourde",
+      "Navets trop cuits → ils se défont"
+    ],
+    "variantes": [
+      "Avec carottes",
+      "Avec pommes de terre",
+      "Avec orange"
+    ],
+    "footer": "Plat ancien · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad022",
+    "emoji": "🍲",
+    "name": "Potée savoyarde au chou",
+    "cuisine": "Cuisine Savoyarde",
+    "persons": 6,
+    "prep": "25 min",
+    "cook": "2 h",
+    "diff": "Facile ★★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "ingredients": [
+      {
+        "ico": "🥬",
+        "qty": "1",
+        "name": "Chou vert"
+      },
+      {
+        "ico": "🥔",
+        "qty": "6",
+        "name": "Pommes de terre"
+      },
+      {
+        "ico": "🥕",
+        "qty": "4",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🌭",
+        "qty": "4",
+        "name": "Saucisses fumées"
+      },
+      {
+        "ico": "🥓",
+        "qty": "300 g",
+        "name": "Poitrine fumée"
+      },
+      {
+        "ico": "🧅",
+        "qty": "1",
+        "name": "Oignon"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Bouquet garni"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Blanchir le chou le rend plus digeste."
+      },
+      {
+        "dot": "#c62828",
+        "text": "Ajouter les pommes de terre en fin de cuisson évite qu’elles s’écrasent."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Blanchir le chou",
+        "desc": "Couper le chou et le blanchir 5 min dans l’eau bouillante."
+      },
+      {
+        "title": "Démarrer la potée",
+        "desc": "Mettre poitrine, oignon, carottes, bouquet garni et chou dans une grande cocotte."
+      },
+      {
+        "title": "Mijoter",
+        "desc": "Couvrir d’eau et cuire 1 h 20 à frémissement."
+      },
+      {
+        "title": "Finaliser",
+        "desc": "Ajouter pommes de terre et saucisses puis cuire encore 30 à 35 min."
+      }
+    ],
+    "errors": [
+      "Chou non blanchi → goût fort",
+      "Pommes de terre ajoutées trop tôt → purée"
+    ],
+    "variantes": [
+      "Avec jarret",
+      "Avec navets",
+      "Avec moutarde"
+    ],
+    "footer": "Plat rustique · Savoie",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad023",
+    "emoji": "🥩",
+    "name": "Onglet à l’échalote bistrot",
+    "cuisine": "Cuisine Bistrot",
+    "persons": 2,
+    "prep": "10 min",
+    "cook": "15 min",
+    "diff": "Facile ★★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "ingredients": [
+      {
+        "ico": "🥩",
+        "qty": "2 pièces",
+        "name": "Onglet de bœuf"
+      },
+      {
+        "ico": "🧅",
+        "qty": "4",
+        "name": "Échalotes"
+      },
+      {
+        "ico": "🧈",
+        "qty": "30 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🍷",
+        "qty": "8 cl",
+        "name": "Vin rouge"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.c.",
+        "name": "Vinaigre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 branche",
+        "name": "Thym"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Sortir la viande 20 min avant cuisson améliore la saisie."
+      },
+      {
+        "dot": "#c62828",
+        "text": "Laisser reposer l’onglet avant de le trancher garde le jus."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Confire les échalotes",
+        "desc": "Émincer les échalotes et les cuire doucement dans le beurre 10 min."
+      },
+      {
+        "title": "Déglacer",
+        "desc": "Ajouter vin rouge, vinaigre et thym puis laisser réduire."
+      },
+      {
+        "title": "Cuire la viande",
+        "desc": "Saisir l’onglet 2 à 3 min par face dans une poêle très chaude."
+      },
+      {
+        "title": "Servir",
+        "desc": "Laisser reposer, saler, poivrer et napper d’échalotes."
+      }
+    ],
+    "errors": [
+      "Viande trop froide → cuisson irrégulière",
+      "Échalotes brûlées → amertume"
+    ],
+    "variantes": [
+      "Avec frites",
+      "Avec purée",
+      "Avec sauce moutarde"
+    ],
+    "footer": "Bistrot français",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad024",
+    "emoji": "🥬",
+    "name": "Gratin de cardons à la lyonnaise",
+    "cuisine": "Cuisine Lyonnaise",
+    "persons": 6,
+    "prep": "25 min",
+    "cook": "40 min",
+    "diff": "Moyenne ★★★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "ingredients": [
+      {
+        "ico": "🥬",
+        "qty": "1 kg",
+        "name": "Cardons préparés"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌾",
+        "qty": "40 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🥛",
+        "qty": "50 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🧀",
+        "qty": "100 g",
+        "name": "Gruyère râpé"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 pincée",
+        "name": "Muscade"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Bien égoutter les cardons évite un gratin aqueux."
+      },
+      {
+        "dot": "#c62828",
+        "text": "Une béchamel assez nappante enrobe mieux les cardons."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les cardons",
+        "desc": "Cuire ou réchauffer les cardons préparés puis les égoutter soigneusement."
+      },
+      {
+        "title": "Faire la béchamel",
+        "desc": "Faire fondre le beurre, ajouter la farine puis verser le lait en fouettant."
+      },
+      {
+        "title": "Monter le gratin",
+        "desc": "Mélanger cardons, béchamel, muscade et poivre dans un plat."
+      },
+      {
+        "title": "Gratiner",
+        "desc": "Parsemer de gruyère et cuire 25 à 30 min à 190°C."
+      }
+    ],
+    "errors": [
+      "Cardons mal égouttés → gratin liquide",
+      "Béchamel trop épaisse → plat lourd"
+    ],
+    "variantes": [
+      "Avec moelle",
+      "Avec parmesan",
+      "Avec chapelure"
+    ],
+    "footer": "Tradition lyonnaise",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad025",
+    "emoji": "🐟",
+    "name": "Matelote de poissons au vin blanc",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "25 min",
+    "cook": "35 min",
+    "diff": "Moyenne ★★★",
+    "color": "#c62828",
+    "colorLight": "#ffebee",
+    "category": "dîner",
+    "ingredients": [
+      {
+        "ico": "🐟",
+        "qty": "800 g",
+        "name": "Poissons blancs en morceaux"
+      },
+      {
+        "ico": "🍄",
+        "qty": "200 g",
+        "name": "Champignons"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Échalotes"
+      },
+      {
+        "ico": "🍷",
+        "qty": "30 cl",
+        "name": "Vin blanc sec"
+      },
+      {
+        "ico": "🫙",
+        "qty": "30 cl",
+        "name": "Fumet de poisson"
+      },
+      {
+        "ico": "🥛",
+        "qty": "10 cl",
+        "name": "Crème"
+      },
+      {
+        "ico": "🧈",
+        "qty": "30 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Bouquet garni"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Cuire le poisson doucement évite qu’il se défasse."
+      },
+      {
+        "dot": "#c62828",
+        "text": "Réduire la sauce avant d’ajouter la crème concentre le goût."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Faire la base",
+        "desc": "Faire revenir les échalotes et les champignons dans le beurre."
+      },
+      {
+        "title": "Mijoter la sauce",
+        "desc": "Ajouter vin blanc, fumet et bouquet garni, puis laisser réduire 15 min."
+      },
+      {
+        "title": "Cuire le poisson",
+        "desc": "Ajouter les morceaux de poisson et cuire 8 à 10 min à frémissement."
+      },
+      {
+        "title": "Finir",
+        "desc": "Ajouter la crème, rectifier l’assaisonnement et servir avec pommes vapeur."
+      }
+    ],
+    "errors": [
+      "Ébullition forte → poisson cassé",
+      "Sauce non réduite → goût dilué"
+    ],
+    "variantes": [
+      "Avec moules",
+      "Avec cidre",
+      "Sans crème"
+    ],
+    "footer": "Plat de rivière · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad026",
+    "emoji": "🥖",
+    "name": "Jambon-beurre parisien traditionnel",
+    "cuisine": "Cuisine Parisienne",
+    "persons": 2,
+    "prep": "5 min",
+    "cook": "0 min",
+    "diff": "Très facile ★",
+    "color": "#1565c0",
+    "colorLight": "#e3f2fd",
+    "category": "déjeuner",
+    "ingredients": [
+      {
+        "ico": "🥖",
+        "qty": "1",
+        "name": "Baguette tradition"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40 g",
+        "name": "Beurre demi-sel mou"
+      },
+      {
+        "ico": "🥓",
+        "qty": "4 tranches",
+        "name": "Jambon blanc de qualité"
+      },
+      {
+        "ico": "🥒",
+        "qty": "4",
+        "name": "Cornichons facultatifs"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Utiliser un beurre mou permet une couche régulière sans déchirer le pain."
+      },
+      {
+        "dot": "#1565c0",
+        "text": "Une baguette fraîche et croustillante fait toute la recette."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Ouvrir le pain",
+        "desc": "Couper la baguette en deux portions puis l’ouvrir dans la longueur sans la séparer totalement."
+      },
+      {
+        "title": "Beurrer",
+        "desc": "Étaler le beurre demi-sel sur les deux faces intérieures."
+      },
+      {
+        "title": "Garnir",
+        "desc": "Déposer les tranches de jambon pliées et ajouter quelques cornichons si souhaité."
+      },
+      {
+        "title": "Servir",
+        "desc": "Refermer, presser légèrement et servir immédiatement."
+      }
+    ],
+    "errors": [
+      "Pain mou → sandwich moins agréable",
+      "Beurre trop froid → pain déchiré"
+    ],
+    "variantes": [
+      "Avec comté",
+      "Avec crudités",
+      "Avec moutarde"
+    ],
+    "footer": "Déjeuner parisien",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad027",
+    "emoji": "🥗",
+    "name": "Salade niçoise traditionnelle simplifiée",
+    "cuisine": "Cuisine Niçoise",
+    "persons": 4,
+    "prep": "20 min",
+    "cook": "10 min",
+    "diff": "Facile ★",
+    "color": "#1565c0",
+    "colorLight": "#e3f2fd",
+    "category": "déjeuner",
+    "ingredients": [
+      {
+        "ico": "🍅",
+        "qty": "4",
+        "name": "Tomates"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs durs"
+      },
+      {
+        "ico": "🐟",
+        "qty": "200 g",
+        "name": "Thon à l’huile"
+      },
+      {
+        "ico": "🫒",
+        "qty": "80 g",
+        "name": "Olives noires"
+      },
+      {
+        "ico": "🫑",
+        "qty": "1",
+        "name": "Poivron vert"
+      },
+      {
+        "ico": "🥒",
+        "qty": "1/2",
+        "name": "Concombre"
+      },
+      {
+        "ico": "🐟",
+        "qty": "6 filets",
+        "name": "Anchois"
+      },
+      {
+        "ico": "🫒",
+        "qty": "4 c.à.s.",
+        "name": "Huile d’olive"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Servir les légumes à température ambiante donne plus de goût."
+      },
+      {
+        "dot": "#1565c0",
+        "text": "Assaisonner simplement à l’huile d’olive respecte l’esprit de la salade."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les œufs",
+        "desc": "Cuire les œufs 10 min, les refroidir puis les couper en quartiers."
+      },
+      {
+        "title": "Couper les légumes",
+        "desc": "Couper tomates, concombre et poivron en morceaux réguliers."
+      },
+      {
+        "title": "Assembler",
+        "desc": "Disposer les légumes, le thon, les œufs, les olives et les anchois dans un grand plat."
+      },
+      {
+        "title": "Assaisonner",
+        "desc": "Arroser d’huile d’olive, poivrer et servir sans trop mélanger."
+      }
+    ],
+    "errors": [
+      "Légumes trop froids → goût atténué",
+      "Trop mélanger → présentation écrasée"
+    ],
+    "variantes": [
+      "Avec févettes",
+      "Sans thon",
+      "Avec basilic"
+    ],
+    "footer": "Salade repas · Nice",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad028",
+    "emoji": "🥪",
+    "name": "Croque madame de brasserie",
+    "cuisine": "Cuisine Française",
+    "persons": 2,
+    "prep": "10 min",
+    "cook": "12 min",
+    "diff": "Facile ★",
+    "color": "#1565c0",
+    "colorLight": "#e3f2fd",
+    "category": "déjeuner",
+    "ingredients": [
+      {
+        "ico": "🍞",
+        "qty": "4 tranches",
+        "name": "Pain de mie"
+      },
+      {
+        "ico": "🥓",
+        "qty": "2 tranches",
+        "name": "Jambon"
+      },
+      {
+        "ico": "🧀",
+        "qty": "120 g",
+        "name": "Gruyère râpé"
+      },
+      {
+        "ico": "🥛",
+        "qty": "4 c.à.s.",
+        "name": "Béchamel"
+      },
+      {
+        "ico": "🥚",
+        "qty": "2",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🧈",
+        "qty": "20 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Une fine couche de béchamel rend le croque plus moelleux."
+      },
+      {
+        "dot": "#1565c0",
+        "text": "Cuire l’œuf au plat juste avant le service garde le jaune coulant."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Monter les croques",
+        "desc": "Garnir le pain avec jambon, gruyère et une fine couche de béchamel."
+      },
+      {
+        "title": "Gratiner",
+        "desc": "Ajouter un peu de gruyère dessus et cuire 8 à 10 min à 200°C."
+      },
+      {
+        "title": "Cuire les œufs",
+        "desc": "Cuire les œufs au plat dans le beurre en gardant le jaune coulant."
+      },
+      {
+        "title": "Servir",
+        "desc": "Déposer un œuf sur chaque croque et servir avec salade verte."
+      }
+    ],
+    "errors": [
+      "Trop de béchamel → croque lourd",
+      "Œuf trop cuit → jaune dur"
+    ],
+    "variantes": [
+      "Avec comté",
+      "Avec pain de campagne",
+      "Avec champignons"
+    ],
+    "footer": "Brasserie française",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad029",
+    "emoji": "🥔",
+    "name": "Galette complète bretonne",
+    "cuisine": "Cuisine Bretonne",
+    "persons": 2,
+    "prep": "10 min",
+    "cook": "10 min",
+    "diff": "Facile ★",
+    "color": "#1565c0",
+    "colorLight": "#e3f2fd",
+    "category": "déjeuner",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "2",
+        "name": "Galettes de sarrasin"
+      },
+      {
+        "ico": "🥚",
+        "qty": "2",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥓",
+        "qty": "2 tranches",
+        "name": "Jambon"
+      },
+      {
+        "ico": "🧀",
+        "qty": "80 g",
+        "name": "Emmental râpé"
+      },
+      {
+        "ico": "🧈",
+        "qty": "20 g",
+        "name": "Beurre demi-sel"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Réchauffer la galette dans le beurre demi-sel lui donne du croustillant."
+      },
+      {
+        "dot": "#1565c0",
+        "text": "Casser l’œuf au centre et étaler le blanc aide à une cuisson uniforme."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Chauffer la galette",
+        "desc": "Faire fondre un peu de beurre dans une poêle et déposer une galette."
+      },
+      {
+        "title": "Ajouter l’œuf",
+        "desc": "Casser l’œuf au centre, étaler légèrement le blanc et poivrer."
+      },
+      {
+        "title": "Garnir",
+        "desc": "Ajouter jambon et emmental autour de l’œuf."
+      },
+      {
+        "title": "Replier",
+        "desc": "Quand le fromage fond, replier les bords en carré et servir aussitôt."
+      }
+    ],
+    "errors": [
+      "Feu trop fort → galette cassante",
+      "Œuf mal réparti → blanc pas cuit"
+    ],
+    "variantes": [
+      "Avec champignons",
+      "Avec andouille",
+      "Avec chèvre"
+    ],
+    "footer": "Déjeuner breton",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad030",
+    "emoji": "🍒",
+    "name": "Clafoutis limousin aux cerises",
+    "cuisine": "Cuisine Limousine",
+    "persons": 6,
+    "prep": "15 min",
+    "cook": "40 min",
+    "diff": "Facile ★",
+    "color": "#ad1457",
+    "colorLight": "#fce4ec",
+    "category": "dessert",
+    "ingredients": [
+      {
+        "ico": "🍒",
+        "qty": "500 g",
+        "name": "Cerises"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "30 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🌾",
+        "qty": "100 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🍬",
+        "qty": "100 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🧈",
+        "qty": "20 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Vanille"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Garder les noyaux selon la tradition donne plus de parfum, mais attention au service."
+      },
+      {
+        "dot": "#ad1457",
+        "text": "Laisser tiédir avant de couper améliore la tenue."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer le plat",
+        "desc": "Beurrer un plat et y répartir les cerises lavées."
+      },
+      {
+        "title": "Faire l’appareil",
+        "desc": "Fouetter œufs, sucre, farine, lait et vanille jusqu’à pâte lisse."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Verser sur les cerises et cuire 35 à 40 min à 180°C."
+      },
+      {
+        "title": "Servir",
+        "desc": "Laisser tiédir et saupoudrer légèrement de sucre."
+      }
+    ],
+    "errors": [
+      "Trop de farine → texture lourde",
+      "Découpe trop chaude → clafoutis fragile"
+    ],
+    "variantes": [
+      "Avec mirabelles",
+      "Avec pruneaux",
+      "Avec amandes"
+    ],
+    "footer": "Dessert traditionnel · Limousin",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad031",
+    "emoji": "🍮",
+    "name": "Îles flottantes crème anglaise",
+    "cuisine": "Cuisine Française",
+    "persons": 6,
+    "prep": "25 min",
+    "cook": "15 min + repos",
+    "diff": "Moyenne ★★★",
+    "color": "#ad1457",
+    "colorLight": "#fce4ec",
+    "category": "dessert",
+    "ingredients": [
+      {
+        "ico": "🥚",
+        "qty": "6",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "75 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🍬",
+        "qty": "150 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Gousse de vanille"
+      },
+      {
+        "ico": "🍬",
+        "qty": "80 g",
+        "name": "Sucre pour caramel"
+      },
+      {
+        "ico": "🧂",
+        "qty": "1 pincée",
+        "name": "Sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Cuire la crème anglaise sans ébullition évite qu’elle tranche."
+      },
+      {
+        "dot": "#ad1457",
+        "text": "Pocher les blancs à frémissement très doux garde leur moelleux."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la crème",
+        "desc": "Chauffer le lait vanillé, puis le verser sur les jaunes fouettés avec le sucre."
+      },
+      {
+        "title": "Cuire la crème",
+        "desc": "Remettre sur feu doux en remuant jusqu’à ce que la crème nappe la cuillère."
+      },
+      {
+        "title": "Pocher les blancs",
+        "desc": "Monter les blancs en neige avec une pincée de sel et les pocher dans le lait frémissant."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Verser la crème froide en coupes, poser les blancs et napper de caramel."
+      }
+    ],
+    "errors": [
+      "Crème bouillie → œufs coagulés",
+      "Blancs trop cuits → texture caoutchouteuse"
+    ],
+    "variantes": [
+      "Avec amandes effilées",
+      "Avec café",
+      "Avec pralines"
+    ],
+    "footer": "Dessert classique · France",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad032",
+    "emoji": "🥮",
+    "name": "Far breton aux pruneaux",
+    "cuisine": "Cuisine Bretonne",
+    "persons": 8,
+    "prep": "15 min",
+    "cook": "50 min",
+    "diff": "Facile ★",
+    "color": "#ad1457",
+    "colorLight": "#fce4ec",
+    "category": "dessert",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "200 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🍬",
+        "qty": "150 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "75 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🍇",
+        "qty": "250 g",
+        "name": "Pruneaux"
+      },
+      {
+        "ico": "🧈",
+        "qty": "20 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Vanille"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Faire tremper les pruneaux les rend plus moelleux."
+      },
+      {
+        "dot": "#ad1457",
+        "text": "Le far se découpe mieux une fois refroidi."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la pâte",
+        "desc": "Fouetter farine, sucre, œufs, lait et vanille jusqu’à obtenir une pâte fluide."
+      },
+      {
+        "title": "Préparer le plat",
+        "desc": "Beurrer généreusement un plat et répartir les pruneaux."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Verser la pâte et cuire 45 à 50 min à 180°C."
+      },
+      {
+        "title": "Refroidir",
+        "desc": "Laisser refroidir avant de couper en parts."
+      }
+    ],
+    "errors": [
+      "Pruneaux trop secs → texture dure",
+      "Four trop chaud → dessus brûlé"
+    ],
+    "variantes": [
+      "Sans pruneaux",
+      "Avec rhum",
+      "Avec raisins"
+    ],
+    "footer": "Dessert breton",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad033",
+    "emoji": "🍎",
+    "name": "Tarte normande aux pommes",
+    "cuisine": "Cuisine Normande",
+    "persons": 8,
+    "prep": "25 min",
+    "cook": "40 min",
+    "diff": "Facile ★★",
+    "color": "#ad1457",
+    "colorLight": "#fce4ec",
+    "category": "dessert",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "1",
+        "name": "Pâte brisée"
+      },
+      {
+        "ico": "🍎",
+        "qty": "4",
+        "name": "Pommes"
+      },
+      {
+        "ico": "🥚",
+        "qty": "2",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "20 cl",
+        "name": "Crème fraîche"
+      },
+      {
+        "ico": "🍬",
+        "qty": "80 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌰",
+        "qty": "50 g",
+        "name": "Poudre d’amande"
+      },
+      {
+        "ico": "🍎",
+        "qty": "1 c.à.s.",
+        "name": "Calvados facultatif"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Des pommes légèrement acidulées équilibrent la crème."
+      },
+      {
+        "dot": "#ad1457",
+        "text": "La poudre d’amande absorbe une partie du jus des pommes."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer le fond",
+        "desc": "Foncer un moule avec la pâte et piquer le fond."
+      },
+      {
+        "title": "Disposer les pommes",
+        "desc": "Éplucher les pommes, les couper en lamelles et les disposer sur la pâte."
+      },
+      {
+        "title": "Faire la crème",
+        "desc": "Mélanger œufs, crème, sucre, poudre d’amande et calvados facultatif."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Verser la crème sur les pommes et cuire 35 à 40 min à 180°C."
+      }
+    ],
+    "errors": [
+      "Pommes trop juteuses → tarte humide",
+      "Crème trop sucrée → dessert lourd"
+    ],
+    "variantes": [
+      "Avec poires",
+      "Sans alcool",
+      "Avec cannelle"
+    ],
+    "footer": "Dessert normand",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad034",
+    "emoji": "🍫",
+    "name": "Profiteroles au chocolat maison",
+    "cuisine": "Cuisine Française",
+    "persons": 6,
+    "prep": "35 min",
+    "cook": "30 min",
+    "diff": "Moyenne ★★★",
+    "color": "#ad1457",
+    "colorLight": "#fce4ec",
+    "category": "dessert",
+    "ingredients": [
+      {
+        "ico": "💧",
+        "qty": "25 cl",
+        "name": "Eau"
+      },
+      {
+        "ico": "🧈",
+        "qty": "80 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌾",
+        "qty": "150 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🥚",
+        "qty": "4",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🍨",
+        "qty": "500 ml",
+        "name": "Glace vanille"
+      },
+      {
+        "ico": "🍫",
+        "qty": "200 g",
+        "name": "Chocolat noir"
+      },
+      {
+        "ico": "🥛",
+        "qty": "15 cl",
+        "name": "Crème liquide"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Dessécher la pâte à choux évite des choux mous."
+      },
+      {
+        "dot": "#ad1457",
+        "text": "Garnir les choux au dernier moment garde le contraste chaud-froid."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer les choux",
+        "desc": "Faire une pâte à choux avec eau, beurre, farine et œufs, puis dresser des petits choux."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire 25 à 30 min à 180°C sans ouvrir le four."
+      },
+      {
+        "title": "Faire la sauce",
+        "desc": "Faire fondre le chocolat avec la crème jusqu’à sauce lisse."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Couper les choux, garnir de glace vanille et napper de chocolat chaud."
+      }
+    ],
+    "errors": [
+      "Four ouvert trop tôt → choux retombés",
+      "Choux garnis trop tôt → ils ramollissent"
+    ],
+    "variantes": [
+      "Avec chantilly",
+      "Avec glace café",
+      "Avec amandes"
+    ],
+    "footer": "Dessert de brasserie",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad035",
+    "emoji": "🍐",
+    "name": "Poire Belle-Hélène classique",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "20 min",
+    "cook": "20 min",
+    "diff": "Facile ★★",
+    "color": "#ad1457",
+    "colorLight": "#fce4ec",
+    "category": "dessert",
+    "ingredients": [
+      {
+        "ico": "🍐",
+        "qty": "4",
+        "name": "Poires fermes"
+      },
+      {
+        "ico": "💧",
+        "qty": "75 cl",
+        "name": "Eau"
+      },
+      {
+        "ico": "🍬",
+        "qty": "150 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Gousse de vanille"
+      },
+      {
+        "ico": "🍫",
+        "qty": "180 g",
+        "name": "Chocolat noir"
+      },
+      {
+        "ico": "🥛",
+        "qty": "10 cl",
+        "name": "Crème"
+      },
+      {
+        "ico": "🍨",
+        "qty": "4 boules",
+        "name": "Glace vanille"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Pocher les poires doucement garde leur forme."
+      },
+      {
+        "dot": "#ad1457",
+        "text": "Napper de chocolat chaud juste avant le service."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer le sirop",
+        "desc": "Porter eau, sucre et vanille à frémissement."
+      },
+      {
+        "title": "Pocher les poires",
+        "desc": "Éplucher les poires et les cuire 15 à 20 min dans le sirop."
+      },
+      {
+        "title": "Faire la sauce",
+        "desc": "Faire fondre chocolat et crème pour obtenir une sauce lisse."
+      },
+      {
+        "title": "Dresser",
+        "desc": "Servir les poires refroidies avec glace vanille et chocolat chaud."
+      }
+    ],
+    "errors": [
+      "Poires trop mûres → elles se défont",
+      "Chocolat trop chauffé → sauce granuleuse"
+    ],
+    "variantes": [
+      "Avec amandes",
+      "Avec chantilly",
+      "Avec poires au vin"
+    ],
+    "footer": "Dessert classique",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad036",
+    "emoji": "🥞",
+    "name": "Crêpes Suzette simplifiées",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "20 min",
+    "cook": "20 min",
+    "diff": "Facile ★★",
+    "color": "#ad1457",
+    "colorLight": "#fce4ec",
+    "category": "dessert",
+    "ingredients": [
+      {
+        "ico": "🥞",
+        "qty": "8",
+        "name": "Crêpes"
+      },
+      {
+        "ico": "🍊",
+        "qty": "2",
+        "name": "Oranges"
+      },
+      {
+        "ico": "🧈",
+        "qty": "80 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🍬",
+        "qty": "60 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      },
+      {
+        "ico": "🍊",
+        "qty": "2 c.à.s.",
+        "name": "Liqueur d’orange facultative"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Zester les oranges avant de les presser facilite le travail."
+      },
+      {
+        "dot": "#ad1457",
+        "text": "Faire chauffer les crêpes dans le beurre d’orange les rend fondantes."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Faire le beurre d’orange",
+        "desc": "Faire fondre beurre, sucre, zestes et jus d’orange jusqu’à sauce brillante."
+      },
+      {
+        "title": "Ajouter les crêpes",
+        "desc": "Plier les crêpes en quatre et les déposer dans la sauce."
+      },
+      {
+        "title": "Napper",
+        "desc": "Réchauffer doucement en nappant les crêpes de sauce."
+      },
+      {
+        "title": "Servir",
+        "desc": "Ajouter la liqueur si souhaité et servir chaud."
+      }
+    ],
+    "errors": [
+      "Sauce trop réduite → caramel dur",
+      "Feu trop fort → beurre brûlé"
+    ],
+    "variantes": [
+      "Sans alcool",
+      "Avec clémentines",
+      "Avec glace"
+    ],
+    "footer": "Dessert français",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad037",
+    "emoji": "🍞",
+    "name": "Pain perdu à la cassonade",
+    "cuisine": "Cuisine Française",
+    "persons": 4,
+    "prep": "10 min",
+    "cook": "10 min",
+    "diff": "Très facile ★",
+    "color": "#ad1457",
+    "colorLight": "#fce4ec",
+    "category": "dessert",
+    "ingredients": [
+      {
+        "ico": "🍞",
+        "qty": "8 tranches",
+        "name": "Pain rassis ou brioche"
+      },
+      {
+        "ico": "🥚",
+        "qty": "3",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "30 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🍬",
+        "qty": "60 g",
+        "name": "Cassonade"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Vanille"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Le pain rassis absorbe mieux l’appareil sans se casser."
+      },
+      {
+        "dot": "#ad1457",
+        "text": "Cuire au beurre donne une surface bien dorée."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Faire l’appareil",
+        "desc": "Battre œufs, lait, vanille et la moitié de la cassonade."
+      },
+      {
+        "title": "Tremper",
+        "desc": "Tremper rapidement les tranches de pain pour les imbiber sans les détremper."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Faire dorer au beurre 2 à 3 min par face."
+      },
+      {
+        "title": "Servir",
+        "desc": "Saupoudrer de cassonade restante et servir chaud."
+      }
+    ],
+    "errors": [
+      "Pain trop frais → se défait",
+      "Trempage trop long → texture molle"
+    ],
+    "variantes": [
+      "Avec pommes",
+      "Avec cannelle",
+      "Avec caramel"
+    ],
+    "footer": "Dessert anti-gaspi",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad038",
+    "emoji": "🍪",
+    "name": "Sablés bretons au beurre salé",
+    "cuisine": "Cuisine Bretonne",
+    "persons": 20,
+    "prep": "20 min",
+    "cook": "15 min + repos",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "collation",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "250 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🧈",
+        "qty": "160 g",
+        "name": "Beurre demi-sel"
+      },
+      {
+        "ico": "🍬",
+        "qty": "120 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🥚",
+        "qty": "3",
+        "name": "Jaunes d’œufs"
+      },
+      {
+        "ico": "🧁",
+        "qty": "1/2 sachet",
+        "name": "Levure chimique"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Le repos au frais évite que les sablés s’étalent."
+      },
+      {
+        "dot": "#f9a825",
+        "text": "Utiliser du vrai beurre demi-sel donne le goût breton."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Crémer",
+        "desc": "Mélanger beurre demi-sel mou et sucre jusqu’à texture crémeuse."
+      },
+      {
+        "title": "Ajouter les jaunes",
+        "desc": "Incorporer les jaunes d’œufs puis la farine et la levure."
+      },
+      {
+        "title": "Reposer",
+        "desc": "Former une pâte, filmer et placer 1 h au frais."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Découper les sablés et cuire 12 à 15 min à 170°C."
+      }
+    ],
+    "errors": [
+      "Beurre fondu → pâte trop molle",
+      "Cuisson trop longue → sablés secs"
+    ],
+    "variantes": [
+      "Avec citron",
+      "Avec chocolat",
+      "Avec vanille"
+    ],
+    "footer": "Collation bretonne",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad039",
+    "emoji": "🍯",
+    "name": "Nonnettes de Dijon à l’orange",
+    "cuisine": "Cuisine Bourguignonne",
+    "persons": 12,
+    "prep": "20 min",
+    "cook": "20 min + repos",
+    "diff": "Facile ★★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "collation",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "200 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🍯",
+        "qty": "200 g",
+        "name": "Miel"
+      },
+      {
+        "ico": "💧",
+        "qty": "10 cl",
+        "name": "Eau"
+      },
+      {
+        "ico": "🍬",
+        "qty": "60 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Épices à pain d’épices"
+      },
+      {
+        "ico": "🧁",
+        "qty": "1 c.à.c.",
+        "name": "Levure"
+      },
+      {
+        "ico": "🍊",
+        "qty": "120 g",
+        "name": "Marmelade d’orange"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Laisser reposer la pâte rend les nonnettes plus moelleuses."
+      },
+      {
+        "dot": "#f9a825",
+        "text": "Remplir les moules à moitié seulement car la pâte gonfle."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Faire fondre",
+        "desc": "Chauffer miel, eau et sucre jusqu’à dissolution, puis laisser tiédir."
+      },
+      {
+        "title": "Préparer la pâte",
+        "desc": "Mélanger farine, levure et épices, puis ajouter le liquide au miel."
+      },
+      {
+        "title": "Garnir",
+        "desc": "Verser un peu de pâte, ajouter une cuillère de marmelade puis recouvrir légèrement."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire 18 à 20 min à 180°C et laisser refroidir avant dégustation."
+      }
+    ],
+    "errors": [
+      "Miel trop chaud versé sur la farine → grumeaux",
+      "Moules trop remplis → débordement"
+    ],
+    "variantes": [
+      "Avec confiture d’abricot",
+      "Avec citron",
+      "Avec glaçage"
+    ],
+    "footer": "Spécialité de Dijon",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad040",
+    "emoji": "🥮",
+    "name": "Madeleines de Commercy",
+    "cuisine": "Cuisine Lorraine",
+    "persons": 18,
+    "prep": "15 min + repos",
+    "cook": "10 min",
+    "diff": "Facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "collation",
+    "ingredients": [
+      {
+        "ico": "🌾",
+        "qty": "150 g",
+        "name": "Farine"
+      },
+      {
+        "ico": "🧈",
+        "qty": "125 g",
+        "name": "Beurre fondu"
+      },
+      {
+        "ico": "🍬",
+        "qty": "120 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🥚",
+        "qty": "3",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🧁",
+        "qty": "1 c.à.c.",
+        "name": "Levure"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1/2",
+        "name": "Zeste de citron"
+      },
+      {
+        "ico": "🧂",
+        "qty": "1 pincée",
+        "name": "Sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Un repos au frais favorise la bosse caractéristique."
+      },
+      {
+        "dot": "#f9a825",
+        "text": "Un choc thermique au four aide les madeleines à gonfler."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer la pâte",
+        "desc": "Fouetter œufs et sucre, ajouter farine, levure, sel, zeste et beurre fondu."
+      },
+      {
+        "title": "Reposer",
+        "desc": "Placer la pâte au frais au moins 1 h."
+      },
+      {
+        "title": "Remplir les moules",
+        "desc": "Beurrer les moules et remplir aux trois quarts."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire 4 min à 220°C puis 6 min à 180°C."
+      }
+    ],
+    "errors": [
+      "Pas de repos → bosse moins marquée",
+      "Moules trop remplis → débordement"
+    ],
+    "variantes": [
+      "Avec vanille",
+      "Avec miel",
+      "Avec chocolat"
+    ],
+    "footer": "Collation lorraine",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad041",
+    "emoji": "🥖",
+    "name": "Tartines beurre confiture maison",
+    "cuisine": "Cuisine Française",
+    "persons": 2,
+    "prep": "5 min",
+    "cook": "0 min",
+    "diff": "Très facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "petit-déjeuner",
+    "ingredients": [
+      {
+        "ico": "🥖",
+        "qty": "1/2",
+        "name": "Baguette fraîche"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40 g",
+        "name": "Beurre demi-sel"
+      },
+      {
+        "ico": "🍓",
+        "qty": "4 c.à.s.",
+        "name": "Confiture"
+      },
+      {
+        "ico": "🥛",
+        "qty": "QS",
+        "name": "Boisson chaude pour accompagner"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Sortir le beurre quelques minutes avant facilite l’étalage."
+      },
+      {
+        "dot": "#f9a825",
+        "text": "Une baguette fraîche rend ce petit-déjeuner très simple mais réussi."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Couper le pain",
+        "desc": "Couper la baguette en tartines régulières."
+      },
+      {
+        "title": "Beurrer",
+        "desc": "Étaler le beurre demi-sel sur le pain sans l’écraser."
+      },
+      {
+        "title": "Ajouter la confiture",
+        "desc": "Déposer une fine couche de confiture sur chaque tartine."
+      },
+      {
+        "title": "Servir",
+        "desc": "Servir immédiatement avec café, thé ou chocolat chaud."
+      }
+    ],
+    "errors": [
+      "Beurre trop froid → pain déchiré",
+      "Trop de confiture → tartine trop sucrée"
+    ],
+    "variantes": [
+      "Avec miel",
+      "Avec brioche",
+      "Avec pain grillé"
+    ],
+    "footer": "Petit-déjeuner français",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad042",
+    "emoji": "🥐",
+    "name": "Croissant perdu à la vanille",
+    "cuisine": "Cuisine Anti-gaspi Française",
+    "persons": 2,
+    "prep": "10 min",
+    "cook": "8 min",
+    "diff": "Très facile ★",
+    "color": "#f9a825",
+    "colorLight": "#fffde7",
+    "category": "petit-déjeuner",
+    "ingredients": [
+      {
+        "ico": "🥐",
+        "qty": "2",
+        "name": "Croissants de la veille"
+      },
+      {
+        "ico": "🥚",
+        "qty": "2",
+        "name": "Œufs"
+      },
+      {
+        "ico": "🥛",
+        "qty": "15 cl",
+        "name": "Lait"
+      },
+      {
+        "ico": "🍬",
+        "qty": "30 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 c.à.c.",
+        "name": "Vanille"
+      },
+      {
+        "ico": "🧈",
+        "qty": "20 g",
+        "name": "Beurre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Des croissants de la veille absorbent mieux l’appareil."
+      },
+      {
+        "dot": "#f9a825",
+        "text": "Cuire doucement évite de brûler le feuilletage."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer l’appareil",
+        "desc": "Battre œufs, lait, sucre et vanille dans un plat creux."
+      },
+      {
+        "title": "Tremper",
+        "desc": "Couper les croissants en deux et les tremper brièvement."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Faire dorer dans le beurre 2 à 3 min par face."
+      },
+      {
+        "title": "Servir",
+        "desc": "Servir chaud avec fruits, sucre glace ou confiture."
+      }
+    ],
+    "errors": [
+      "Trempage trop long → croissant détrempé",
+      "Feu trop fort → extérieur brûlé"
+    ],
+    "variantes": [
+      "Avec chocolat",
+      "Avec pommes poêlées",
+      "Avec caramel"
+    ],
+    "footer": "Petit-déjeuner anti-gaspi",
+    "stars": "★★★★"
+  },
+  {
+    "id": "frtrad043",
+    "emoji": "🍓",
+    "name": "Confiture de fraises traditionnelle",
+    "cuisine": "Cuisine Préparation Française",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "45 min à 1 h",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍓",
+        "qty": "1 kg",
+        "name": "Fraises"
+      },
+      {
+        "ico": "🍬",
+        "qty": "800 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1",
+        "name": "Jus de citron"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Utiliser des bocaux parfaitement propres améliore la conservation."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Étiqueter les pots avec la date de préparation évite les oublis."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo Après ouverture : 2 à 3 semaines au frais ; congélateur Déconseillé, texture moins intéressante ; conserve Pots stérilisés fermés : 6 à 12 mois dans un endroit frais et sombre."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, équeuter, éplucher ou couper les ingrédients selon la préparation choisie."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire doucement en remuant régulièrement jusqu’à obtenir la texture attendue et une préparation homogène."
+      },
+      {
+        "title": "Mettre en contenant",
+        "desc": "Verser chaud en bocaux stérilisés ou laisser refroidir avant de portionner pour le frigo ou le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter et stocker selon les indications de conservation précisées."
+      }
+    ],
+    "errors": [
+      "Bocaux mal nettoyés → conservation risquée",
+      "Mise en pot trop lente → refroidissement irrégulier"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "Format petites portions"
+    ],
+    "footer": "Préparation traditionnelle · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "Après ouverture : 2 à 3 semaines au frais",
+      "congelateur": "Déconseillé, texture moins intéressante",
+      "conserve": "Pots stérilisés fermés : 6 à 12 mois dans un endroit frais et sombre"
+    }
+  },
+  {
+    "id": "frtrad044",
+    "emoji": "🍅",
+    "name": "Sauce tomate provençale en bocaux",
+    "cuisine": "Cuisine Préparation Provençale",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "45 min à 1 h",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍅",
+        "qty": "2 kg",
+        "name": "Tomates mûres"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🧄",
+        "qty": "4 gousses",
+        "name": "Ail"
+      },
+      {
+        "ico": "🫒",
+        "qty": "4 c.à.s.",
+        "name": "Huile d’olive"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 bouquet",
+        "name": "Basilic et thym"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Utiliser des bocaux parfaitement propres améliore la conservation."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Étiqueter les pots avec la date de préparation évite les oublis."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 à 4 jours après ouverture ; congélateur Jusqu’à 6 mois en portions ; conserve Stérilisation en bocaux : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, équeuter, éplucher ou couper les ingrédients selon la préparation choisie."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire doucement en remuant régulièrement jusqu’à obtenir la texture attendue et une préparation homogène."
+      },
+      {
+        "title": "Mettre en contenant",
+        "desc": "Verser chaud en bocaux stérilisés ou laisser refroidir avant de portionner pour le frigo ou le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter et stocker selon les indications de conservation précisées."
+      }
+    ],
+    "errors": [
+      "Bocaux mal nettoyés → conservation risquée",
+      "Mise en pot trop lente → refroidissement irrégulier"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "Format petites portions"
+    ],
+    "footer": "Préparation traditionnelle · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 à 4 jours après ouverture",
+      "congelateur": "Jusqu’à 6 mois en portions",
+      "conserve": "Stérilisation en bocaux : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "frtrad045",
+    "emoji": "🦆",
+    "name": "Graisse de canard filtrée à conserver",
+    "cuisine": "Cuisine Préparation Sud-Ouest",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "45 min à 1 h",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🦆",
+        "qty": "500 g",
+        "name": "Parures ou graisse de canard"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 branche",
+        "name": "Thym facultatif"
+      },
+      {
+        "ico": "🧂",
+        "qty": "1 pincée",
+        "name": "Sel"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Utiliser des bocaux parfaitement propres améliore la conservation."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Étiqueter les pots avec la date de préparation évite les oublis."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 1 à 2 mois en bocal propre fermé ; congélateur Jusqu’à 6 mois ; conserve Bocal stérilisé et graisse bien filtrée : 3 à 6 mois au frais."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, équeuter, éplucher ou couper les ingrédients selon la préparation choisie."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire doucement en remuant régulièrement jusqu’à obtenir la texture attendue et une préparation homogène."
+      },
+      {
+        "title": "Mettre en contenant",
+        "desc": "Verser chaud en bocaux stérilisés ou laisser refroidir avant de portionner pour le frigo ou le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter et stocker selon les indications de conservation précisées."
+      }
+    ],
+    "errors": [
+      "Bocaux mal nettoyés → conservation risquée",
+      "Mise en pot trop lente → refroidissement irrégulier"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "Format petites portions"
+    ],
+    "footer": "Préparation traditionnelle · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "1 à 2 mois en bocal propre fermé",
+      "congelateur": "Jusqu’à 6 mois",
+      "conserve": "Bocal stérilisé et graisse bien filtrée : 3 à 6 mois au frais"
+    }
+  },
+  {
+    "id": "frtrad046",
+    "emoji": "🥒",
+    "name": "Cornichons au vinaigre maison",
+    "cuisine": "Cuisine Préparation Française",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "45 min à 1 h",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🥒",
+        "qty": "1 kg",
+        "name": "Petits cornichons"
+      },
+      {
+        "ico": "🍚",
+        "qty": "75 cl",
+        "name": "Vinaigre blanc"
+      },
+      {
+        "ico": "🧂",
+        "qty": "80 g",
+        "name": "Gros sel"
+      },
+      {
+        "ico": "🌿",
+        "qty": "2 branches",
+        "name": "Estragon"
+      },
+      {
+        "ico": "🧅",
+        "qty": "6",
+        "name": "Petits oignons"
+      },
+      {
+        "ico": "🌶️",
+        "qty": "QS",
+        "name": "Grains de poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Utiliser des bocaux parfaitement propres améliore la conservation."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Étiqueter les pots avec la date de préparation évite les oublis."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo Après ouverture : 1 à 2 mois au frais ; congélateur Déconseillé ; conserve Bocaux au vinaigre fermés : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, équeuter, éplucher ou couper les ingrédients selon la préparation choisie."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire doucement en remuant régulièrement jusqu’à obtenir la texture attendue et une préparation homogène."
+      },
+      {
+        "title": "Mettre en contenant",
+        "desc": "Verser chaud en bocaux stérilisés ou laisser refroidir avant de portionner pour le frigo ou le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter et stocker selon les indications de conservation précisées."
+      }
+    ],
+    "errors": [
+      "Bocaux mal nettoyés → conservation risquée",
+      "Mise en pot trop lente → refroidissement irrégulier"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "Format petites portions"
+    ],
+    "footer": "Préparation traditionnelle · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "Après ouverture : 1 à 2 mois au frais",
+      "congelateur": "Déconseillé",
+      "conserve": "Bocaux au vinaigre fermés : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "frtrad047",
+    "emoji": "🍐",
+    "name": "Poires au vin rouge en bocaux",
+    "cuisine": "Cuisine Préparation Française",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "45 min à 1 h",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍐",
+        "qty": "1,5 kg",
+        "name": "Poires fermes"
+      },
+      {
+        "ico": "🍷",
+        "qty": "75 cl",
+        "name": "Vin rouge"
+      },
+      {
+        "ico": "🍬",
+        "qty": "250 g",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1 bâton",
+        "name": "Cannelle"
+      },
+      {
+        "ico": "⭐",
+        "qty": "2",
+        "name": "Badiane"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1 c.à.s.",
+        "name": "Jus de citron"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Utiliser des bocaux parfaitement propres améliore la conservation."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Étiqueter les pots avec la date de préparation évite les oublis."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo Après ouverture : 4 à 5 jours ; congélateur Déconseillé, texture plus molle ; conserve Bocaux stérilisés : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, équeuter, éplucher ou couper les ingrédients selon la préparation choisie."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire doucement en remuant régulièrement jusqu’à obtenir la texture attendue et une préparation homogène."
+      },
+      {
+        "title": "Mettre en contenant",
+        "desc": "Verser chaud en bocaux stérilisés ou laisser refroidir avant de portionner pour le frigo ou le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter et stocker selon les indications de conservation précisées."
+      }
+    ],
+    "errors": [
+      "Bocaux mal nettoyés → conservation risquée",
+      "Mise en pot trop lente → refroidissement irrégulier"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "Format petites portions"
+    ],
+    "footer": "Préparation traditionnelle · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "Après ouverture : 4 à 5 jours",
+      "congelateur": "Déconseillé, texture plus molle",
+      "conserve": "Bocaux stérilisés : 6 à 12 mois"
+    }
+  },
+  {
+    "id": "frtrad048",
+    "emoji": "🥣",
+    "name": "Fond brun de volaille à congeler",
+    "cuisine": "Cuisine Préparation Française",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "45 min à 1 h",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍗",
+        "qty": "1,5 kg",
+        "name": "Carcasses de volaille"
+      },
+      {
+        "ico": "🥕",
+        "qty": "2",
+        "name": "Carottes"
+      },
+      {
+        "ico": "🧅",
+        "qty": "2",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🫛",
+        "qty": "2 branches",
+        "name": "Céleri"
+      },
+      {
+        "ico": "🍅",
+        "qty": "1 c.à.s.",
+        "name": "Concentré de tomate"
+      },
+      {
+        "ico": "💧",
+        "qty": "2,5 L",
+        "name": "Eau"
+      },
+      {
+        "ico": "🌿",
+        "qty": "1",
+        "name": "Bouquet garni"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Utiliser des bocaux parfaitement propres améliore la conservation."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Étiqueter les pots avec la date de préparation évite les oublis."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 3 jours en bouteille ou bocal fermé ; congélateur Jusqu’à 6 mois en portions ou glaçons ; conserve Stérilisation sous pression recommandée ; sinon non conseillé."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, équeuter, éplucher ou couper les ingrédients selon la préparation choisie."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire doucement en remuant régulièrement jusqu’à obtenir la texture attendue et une préparation homogène."
+      },
+      {
+        "title": "Mettre en contenant",
+        "desc": "Verser chaud en bocaux stérilisés ou laisser refroidir avant de portionner pour le frigo ou le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter et stocker selon les indications de conservation précisées."
+      }
+    ],
+    "errors": [
+      "Bocaux mal nettoyés → conservation risquée",
+      "Mise en pot trop lente → refroidissement irrégulier"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "Format petites portions"
+    ],
+    "footer": "Préparation traditionnelle · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "3 jours en bouteille ou bocal fermé",
+      "congelateur": "Jusqu’à 6 mois en portions ou glaçons",
+      "conserve": "Stérilisation sous pression recommandée ; sinon non conseillé"
+    }
+  },
+  {
+    "id": "frtrad049",
+    "emoji": "🧅",
+    "name": "Oignons confits au vin blanc",
+    "cuisine": "Cuisine Préparation Française",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "45 min à 1 h",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🧅",
+        "qty": "1 kg",
+        "name": "Oignons"
+      },
+      {
+        "ico": "🍷",
+        "qty": "20 cl",
+        "name": "Vin blanc"
+      },
+      {
+        "ico": "🍬",
+        "qty": "2 c.à.s.",
+        "name": "Sucre"
+      },
+      {
+        "ico": "🧈",
+        "qty": "40 g",
+        "name": "Beurre"
+      },
+      {
+        "ico": "🍋",
+        "qty": "2 c.à.s.",
+        "name": "Vinaigre de vin"
+      },
+      {
+        "ico": "🧂",
+        "qty": "QS",
+        "name": "Sel et poivre"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Utiliser des bocaux parfaitement propres améliore la conservation."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Étiqueter les pots avec la date de préparation évite les oublis."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo 7 à 10 jours en bocal fermé ; congélateur Jusqu’à 3 mois en petites portions ; conserve Non adaptée à une conserve longue durée sans stérilisation maîtrisée."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, équeuter, éplucher ou couper les ingrédients selon la préparation choisie."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire doucement en remuant régulièrement jusqu’à obtenir la texture attendue et une préparation homogène."
+      },
+      {
+        "title": "Mettre en contenant",
+        "desc": "Verser chaud en bocaux stérilisés ou laisser refroidir avant de portionner pour le frigo ou le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter et stocker selon les indications de conservation précisées."
+      }
+    ],
+    "errors": [
+      "Bocaux mal nettoyés → conservation risquée",
+      "Mise en pot trop lente → refroidissement irrégulier"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "Format petites portions"
+    ],
+    "footer": "Préparation traditionnelle · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "7 à 10 jours en bocal fermé",
+      "congelateur": "Jusqu’à 3 mois en petites portions",
+      "conserve": "Non adaptée à une conserve longue durée sans stérilisation maîtrisée"
+    }
+  },
+  {
+    "id": "frtrad050",
+    "emoji": "🍎",
+    "name": "Gelée de pommes normande",
+    "cuisine": "Cuisine Préparation Normande",
+    "persons": 1,
+    "prep": "20 min",
+    "cook": "45 min à 1 h",
+    "diff": "Facile ★★",
+    "color": "#5d4037",
+    "colorLight": "#efebe9",
+    "category": "préparation",
+    "ingredients": [
+      {
+        "ico": "🍎",
+        "qty": "2 kg",
+        "name": "Pommes"
+      },
+      {
+        "ico": "💧",
+        "qty": "1,5 L",
+        "name": "Eau"
+      },
+      {
+        "ico": "🍬",
+        "qty": "800 g",
+        "name": "Sucre par litre de jus"
+      },
+      {
+        "ico": "🍋",
+        "qty": "1",
+        "name": "Jus de citron"
+      }
+    ],
+    "tips": [
+      {
+        "dot": "#4caf50",
+        "text": "Utiliser des bocaux parfaitement propres améliore la conservation."
+      },
+      {
+        "dot": "#5d4037",
+        "text": "Étiqueter les pots avec la date de préparation évite les oublis."
+      },
+      {
+        "dot": "#607d8b",
+        "text": "Conservation : frigo Après ouverture : 2 à 3 semaines au frais ; congélateur Déconseillé ; conserve Pots stérilisés fermés : 6 à 12 mois."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparer",
+        "desc": "Laver, équeuter, éplucher ou couper les ingrédients selon la préparation choisie."
+      },
+      {
+        "title": "Cuire",
+        "desc": "Cuire doucement en remuant régulièrement jusqu’à obtenir la texture attendue et une préparation homogène."
+      },
+      {
+        "title": "Mettre en contenant",
+        "desc": "Verser chaud en bocaux stérilisés ou laisser refroidir avant de portionner pour le frigo ou le congélateur."
+      },
+      {
+        "title": "Conserver",
+        "desc": "Fermer, étiqueter et stocker selon les indications de conservation précisées."
+      }
+    ],
+    "errors": [
+      "Bocaux mal nettoyés → conservation risquée",
+      "Mise en pot trop lente → refroidissement irrégulier"
+    ],
+    "variantes": [
+      "Version plus épicée",
+      "Avec herbes fraîches",
+      "Format petites portions"
+    ],
+    "footer": "Préparation traditionnelle · Conservation incluse",
+    "stars": "★★★★",
+    "conservation": {
+      "frigo": "Après ouverture : 2 à 3 semaines au frais",
+      "congelateur": "Déconseillé",
+      "conserve": "Pots stérilisés fermés : 6 à 12 mois"
+    }
   }
 ]
