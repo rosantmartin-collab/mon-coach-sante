@@ -413,7 +413,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
         <button class="view-toggle-btn" id="view-grid-btn" onclick="setProposalView('grid')" title="Vue grille">⊞</button>
       </div>
     </div>
-    <div class="filter-row mb16" style="display:flex;flex-wrap:wrap;gap:6px;">
+    <div class="filter-row mb8" style="display:flex;flex-wrap:wrap;gap:6px;">
       <button class="filter-btn active" onclick="filterProposals('all',this)">🍽️ Toutes</button>
       <button class="filter-btn" onclick="filterProposals('entrée',this)">🥗 Entrées</button>
       <button class="filter-btn" onclick="filterProposals('petit-déjeuner',this)">🌅 Petits-déj.</button>
@@ -422,6 +422,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       <button class="filter-btn" onclick="filterProposals('collation',this)">🫐 Collations</button>
       <button class="filter-btn" onclick="filterProposals('apéro',this)">🥂 Apéro</button>
       <button class="filter-btn" onclick="filterProposals('préparation',this)">🫙 Préparation</button>
+    </div>
+    <div style="position:relative;margin-bottom:14px;">
+      <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:1rem;pointer-events:none;">🔍</span>
+      <input type="text" id="suggestion-search" placeholder="Rechercher dans les 650+ recettes..." oninput="searchSuggestions(this.value)"
+        style="width:100%;padding:10px 16px 10px 38px;border-radius:12px;border:1.5px solid var(--bg4);background:var(--bg2);color:var(--text);font-size:.9rem;outline:none;transition:border-color .2s;"
+        onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--bg4)'">
+      <button id="suggestion-search-clear" onclick="clearSuggestionSearch()" style="display:none;position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--text2);font-size:1rem;padding:4px;">✕</button>
     </div>
     <div id="recipe-proposals-list" style="width:100%;"></div>
   </div>
@@ -1900,6 +1907,73 @@ function deleteRecipe(idx){
 
 let _proposalView='list';
 let _proposalFilter='all';
+let _suggestionSearchQuery='';
+
+function searchSuggestions(q){
+  _suggestionSearchQuery=q.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const clearBtn=document.getElementById('suggestion-search-clear');
+  if(clearBtn) clearBtn.style.display=_suggestionSearchQuery?'block':'none';
+  if(_suggestionSearchQuery){
+    // Chercher dans TOUTE la bibliothèque, pas seulement les proposals
+    renderSuggestionSearch();
+  } else {
+    renderProposals();
+  }
+}
+
+function clearSuggestionSearch(){
+  _suggestionSearchQuery='';
+  const inp=document.getElementById('suggestion-search');
+  if(inp) inp.value='';
+  const clearBtn=document.getElementById('suggestion-search-clear');
+  if(clearBtn) clearBtn.style.display='none';
+  renderProposals();
+}
+
+function renderSuggestionSearch(){
+  const el=document.getElementById('recipe-proposals-list');
+  if(!_suggestionSearchQuery){renderProposals();return;}
+  const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const q=_suggestionSearchQuery;
+  const approvedIds=new Set((S.recipes||[]).map(r=>r.id));
+  const rejectedIds=new Set(S.rejectedIds||[]);
+  const allSugg=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA).filter(r=>r&&r.id);
+  // Chercher dans toute la bibliothèque
+  const results=allSugg.filter(r=>{
+    if(approvedIds.has(r.id)||rejectedIds.has(r.id)) return false;
+    return norm(r.name).includes(q)||norm(r.cuisine||'').includes(q)||norm(r.category||'').includes(q);
+  }).slice(0,30);
+  if(!results.length){
+    el.innerHTML='<div style="text-align:center;padding:30px;color:var(--text2);">Aucune recette trouvée pour "'+_suggestionSearchQuery+'"</div>';
+    return;
+  }
+  const catIco={déjeuner:'☀️',dîner:'🌙','petit-déjeuner':'🌅',dessert:'🍰',collation:'🫐',entrée:'🥗',apéro:'🥂',préparation:'🫙'};
+  let h='<div style="font-size:.8rem;color:var(--text2);margin-bottom:10px;">'+results.length+' résultat'+(results.length>1?'s':'')+'</div>';
+  results.forEach((r,idx)=>{
+    const alreadyInProposals=(S.proposals||[]).some(p=>p&&p.id===r.id);
+    const rid=r.id;
+    h+='<div class="rprop" style="margin-bottom:10px;"><div class="fb"><div style="display:flex;align-items:center;gap:12px;"><span style="font-size:2.4rem;width:66px;height:66px;display:flex;align-items:center;justify-content:center;border-radius:18px;flex-shrink:0;background:'+getCatEmojiColor(r)+';">'+r.emoji+'</span><div><div class="rcat">'+(catIco[r.category]||'🍽️')+' '+r.category+' · '+r.cuisine+'</div><div class="rname">'+r.name+'</div><div class="rmeta">⏱ '+r.prep+' · 🔥 '+r.cook+' · 👥 '+(r.persons||2)+' pers.</div></div></div></div><div class="rprop-actions"><button class="btn btn-g btn-sm" onclick="previewRecipeFromSearch(this.dataset.id)" data-id="'+rid+'">👁️ Voir la fiche</button><button class="btn btn-p btn-sm" onclick="addRecipeFromSearch(this.dataset.id)" data-id="'+rid+'">✅ Valider</button></div></div>';
+  });
+  el.innerHTML=h;
+}
+
+function previewRecipeFromSearch(id){
+  const r=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA).find(x=>x&&x.id===id);
+  if(!r)return;
+  document.getElementById('fiche-modal-content').innerHTML=buildFicheHTML(r);
+  const addBtn=document.getElementById('fiche-add-btn');
+  const alreadySaved=(S.recipes||[]).some(x=>x.id===r.id);
+  addBtn.style.display=alreadySaved?'none':'inline-block';
+  _ficheAddCallback=()=>{if(!S.recipes.some(x=>x.id===r.id)){S.recipes.push({...r});save();}addBtn.style.display='none';showToast('✅ Recette ajoutée !');};
+  document.getElementById('fiche-modal').classList.add('active');
+}
+
+function addRecipeFromSearch(id){
+  const r=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA).find(x=>x&&x.id===id);
+  if(!r)return;
+  if(!S.recipes.some(x=>x.id===r.id)){S.recipes.push({...r});save();showToast('✅ Recette ajoutée à tes recettes !');}
+  else showToast('ℹ️ Recette déjà dans tes recettes');
+}
 function filterProposals(cat, btn){
   _proposalFilter=cat;
   document.querySelectorAll('.filter-row .filter-btn').forEach(b=>b.classList.remove('active'));
