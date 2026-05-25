@@ -296,6 +296,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 @media(max-width:600px){.rprop-grid{grid-template-columns:repeat(2,1fr);}}
 .view-toggle-btn{background:var(--bg3);border:none;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:1.1rem;color:var(--text2);transition:all .2s;}
 .view-toggle-btn.active{background:var(--primary);color:#fff;}
+
+/* Paramètres */
+.theme-swatch{display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:12px;border:2px solid var(--bg4);background:var(--bg2);color:var(--text);cursor:pointer;font-size:.85rem;font-weight:500;transition:all .2s;}
+.theme-swatch.active{border-color:var(--primary);background:var(--bg3);}
+.swatch-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;}
+.cat-toggle{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:10px;background:var(--bg3);font-size:.82rem;cursor:pointer;color:var(--text);}
+.cat-toggle input{accent-color:var(--primary);}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
@@ -318,6 +325,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <button class="nav-btn" onclick="showPage('sport')" id="nav-sport"><span class="nav-ico">💪</span>Sport</button>
   <button class="nav-btn" onclick="showPage('stats')" id="nav-stats"><span class="nav-ico">📊</span>Stats</button>
   <button class="nav-btn" onclick="showPage('profile')" id="nav-profile"><span class="nav-ico">⚙️</span>Profil</button>
+  <button class="nav-btn" onclick="showPage('settings')" id="nav-settings"><span class="nav-ico">🎛️</span>Paramètres</button>
 </nav>
 
 <main class="main">
@@ -709,6 +717,107 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 </div>
 
+
+<div id="page-settings" class="page">
+  <div class="ph">
+    <div class="pt">🎛️ Paramètres</div>
+    <div class="ps">Personnalise l'apparence et les suggestions</div>
+  </div>
+
+  <!-- THÈME -->
+  <div class="card mb16">
+    <div class="card-title">🎨 Thème</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;" id="theme-swatches">
+      <button class="theme-swatch active" data-theme="terracotta" onclick="applyTheme('terracotta',this)" title="Crème & Terracotta">
+        <span class="swatch-dot" style="background:#c84b31"></span>Terracotta
+      </button>
+      <button class="theme-swatch" data-theme="dark" onclick="applyTheme('dark',this)" title="Dark classique">
+        <span class="swatch-dot" style="background:#3b82f6"></span>Dark bleu
+      </button>
+      <button class="theme-swatch" data-theme="forest" onclick="applyTheme('forest',this)" title="Forêt">
+        <span class="swatch-dot" style="background:#10b981"></span>Forêt
+      </button>
+      <button class="theme-swatch" data-theme="violet" onclick="applyTheme('violet',this)" title="Violet sombre">
+        <span class="swatch-dot" style="background:#7c3aed"></span>Violet
+      </button>
+      <button class="theme-swatch" data-theme="ocean" onclick="applyTheme('ocean',this)" title="Océan">
+        <span class="swatch-dot" style="background:#0ea5e9"></span>Océan
+      </button>
+    </div>
+  </div>
+
+  <!-- SUGGESTIONS -->
+  <div class="card mb16">
+    <div class="card-title">✨ Suggestions</div>
+    <div class="fg">
+      <label class="fl">Nombre de suggestions par lot</label>
+      <select class="fsel" id="s-nb-suggestions" onchange="saveSettings()">
+        <option value="10">10 suggestions</option>
+        <option value="20" selected>20 suggestions</option>
+        <option value="30">30 suggestions</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label class="fl">Difficulté max des recettes suggérées</label>
+      <select class="fsel" id="s-max-diff" onchange="saveSettings()">
+        <option value="all">Toutes les difficultés</option>
+        <option value="easy">Facile uniquement (★)</option>
+        <option value="medium">Facile + Moyenne (★★)</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label class="fl" style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+        <input type="checkbox" id="s-seasonal" onchange="saveSettings()" style="width:16px;height:16px;accent-color:var(--primary);">
+        Favoriser les recettes de saison
+      </label>
+    </div>
+    <div class="fg">
+      <label class="fl">Catégories exclues des suggestions</label>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;" id="s-excluded-cats">
+        <label class="cat-toggle"><input type="checkbox" value="apéro" onchange="saveSettings()"> 🥂 Apéro</label>
+        <label class="cat-toggle"><input type="checkbox" value="préparation" onchange="saveSettings()"> 🫙 Préparation</label>
+        <label class="cat-toggle"><input type="checkbox" value="dessert" onchange="saveSettings()"> 🍰 Desserts</label>
+        <label class="cat-toggle"><input type="checkbox" value="collation" onchange="saveSettings()"> 🫐 Collations</label>
+        <label class="cat-toggle"><input type="checkbox" value="entrée" onchange="saveSettings()"> 🥗 Entrées</label>
+        <label class="cat-toggle"><input type="checkbox" value="petit-déjeuner" onchange="saveSettings()"> 🌅 Petit-déj.</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRÉFÉRENCES ALIMENTAIRES -->
+  <div class="card mb16">
+    <div class="card-title">🥗 Préférences alimentaires</div>
+    <div class="fg">
+      <label class="fl">Régime alimentaire</label>
+      <select class="fsel" id="s-diet" onchange="saveSettings()">
+        <option value="none">Aucun régime particulier</option>
+        <option value="vegetarian">🌿 Végétarien</option>
+        <option value="vegan">🌱 Vegan</option>
+        <option value="gluten-free">🌾 Sans gluten</option>
+        <option value="lactose-free">🥛 Sans lactose</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label class="fl">Nombre de personnes par défaut</label>
+      <select class="fsel" id="s-persons" onchange="saveSettings()">
+        <option value="1">1 personne</option>
+        <option value="2" selected>2 personnes</option>
+        <option value="4">4 personnes</option>
+        <option value="6">6 personnes</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- GÉNÉRAL -->
+  <div class="card mb16">
+    <div class="card-title">⚙️ Général</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <button class="btn btn-g" onclick="resetSeenProposals()">🔄 Réinitialiser les suggestions vues</button>
+      <button class="btn btn-g" onclick="exportRecipesPDF()">📄 Exporter mes recettes</button>
+    </div>
+  </div>
+
+</div>
 </main>
 
 <nav class="bnav">
@@ -719,6 +828,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <button class="bnav-btn" onclick="showPage('sport')" id="mnav-sport"><span class="ico">💪</span>Sport</button>
     <button class="bnav-btn" onclick="showPage('stats')" id="mnav-stats"><span class="ico">📊</span>Stats</button>
     <button class="bnav-btn" onclick="showPage('profile')" id="mnav-profile"><span class="ico">⚙️</span>Profil</button>
+    <button class="bnav-btn" onclick="showPage('settings')" id="mnav-settings"><span class="ico">🎛️</span>Param.</button>
   </div>
 </nav>
 </div>
@@ -1139,7 +1249,7 @@ function showToast(msg){
 function showPage(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+page).classList.add('active');
-  ['home','recettes','meals','sport','stats','profile'].forEach(p=>{
+  ['home','recettes','meals','sport','stats','profile','settings'].forEach(p=>{
     const a=p===page;
     document.getElementById('nav-'+p)?.classList.toggle('active',a);
     document.getElementById('mnav-'+p)?.classList.toggle('active',a);
@@ -1738,7 +1848,7 @@ function closeShModal(){document.getElementById('shmodal').classList.remove('act
 function showPage(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+page).classList.add('active');
-  ['home','recettes','meals','sport','stats','profile'].forEach(p=>{
+  ['home','recettes','meals','sport','stats','profile','settings'].forEach(p=>{
     const a=p===page;
     document.getElementById('nav-'+p)?.classList.toggle('active',a);
     document.getElementById('mnav-'+p)?.classList.toggle('active',a);
@@ -2959,6 +3069,112 @@ async function pullFromCloud(){
 // ════════════════════════════════════════════════════════════
 // § 25 — INIT (initialisation de l'application)
 // ════════════════════════════════════════════════════════════
+
+// ════════════════════════════════════════
+// PARAMÈTRES
+// ════════════════════════════════════════
+const THEMES = {
+  terracotta:{
+    '--bg':'#fdf6ec','--bg2':'#ffffff','--bg3':'#f0e6da','--bg4':'#e8ddd0',
+    '--text':'#3d2b1f','--text2':'#9e8272',
+    '--primary':'#c84b31','--primary-d':'#a33a23',
+    '--rest':'#5b7b4e','--success':'#5b7b4e','--warn':'#b06d2b',
+    '--shadow':'0 4px 24px rgba(61,43,31,.12)'
+  },
+  dark:{
+    '--bg':'#0f172a','--bg2':'#1e293b','--bg3':'#334155','--bg4':'#475569',
+    '--text':'#f1f5f9','--text2':'#94a3b8',
+    '--primary':'#3b82f6','--primary-d':'#2563eb',
+    '--rest':'#10b981','--success':'#22c55e','--warn':'#f59e0b',
+    '--shadow':'0 4px 24px rgba(0,0,0,.35)'
+  },
+  forest:{
+    '--bg':'#0d1f0d','--bg2':'#162916','--bg3':'#1e3d1e','--bg4':'#2d5a2d',
+    '--text':'#e8f5e9','--text2':'#81c784',
+    '--primary':'#4caf50','--primary-d':'#388e3c',
+    '--rest':'#66bb6a','--success':'#4caf50','--warn':'#ffb300',
+    '--shadow':'0 4px 24px rgba(0,0,0,.4)'
+  },
+  violet:{
+    '--bg':'#0d0d1a','--bg2':'#18182e','--bg3':'#252540','--bg4':'#35355a',
+    '--text':'#ede9fe','--text2':'#a78bfa',
+    '--primary':'#7c3aed','--primary-d':'#6d28d9',
+    '--rest':'#10b981','--success':'#34d399','--warn':'#f59e0b',
+    '--shadow':'0 4px 24px rgba(0,0,0,.45)'
+  },
+  ocean:{
+    '--bg':'#0c1929','--bg2':'#0f2540','--bg3':'#163354','--bg4':'#1e4470',
+    '--text':'#e0f2fe','--text2':'#7dd3fc',
+    '--primary':'#0ea5e9','--primary-d':'#0284c7',
+    '--rest':'#34d399','--success':'#34d399','--warn':'#fb923c',
+    '--shadow':'0 4px 24px rgba(0,0,0,.4)'
+  }
+};
+
+function applyTheme(name, btn){
+  const t=THEMES[name];
+  if(!t)return;
+  const root=document.documentElement;
+  Object.entries(t).forEach(([k,v])=>root.style.setProperty(k,v));
+  document.querySelectorAll('.theme-swatch').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  // Sauvegarder
+  if(!S.settings)S.settings={};
+  S.settings.theme=name;
+  save();
+  showToast('🎨 Thème appliqué !');
+}
+
+function saveSettings(){
+  if(!S.settings)S.settings={};
+  S.settings.nbSuggestions=parseInt(document.getElementById('s-nb-suggestions')?.value)||20;
+  S.settings.maxDiff=document.getElementById('s-max-diff')?.value||'all';
+  S.settings.seasonal=document.getElementById('s-seasonal')?.checked||false;
+  S.settings.diet=document.getElementById('s-diet')?.value||'none';
+  S.settings.persons=parseInt(document.getElementById('s-persons')?.value)||2;
+  // Catégories exclues
+  const excluded=[];
+  document.querySelectorAll('#s-excluded-cats input:checked').forEach(cb=>excluded.push(cb.value));
+  S.settings.excludedCats=excluded;
+  save();
+}
+
+function loadSettingsUI(){
+  if(!S.settings)return;
+  const s=S.settings;
+  if(s.theme){
+    applyTheme(s.theme, document.querySelector('[data-theme="'+s.theme+'"]'));
+  }
+  if(document.getElementById('s-nb-suggestions'))
+    document.getElementById('s-nb-suggestions').value=s.nbSuggestions||20;
+  if(document.getElementById('s-max-diff'))
+    document.getElementById('s-max-diff').value=s.maxDiff||'all';
+  if(document.getElementById('s-seasonal'))
+    document.getElementById('s-seasonal').checked=!!s.seasonal;
+  if(document.getElementById('s-diet'))
+    document.getElementById('s-diet').value=s.diet||'none';
+  if(document.getElementById('s-persons'))
+    document.getElementById('s-persons').value=s.persons||2;
+  // Catégories exclues
+  if(s.excludedCats){
+    document.querySelectorAll('#s-excluded-cats input').forEach(cb=>{
+      cb.checked=s.excludedCats.includes(cb.value);
+    });
+  }
+}
+
+function resetSeenProposals(){
+  S.seenProposalIds=[];
+  S.proposals=(S.proposals||[]).filter(p=>S.recipes.some(r=>r.id===p.id));
+  save();
+  showToast('🔄 Suggestions réinitialisées !');
+  _autoGenerateProposals();
+}
+
+function exportRecipesPDF(){
+  showToast('📄 Export en cours de développement...');
+}
+
 document.addEventListener('DOMContentLoaded',()=>{
   supa.auth.onAuthStateChange(async(event,session)=>{
     if(session&&session.user){
