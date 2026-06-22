@@ -814,6 +814,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <div style="display:flex;flex-direction:column;gap:10px;">
       <button class="btn btn-g" onclick="resetSeenProposals()">🔄 Réinitialiser les suggestions vues</button>
       <button class="btn btn-g" onclick="exportRecipesPDF()">📄 Exporter mes recettes</button>
+      <button class="btn btn-p" onclick="updateSavedRecipes()" id="btn-update-recipes">⬆️ Mettre à jour mes recettes sauvegardées</button>
+      <div id="update-recipes-status" style="font-size:.82rem;color:var(--text2);margin-top:6px;display:none;"></div>
     </div>
   </div>
 
@@ -3173,6 +3175,67 @@ function resetSeenProposals(){
 
 function exportRecipesPDF(){
   showToast('📄 Export en cours de développement...');
+}
+
+async function updateSavedRecipes(){
+  const btn=document.getElementById('btn-update-recipes');
+  const status=document.getElementById('update-recipes-status');
+  if(!S.recipes||S.recipes.length===0){showToast('ℹ️ Aucune recette sauvegardée');return;}
+  btn.disabled=true;
+  btn.textContent='⏳ Mise à jour en cours...';
+  status.style.display='block';
+  status.textContent='Chargement de la bibliothèque...';
+
+  // Charger la dernière version de recettes.json
+  let library=[];
+  try{
+    const res=await fetch('recettes.json');
+    library=await res.json();
+  }catch(e){
+    status.textContent='❌ Impossible de charger recettes.json';
+    btn.disabled=false;
+    btn.textContent='⬆️ Mettre à jour mes recettes sauvegardées';
+    return;
+  }
+
+  // Créer un index par ID et par nom
+  const libById={};
+  const libByName={};
+  library.filter(r=>r&&r.id).forEach(r=>{
+    libById[r.id]=r;
+    if(r.name) libByName[r.name.toLowerCase().trim()]=r;
+  });
+
+  let updated=0;
+  let notFound=0;
+
+  S.recipes=S.recipes.map(saved=>{
+    // Chercher par ID d'abord, puis par nom
+    const fresh=libById[saved.id]||libByName[(saved.name||'').toLowerCase().trim()];
+    if(fresh){
+      // Mettre à jour steps, tips, errors, variantes, footer
+      // Garder id, emoji, name, category, color, colorLight de la version sauvegardée
+      updated++;
+      return {
+        ...fresh,
+        id: saved.id, // garder l'ID original
+        emoji: saved.emoji||fresh.emoji,
+      };
+    }
+    notFound++;
+    return saved;
+  });
+
+  // Sauvegarder
+  try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  clearTimeout(_cloudTimer);
+  pushToCloud();
+
+  status.textContent=`✅ ${updated} recette(s) mise(s) à jour · ${notFound} non trouvée(s) dans la bibliothèque`;
+  btn.disabled=false;
+  btn.textContent='⬆️ Mettre à jour mes recettes sauvegardées';
+  showToast('✅ '+updated+' recette(s) mise(s) à jour !');
+  renderMyRecipes();
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
