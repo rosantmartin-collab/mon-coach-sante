@@ -221,8 +221,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .rcat{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text2);margin-bottom:4px;}
 .rname{font-weight:800;font-size:1rem;margin-bottom:3px;}
 .rmeta{font-size:.75rem;color:var(--text2);}
-.my-recipe-item{background:var(--bg3);border-radius:12px;padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s;}
-.my-recipe-item:hover{background:var(--bg4);}
+.my-recipe-item{background:var(--bg2);border-radius:12px;padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s;border:1.5px solid var(--bg4);}
+.my-recipe-item:hover{border-color:var(--primary);}
+.my-recipe-item.is-fav{border-color:#f59e0b;background:linear-gradient(135deg,var(--bg2) 85%,#fff8e6 100%);}
+.fav-btn{background:none;border:none;cursor:pointer;font-size:1.3rem;padding:4px;line-height:1;transition:transform .2s;}
+.fav-btn:hover{transform:scale(1.3);}
 .my-recipe-emoji{font-size:2.2rem;width:62px;height:62px;display:flex;align-items:center;justify-content:center;border-radius:16px;flex-shrink:0;background:var(--bg3);}
 .my-recipe-info{flex:1;}
 .my-recipe-name{font-weight:700;font-size:.92rem;margin-bottom:2px;}
@@ -400,6 +403,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div id="rpanel-mes-recettes" class="rpanel active">
   <div class="recipe-filters" id="recipe-filter-row">
     <button class="filter-btn active" id="rfbtn-all" onclick="filterRecipes('all',this)">🍽️ Toutes <span class="filter-count" id="rfc-all"></span></button>
+    <button class="filter-btn" id="rfbtn-fav" onclick="filterRecipes('fav',this)">⭐ Favoris <span class="filter-count" id="rfc-fav"></span></button>
     <button class="filter-btn" id="rfbtn-entree" onclick="filterRecipes('entrée',this)">🥗 Entrées <span class="filter-count" id="rfc-entree"></span></button>
     <button class="filter-btn" id="rfbtn-pdej" onclick="filterRecipes('petit-déjeuner',this)">🌅 Petits-déj. <span class="filter-count" id="rfc-pdej"></span></button>
     <button class="filter-btn" id="rfbtn-plat" onclick="filterRecipes('plat',this)">🍽️ Plats <span class="filter-count" id="rfc-plat"></span></button>
@@ -1998,6 +2002,7 @@ function updateRecipeCounters(){
     prep: recipes.filter(r=>r.category==='préparation').length,
   };
   const set=(id,n)=>{const el=document.getElementById(id);if(el)el.textContent=n>0?n:'';};
+  set('rfc-fav',(S.favoriteIds||[]).length);
   set('rfc-all',total);
   set('rfc-entree',counts.entree);
   set('rfc-pdej',counts.pdej);
@@ -2012,7 +2017,8 @@ function renderMyRecipes(){
   const el=document.getElementById('my-recipes-list');
   const normalize=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
   const filtered=(S.recipes||[]).filter(r=>{
-    const catOk=_currentRecipeFilter==='all'||((_currentRecipeFilter==='plat')&&(r.category==='déjeuner'||r.category==='dîner'))||(_currentRecipeFilter!=='plat'&&r.category===_currentRecipeFilter);
+    const isFavFilter=_currentRecipeFilter==='fav';
+  const catOk=isFavFilter?(S.favoriteIds||[]).includes(r.id):(_currentRecipeFilter==='all'||((_currentRecipeFilter==='plat')&&(r.category==='déjeuner'||r.category==='dîner'))||(_currentRecipeFilter!=='plat'&&r.category===_currentRecipeFilter));
     if(!catOk) return false;
     if(!_recipeSearchQuery) return true;
     const q=normalize(_recipeSearchQuery);
@@ -2027,7 +2033,8 @@ function renderMyRecipes(){
   let h='';
   filtered.forEach((r)=>{const i=S.recipes.indexOf(r);
     const cc=catColors[r.category]||'#e8f5e9;color:#333';
-    h+='<div class="my-recipe-item" onclick="viewRecipe('+i+')"><div class="my-recipe-emoji" style="background:'+getCatEmojiColor(r)+';font-size:2.3rem;">'+(r.emoji||'🍽️')+'</div><div class="my-recipe-info"><div class="my-recipe-name">'+r.name+'</div><div class="my-recipe-meta">'+(r.prep?'⏱ '+r.prep+' prép. ':'')+(r.cook?'🔥 '+r.cook+' cuisson':'')+(r.persons?' · 👥 '+r.persons+' pers.':'')+'</div><div style="margin-top:4px;"><span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:'+cc+';">'+r.category+'</span>'+(r.source==='ia'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8eaf6;color:#3949ab;">🤖 IA</span>':r.source==='repas'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8f5e9;color:#2e7d32;">📋 Plan</span>':'')+'</div></div><div style="display:flex;gap:4px;"><button onclick="event.stopPropagation();editRecipe('+i+')" style="background:none;border:none;color:var(--primary);cursor:pointer;font-size:1.1rem;padding:4px;" title="Modifier">✏️</button><button onclick="event.stopPropagation();deleteRecipe('+i+')" style="background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.1rem;padding:4px;" title="Supprimer">🗑️</button></div></div>';
+    const isFav=(S.favoriteIds||[]).includes(r.id);
+    h+='<div class="my-recipe-item'+(isFav?' is-fav':'')+'" onclick="viewRecipe('+i+')"><div class="my-recipe-emoji" style="background:'+getCatEmojiColor(r)+';font-size:2.3rem;">'+(r.emoji||'🍽️')+'</div><div class="my-recipe-info"><div class="my-recipe-name">'+r.name+'</div><div class="my-recipe-meta">'+(r.prep?'⏱ '+r.prep+' prép. ':'')+(r.cook?'🔥 '+r.cook+' cuisson':'')+(r.persons?' · 👥 '+r.persons+' pers.':'')+'</div><div style="margin-top:4px;"><span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:'+cc+';">'+r.category+'</span>'+(r.source==='ia'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8eaf6;color:#3949ab;">🤖 IA</span>':r.source==='repas'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8f5e9;color:#2e7d32;">📋 Plan</span>':'')+'</div></div><div style="display:flex;gap:4px;"><button class="fav-btn" onclick="toggleFavorite('+i+',event)" title="'+(isFav?'Retirer des favoris':'Ajouter aux favoris')+'">'+(isFav?'⭐':'☆')+'</button><button onclick="event.stopPropagation();editRecipe('+i+')" style="background:none;border:none;color:var(--primary);cursor:pointer;font-size:1.1rem;padding:4px;" title="Modifier">✏️</button><button onclick="event.stopPropagation();deleteRecipe('+i+')" style="background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.1rem;padding:4px;" title="Supprimer">🗑️</button></div></div>';
   });
   el.innerHTML=h;
 }
@@ -3173,6 +3180,24 @@ function resetSeenProposals(){
   _autoGenerateProposals();
 }
 
+function toggleFavorite(idx, event){
+  if(event) event.stopPropagation();
+  if(!S.favoriteIds) S.favoriteIds=[];
+  const id=S.recipes[idx]?.id;
+  if(!id) return;
+  const pos=S.favoriteIds.indexOf(id);
+  if(pos===-1){
+    S.favoriteIds.push(id);
+    showToast('⭐ Ajouté aux favoris !');
+  } else {
+    S.favoriteIds.splice(pos,1);
+    showToast('Retiré des favoris');
+  }
+  try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  clearTimeout(_cloudTimer); pushToCloud();
+  renderMyRecipes();
+}
+
 function exportRecipesPDF(){
   showToast('📄 Export en cours de développement...');
 }
@@ -3257,7 +3282,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       _currentUser=session.user;
       document.getElementById('auth-screen').style.display='none';
       // Réinitialiser S à vide
-      S={profile:{name:'',weight:75,height:175,goal:'maintenance',exclusions:[]},plan:{},meals:{},workouts:[],recipes:[],proposals:[],rejectedIds:[],seenProposalIds:[],page:'home',mealDay:'lundi'};
+      S={profile:{name:'',weight:75,height:175,goal:'maintenance',exclusions:[]},plan:{},meals:{},workouts:[],recipes:[],proposals:[],rejectedIds:[],seenProposalIds:[],favoriteIds:[],page:'home',mealDay:'lundi'};
       // Charger recettes + cloud AVANT d'afficher quoi que ce soit
       Promise.all([
         loadRecipes(),
