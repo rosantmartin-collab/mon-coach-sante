@@ -3251,7 +3251,12 @@ function toggleCompactMode(){
 function setRecipeRating(recipeId, stars, event){
   if(event) event.stopPropagation();
   if(!S.recipeRatings) S.recipeRatings={};
-  S.recipeRatings[recipeId]=stars;
+  // Si on reclique sur la même note → annuler
+  if(S.recipeRatings[recipeId]===stars){
+    delete S.recipeRatings[recipeId];
+  } else {
+    S.recipeRatings[recipeId]=stars;
+  }
   try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
   clearTimeout(_cloudTimer); pushToCloud();
   renderMyRecipes();
