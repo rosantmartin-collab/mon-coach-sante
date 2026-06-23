@@ -226,6 +226,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .my-recipe-item.is-fav{border-color:#f59e0b;background:linear-gradient(135deg,var(--bg2) 85%,#fff8e6 100%);}
 .fav-btn{background:none;border:none;cursor:pointer;font-size:1.3rem;padding:4px;line-height:1;transition:transform .2s;}
 .fav-btn:hover{transform:scale(1.3);}
+.star-rating{display:flex;gap:2px;}
+.star-rating span{cursor:pointer;font-size:1.1rem;transition:transform .15s;}
+.star-rating span:hover{transform:scale(1.2);}
+/* Mode compact */
+.compact .my-recipe-item{padding:7px 12px;}
+.compact .my-recipe-emoji{width:40px;height:40px;font-size:1.4rem!important;border-radius:10px;}
+.compact .my-recipe-name{font-size:.85rem;}
+.compact .my-recipe-meta{display:none;}
+.compact .recipe-cats{display:none;}
 .my-recipe-emoji{font-size:2.2rem;width:62px;height:62px;display:flex;align-items:center;justify-content:center;border-radius:16px;flex-shrink:0;background:var(--bg3);}
 .my-recipe-info{flex:1;}
 .my-recipe-name{font-weight:700;font-size:.92rem;margin-bottom:2px;}
@@ -412,12 +421,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <button class="filter-btn" id="rfbtn-apero" onclick="filterRecipes('apéro',this)">🥂 Apéro <span class="filter-count" id="rfc-apero"></span></button>
     <button class="filter-btn" id="rfbtn-prep" onclick="filterRecipes('préparation',this)">🫙 Préparation <span class="filter-count" id="rfc-prep"></span></button>
   </div>
-  <div style="position:relative;margin-bottom:12px;">
+  <div style="position:relative;margin-bottom:8px;">
     <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:1rem;pointer-events:none;">🔍</span>
     <input type="text" id="recipe-search" placeholder="Rechercher une recette..." oninput="searchRecipes(this.value)"
       style="width:100%;padding:10px 16px 10px 38px;border-radius:12px;border:1.5px solid var(--bg4);background:var(--bg2);color:var(--text);font-size:.9rem;outline:none;transition:border-color .2s;"
       onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--bg4)'">
     <button id="recipe-search-clear" onclick="clearRecipeSearch()" style="display:none;position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--text2);font-size:1rem;padding:4px;">✕</button>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;">
+    <select id="recipe-sort" onchange="renderMyRecipes()" style="padding:6px 12px;border-radius:10px;border:1.5px solid var(--bg4);background:var(--bg2);color:var(--text);font-size:.82rem;cursor:pointer;flex:1;">
+      <option value="date">📅 Date d'ajout</option>
+      <option value="name">🔤 Nom A→Z</option>
+      <option value="rating">⭐ Mieux notées</option>
+      <option value="cat">🍽️ Catégorie</option>
+    </select>
+    <button onclick="toggleCompactMode()" id="compact-btn" title="Mode compact" style="padding:6px 10px;border-radius:10px;border:1.5px solid var(--bg4);background:var(--bg2);color:var(--text2);cursor:pointer;font-size:1rem;flex-shrink:0;">☰</button>
   </div>
   <div id="my-recipes-list"></div>
 </div>
@@ -2034,7 +2052,41 @@ function renderMyRecipes(){
   filtered.forEach((r)=>{const i=S.recipes.indexOf(r);
     const cc=catColors[r.category]||'#e8f5e9;color:#333';
     const isFav=(S.favoriteIds||[]).includes(r.id);
-    h+='<div class="my-recipe-item'+(isFav?' is-fav':'')+'" onclick="viewRecipe('+i+')"><div class="my-recipe-emoji" style="background:'+getCatEmojiColor(r)+';font-size:2.3rem;">'+(r.emoji||'🍽️')+'</div><div class="my-recipe-info"><div class="my-recipe-name">'+r.name+'</div><div class="my-recipe-meta">'+(r.prep?'⏱ '+r.prep+' prép. ':'')+(r.cook?'🔥 '+r.cook+' cuisson':'')+(r.persons?' · 👥 '+r.persons+' pers.':'')+'</div><div style="margin-top:4px;"><span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:'+cc+';">'+r.category+'</span>'+(r.source==='ia'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8eaf6;color:#3949ab;">🤖 IA</span>':r.source==='repas'?' <span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:#e8f5e9;color:#2e7d32;">📋 Plan</span>':'')+'</div></div><div style="display:flex;gap:4px;"><button class="fav-btn" onclick="toggleFavorite('+i+',event)" title="'+(isFav?'Retirer des favoris':'Ajouter aux favoris')+'">'+(isFav?'⭐':'☆')+'</button><button onclick="event.stopPropagation();editRecipe('+i+')" style="background:none;border:none;color:var(--primary);cursor:pointer;font-size:1.1rem;padding:4px;" title="Modifier">✏️</button><button onclick="event.stopPropagation();deleteRecipe('+i+')" style="background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.1rem;padding:4px;" title="Supprimer">🗑️</button></div></div>';
+    const rating=(S.recipeRatings||{})[r.id]||0;
+    const comment=(S.recipeComments||{})[r.id]||'';
+    const rid2=r.id;
+    const starsHtml=[1,2,3,4,5].map(s=>'<span data-rid="'+rid2+'" data-s="'+s+'" onclick="event.stopPropagation();setRecipeRating(this.dataset.rid,+this.dataset.s,event)" style="font-size:.95rem;cursor:pointer;color:'+(s<=rating?'#f59e0b':'var(--bg4)')+';">★</span>').join('');
+    const div=document.createElement('div');
+    div.className='my-recipe-item'+(isFav?' is-fav':'');
+    div.onclick=()=>viewRecipe(i);
+    div.innerHTML='<div class="my-recipe-emoji" style="background:'+getCatEmojiColor(r)+';font-size:2.3rem;">'+(r.emoji||'🍽️')+'</div>'+
+      '<div class="my-recipe-info">'+
+        '<div class="my-recipe-name">'+r.name+'</div>'+
+        '<div class="my-recipe-meta">'+(r.prep?'⏱ '+r.prep+' prép. ':'')+(r.cook?'🔥 '+r.cook+' cuisson':'')+(r.persons?' · 👥 '+r.persons+' pers.':'')+'</div>'+
+        '<div class="recipe-cats" style="margin-top:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;">'+
+          '<span style="padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;background:'+cc+';">'+r.category+'</span>'+
+          (comment?'<span style="font-size:.7rem;color:var(--warn);">💬</span>':'')+
+        '</div>'+
+        '<div style="margin-top:3px;">'+starsHtml+'</div>'+
+        (comment?'<div style="font-size:.75rem;color:var(--text2);margin-top:3px;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;">'+comment+'</div>':'')+
+      '</div>'+
+      '<div style="display:flex;gap:4px;flex-direction:column;align-items:flex-end;">'+
+        '<div style="display:flex;gap:4px;">'+
+          '<button class="fav-btn" title="'+(isFav?'Retirer':'Ajouter')+' favori">'+(isFav?'⭐':'☆')+'</button>'+
+          '<button style="background:none;border:none;color:'+(comment?'var(--warn)':'var(--text2)')+';cursor:pointer;font-size:1.1rem;padding:4px;" title="Note personnelle">💬</button>'+
+        '</div>'+
+        '<div style="display:flex;gap:4px;">'+
+          '<button style="background:none;border:none;color:var(--primary);cursor:pointer;font-size:1.1rem;padding:4px;" title="Modifier">✏️</button>'+
+          '<button style="background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.1rem;padding:4px;" title="Supprimer">🗑️</button>'+
+        '</div>'+
+      '</div>';
+    // Attacher les événements proprement
+    const btns=div.querySelectorAll('button');
+    btns[0].onclick=ev=>{ev.stopPropagation();toggleFavorite(i,ev);};
+    btns[1].onclick=ev=>{ev.stopPropagation();openCommentModal(r.id,r.name,ev);};
+    btns[2].onclick=ev=>{ev.stopPropagation();editRecipe(i);};
+    btns[3].onclick=ev=>{ev.stopPropagation();deleteRecipe(i);};
+    el.appendChild(div);
   });
   el.innerHTML=h;
 }
@@ -3178,6 +3230,72 @@ function resetSeenProposals(){
   save();
   showToast('🔄 Suggestions réinitialisées !');
   _autoGenerateProposals();
+}
+
+let _compactMode=false;
+
+function toggleCompactMode(){
+  _compactMode=!_compactMode;
+  const list=document.getElementById('my-recipes-list');
+  const btn=document.getElementById('compact-btn');
+  if(list) list.classList.toggle('compact',_compactMode);
+  if(btn){btn.style.background=_compactMode?'var(--primary)':'var(--bg2)';btn.style.color=_compactMode?'#fff':'var(--text2)';}
+}
+
+function setRecipeRating(recipeId, stars, event){
+  if(event) event.stopPropagation();
+  if(!S.recipeRatings) S.recipeRatings={};
+  S.recipeRatings[recipeId]=stars;
+  try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  clearTimeout(_cloudTimer); pushToCloud();
+  renderMyRecipes();
+}
+
+function openCommentModal(recipeId, recipeName, event){
+  if(event) event.stopPropagation();
+  if(!S.recipeComments) S.recipeComments={};
+  const current=S.recipeComments[recipeId]||'';
+  // Créer une modale simple
+  let modal=document.getElementById('comment-modal');
+  if(!modal){
+    modal=document.createElement('div');
+    modal.id='comment-modal';
+    modal.className='mo';
+    const mod=document.createElement('div');
+    mod.className='mod';
+    mod.style.cssText='max-width:460px;padding:24px;';
+    mod.innerHTML='<div style="font-weight:700;font-size:1rem;margin-bottom:4px;">💬 Note personnelle</div>'+
+      '<div id="comment-modal-name" style="font-size:.85rem;color:var(--text2);margin-bottom:14px;"></div>'+
+      '<textarea id="comment-textarea" rows="4" placeholder="Tes astuces, modifications, avis..." '+
+        'style="width:100%;padding:10px;border-radius:10px;border:1.5px solid var(--bg4);background:var(--bg3);color:var(--text);font-size:.9rem;resize:vertical;outline:none;"></textarea>'+
+      '<div style="display:flex;gap:10px;margin-top:14px;">'+
+        '<button class="btn btn-p" id="comment-save-btn">💾 Sauvegarder</button>'+
+        '<button class="btn btn-g" id="comment-cancel-btn">Annuler</button>'+
+      '</div>';
+    modal.appendChild(mod);
+    mod.querySelector('#comment-save-btn').onclick=saveComment;
+    mod.querySelector('#comment-cancel-btn').onclick=()=>modal.classList.remove('active');
+    document.body.appendChild(modal);
+    modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('active');});
+  }
+  modal.dataset.recipeId=recipeId;
+  document.getElementById('comment-modal-name').textContent=recipeName;
+  document.getElementById('comment-textarea').value=current;
+  modal.classList.add('active');
+}
+
+function saveComment(){
+  const modal=document.getElementById('comment-modal');
+  const id=modal.dataset.recipeId;
+  const text=document.getElementById('comment-textarea').value.trim();
+  if(!S.recipeComments) S.recipeComments={};
+  if(text) S.recipeComments[id]=text;
+  else delete S.recipeComments[id];
+  try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  clearTimeout(_cloudTimer); pushToCloud();
+  modal.classList.remove('active');
+  renderMyRecipes();
+  showToast('💬 Note sauvegardée !');
 }
 
 function toggleFavorite(idx, event){
