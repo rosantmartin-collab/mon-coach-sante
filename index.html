@@ -412,7 +412,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div id="rpanel-mes-recettes" class="rpanel active">
   <div class="recipe-filters" id="recipe-filter-row">
     <button class="filter-btn active" id="rfbtn-all" onclick="filterRecipes('all',this)">🍽️ Toutes <span class="filter-count" id="rfc-all"></span></button>
-    <button class="filter-btn" id="rfbtn-fav" onclick="filterRecipes('fav',this)">⭐ Favoris <span class="filter-count" id="rfc-fav"></span></button>
     <button class="filter-btn" id="rfbtn-entree" onclick="filterRecipes('entrée',this)">🥗 Entrées <span class="filter-count" id="rfc-entree"></span></button>
     <button class="filter-btn" id="rfbtn-pdej" onclick="filterRecipes('petit-déjeuner',this)">🌅 Petits-déj. <span class="filter-count" id="rfc-pdej"></span></button>
     <button class="filter-btn" id="rfbtn-plat" onclick="filterRecipes('plat',this)">🍽️ Plats <span class="filter-count" id="rfc-plat"></span></button>
@@ -2020,7 +2019,6 @@ function updateRecipeCounters(){
     prep: recipes.filter(r=>r.category==='préparation').length,
   };
   const set=(id,n)=>{const el=document.getElementById(id);if(el)el.textContent=n>0?n:'';};
-  set('rfc-fav',(S.favoriteIds||[]).length);
   set('rfc-all',total);
   set('rfc-entree',counts.entree);
   set('rfc-pdej',counts.pdej);
@@ -3127,6 +3125,8 @@ async function pullFromCloud(){
     if(!S.proposals)S.proposals=[];
     if(!S.rejectedIds)S.rejectedIds=[];
     if(!S.favoriteIds)S.favoriteIds=[];
+    // Nettoyer les anciens IDs photos/vidéos invalides
+    S.favoriteIds=S.favoriteIds.filter(id=>!id.startsWith('photo_')&&!id.startsWith('video_'));
     if(!S.mealDay)S.mealDay='lundi';
 
     try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
