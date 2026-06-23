@@ -1980,8 +1980,8 @@ function filterRecipes(cat,btn){
   const clearBtn=document.getElementById('recipe-search-clear');
   if(clearBtn) clearBtn.style.display='none';
   _currentRecipeFilter=cat;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+  document.querySelectorAll('#recipe-filter-row .filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
   renderMyRecipes();
 }
 function renderRecettes(){_currentRecipeFilter="all";renderMyRecipes();renderProposals();}
