@@ -2035,9 +2035,15 @@ function renderMyRecipes(){
   const el=document.getElementById('my-recipes-list');
   const normalize=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
   const filtered=(S.recipes||[]).filter(r=>{
-    const isFavFilter=_currentRecipeFilter==='fav';
-  const catOk=isFavFilter?(S.favoriteIds||[]).includes(r.id):(_currentRecipeFilter==='all'||((_currentRecipeFilter==='plat')&&(r.category==='déjeuner'||r.category==='dîner'))||(_currentRecipeFilter!=='plat'&&r.category===_currentRecipeFilter));
+    if(!r||!r.id) return false;
+    // Filtre catégorie
+    let catOk=false;
+    if(_currentRecipeFilter==='all') catOk=true;
+    else if(_currentRecipeFilter==='fav') catOk=(S.favoriteIds||[]).includes(r.id);
+    else if(_currentRecipeFilter==='plat') catOk=(r.category==='déjeuner'||r.category==='dîner');
+    else catOk=(r.category===_currentRecipeFilter);
     if(!catOk) return false;
+    // Filtre recherche
     if(!_recipeSearchQuery) return true;
     const q=normalize(_recipeSearchQuery);
     return normalize(r.name).includes(q)||normalize(r.cuisine||'').includes(q)||normalize(r.category).includes(q);
