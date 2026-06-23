@@ -3126,7 +3126,17 @@ async function pullFromCloud(){
     if(!S.recipes)S.recipes=[];
     if(!S.proposals)S.proposals=[];
     if(!S.rejectedIds)S.rejectedIds=[];
+    if(!S.favoriteIds)S.favoriteIds=[];
     if(!S.mealDay)S.mealDay='lundi';
+    // Nettoyer les favoriteIds invalides (ex: anciens IDs photos/vidéos)
+    const validRecipeIds=new Set((S.recipes||[]).map(r=>r.id));
+    const beforeClean=S.favoriteIds.length;
+    S.favoriteIds=S.favoriteIds.filter(id=>validRecipeIds.has(id));
+    if(S.favoriteIds.length!==beforeClean){
+      console.log('🧹 Favoris nettoyés:',beforeClean,'→',S.favoriteIds.length);
+      // Sauvegarder immédiatement dans Supabase
+      setTimeout(()=>pushToCloud(),1000);
+    }
     try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
     console.log('✅ Données cloud chargées pour',_currentUser.email);
   }catch(e){console.warn('pullFromCloud:',e.message);}
