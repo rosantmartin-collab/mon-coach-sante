@@ -3128,15 +3128,7 @@ async function pullFromCloud(){
     if(!S.rejectedIds)S.rejectedIds=[];
     if(!S.favoriteIds)S.favoriteIds=[];
     if(!S.mealDay)S.mealDay='lundi';
-    // Nettoyer les favoriteIds invalides (ex: anciens IDs photos/vidéos)
-    const validRecipeIds=new Set((S.recipes||[]).map(r=>r.id));
-    const beforeClean=S.favoriteIds.length;
-    S.favoriteIds=S.favoriteIds.filter(id=>validRecipeIds.has(id));
-    if(S.favoriteIds.length!==beforeClean){
-      console.log('🧹 Favoris nettoyés:',beforeClean,'→',S.favoriteIds.length);
-      // Sauvegarder immédiatement dans Supabase
-      setTimeout(()=>pushToCloud(),1000);
-    }
+
     try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
     console.log('✅ Données cloud chargées pour',_currentUser.email);
   }catch(e){console.warn('pullFromCloud:',e.message);}
@@ -3427,6 +3419,20 @@ document.addEventListener('DOMContentLoaded',()=>{
         pullFromCloud()
       ]).then(()=>{
         if(!S.meals||Object.keys(S.meals).length===0) ensureWeek();
+        // Nettoyer favoriteIds invalides (maintenant que recettes + cloud sont chargés)
+        if(S.favoriteIds&&S.favoriteIds.length){
+          const allIds=new Set([
+            ...RECIPE_SUGGESTIONS.map(r=>r.id),
+            ...RECIPE_SUGGESTIONS_EXTRA.map(r=>r.id),
+            ...(S.recipes||[]).map(r=>r.id)
+          ]);
+          const before=S.favoriteIds.length;
+          S.favoriteIds=S.favoriteIds.filter(id=>allIds.has(id));
+          if(S.favoriteIds.length!==before){
+            console.log('🧹 Favoris nettoyés:',before,'→',S.favoriteIds.length);
+            pushToCloud();
+          }
+        }
         // Restaurer la dernière page visitée
         const lastPage=(()=>{try{return localStorage.getItem('coachv3_lastpage')||'home';}catch(e){return 'home';}})();
         showPage(lastPage);
