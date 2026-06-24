@@ -3474,9 +3474,7 @@ function buildChatSystemPrompt(){
     return (labels[slot]||slot)+': '+(m.n||'');
   }).filter(x=>!x.endsWith(': ')).join(' | ');
 
-  let sys='Tu es un coach culinaire expert et bienveillant dans Mon Coach Santé, une app de cuisine française.';
-  sys+=' Tu réponds en français, de façon concise et pratique.';
-  sys+=' Tu aides avec : techniques de cuisine, substitutions d\'ingrédients, temps de cuisson, conseils de préparation.';
+  let sys='Tu es un coach culinaire expert dans Mon Coach Santé. Tu réponds en français, de façon TRÈS concise (2-3 phrases max). Tu réponds DIRECTEMENT à la question sans répéter la recette en entier. Si on te demande une technique ou un conseil, donne juste le conseil. Si on te demande les ingrédients, liste uniquement les ingrédients. Tu n\'utilises JAMAIS de titres ou de sections - tu réponds comme dans une conversation naturelle.';
   if(userName) sys+='\nUtilisateur: '+userName+'.';
   if(todayPlan) sys+='\nMenu aujourd\'hui ('+today+'): '+todayPlan+'.';
   if(favFull) sys+='\n\nRECETTES FAVORITES (fiches complètes):\n'+favFull;
