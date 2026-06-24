@@ -752,28 +752,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <div class="ps">Personnalise l'apparence et les suggestions</div>
   </div>
 
-  <!-- THÈME -->
-  <div class="card mb16">
-    <div class="card-title">🎨 Thème</div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;" id="theme-swatches">
-      <button class="theme-swatch active" data-theme="terracotta" onclick="applyTheme('terracotta',this)" title="Crème & Terracotta">
-        <span class="swatch-dot" style="background:#c84b31"></span>Terracotta
-      </button>
-      <button class="theme-swatch" data-theme="dark" onclick="applyTheme('dark',this)" title="Dark classique">
-        <span class="swatch-dot" style="background:#3b82f6"></span>Dark bleu
-      </button>
-      <button class="theme-swatch" data-theme="forest" onclick="applyTheme('forest',this)" title="Forêt">
-        <span class="swatch-dot" style="background:#10b981"></span>Forêt
-      </button>
-      <button class="theme-swatch" data-theme="violet" onclick="applyTheme('violet',this)" title="Violet sombre">
-        <span class="swatch-dot" style="background:#7c3aed"></span>Violet
-      </button>
-      <button class="theme-swatch" data-theme="ocean" onclick="applyTheme('ocean',this)" title="Océan">
-        <span class="swatch-dot" style="background:#0ea5e9"></span>Océan
-      </button>
-    </div>
-  </div>
-
   <!-- SUGGESTIONS -->
   <div class="card mb16">
     <div class="card-title">✨ Suggestions</div>
@@ -907,7 +885,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div class="mod">
     <div class="mod-title">🛒 Liste de courses</div>
     <div id="sh-list"></div>
-    <div class="mod-actions"><button class="btn btn-g" onclick="closeShModal()">Fermer</button></div>
+    <div class="mod-actions" style="gap:10px;">
+      <button class="btn btn-p" onclick="shareShoppingList()">📤 Partager</button>
+      <button class="btn btn-g" onclick="closeShModal()">Fermer</button>
+    </div>
   </div>
 </div>
 
