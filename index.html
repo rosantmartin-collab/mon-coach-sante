@@ -2023,7 +2023,7 @@ function updateRecipeCounters(){
     prep: recipes.filter(r=>r.category==='préparation').length,
   };
   const set=(id,n)=>{const el=document.getElementById(id);if(el)el.textContent=n>0?n:'';};
-  set('rfc-fav',(S.favoriteIds||[]).filter(id=>!id.startsWith('photo_')&&!id.startsWith('video_')).length);
+  set('rfc-fav',(S.favoriteIds||[]).length);
   set('rfc-all',total);
   set('rfc-entree',counts.entree);
   set('rfc-pdej',counts.pdej);
