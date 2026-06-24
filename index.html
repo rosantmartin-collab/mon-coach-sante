@@ -214,16 +214,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .rprop:hover{border-color:var(--primary);}
 .rprop-actions{display:flex;gap:8px;margin-top:12px;}
 /* Swipe suggestions mobile */
-.rprop{position:relative;overflow:hidden;touch-action:pan-y;}
+.rprop{position:relative;overflow:hidden;touch-action:pan-y;border-radius:14px;border:1.5px solid var(--bg4);margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:box-shadow .2s;}
+.rprop:hover{box-shadow:0 6px 20px rgba(0,0,0,.1);}
 .rprop-swipe-hint{position:absolute;right:0;top:0;bottom:0;width:80px;background:var(--danger);display:flex;align-items:center;justify-content:center;font-size:1.5rem;opacity:0;transition:opacity .2s;border-radius:0 var(--r) var(--r) 0;pointer-events:none;}
 .rprop-inner{transition:transform .2s;background:var(--bg2);border-radius:var(--r);width:100%;}
 
 .rcat{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text2);margin-bottom:4px;}
 .rname{font-weight:800;font-size:1rem;margin-bottom:3px;}
 .rmeta{font-size:.75rem;color:var(--text2);}
-.my-recipe-item{background:var(--bg2);border-radius:12px;padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s;border:1.5px solid var(--bg4);}
-.my-recipe-item:hover{border-color:var(--primary);}
-.my-recipe-item.is-fav{border-color:#f59e0b;background:linear-gradient(135deg,var(--bg2) 85%,#fff8e6 100%);}
+.my-recipe-item{background:var(--bg2);border-radius:14px;padding:13px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .25s;border:1.5px solid var(--bg4);box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.my-recipe-item:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1);}
+.my-recipe-item.is-fav{border-color:#f59e0b;background:linear-gradient(135deg,var(--bg2) 80%,#fffbeb 100%);}
 .fav-btn{background:none;border:none;cursor:pointer;font-size:1.3rem;padding:4px;line-height:1;transition:transform .2s;}
 .fav-btn:hover{transform:scale(1.3);}
 .star-rating{display:flex;gap:2px;}
@@ -476,8 +477,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <div class="mo" id="fiche-modal">
   <div class="mod" style="max-width:740px;background:#f5f5f5;padding:0;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;max-height:90vh;">
     <div id="fiche-modal-content" style="overflow-y:auto;flex:1;"></div>
-    <div style="padding:14px 20px;display:flex;gap:10px;background:#f5f5f5;border-top:1px solid #e0e0e0;flex-shrink:0;">
+    <div style="padding:14px 20px;display:flex;gap:10px;background:var(--bg3);border-top:1px solid var(--bg4);flex-shrink:0;flex-wrap:wrap;">
       <button class="btn btn-p" id="fiche-add-btn" style="display:none;" onclick="ficheAddAction()">✅ Ajouter à mes recettes</button>
+      <button class="btn btn-g" id="fiche-photo-btn" style="display:none;" onclick="document.getElementById('fiche-photo-input').click()">📸 Ajouter une photo</button>
+      <input type="file" id="fiche-photo-input" accept="image/*" style="display:none" onchange="saveFichePhoto(this)">
       <button class="btn btn-g" onclick="closeFicheModal()">Fermer</button>
     </div>
   </div>
@@ -2608,6 +2611,10 @@ function inferEquipment(r){
 }
 
 function buildFicheHTML(r){
+  _currentFicheRecipeId=r.id;
+  const photoBtn=document.getElementById('fiche-photo-btn');
+  if(photoBtn) photoBtn.style.display=S.recipes?.some(x=>x.id===r.id)?'inline-flex':'none';
+  const savedPhoto=(S.recipePhotos||{})[r.id];
   const ingRows=(r.ingredients||[]).map(ing=>'<tr><td class="fiche-ing-ico">'+(ing.ico||'•')+'</td><td style="color:#555;font-size:.78rem;">'+ing.qty+'</td><td>'+ing.name+'</td></tr>').join('');
   const tipItems=(r.tips||[]).map(t=>'<li class="fiche-tip-item"><span class="fiche-tip-dot" style="background:'+t.dot+';"></span><span>'+t.text+'</span></li>').join('');
   const stepItems=(r.steps||[]).map((s,i)=>'<div class="fiche-step"><div class="fiche-step-num">'+(i+1)+'</div><div class="fiche-step-content"><div class="fiche-step-title">'+s.title+'</div><div>'+s.desc+'</div>'+(s.detail?'<div class="step-detail">💡 '+s.detail+'</div>':'')+'</div></div>').join('');
@@ -3479,7 +3486,8 @@ function buildChatSystemPrompt(){
   if(todayPlan) sys+='\nMenu aujourd\'hui ('+today+'): '+todayPlan+'.';
   if(favFull) sys+='\n\nRECETTES FAVORITES (fiches complètes):\n'+favFull;
   if(recipesFull) sys+='\n\nRECETTES SAUVEGARDÉES (fiches complètes):\n'+recipesFull;
-  sys+='\n\nUtilise ces fiches pour répondre précisément aux questions sur les recettes. Ton ton est chaleureux et encourageant.';;
+  sys+='\n\nUtilise ces fiches pour répondre précisément aux questions sur les recettes. Ton ton est chaleureux et encourageant.';
+  sys+='\n\nSi l\'utilisateur demande de CRÉER ou GÉNÉRER une recette (ex: "crée-moi une recette avec...", "invente une recette de..."), génère une recette complète au format JSON strict entre balises <recipe> et </recipe> comme ceci:\n<recipe>{"name":"Nom","emoji":"🍽️","category":"dîner","cuisine":"Française","persons":4,"prep":"15 min","cook":"30 min","diff":"Facile ★","ingredients":[{"ico":"🧅","qty":"2","name":"Oignons"}],"steps":[{"title":"Étape","desc":"Description"}],"tips":[{"dot":"#f9a825","text":"Conseil"}]}</recipe>\nAprès le JSON, donne une courte description naturelle de la recette.';
   return sys;
 }
 
@@ -3564,15 +3572,89 @@ async function sendChatMessage(){
       })
     });
     const data=await res.json();
-    const reply=data.content?.[0]?.text||'Je n\'ai pas pu répondre, réessaie.';
+    const raw=data.content?.[0]?.text||'Je n\'ai pas pu répondre, réessaie.';
     removeTyping();
-    addChatMessage(reply,'bot');
-    _chatHistory.push({role:'assistant',content:reply});
+    // Détecter une recette générée
+    const recipeMatch=raw.match(/<recipe>([\s\S]*?)<\/recipe>/);
+    if(recipeMatch){
+      try{
+        const generated=JSON.parse(recipeMatch[1]);
+        generated.id='gen_'+Date.now();
+        generated.color='#f57f17';
+        generated.colorLight='#fff9e6';
+        generated.seasons=['all'];
+        generated.errors=[];
+        generated.variantes=[];
+        generated.footer='Recette générée par IA';
+        generated.stars='★★★★★';
+        // Afficher sans le JSON
+        const reply=raw.replace(/<recipe>[\s\S]*?<\/recipe>/,'').trim();
+        addChatMessage(reply,'bot');
+        // Bouton pour ajouter
+        const msgs=document.getElementById('chat-messages');
+        const btnDiv=document.createElement('div');
+        btnDiv.style.cssText='display:flex;justify-content:flex-start;margin-top:4px;';
+        const addBtn=document.createElement('button');
+        addBtn.className='btn btn-p btn-sm';
+        addBtn.textContent='✅ Ajouter à mes recettes';
+        addBtn.onclick=()=>{
+          if(!S.recipes.some(r=>r.id===generated.id)){S.recipes.push(generated);save();showToast('✅ Recette ajoutée !');}
+          addBtn.disabled=true;addBtn.textContent='✅ Ajoutée !';
+          renderMyRecipes();
+        };
+        btnDiv.appendChild(addBtn);
+        msgs.appendChild(btnDiv);
+        msgs.scrollTop=msgs.scrollHeight;
+        _chatHistory.push({role:'assistant',content:raw});
+      }catch(e){
+        addChatMessage(raw,'bot');
+        _chatHistory.push({role:'assistant',content:raw});
+      }
+    } else {
+      addChatMessage(raw,'bot');
+      _chatHistory.push({role:'assistant',content:raw});
+    }
   }catch(e){
     removeTyping();
     addChatMessage('❌ Erreur de connexion. Vérifie ta clé API.','bot');
   }
   btn.disabled=false;
+}
+
+
+let _currentFicheRecipeId=null;
+
+function saveFichePhoto(input){
+  const file=input.files[0];
+  if(!file||!_currentFicheRecipeId)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    if(!S.recipePhotos)S.recipePhotos={};
+    S.recipePhotos[_currentFicheRecipeId]=e.target.result;
+    save();
+    showToast('📸 Photo sauvegardée !');
+    // Afficher la photo dans la fiche
+    const photoZone=document.getElementById('fiche-photo-zone');
+    if(photoZone) photoZone.innerHTML='<img src="'+e.target.result+'" style="width:100%;border-radius:12px;margin-bottom:14px;max-height:220px;object-fit:cover;">';
+  };
+  reader.readAsDataURL(file);
+}
+
+function shareShoppingList(){
+  const items=document.querySelectorAll('.shopping-item');
+  if(!items.length){showToast('Aucun article dans la liste');return;}
+  let text='🛒 Ma liste de courses Mon Coach Santé\n\n';
+  items.forEach(item=>{
+    const name=item.querySelector('.item-name')?.textContent||'';
+    const qty=item.querySelector('.item-qty')?.textContent||'';
+    text+=(qty?qty+' ':'')+name+'\n';
+  });
+  if(navigator.share){
+    navigator.share({title:'Liste de courses',text}).catch(()=>{});
+  } else {
+    // Fallback : copier dans le presse-papiers
+    navigator.clipboard.writeText(text).then(()=>showToast('📋 Liste copiée !'));
+  }
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
