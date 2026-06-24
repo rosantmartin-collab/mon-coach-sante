@@ -383,6 +383,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 <!-- MEALS -->
 <div id="page-meals" class="page">
+  <button onclick="generateShoppingList()" style="position:fixed;bottom:80px;left:20px;z-index:997;
+    padding:10px 18px;border-radius:24px;background:var(--success);color:#fff;border:none;
+    font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);
+    display:flex;align-items:center;gap:6px;" id="shopping-fab">
+    🛒 Liste de courses
+  </button>
   <div class="ph">
     <div class="fb">
       <div>
@@ -390,7 +396,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
         <div class="ps">Semaine du <span id="week-label">...</span></div>
       </div>
       <div class="flex gap8">
-        <button class="btn btn-g btn-sm" onclick="generateShoppingList()">🛒 Courses</button>
         <button class="btn btn-p btn-sm" onclick="regenerateWeek()">🔄 Régénérer</button>
       </div>
     </div>
@@ -1265,6 +1270,9 @@ function showPage(page){
     document.getElementById('nav-'+p)?.classList.toggle('active',a);
     document.getElementById('mnav-'+p)?.classList.toggle('active',a);
   });
+  // Afficher/masquer le bouton courses flottant
+  const shFab=document.getElementById('shopping-fab');
+  if(shFab) shFab.style.display=page==='meals'?'flex':'none';
   S.page=page;
   try{localStorage.setItem('coachv3_lastpage',page);}catch(e){}
   renderPage();
@@ -1864,6 +1872,9 @@ function showPage(page){
     document.getElementById('nav-'+p)?.classList.toggle('active',a);
     document.getElementById('mnav-'+p)?.classList.toggle('active',a);
   });
+  // Afficher/masquer le bouton courses flottant
+  const shFab=document.getElementById('shopping-fab');
+  if(shFab) shFab.style.display=page==='meals'?'flex':'none';
   S.page=page;
   try{localStorage.setItem('coachv3_lastpage',page);}catch(e){}
   renderPage();
