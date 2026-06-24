@@ -3450,30 +3450,79 @@ function removeTyping(){
 
 function buildChatSystemPrompt(){
   const userName=S.profile?.name||'';
-  // Résumé des recettes sauvegardées (max 30)
-  const myRecipes=(S.recipes||[]).slice(0,30).map(r=>r.name+(r.category?' ('+r.category+')':'')).join(', ');
-  // Favoris
+
+  // Fiches complètes des recettes favorites
   const favIds=new Set(S.favoriteIds||[]);
-  const favRecipes=(S.recipes||[]).filter(r=>favIds.has(r.id)).map(r=>r.name).join(', ');
-  // Plan de la semaine
+  const favFull=(S.recipes||[]).filter(r=>favIds.has(r.id)).map(r=>{
+    const ings=(r.ingredients||[]).map(i=>(i.qty?i.qty+' ':'')+i.name).join(', ');
+    const steps=(r.steps||[]).map((s,i)=>(i+1)+'. '+s.title+': '+s.desc).join(' ');
+    return '- '+r.name+' ('+r.category+') | Ingrédients: '+ings+' | Étapes: '+steps;
+  }).join('\n');
+
+  // Fiches complètes des recettes sauvegardées (max 20)
+  const recipesFull=(S.recipes||[]).slice(0,20).map(r=>{
+    const ings=(r.ingredients||[]).map(i=>(i.qty?i.qty+' ':'')+i.name).join(', ');
+    const steps=(r.steps||[]).map((s,i)=>(i+1)+'. '+s.title+': '+s.desc).join(' ');
+    return '- '+r.name+' ('+r.category+') | Ingrédients: '+ings+' | Étapes: '+steps;
+  }).join('\n');
+
+  // Plan du jour
   const today=new Date().toLocaleDateString('fr-FR',{weekday:'long'});
   const todayMeals=S.meals?.[today]||{};
   const todayPlan=Object.entries(todayMeals).map(([slot,m])=>{
     const labels={breakfast:'Petit-déj',lunch:'Déjeuner',snack2:'Collation',dinner:'Dîner'};
     return (labels[slot]||slot)+': '+(m.n||'');
-  }).filter(x=>x.includes(': ') && !x.endsWith(': ')).join(' | ');
-  // Recette actuellement ouverte
-  let currentRecipe='';
-  // Construire le prompt
-  let sys='Tu es un coach culinaire expert et bienveillant intégré dans Mon Coach Santé, une application de cuisine française.';
+  }).filter(x=>!x.endsWith(': ')).join(' | ');
+
+  let sys='Tu es un coach culinaire expert et bienveillant dans Mon Coach Santé, une app de cuisine française.';
   sys+=' Tu réponds en français, de façon concise et pratique.';
-  sys+=' Tu aides avec : les techniques de cuisine, les substitutions d'ingrédients, les temps de cuisson, les conseils de préparation, les associations de saveurs.';
-  if(userName) sys+=' L'utilisateur s'appelle '+userName+'.';
-  if(myRecipes) sys+=' Ses recettes sauvegardées incluent : '+myRecipes+'.';
-  if(favRecipes) sys+=' Ses recettes favorites sont : '+favRecipes+'.';
-  if(todayPlan) sys+=' Son menu d'aujourd'hui ('+today+') : '+todayPlan+'.';
-  sys+=' Si on te demande des détails sur une de ses recettes, explique comment la réaliser. Ton ton est chaleureux et encourageant.';
+  sys+=' Tu aides avec : techniques de cuisine, substitutions d\'ingrédients, temps de cuisson, conseils de préparation.';
+  if(userName) sys+='\nUtilisateur: '+userName+'.';
+  if(todayPlan) sys+='\nMenu aujourd\'hui ('+today+'): '+todayPlan+'.';
+  if(favFull) sys+='\n\nRECETTES FAVORITES (fiches complètes):\n'+favFull;
+  if(recipesFull) sys+='\n\nRECETTES SAUVEGARDÉES (fiches complètes):\n'+recipesFull;
+  sys+='\n\nUtilise ces fiches pour répondre précisément aux questions sur les recettes. Ton ton est chaleureux et encourageant.';;
   return sys;
+}
+
+function findRelevantRecipes(query){
+  // Normaliser la query
+  const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const q=norm(query);
+  const words=q.split(/\s+/).filter(w=>w.length>3);
+  // Chercher dans toute la bibliothèque + recettes sauvegardées
+  const allLib=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA).filter(r=>r&&r.name);
+  const allRecipes=[...allLib,...(S.recipes||[])];
+  // Dédupliquer par id
+  const seen=new Set();
+  const unique=allRecipes.filter(r=>{if(seen.has(r.id))return false;seen.add(r.id);return true;});
+  // Scorer chaque recette
+  const scored=unique.map(r=>{
+    const name=norm(r.name);
+    const cat=norm(r.category||'');
+    const cuisine=norm(r.cuisine||'');
+    const ings=(r.ingredients||[]).map(i=>norm(i.name)).join(' ');
+    let score=0;
+    if(name.includes(q)) score+=10;
+    words.forEach(w=>{
+      if(name.includes(w)) score+=3;
+      if(cat.includes(w)||cuisine.includes(w)) score+=2;
+      if(ings.includes(w)) score+=1;
+    });
+    return {r,score};
+  }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,5);
+  return scored.map(x=>x.r);
+}
+
+function formatRecipeForBot(r){
+  const ings=(r.ingredients||[]).map(i=>(i.qty?i.qty+' ':'')+i.name).join(', ');
+  const steps=(r.steps||[]).map((s,i)=>(i+1)+'. '+s.title+': '+s.desc).join(' ');
+  const tips=(r.tips||[]).map(t=>t.text).join(' ');
+  return r.name+' ('+r.category+', '+r.cuisine+')'+
+    '\nPour '+r.persons+' pers. | Prép: '+r.prep+' | Cuisson: '+r.cook+
+    '\nIngrédients: '+ings+
+    '\nÉtapes: '+steps+
+    (tips?'\nConseils: '+tips:'');
 }
 
 async function sendChatMessage(){
@@ -3491,8 +3540,19 @@ async function sendChatMessage(){
   input.value='';
   btn.disabled=true;
   addChatMessage(text,'user');
-  _chatHistory.push({role:'user',content:text});
   showTyping();
+
+  // Rechercher les recettes pertinentes dans toute la bibliothèque
+  const relevant=findRelevantRecipes(text);
+  let contextMsg='';
+  if(relevant.length>0){
+    contextMsg='\n\nRECETTES PERTINENTES TROUVÉES DANS LA BIBLIOTHÈQUE:\n'+
+      relevant.map(r=>formatRecipeForBot(r)).join('\n\n---\n');
+  }
+
+  // Construire le message enrichi
+  const enrichedMsg=text+(contextMsg?'\n[CONTEXTE AUTOMATIQUE:'+contextMsg+']':'');
+  _chatHistory.push({role:'user',content:enrichedMsg});
 
   try{
     const res=await fetch('https://api.anthropic.com/v1/messages',{
@@ -3500,7 +3560,7 @@ async function sendChatMessage(){
       headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
       body:JSON.stringify({
         model:'claude-haiku-4-5-20251001',
-        max_tokens:600,
+        max_tokens:800,
         system:buildChatSystemPrompt(),
         messages:_chatHistory.slice(-10)
       })
