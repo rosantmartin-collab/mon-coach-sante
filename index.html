@@ -890,8 +890,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div class="mod">
     <div class="mod-title">🛒 Liste de courses</div>
     <div id="sh-list"></div>
-    <div class="mod-actions" style="gap:10px;">
-      <button class="btn btn-p" onclick="shareShoppingList()">📤 Partager</button>
+    <div class="mod-actions" style="gap:8px;flex-wrap:wrap;">
+      <button class="btn btn-g" onclick="copyShoppingList()">📋 Copier</button>
+      <button class="btn btn-g" onclick="mailShoppingList()">✉️ Mail</button>
+      <button class="btn btn-g" onclick="smsShoppingList()">💬 Messages</button>
       <button class="btn btn-g" onclick="closeShModal()">Fermer</button>
     </div>
   </div>
@@ -3632,9 +3634,9 @@ function saveFichePhoto(input){
   reader.readAsDataURL(file);
 }
 
-function shareShoppingList(){
+function getShoppingText(){
   const el=document.getElementById('sh-list');
-  if(!el||!el.innerHTML.trim()){showToast('Aucun article dans la liste');return;}
+  if(!el||!el.innerHTML.trim()) return '';
   let text='🛒 Ma liste de courses\n\n';
   Array.from(el.children).forEach(node=>{
     if(node.classList.contains('si')){
@@ -3645,18 +3647,37 @@ function shareShoppingList(){
       if(cat) text+='\n'+cat+'\n';
     }
   });
+  return text;
+}
+
+function copyShoppingList(){
+  const text=getShoppingText();
+  if(!text){showToast('Aucun article dans la liste');return;}
   const ta=document.createElement('textarea');
   ta.value=text;
   ta.style.cssText='position:fixed;top:0;left:0;opacity:0;';
   document.body.appendChild(ta);
   ta.focus();ta.select();
-  try{
-    document.execCommand('copy');
-    showToast('📋 Liste copiée dans le presse-papiers !');
-  }catch(e){
-    if(navigator.share) navigator.share({title:'🛒 Liste de courses',text});
-  }
+  try{document.execCommand('copy');showToast('📋 Liste copiée !');}catch(e){showToast('Impossible de copier');}
   document.body.removeChild(ta);
+}
+
+function mailShoppingList(){
+  const text=getShoppingText();
+  if(!text){showToast('Aucun article dans la liste');return;}
+  const subject=encodeURIComponent('🛒 Ma liste de courses');
+  const body=encodeURIComponent(text);
+  window.open('mailto:?subject='+subject+'&body='+body);
+}
+
+function smsShoppingList(){
+  const text=getShoppingText();
+  if(!text){showToast('Aucun article dans la liste');return;}
+  window.open('sms:?&body='+encodeURIComponent(text));
+}
+
+function shareShoppingList(){
+  copyShoppingList();
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
