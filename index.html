@@ -3001,6 +3001,10 @@ function saveAPIKey(){
   const k=document.getElementById('api-key-input').value.trim();
   if(!k){showToast('Clé API invalide');return;}
   localStorage.setItem('anthropic_api_key',k);
+  // Sauvegarder aussi dans le cloud Supabase
+  if(!S.settings)S.settings={};
+  S.settings.anthropicKey=k;
+  save();
   document.getElementById('api-key-modal').classList.remove('active');
   showToast('✅ Clé API sauvegardée !');
 }
@@ -3009,7 +3013,9 @@ function openAPIKeyModal(){
   document.getElementById('api-key-modal').classList.add('active');
 }
 
-function getAnthropicKey(){return localStorage.getItem('anthropic_api_key')||'';}
+function getAnthropicKey(){
+  return localStorage.getItem('anthropic_api_key')||S?.settings?.anthropicKey||'';
+}
 async function callGemini(systemPrompt, userText, imageB64, imageMime){
   const key = getAnthropicKey();
   const msgContent = [];
@@ -3131,6 +3137,10 @@ async function pullFromCloud(){
     if(!S.rejectedIds)S.rejectedIds=[];
     if(!S.favoriteIds)S.favoriteIds=[];
     if(!S.mealDay)S.mealDay='lundi';
+    // Restaurer la clé API depuis le cloud
+    if(S.settings?.anthropicKey){
+      localStorage.setItem('anthropic_api_key',S.settings.anthropicKey);
+    }
 
     try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
     console.log('✅ Données cloud chargées pour',_currentUser.email);
@@ -3438,6 +3448,34 @@ function removeTyping(){
   document.getElementById('chat-typing')?.remove();
 }
 
+function buildChatSystemPrompt(){
+  const userName=S.profile?.name||'';
+  // Résumé des recettes sauvegardées (max 30)
+  const myRecipes=(S.recipes||[]).slice(0,30).map(r=>r.name+(r.category?' ('+r.category+')':'')).join(', ');
+  // Favoris
+  const favIds=new Set(S.favoriteIds||[]);
+  const favRecipes=(S.recipes||[]).filter(r=>favIds.has(r.id)).map(r=>r.name).join(', ');
+  // Plan de la semaine
+  const today=new Date().toLocaleDateString('fr-FR',{weekday:'long'});
+  const todayMeals=S.meals?.[today]||{};
+  const todayPlan=Object.entries(todayMeals).map(([slot,m])=>{
+    const labels={breakfast:'Petit-déj',lunch:'Déjeuner',snack2:'Collation',dinner:'Dîner'};
+    return (labels[slot]||slot)+': '+(m.n||'');
+  }).filter(x=>x.includes(': ') && !x.endsWith(': ')).join(' | ');
+  // Recette actuellement ouverte
+  let currentRecipe='';
+  // Construire le prompt
+  let sys='Tu es un coach culinaire expert et bienveillant intégré dans Mon Coach Santé, une application de cuisine française.';
+  sys+=' Tu réponds en français, de façon concise et pratique.';
+  sys+=' Tu aides avec : les techniques de cuisine, les substitutions d'ingrédients, les temps de cuisson, les conseils de préparation, les associations de saveurs.';
+  if(userName) sys+=' L'utilisateur s'appelle '+userName+'.';
+  if(myRecipes) sys+=' Ses recettes sauvegardées incluent : '+myRecipes+'.';
+  if(favRecipes) sys+=' Ses recettes favorites sont : '+favRecipes+'.';
+  if(todayPlan) sys+=' Son menu d'aujourd'hui ('+today+') : '+todayPlan+'.';
+  sys+=' Si on te demande des détails sur une de ses recettes, explique comment la réaliser. Ton ton est chaleureux et encourageant.';
+  return sys;
+}
+
 async function sendChatMessage(){
   const input=document.getElementById('chat-input');
   const btn=document.getElementById('chat-send-btn');
@@ -3463,7 +3501,7 @@ async function sendChatMessage(){
       body:JSON.stringify({
         model:'claude-haiku-4-5-20251001',
         max_tokens:600,
-        system:'Tu es un coach culinaire expert et bienveillant intégré dans une application de cuisine française. Tu réponds en français, de façon concise et pratique (max 3-4 phrases). Tu aides avec : les techniques de cuisine, les substitutions d\'ingrédients, les temps de cuisson, les conseils de préparation, les associations de saveurs. Ton ton est chaleureux et encourageant.',
+        system:buildChatSystemPrompt(),
         messages:_chatHistory.slice(-10)
       })
     });
