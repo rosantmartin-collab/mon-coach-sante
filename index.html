@@ -3633,20 +3633,30 @@ function saveFichePhoto(input){
 }
 
 function shareShoppingList(){
-  const items=document.querySelectorAll('.shopping-item');
-  if(!items.length){showToast('Aucun article dans la liste');return;}
-  let text='🛒 Ma liste de courses Mon Coach Santé\n\n';
-  items.forEach(item=>{
-    const name=item.querySelector('.item-name')?.textContent||'';
-    const qty=item.querySelector('.item-qty')?.textContent||'';
-    text+=(qty?qty+' ':'')+name+'\n';
+  const el=document.getElementById('sh-list');
+  if(!el||!el.innerHTML.trim()){showToast('Aucun article dans la liste');return;}
+  let text='🛒 Ma liste de courses\n\n';
+  Array.from(el.children).forEach(node=>{
+    if(node.classList.contains('si')){
+      const name=node.querySelector('span')?.textContent?.trim()||'';
+      if(name) text+='• '+name+'\n';
+    } else {
+      const cat=(node.textContent||'').trim();
+      if(cat) text+='\n'+cat+'\n';
+    }
   });
-  if(navigator.share){
-    navigator.share({title:'Liste de courses',text}).catch(()=>{});
-  } else {
-    // Fallback : copier dans le presse-papiers
-    navigator.clipboard.writeText(text).then(()=>showToast('📋 Liste copiée !'));
+  const ta=document.createElement('textarea');
+  ta.value=text;
+  ta.style.cssText='position:fixed;top:0;left:0;opacity:0;';
+  document.body.appendChild(ta);
+  ta.focus();ta.select();
+  try{
+    document.execCommand('copy');
+    showToast('📋 Liste copiée dans le presse-papiers !');
+  }catch(e){
+    if(navigator.share) navigator.share({title:'🛒 Liste de courses',text});
   }
+  document.body.removeChild(ta);
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
