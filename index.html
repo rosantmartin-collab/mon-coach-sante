@@ -887,10 +887,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 <!-- SHOPPING MODAL -->
 <div class="mo" id="shmodal">
-  <div class="mod">
+  <div class="mod" style="max-width:500px;">
     <div class="mod-title">🛒 Liste de courses</div>
-    <div id="sh-list"></div>
-    <div class="mod-actions" style="gap:8px;flex-wrap:wrap;">
+    <!-- Barre d'ajout -->
+    <div style="display:flex;gap:8px;margin-bottom:12px;">
+      <input id="sh-add-input" type="text" placeholder="Ajouter un article..." 
+        onkeydown="if(event.key==='Enter')addShoppingItem()"
+        style="flex:1;padding:8px 12px;border-radius:10px;border:1.5px solid var(--bg4);background:var(--bg3);color:var(--text);font-size:.85rem;outline:none;">
+      <button onclick="addShoppingItem()" style="padding:8px 14px;border-radius:10px;background:var(--primary);color:#fff;border:none;cursor:pointer;font-weight:700;">+</button>
+    </div>
+    <div id="sh-list" style="max-height:50vh;overflow-y:auto;"></div>
+    <div class="mod-actions" style="gap:8px;flex-wrap:wrap;margin-top:12px;">
       <button class="btn btn-g" onclick="copyShoppingList()">📋 Copier</button>
       <button class="btn btn-g" onclick="mailShoppingList()">✉️ Mail</button>
       <button class="btn btn-g" onclick="smsShoppingList()">💬 Messages</button>
@@ -1839,10 +1846,16 @@ function generateShoppingList(){
     '🫙 Épicerie':['huile','miel','sauce soja','sauce teriyaki','curry','harissa','épices','bouillon','sauce tomate','sirop','herbes','confiture','compote','vin blanc','vin rouge','lait de coco','pruneaux'],
     '🥜 Oléagineux & Graines':['noix','amandes','noisettes','cacahuètes','graines','beurre de cacahuète','pâte de noisettes','sésame','chocolat noir','pain d\'épices'],
   };
-  function rowHtml(it){
+  function rowHtml(it,editable=false){
     const qty=getQty(it);
-    const qtyTxt=qty?`<span style="color:var(--warn);font-size:.75rem;font-weight:600;">${qty.q}</span>${qty.u?` <span style="color:var(--text2);font-size:.7rem;">${qty.u}</span>`:''}`:'';;
-    return`<div class="si"><input type="checkbox" onchange="this.closest('.si').classList.toggle('checked',this.checked)"><span style="flex:1;">${it}</span>${qtyTxt}</div>`;
+    const qtyTxt=qty?`<span style="color:var(--warn);font-size:.75rem;font-weight:600;">${qty.q}</span>${qty.u?` <span style="color:var(--text2);font-size:.7rem;">${qty.u}</span>`:''}`:'';
+    const escapedIt=it.replace(/'/g,"\\'");
+    return`<div class="si" id="si-${CSS.escape(it)}">
+      <input type="checkbox" onchange="this.closest('.si').classList.toggle('checked',this.checked)">
+      <span style="flex:1;cursor:pointer;" ondblclick="editShoppingItem(this,'${escapedIt}')">${it}</span>
+      ${qtyTxt}
+      <button onclick="deleteShoppingItem('${escapedIt}')" style="background:none;border:none;color:var(--text2);cursor:pointer;font-size:.9rem;padding:2px 4px;opacity:.6;flex-shrink:0;">✕</button>
+    </div>`;
   }
   let html='';const done=new Set();
   Object.entries(cats).forEach(([cat,kws])=>{
@@ -1861,6 +1874,65 @@ function generateShoppingList(){
   document.getElementById('shmodal').classList.add('active');
 }
 function closeShModal(){document.getElementById('shmodal').classList.remove('active');}
+
+function addShoppingItem(){
+  const input=document.getElementById('sh-add-input');
+  const val=(input.value||'').trim();
+  if(!val)return;
+  input.value='';
+  const el=document.getElementById('sh-list');
+  // Ajouter dans la section "Autres" ou créer
+  let autresCat=el.querySelector('[data-cat="autres"]');
+  if(!autresCat){
+    const catDiv=document.createElement('div');
+    catDiv.style.cssText='font-weight:700;margin:12px 0 5px;color:var(--text2);font-size:.8rem;';
+    catDiv.textContent='➕ Ajouts manuels';
+    catDiv.dataset.cat='autres';
+    el.appendChild(catDiv);
+    autresCat=catDiv;
+  }
+  const div=document.createElement('div');
+  div.innerHTML=`<div class="si">
+    <input type="checkbox" onchange="this.closest('.si').classList.toggle('checked',this.checked)">
+    <span style="flex:1;cursor:pointer;" ondblclick="editShoppingItem(this,'${val.replace(/'/g,"\'")}')"> ${val}</span>
+    <button onclick="this.closest('.si').remove()" style="background:none;border:none;color:var(--text2);cursor:pointer;font-size:.9rem;padding:2px 4px;opacity:.6;">✕</button>
+  </div>`;
+  el.appendChild(div.firstElementChild);
+  input.focus();
+}
+
+function deleteShoppingItem(name){
+  const el=document.getElementById('sh-list');
+  Array.from(el.querySelectorAll('.si')).forEach(si=>{
+    const span=si.querySelector('span');
+    if(span&&span.textContent.trim()===name) si.remove();
+  });
+}
+
+function editShoppingItem(span, originalName){
+  const current=span.textContent.trim();
+  const input=document.createElement('input');
+  input.type='text';
+  input.value=current;
+  input.style.cssText='flex:1;padding:2px 6px;border-radius:6px;border:1.5px solid var(--primary);background:var(--bg3);color:var(--text);font-size:.85rem;outline:none;';
+  span.replaceWith(input);
+  input.focus();
+  input.select();
+  const confirm=()=>{
+    const newVal=input.value.trim()||originalName;
+    const newSpan=document.createElement('span');
+    newSpan.style.cssText='flex:1;cursor:pointer;';
+    newSpan.textContent=newVal;
+    const escapedNew=newVal.replace(/'/g,"\'");
+    newSpan.setAttribute('ondblclick',`editShoppingItem(this,'${escapedNew}')`);
+    input.replaceWith(newSpan);
+    // Mettre à jour le bouton supprimer
+    const btn=newSpan.closest('.si')?.querySelector('button');
+    if(btn) btn.setAttribute('onclick',`deleteShoppingItem('${escapedNew}')`);
+  };
+  input.addEventListener('blur',confirm);
+  input.addEventListener('keydown',e=>{if(e.key==='Enter')confirm();if(e.key==='Escape'){input.value=originalName;confirm();}});
+}
 
 
 // ════════════════════════════════════════════════════════════
