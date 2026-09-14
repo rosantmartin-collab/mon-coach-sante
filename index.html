@@ -1272,6 +1272,123 @@ function saveLog(){
 // ════════════════════════════════════════════════════════════
 // § 08 — STATS (statistiques nutritionnelles)
 
+
+// ════════════════════════════════════════════════════════════
+// CONSTANTES JOURS + FONCTIONS REPAS
+// ════════════════════════════════════════════════════════════
+const DAYS=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
+const DKEYS=['lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche'];
+
+function todayKey(){
+  const d=new Date().getDay(); // 0=dim
+  const map=[6,0,1,2,3,4,5]; // JS dimanche=0 → index 6
+  return DKEYS[map[d]];
+}
+
+function fmtDate(d){
+  return d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
+}
+
+function getCalTarget(){
+  const g=S.profile?.goal||'maintenance';
+  return g==='loss'?1800:g==='gain'?2600:2100;
+}
+
+function genDay(type){
+  // Génère un repas type selon le type de journée
+  const base={
+    breakfast:{n:'Petit-déjeuner',c:400,ing:['flocons d\'avoine','lait','banane']},
+    lunch:{n:'Déjeuner équilibré',c:600,ing:['poulet','riz','haricots verts']},
+    snack2:{n:'Collation',c:200,ing:['yaourt','myrtilles']},
+    dinner:{n:'Dîner léger',c:500,ing:['saumon','épinards','citron']}
+  };
+  if(type==='repos') return {
+    breakfast:{n:'Petit-déjeuner',c:350,ing:['pain complet','œufs','fromage']},
+    lunch:{n:'Déjeuner',c:550,ing:['salade','thon','tomates']},
+    snack2:{n:'Collation',c:150,ing:['pomme','amandes']},
+    dinner:{n:'Dîner',c:450,ing:['soupe de légumes','pain']}
+  };
+  return JSON.parse(JSON.stringify(base));
+}
+
+function ensureWeek(){
+  DKEYS.forEach(k=>{
+    if(!S.meals[k]) S.meals[k]=genDay(S.plan[k]||'repos');
+  });
+  save();
+}
+
+function regenerateWeek(){
+  DKEYS.forEach(k=>{ S.meals[k]=genDay(S.plan[k]||'repos'); });
+  save();
+  renderMeals();
+  showToast('🔄 Semaine régénérée !');
+}
+
+function renderMeals(){
+  // Week label
+  const now=new Date();
+  const monday=new Date(now);
+  monday.setDate(now.getDate()-((now.getDay()+6)%7));
+  const sunday=new Date(monday);
+  sunday.setDate(monday.getDate()+6);
+  const el=document.getElementById('week-label');
+  if(el) el.textContent=fmtDate(monday)+' – '+fmtDate(sunday);
+
+  // Grille 7 jours
+  const grid=document.getElementById('week-grid');
+  if(!grid) return;
+  const tk=todayKey();
+  grid.innerHTML=DKEYS.map((k,i)=>{
+    const m=S.meals[k]||{};
+    const isToday=k===tk;
+    const isSelected=k===(S.mealDay||tk);
+    const totalCal=[m.breakfast,m.lunch,m.snack2,m.dinner].filter(Boolean).reduce((s,x)=>s+(parseInt(x.c)||0),0);
+    return `<div class="day-card${isSelected?' selected':''}" onclick="selectDay('${k}')" style="${isToday?'border-color:var(--primary);':''}">`+
+      `<div class="day-name">${DAYS[i].slice(0,3)}</div>`+
+      `<div class="day-cal">${totalCal||'—'}</div>`+
+      `<div style="font-size:.6rem;color:var(--text2);">kcal</div>`+
+      `</div>`;
+  }).join('');
+
+  // Détail du jour
+  renderDayDetail(S.mealDay||tk);
+}
+
+function selectDay(key){
+  S.mealDay=key;
+  renderMeals();
+}
+
+function renderDayDetail(key){
+  const el=document.getElementById('meals-detail');
+  if(!el) return;
+  const m=S.meals[key]||{};
+  const dayIdx=DKEYS.indexOf(key);
+  const dayName=DAYS[dayIdx]||key;
+  const slots=[
+    {key:'breakfast',label:'Petit-déjeuner',icon:'🌅'},
+    {key:'lunch',label:'Déjeuner',icon:'☀️'},
+    {key:'snack2',label:'Collation',icon:'🫐'},
+    {key:'dinner',label:'Dîner',icon:'🌙'},
+  ];
+  el.innerHTML=`<div class="card"><div class="card-title">📅 ${dayName}</div>`+
+    slots.map(sl=>{
+      const meal=m[sl.key];
+      return `<div class="meal-slot" onclick="viewMealFiche('${key}','${sl.key}')">
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bg3);cursor:pointer;">
+          <span style="font-size:1.3rem;">${sl.icon}</span>
+          <div style="flex:1;">
+            <div style="font-weight:600;font-size:.88rem;">${sl.label}</div>
+            ${meal?`<div style="font-size:.78rem;color:var(--text2);">${meal.n||''} ${meal.c?'· '+meal.c+' kcal':''}</div>`:'<div style="font-size:.78rem;color:var(--text2);">Non planifié</div>'}
+          </div>
+          <span style="color:var(--text2);font-size:.8rem;">→</span>
+        </div>
+      </div>`;
+    }).join('')+
+    `</div>`;
+}
+
 // ════════════════════════════════════════
 // § 06 — HOME
 // ════════════════════════════════════════
