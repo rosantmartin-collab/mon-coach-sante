@@ -3141,6 +3141,12 @@ async function signOut(){
 // ════════════════════════════════════════════════════════════
 // § 24 — SYNC CLOUD (sauvegarde et chargement Supabase)
 // ════════════════════════════════════════════════════════════
+function save(){
+  try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
+  clearTimeout(_cloudTimer);
+  _cloudTimer=setTimeout(()=>pushToCloud(),3000);
+}
+
 async function pushToCloud(){
   if(!_currentUser)return;
   try{
