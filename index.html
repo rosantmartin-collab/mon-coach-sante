@@ -356,29 +356,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 <!-- HOME -->
 <div id="page-home" class="page active">
-  <div class="ph">
-    <div class="pt" id="greeting">Bonjour ! 👋</div>
-    <div class="ps" id="today-date"></div>
-  </div>
-  <div class="g2">
-    <div class="card">
-      <div class="card-title">📅 Aujourd'hui</div>
-      <div id="today-badge"></div>
-      <div id="today-preview" class="mt16"></div>
-    </div>
-    <div class="card">
-      <div class="card-title">🎯 Nutrition du jour</div>
-      <div id="today-macros"></div>
-    </div>
-    <div class="card">
-      <div class="card-title">💡 Conseil du jour</div>
-      <div id="daily-tip"></div>
-    </div>
-    <div class="card">
-      <div class="card-title">📅 Ma semaine</div>
-      <div id="week-home"></div>
-    </div>
-  </div>
+  <div id="home-content"></div>
 </div>
 
 <!-- MEALS -->
@@ -1339,20 +1317,27 @@ function renderMeals(){
   const grid=document.getElementById('week-grid');
   if(!grid) return;
   const tk=todayKey();
+  const selDay=S.mealDay||tk;
   grid.innerHTML=DKEYS.map((k,i)=>{
     const m=S.meals[k]||{};
     const isToday=k===tk;
-    const isSelected=k===(S.mealDay||tk);
+    const isSelected=k===selDay;
     const totalCal=[m.breakfast,m.lunch,m.snack2,m.dinner].filter(Boolean).reduce((s,x)=>s+(parseInt(x.c)||0),0);
-    return `<div class="day-card${isSelected?' selected':''}" onclick="selectDay('${k}')" style="${isToday?'border-color:var(--primary);':''}">`+
-      `<div class="day-name">${DAYS[i].slice(0,3)}</div>`+
-      `<div class="day-cal">${totalCal||'—'}</div>`+
-      `<div style="font-size:.6rem;color:var(--text2);">kcal</div>`+
-      `</div>`;
+    return `<div onclick="selectDay('${k}')" style="
+      background:${isSelected?'var(--primary)':'var(--bg2)'};
+      color:${isSelected?'#fff':'var(--text)'};
+      border-radius:14px;padding:10px 4px;text-align:center;cursor:pointer;
+      border:2px solid ${isToday?'var(--primary)':'var(--bg4)'};
+      box-shadow:${isSelected?'0 4px 14px rgba(200,75,49,.3)':'none'};
+      transition:all .2s;">
+      <div style="font-size:.72rem;font-weight:700;opacity:${isSelected?1:.7};">${DAYS[i].slice(0,3).toUpperCase()}</div>
+      <div style="font-size:1rem;font-weight:900;margin:4px 0;">${totalCal||'—'}</div>
+      <div style="font-size:.6rem;opacity:.7;">kcal</div>
+    </div>`;
   }).join('');
 
   // Détail du jour
-  renderDayDetail(S.mealDay||tk);
+  renderDayDetail(selDay);
 }
 
 function selectDay(key){
@@ -1367,23 +1352,35 @@ function renderDayDetail(key){
   const dayIdx=DKEYS.indexOf(key);
   const dayName=DAYS[dayIdx]||key;
   const slots=[
-    {key:'breakfast',label:'Petit-déjeuner',icon:'🌅'},
-    {key:'lunch',label:'Déjeuner',icon:'☀️'},
-    {key:'snack2',label:'Collation',icon:'🫐'},
-    {key:'dinner',label:'Dîner',icon:'🌙'},
+    {key:'breakfast',label:'Petit-déjeuner',icon:'🌅',color:'#f59e0b'},
+    {key:'lunch',label:'Déjeuner',icon:'☀️',color:'#10b981'},
+    {key:'snack2',label:'Collation',icon:'🫐',color:'#8b5cf6'},
+    {key:'dinner',label:'Dîner',icon:'🌙',color:'#3b82f6'},
   ];
-  el.innerHTML=`<div class="card"><div class="card-title">📅 ${dayName}</div>`+
+  const totalCal=slots.reduce((s,sl)=>s+(parseInt((m[sl.key]||{}).c)||0),0);
+  el.innerHTML=`<div class="card">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <div class="card-title" style="margin:0;">📅 ${dayName}</div>
+      <div style="font-size:.82rem;color:var(--primary);font-weight:700;">${totalCal} kcal</div>
+    </div>`+
     slots.map(sl=>{
       const meal=m[sl.key];
-      return `<div class="meal-slot" onclick="viewMealFiche('${key}','${sl.key}')">
-        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bg3);cursor:pointer;">
-          <span style="font-size:1.3rem;">${sl.icon}</span>
-          <div style="flex:1;">
-            <div style="font-weight:600;font-size:.88rem;">${sl.label}</div>
-            ${meal?`<div style="font-size:.78rem;color:var(--text2);">${meal.n||''} ${meal.c?'· '+meal.c+' kcal':''}</div>`:'<div style="font-size:.78rem;color:var(--text2);">Non planifié</div>'}
-          </div>
-          <span style="color:var(--text2);font-size:.8rem;">→</span>
+      return `<div onclick="viewMealFiche('${key}','${sl.key}')" style="
+        display:flex;align-items:center;gap:12px;padding:12px;
+        border-radius:12px;margin-bottom:8px;cursor:pointer;
+        background:var(--bg3);transition:all .2s;border:1.5px solid var(--bg4);"
+        onmouseover="this.style.borderColor='var(--primary)'"
+        onmouseout="this.style.borderColor='var(--bg4)'">
+        <div style="width:42px;height:42px;border-radius:12px;background:${sl.color}22;
+          display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">${sl.icon}</div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-weight:700;font-size:.85rem;">${sl.label}</div>
+          ${meal
+            ?`<div style="font-size:.78rem;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${meal.n||''}</div>`
+            :`<div style="font-size:.78rem;color:var(--text2);font-style:italic;">Non planifié</div>`}
         </div>
+        ${meal&&meal.c?`<div style="font-size:.78rem;font-weight:700;color:${sl.color};flex-shrink:0;">${meal.c} kcal</div>`:''}
+        <span style="color:var(--text2);font-size:.85rem;">›</span>
       </div>`;
     }).join('')+
     `</div>`;
