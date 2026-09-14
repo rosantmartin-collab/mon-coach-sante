@@ -2364,8 +2364,7 @@ async function generateRecipeProposals(){
   const picked=pool.sort(()=>Math.random()-.5).slice(0,20);
   picked.forEach(r=>S.proposals.push(r));
   save();
-  document.querySelectorAll('.rtab').forEach((t,i)=>t.classList.toggle('active',i===1));
-  document.querySelectorAll('.rpanel').forEach((p,i)=>p.classList.toggle('active',i===1));
+  switchRecipeTab('suggestions', document.querySelector('.rtab:nth-child(2)'));
   renderProposals();showToast('✨ '+picked.length+' suggestions disponibles !');
 }
 
