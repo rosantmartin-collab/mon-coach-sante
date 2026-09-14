@@ -1759,6 +1759,18 @@ function editShoppingItem(span, originalName){
 // ════════════════════════════════════════════════════════════
 // § 11 — NAV UPDATE (mise à jour de la navigation)
 // ════════════════════════════════════════════════════════════
+
+function renderPage(){
+  const p=S.page||'home';
+  if(p==='home') renderHome();
+  else if(p==='recettes') renderRecettes();
+  else if(p==='meals') renderMeals();
+  else if(p==='sport') renderSport();
+  else if(p==='stats') renderStats();
+  else if(p==='profile') renderProfile();
+  else if(p==='settings') loadSettingsUI();
+}
+
 function showPage(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+page).classList.add('active');
