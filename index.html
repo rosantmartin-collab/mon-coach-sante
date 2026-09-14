@@ -1563,19 +1563,25 @@ function openProgModal(progId){
   const prog=PROGRAMS.find(p=>p.id===progId);
   if(!prog)return;
   document.getElementById('prog-modal-title').innerHTML=`${prog.icon} ${prog.name}`;
-  let rows=prog.exercises.map(e=>`
-    <tr>
+  let rows=prog.exercises.map(e=>{
+    if(e.sets===0){
+      // Ligne de séparation / titre de section
+      return `<tr><td colspan="4" style="background:var(--bg3);color:var(--primary);font-weight:700;font-size:.8rem;padding:8px 12px;border-radius:8px;text-align:center;">${e.n}</td></tr>`;
+    }
+    return `<tr>
       <td><strong>${e.n}</strong>${e.note?`<br><span style="color:var(--text2);font-size:.72rem;">${e.note}</span>`:''}</td>
-      <td><span class="ex-badge">${e.sets} séries</span></td>
+      <td><span class="ex-badge">${e.sets>0?e.sets+' séries':''}</span></td>
       <td style="color:var(--warn);font-weight:700;">${e.reps}</td>
       <td style="color:var(--text2);">${e.rest}</td>
-    </tr>`).join('');
+    </tr>`;
+  }).join('');
   document.getElementById('prog-modal-body').innerHTML=`
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:${prog.description?'8':'16'}px;">
       <span style="font-size:.82rem;color:var(--text2);">⏱ ${prog.duration}</span>
       <span style="font-size:.82rem;color:var(--text2);">🎯 ${prog.level}</span>
       <span style="font-size:.82rem;color:${prog.color};">${prog.focus}</span>
     </div>
+    ${prog.description?`<div style="margin-bottom:14px;padding:10px 14px;background:var(--bg3);border-radius:10px;font-size:.82rem;color:var(--text2);">📋 ${prog.description}</div>`:''}
     <div style="overflow-x:auto;">
       <table class="ex-table">
         <thead><tr><th>Exercice</th><th>Volume</th><th>Reps</th><th>Repos</th></tr></thead>
@@ -2089,7 +2095,7 @@ function toggleProgGrid(){
 function renderProgGrid(){
   let ph='';
   PROGRAMS.forEach(prog=>{
-    ph+='<div class="prog-card" onclick="openProgModal(\''+prog.id+'\')"><div class="prog-icon">'+prog.icon+'</div><div class="prog-name">'+prog.name+'</div><div class="prog-meta">⏱ '+prog.duration+' · '+prog.level+'</div><div class="prog-focus">'+prog.focus+'</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span style="font-size:.75rem;color:var(--text2);">'+prog.exercises.length+' exercices</span><span style="font-size:.78rem;color:'+prog.color+';font-weight:700;">Voir →</span></div></div>';
+    ph+='<div class="prog-card" onclick="openProgModal(\''+prog.id+'\')"><div class="prog-icon">'+prog.icon+'</div><div class="prog-name">'+prog.name+'</div><div class="prog-meta">⏱ '+prog.duration+' · '+prog.level+'</div><div class="prog-focus">'+prog.focus+'</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span style="font-size:.75rem;color:var(--text2);">'+prog.exercises.filter(e=>e.sets>0).length+' exercices</span><span style="font-size:.78rem;color:'+prog.color+';font-weight:700;">Voir →</span></div></div>';
   });
   document.getElementById('prog-grid').innerHTML=ph;
 }
