@@ -3085,7 +3085,6 @@ async function callGemini(systemPrompt, userText, imageB64, imageMime){
 const SUPA_URL='https://zrtxadljjunwxhhmsqss.supabase.co';
 const SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpydHhhZGxqanVud3hoaG1zcXNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1NTE0ODUsImV4cCI6MjA5MjEyNzQ4NX0.8tFM11qAWBjoJXb93v3BZMJn9PgXPT1nnWsRDG5LTCI';
 const supa=supabase.createClient(SUPA_URL,SUPA_KEY);
-let _authMode='login',_currentUser=null;
 
 function toggleAuthMode(){
   _authMode=_authMode==='login'?'signup':'login';
