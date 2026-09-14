@@ -1271,6 +1271,115 @@ function saveLog(){
 
 // ════════════════════════════════════════════════════════════
 // § 08 — STATS (statistiques nutritionnelles)
+
+// ════════════════════════════════════════
+// § 06 — HOME
+// ════════════════════════════════════════
+function renderHome(){
+  const name=S.profile?.name||'';
+  const now=new Date();
+  const h=now.getHours();
+  const greeting=h<12?'Bonjour':h<18?'Bon après-midi':'Bonsoir';
+  const todayKey2=todayKey();
+  const todayProg=getTodayProgram();
+  const todayMeals=S.meals[todayKey2]||{};
+
+  // Calories du jour
+  const meals2=[todayMeals.breakfast,todayMeals.lunch,todayMeals.snack2,todayMeals.dinner].filter(Boolean);
+  const totalCal=meals2.reduce((s,m)=>s+(parseInt(m.c)||0),0);
+  const targetCal=S.profile?.goal==='loss'?1800:S.profile?.goal==='gain'?2600:2100;
+  const calPct=Math.min(100,Math.round(totalCal/targetCal*100));
+
+  // Prochain repas
+  const mealSlots=[
+    {key:'breakfast',label:'Petit-déj',icon:'🌅'},
+    {key:'lunch',label:'Déjeuner',icon:'☀️'},
+    {key:'snack2',label:'Collation',icon:'🫐'},
+    {key:'dinner',label:'Dîner',icon:'🌙'},
+  ];
+  const nextMeal=mealSlots.find(s=>todayMeals[s.key]);
+
+  // Recettes favorites pour accueil rapide
+  const favIds=new Set(S.favoriteIds||[]);
+  const favRecipes=(S.recipes||[]).filter(r=>favIds.has(r.id)).slice(0,3);
+
+  // Tips du jour
+  const tips=S._cachedTips||(S._cachedTips=_getDailyTips());
+
+  let el=document.getElementById('home-content');
+  if(!el)return;
+
+  el.innerHTML=`
+    <!-- Hero -->
+    <div class="card mb16" style="background:linear-gradient(135deg,var(--primary),var(--primary-d));color:#fff;border:none;">
+      <div style="font-size:1.3rem;font-weight:900;margin-bottom:4px;">${greeting}${name?' '+name:''} 👋</div>
+      <div style="font-size:.85rem;opacity:.85;">${now.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'})}</div>
+    </div>
+
+    <!-- Calories -->
+    <div class="card mb16">
+      <div class="card-title">🔥 Calories du jour</div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div style="flex:1;">
+          <div style="background:var(--bg3);border-radius:20px;height:10px;overflow:hidden;">
+            <div style="background:var(--primary);height:100%;width:${calPct}%;border-radius:20px;transition:width .5s;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--text2);margin-top:4px;">
+            <span>${totalCal} kcal</span><span>${targetCal} kcal</span>
+          </div>
+        </div>
+        <div style="font-size:1.5rem;font-weight:900;color:var(--primary);">${calPct}%</div>
+      </div>
+    </div>
+
+    <!-- Repas du jour -->
+    <div class="card mb16">
+      <div class="card-title">🍽️ Repas du jour</div>
+      ${mealSlots.map(sl=>{
+        const m=todayMeals[sl.key];
+        return m?`<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bg3);">
+          <span style="font-size:1.2rem;">${sl.icon}</span>
+          <div style="flex:1;">
+            <div style="font-weight:600;font-size:.88rem;">${sl.label}</div>
+            <div style="font-size:.78rem;color:var(--text2);">${m.n||''} ${m.c?'· '+m.c+' kcal':''}</div>
+          </div>
+        </div>`:''
+      }).join('')}
+      ${!meals2.length?'<div style="color:var(--text2);text-align:center;padding:20px;">Aucun repas planifié</div>':''}
+    </div>
+
+    <!-- Sport du jour -->
+    ${todayProg?`<div class="card mb16">
+      <div class="card-title">💪 Séance du jour</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="font-weight:700;">${todayProg.icon} ${todayProg.name}</div>
+          <div style="font-size:.8rem;color:var(--text2);">⏱ ${todayProg.duration} · ${todayProg.level}</div>
+        </div>
+        <button class="btn btn-p" onclick="showPage('sport')">Démarrer</button>
+      </div>
+    </div>`:''}
+
+    <!-- Favoris rapides -->
+    ${favRecipes.length?`<div class="card mb16">
+      <div class="card-title">⭐ Mes favoris</div>
+      ${favRecipes.map((r,i)=>`<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bg3);cursor:pointer;" onclick="viewRecipe(${S.recipes.indexOf(r)})">
+        <div style="width:40px;height:40px;background:${r.color||'var(--bg3)'};border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">${r.emoji||'🍽️'}</div>
+        <div style="flex:1;">
+          <div style="font-weight:600;font-size:.88rem;">${r.name}</div>
+          <div style="font-size:.75rem;color:var(--text2);">${r.prep||''} ${r.cook?'· '+r.cook:''}</div>
+        </div>
+      </div>`).join('')}
+    </div>`:''}
+
+    <!-- Tips -->
+    <div class="card mb16">
+      <div class="card-title">💡 Conseil du jour</div>
+      <div style="font-size:.85rem;line-height:1.6;color:var(--text);">${tips[0]||'Bois suffisamment d\'eau aujourd\'hui !'}</div>
+    </div>
+  `;
+}
+
 // ════════════════════════════════════════════════════════════
 function renderStats(){
   const now=new Date();
