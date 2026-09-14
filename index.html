@@ -1389,6 +1389,21 @@ function renderDayDetail(key){
     `</div>`;
 }
 
+
+function _getDailyTips(){
+  const tips=[
+    'Bois au moins 1,5L d\'eau aujourd\'hui pour optimiser ton métabolisme.',
+    'Mâche lentement — ton cerveau met 20 min pour enregistrer la satiété.',
+    'Une marche de 10 min après le repas améliore la glycémie de 22%.',
+    'Privilégie les protéines au petit-déjeuner pour réduire les fringales.',
+    'Le sommeil est le meilleur récupérateur musculaire — vise 7-8h.',
+    'Ajoute des légumes à chaque repas pour atteindre tes 5 portions.',
+    'Prépare tes repas à l\'avance pour résister aux mauvaises tentations.',
+  ];
+  const i=new Date().getDate()%tips.length;
+  return [tips[i]];
+}
+
 // ════════════════════════════════════════
 // § 06 — HOME
 // ════════════════════════════════════════
