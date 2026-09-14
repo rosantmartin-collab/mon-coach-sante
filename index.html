@@ -961,30 +961,48 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 // § 01 — PROGRAMMES MAISON (plans d'entraînement)
 // ════════════════════════════════════════════════════════════
 
-const EXERCISE_IMGS = {
-  'jumping jack': 'https://wger.de/static/images/exercises/40.png',
-  'squat': 'https://wger.de/static/images/exercises/36.png',
-  'squat jump': 'https://wger.de/static/images/exercises/36.png',
-  'squat moove': 'https://wger.de/static/images/exercises/36.png',
-  'burpees': 'https://wger.de/static/images/exercises/114.png',
-  'pompes': 'https://wger.de/static/images/exercises/10.png',
-  'mountain climbers': 'https://wger.de/static/images/exercises/115.png',
-  'gainage': 'https://wger.de/static/images/exercises/73.png',
-  'chaise': 'https://wger.de/static/images/exercises/36.png',
-  'fente bulgare': 'https://wger.de/static/images/exercises/101.png',
-  'fente alterné': 'https://wger.de/static/images/exercises/99.png',
-  'fente marché': 'https://wger.de/static/images/exercises/99.png',
-  'fente marcher': 'https://wger.de/static/images/exercises/99.png',
-  'fente jump': 'https://wger.de/static/images/exercises/99.png',
-  'fente jump alterné': 'https://wger.de/static/images/exercises/99.png',
-  'thruster': 'https://wger.de/static/images/exercises/35.png',
-  'touche épaule': 'https://wger.de/static/images/exercises/73.png',
-  'monter genoux': 'https://wger.de/static/images/exercises/40.png',
-  'monter de genoux': 'https://wger.de/static/images/exercises/40.png',
-  'mouvements ostéo-articulaires / stretching': 'https://wger.de/static/images/exercises/35.png',
-  'gainage côté': 'https://wger.de/static/images/exercises/73.png',
-  'gainage militaire': 'https://wger.de/static/images/exercises/73.png'
+const EXERCISE_SEARCH_TERMS = {
+  'jumping jack': 'jumping+jack',
+  'squat': 'squat',
+  'squat jump': 'squat+jump',
+  'squat moove': 'squat',
+  'burpees': 'burpee',
+  'pompes': 'push+up',
+  'mountain climbers': 'mountain+climber',
+  'gainage côté': 'side+plank',
+  'gainage militaire': 'plank',
+  'chaise': 'wall+sit',
+  'fente bulgare': 'bulgarian+split+squat',
+  'fente alterné': 'lunge',
+  'fente marché': 'walking+lunge',
+  'fente marcher': 'walking+lunge',
+  'fente jump': 'jump+lunge',
+  'fente jump alterné': 'jump+lunge',
+  'thruster': 'thruster',
+  'touche épaule': 'shoulder+tap',
+  'monter genoux': 'high+knee',
+  'monter de genoux': 'high+knee',
+  'mouvements ostéo-articulaires / stretching': 'stretching'
 };
+const _exerciseImgCache = {};
+
+async function getExerciseImg(name) {
+  const key = name.toLowerCase().trim();
+  if(_exerciseImgCache[key] !== undefined) return _exerciseImgCache[key];
+  const term = EXERCISE_SEARCH_TERMS[key] || encodeURIComponent(key);
+  try {
+    const res = await fetch(`https://wger.de/api/v2/exerciseinfo/?format=json&language=2&name=${term}&limit=5`);
+    const data = await res.json();
+    const ex = (data.results||[]).find(e=>e.images&&e.images.length>0);
+    const url = ex ? ex.images[0].image : '';
+    _exerciseImgCache[key] = url;
+    return url;
+  } catch(e) {
+    _exerciseImgCache[key] = '';
+    return '';
+  }
+}
+
 
 const PROGRAMS = [
   {
@@ -1584,17 +1602,24 @@ function renderMealsDetail(){
 // renderSport now defined in new JS section above
 
 // PROGRAM MODAL
-function openProgModal(progId){
-  const prog=PROGRAMS.find(p=>p.id===progId);
+async function openProgModal(progId){
+  const prog=PROGRAMS.find(p=>p&&p.id===progId);
   if(!prog)return;
   document.getElementById('prog-modal-title').innerHTML=`${prog.icon} ${prog.name}`;
-  let rows=prog.exercises.map(e=>{
+  
+  // Charger les images en parallèle
+  const imgUrls = await Promise.all(prog.exercises.map(e => 
+    e.sets===0 ? Promise.resolve('') : getExerciseImg(e.n)
+  ));
+
+  let rows=prog.exercises.map((e,idx)=>{
     if(e.sets===0){
-      return `<tr><td colspan="4" style="background:var(--bg3);color:var(--primary);font-weight:700;font-size:.8rem;padding:8px 12px;border-radius:8px;text-align:center;">${e.n}</td></tr>`;
+      return `<tr><td colspan="5" style="background:var(--bg3);color:var(--primary);font-weight:700;font-size:.8rem;padding:8px 12px;border-radius:8px;text-align:center;">${e.n}</td></tr>`;
     }
-    const normName=e.n.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-    const imgUrl=EXERCISE_IMGS[e.n.toLowerCase().trim()]||EXERCISE_IMGS[normName]||'';
-    const imgCell=imgUrl?`<td style="width:70px;padding:4px;"><img src="${imgUrl}" style="width:60px;height:60px;object-fit:contain;border-radius:10px;background:var(--bg3);display:block;" onerror="this.style.display='none'"></td>`:'<td style="width:20px;"></td>';
+    const imgUrl=imgUrls[idx]||'';
+    const imgCell=imgUrl
+      ?`<td style="width:70px;padding:4px;"><img src="${imgUrl}" style="width:62px;height:62px;object-fit:cover;border-radius:10px;background:var(--bg3);display:block;" onerror="this.style.display='none'"></td>`
+      :`<td style="width:20px;"></td>`;
     return `<tr>
       ${imgCell}
       <td><strong>${e.n}</strong>${e.note?`<br><span style="color:var(--text2);font-size:.72rem;">${e.note}</span>`:''}</td>
@@ -1612,7 +1637,7 @@ function openProgModal(progId){
     ${prog.description?`<div style="margin-bottom:14px;padding:10px 14px;background:var(--bg3);border-radius:10px;font-size:.82rem;color:var(--text2);">📋 ${prog.description}</div>`:''}
     <div style="overflow-x:auto;">
       <table class="ex-table">
-        <thead><tr><th style="width:60px;"></th><th>Exercice</th><th>Volume</th><th>Reps</th><th>Repos</th></tr></thead>
+        <thead><tr><th style="width:70px;"></th><th>Exercice</th><th>Volume</th><th>Reps</th><th>Repos</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>
     </div>
