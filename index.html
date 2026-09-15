@@ -1398,16 +1398,43 @@ function renderDayDetail(key){
 
 function _getDailyTips(){
   const tips=[
-    'Bois au moins 1,5L d\'eau aujourd\'hui pour optimiser ton métabolisme.',
-    'Mâche lentement — ton cerveau met 20 min pour enregistrer la satiété.',
-    'Une marche de 10 min après le repas améliore la glycémie de 22%.',
-    'Privilégie les protéines au petit-déjeuner pour réduire les fringales.',
-    'Le sommeil est le meilleur récupérateur musculaire — vise 7-8h.',
-    'Ajoute des légumes à chaque repas pour atteindre tes 5 portions.',
-    'Prépare tes repas à l\'avance pour résister aux mauvaises tentations.',
+    // 🥗 Nutrition
+    {theme:'🥗 Nutrition',text:'Bois un grand verre d\'eau avant chaque repas — tu mangeras naturellement moins et mieux.'},
+    {theme:'🥗 Nutrition',text:'Mâche chaque bouchée au moins 20 fois. Ton cerveau met 20 min à ressentir la satiété.'},
+    {theme:'🥗 Nutrition',text:'Privilégie les protéines au petit-déjeuner : œufs, yaourt grec, fromage blanc. Ça réduit les fringales de l\'après-midi.'},
+    {theme:'🥗 Nutrition',text:'Les légumineuses (lentilles, pois chiches, haricots) sont parmi les aliments les plus rassasiants et les moins chers.'},
+    {theme:'🥗 Nutrition',text:'Un carré de chocolat noir à 70%+ après le repas satisfait l\'envie de sucre sans pic glycémique.'},
+    {theme:'🥗 Nutrition',text:'Cuisine en batch le dimanche : prépare tes protéines et légumes pour la semaine. Tu éviteras les mauvais choix rapides.'},
+    {theme:'🥗 Nutrition',text:'Les oméga-3 (saumon, sardines, graines de chia) réduisent l\'inflammation et améliorent la récupération musculaire.'},
+    {theme:'🥗 Nutrition',text:'Mange tes légumes en premier dans l\'assiette — tu augmentes tes fibres et tu modères les féculents naturellement.'},
+    // 💪 Sport
+    {theme:'💪 Sport',text:'Un échauffement de 5 min avant le sport réduit le risque de blessure de 30% et améliore la performance.'},
+    {theme:'💪 Sport',text:'La progression est la clé : augmente le volume ou l\'intensité de 5-10% chaque semaine pour continuer à progresser.'},
+    {theme:'💪 Sport',text:'Les jours de repos sont aussi importants que les jours d\'entraînement — c\'est là que tes muscles se construisent.'},
+    {theme:'💪 Sport',text:'Une marche de 30 min par jour brûle autant de graisses sur la semaine qu\'une session HIIT, sans le stress hormonal.'},
+    {theme:'💪 Sport',text:'Le gainage est la base de tout : un core fort protège ton dos et améliore tous tes autres exercices.'},
+    {theme:'💪 Sport',text:'Pour brûler les graisses efficacement, entraîne-toi à 65-75% de ta fréquence cardiaque max — la zone lipides.'},
+    {theme:'💪 Sport',text:'L\'échauffement et les étirements post-séance réduisent les courbatures de 40%. Ne les saute jamais.'},
+    // 🧘 Mindset
+    {theme:'🧘 Mindset',text:'La constance bat l\'intensité. Faire 20 min chaque jour donne de meilleurs résultats qu\'une session de 3h le weekend.'},
+    {theme:'🧘 Mindset',text:'Ne te compare pas aux autres. Compare-toi à qui tu étais il y a 3 mois — c\'est la seule progression qui compte.'},
+    {theme:'🧘 Mindset',text:'Un écart alimentaire ne ruine pas une semaine. Ce qui compte, c\'est ce que tu fais les 6 autres jours.'},
+    {theme:'🧘 Mindset',text:'La motivation vient après l\'action, pas avant. Commence petit, commence maintenant — l\'envie suivra.'},
+    {theme:'🧘 Mindset',text:'Visualise ta séance la veille au soir. Les athlètes de haut niveau l\'utilisent : ça programme ton cerveau pour réussir.'},
+    {theme:'🧘 Mindset',text:'Célèbre tes petites victoires — un repas équilibré, une séance complète, 8h de sommeil. Chaque pas compte.'},
+    // 😴 Récupération
+    {theme:'😴 Récupération',text:'7 à 8h de sommeil par nuit — c\'est le meilleur booster de testostérone, de récupération et de perte de graisse qui existe.'},
+    {theme:'😴 Récupération',text:'Évite les écrans 1h avant de dormir. La lumière bleue bloque la mélatonine et dégrade la qualité de ton sommeil.'},
+    {theme:'😴 Récupération',text:'Le stress chronique élève le cortisol et favorise le stockage de graisses abdominales. La gestion du stress, c\'est du sport.'},
+    {theme:'😴 Récupération',text:'Une sieste de 20 min améliore les performances cognitives de 34% et la vigilance de 100% selon la NASA.'},
+    // 💧 Hydratation
+    {theme:'💧 Hydratation',text:'La déshydratation de seulement 2% réduit tes performances sportives de 20%. Bois avant d\'avoir soif.'},
+    {theme:'💧 Hydratation',text:'Commence ta journée par 500ml d\'eau à jeun — ton corps a perdu 500ml à 1L pendant ton sommeil.'},
+    {theme:'💧 Hydratation',text:'L\'eau citron le matin n\'est pas magique, mais elle t\'aide à hydrater, alcaliniser légèrement et démarrer une bonne routine.'},
   ];
-  const i=new Date().getDate()%tips.length;
-  return [tips[i]];
+  // 1 conseil par jour, change à minuit
+  const day=new Date().getDate()+new Date().getMonth()*31+new Date().getFullYear()*365;
+  return [tips[day%tips.length]];
 }
 
 // ════════════════════════════════════════
@@ -1509,7 +1536,7 @@ function renderHome(){
         <!-- Conseil du jour -->
         <div style="background:linear-gradient(135deg,#f0e6da,#fdf6ec);border-radius:14px;padding:16px;border:1px solid var(--bg4);flex:1;">
           <div style="font-weight:700;font-size:.9rem;margin-bottom:8px;">💡 Conseil du jour</div>
-          <div style="font-size:.8rem;line-height:1.6;color:var(--text);">${tips[0]||'Bois suffisamment d\'eau aujourd\'hui !'}</div>
+          ${tips[0]?`<div style="font-size:.7rem;font-weight:700;color:var(--primary);margin-bottom:6px;">${tips[0].theme}</div><div style="font-size:.8rem;line-height:1.6;color:var(--text);">${tips[0].text}</div>`:'<div style="font-size:.8rem;color:var(--text2);">Bois suffisamment d\'eau !</div>'}
         </div>
 
       </div>
@@ -1517,7 +1544,10 @@ function renderHome(){
 
     <!-- Favoris -->
     ${favRecipes.length?`<div style="background:var(--bg2);border-radius:14px;padding:16px;border:1px solid var(--bg4);margin-bottom:16px;">
-      <div style="font-weight:700;font-size:.9rem;margin-bottom:12px;">⭐ Mes favoris</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div style="font-weight:700;font-size:.9rem;">⭐ Mes favoris</div>
+        <button class="btn btn-g" style="font-size:.75rem;padding:5px 12px;" onclick="showPage('recettes');setTimeout(()=>filterRecipes('fav',document.getElementById('rfbtn-fav')),100)">Voir tous →</button>
+      </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;">
         ${favRecipes.map(r=>`<div onclick="viewRecipe(${S.recipes.indexOf(r)})" style="
           display:flex;align-items:center;gap:10px;padding:10px;
