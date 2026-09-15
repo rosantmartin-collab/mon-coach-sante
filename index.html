@@ -3199,6 +3199,25 @@ async function signOut(){
 // ════════════════════════════════════════════════════════════
 // § 24 — SYNC CLOUD (sauvegarde et chargement Supabase)
 // ════════════════════════════════════════════════════════════
+
+function showToast(msg, duration=2500){
+  let t=document.getElementById('toast');
+  if(!t){
+    t=document.createElement('div');
+    t.id='toast';
+    t.style.cssText='position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:#3d2b1f;color:#fff;padding:10px 20px;border-radius:20px;font-size:.85rem;font-weight:600;z-index:9999;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;';
+    document.body.appendChild(t);
+  }
+  t.textContent=msg;
+  t.style.opacity='1';
+  t.style.transform='translateX(-50%) translateY(0)';
+  clearTimeout(t._timer);
+  t._timer=setTimeout(()=>{
+    t.style.opacity='0';
+    t.style.transform='translateX(-50%) translateY(20px)';
+  },duration);
+}
+
 function save(){
   try{localStorage.setItem('coachv3',JSON.stringify(S));}catch(e){}
   clearTimeout(_cloudTimer);
