@@ -1273,20 +1273,29 @@ function getCalTarget(){
 }
 
 function genDay(type){
-  // Génère un repas type selon le type de journée
-  const base={
-    breakfast:{n:'Petit-déjeuner',c:400,ing:['flocons d\'avoine','lait','banane']},
-    lunch:{n:'Déjeuner équilibré',c:600,ing:['poulet','riz','haricots verts']},
-    snack2:{n:'Collation',c:200,ing:['yaourt','myrtilles']},
-    dinner:{n:'Dîner léger',c:500,ing:['saumon','épinards','citron']}
+  // Pioche dans les recettes sauvegardées selon la catégorie
+  const all=RECIPE_SUGGESTIONS.concat(RECIPE_SUGGESTIONS_EXTRA).concat(S.recipes||[]);
+  const pick=(cats)=>{
+    const pool=all.filter(r=>r&&r.name&&cats.includes(r.category));
+    if(!pool.length) return null;
+    const r=pool[Math.floor(Math.random()*pool.length)];
+    const cal=r.cal||(r.persons?Math.round(500/Math.max(1,r.persons)):400);
+    const ing=(r.ingredients||[]).map(i=>i.name).slice(0,5);
+    return {n:r.name,c:cal,ing,recipeId:r.id,emoji:r.emoji};
   };
-  if(type==='repos') return {
-    breakfast:{n:'Petit-déjeuner',c:350,ing:['pain complet','œufs','fromage']},
-    lunch:{n:'Déjeuner',c:550,ing:['salade','thon','tomates']},
-    snack2:{n:'Collation',c:150,ing:['pomme','amandes']},
-    dinner:{n:'Dîner',c:450,ing:['soupe de légumes','pain']}
+  const sport={
+    breakfast: pick(['petit-déjeuner'])||{n:'Porridge protéiné',c:420,ing:['flocons avoine','whey','banane']},
+    lunch:     pick(['déjeuner'])||{n:'Riz poulet légumes',c:620,ing:['riz','poulet','haricots verts']},
+    snack2:    pick(['collation'])||{n:'Yaourt myrtilles',c:180,ing:['yaourt','myrtilles']},
+    dinner:    pick(['dîner'])||{n:'Saumon épinards',c:520,ing:['saumon','épinards','citron']}
   };
-  return JSON.parse(JSON.stringify(base));
+  const repos={
+    breakfast: pick(['petit-déjeuner'])||{n:'Œufs pain complet',c:360,ing:['œufs','pain complet','fromage']},
+    lunch:     pick(['déjeuner','entrée'])||{n:'Salade thon',c:480,ing:['salade','thon','tomates']},
+    snack2:    pick(['collation'])||{n:'Pomme amandes',c:160,ing:['pomme','amandes']},
+    dinner:    pick(['dîner'])||{n:'Soupe légumes',c:380,ing:['légumes','pain']}
+  };
+  return type==='repos'?repos:sport;
 }
 
 function ensureWeek(){
@@ -1413,99 +1422,118 @@ function renderHome(){
   const todayProg=getTodayProgram();
   const todayMeals=S.meals[todayKey2]||{};
 
-  // Calories du jour
   const meals2=[todayMeals.breakfast,todayMeals.lunch,todayMeals.snack2,todayMeals.dinner].filter(Boolean);
   const totalCal=meals2.reduce((s,m)=>s+(parseInt(m.c)||0),0);
   const targetCal=S.profile?.goal==='loss'?1800:S.profile?.goal==='gain'?2600:2100;
   const calPct=Math.min(100,Math.round(totalCal/targetCal*100));
+  const calColor=calPct>100?'#ef4444':calPct>75?'var(--primary)':'#10b981';
 
-  // Prochain repas
   const mealSlots=[
-    {key:'breakfast',label:'Petit-déj',icon:'🌅'},
-    {key:'lunch',label:'Déjeuner',icon:'☀️'},
-    {key:'snack2',label:'Collation',icon:'🫐'},
-    {key:'dinner',label:'Dîner',icon:'🌙'},
+    {key:'breakfast',label:'Petit-déj',icon:'🌅',color:'#f59e0b'},
+    {key:'lunch',label:'Déjeuner',icon:'☀️',color:'#10b981'},
+    {key:'snack2',label:'Collation',icon:'🫐',color:'#8b5cf6'},
+    {key:'dinner',label:'Dîner',icon:'🌙',color:'#3b82f6'},
   ];
-  const nextMeal=mealSlots.find(s=>todayMeals[s.key]);
 
-  // Recettes favorites pour accueil rapide
   const favIds=new Set(S.favoriteIds||[]);
-  const favRecipes=(S.recipes||[]).filter(r=>favIds.has(r.id)).slice(0,3);
-
-  // Tips du jour
-  const tips=S._cachedTips||(S._cachedTips=_getDailyTips());
+  const favRecipes=(S.recipes||[]).filter(r=>favIds.has(r.id)).slice(0,4);
+  const tips=_getDailyTips();
 
   let el=document.getElementById('home-content');
   if(!el)return;
 
   el.innerHTML=`
-    <!-- Hero -->
-    <div class="card mb16" style="background:linear-gradient(135deg,var(--primary),var(--primary-d));color:#fff;border:none;">
-      <div style="font-size:1.3rem;font-weight:900;margin-bottom:4px;">${greeting}${name?' '+name:''} 👋</div>
-      <div style="font-size:.85rem;opacity:.85;">${now.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'})}</div>
-    </div>
-
-    <!-- Calories -->
-    <div class="card mb16">
-      <div class="card-title">🔥 Calories du jour</div>
-      <div style="display:flex;align-items:center;gap:16px;">
-        <div style="flex:1;">
-          <div style="background:var(--bg3);border-radius:20px;height:10px;overflow:hidden;">
-            <div style="background:var(--primary);height:100%;width:${calPct}%;border-radius:20px;transition:width .5s;"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--text2);margin-top:4px;">
-            <span>${totalCal} kcal</span><span>${targetCal} kcal</span>
-          </div>
+    <!-- Hero banner -->
+    <div style="background:linear-gradient(135deg,var(--primary) 0%,var(--primary-d) 100%);
+      border-radius:18px;padding:20px 24px;margin-bottom:16px;
+      display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-size:1.4rem;font-weight:900;color:#fff;">${greeting}${name?' '+name:''} 👋</div>
+        <div style="font-size:.85rem;color:rgba(255,255,255,.8);margin-top:2px;">
+          ${now.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'})}
         </div>
-        <div style="font-size:1.5rem;font-weight:900;color:var(--primary);">${calPct}%</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:2rem;font-weight:900;color:#fff;">${calPct}%</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.7);">${totalCal}/${targetCal} kcal</div>
       </div>
     </div>
 
-    <!-- Repas du jour -->
-    <div class="card mb16">
-      <div class="card-title">🍽️ Repas du jour</div>
-      ${mealSlots.map(sl=>{
-        const m=todayMeals[sl.key];
-        return m?`<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bg3);">
-          <span style="font-size:1.2rem;">${sl.icon}</span>
-          <div style="flex:1;">
-            <div style="font-weight:600;font-size:.88rem;">${sl.label}</div>
-            <div style="font-size:.78rem;color:var(--text2);">${m.n||''} ${m.c?'· '+m.c+' kcal':''}</div>
-          </div>
-        </div>`:''
-      }).join('')}
-      ${!meals2.length?'<div style="color:var(--text2);text-align:center;padding:20px;">Aucun repas planifié</div>':''}
+    <!-- Barre calories -->
+    <div style="background:var(--bg2);border-radius:14px;padding:16px 18px;margin-bottom:16px;border:1px solid var(--bg4);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:700;font-size:.9rem;">🔥 Calories du jour</div>
+        <div style="font-size:.8rem;color:var(--text2);">${totalCal} / ${targetCal} kcal</div>
+      </div>
+      <div style="background:var(--bg3);border-radius:20px;height:12px;overflow:hidden;">
+        <div style="background:${calColor};height:100%;width:${calPct}%;border-radius:20px;transition:width .6s;"></div>
+      </div>
     </div>
 
-    <!-- Sport du jour -->
-    ${todayProg?`<div class="card mb16">
-      <div class="card-title">💪 Séance du jour</div>
-      <div style="display:flex;align-items:center;justify-content:space-between;">
-        <div>
-          <div style="font-weight:700;">${todayProg.icon} ${todayProg.name}</div>
-          <div style="font-size:.8rem;color:var(--text2);">⏱ ${todayProg.duration} · ${todayProg.level}</div>
+    <!-- Grille 2 colonnes -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">
+
+      <!-- Repas du jour -->
+      <div style="background:var(--bg2);border-radius:14px;padding:16px;border:1px solid var(--bg4);">
+        <div style="font-weight:700;font-size:.9rem;margin-bottom:12px;">🍽️ Repas du jour</div>
+        ${mealSlots.map(sl=>{
+          const m=todayMeals[sl.key];
+          return `<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--bg3);">
+            <div style="width:28px;height:28px;border-radius:8px;background:${sl.color}22;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;">${sl.icon}</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:.75rem;font-weight:700;color:${sl.color};">${sl.label}</div>
+              <div style="font-size:.72rem;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${m?m.n:'Non planifié'}</div>
+            </div>
+          </div>`;
+        }).join('')}
+        <div style="text-align:center;margin-top:10px;">
+          <button class="btn btn-g" style="font-size:.75rem;padding:6px 12px;" onclick="showPage('meals')">Voir les repas →</button>
         </div>
-        <button class="btn btn-p" onclick="showPage('sport')">Démarrer</button>
+      </div>
+
+      <!-- Colonne droite -->
+      <div style="display:flex;flex-direction:column;gap:14px;">
+
+        <!-- Séance sport -->
+        ${todayProg?`<div style="background:var(--bg2);border-radius:14px;padding:16px;border:1px solid var(--bg4);">
+          <div style="font-weight:700;font-size:.9rem;margin-bottom:8px;">💪 Séance du jour</div>
+          <div style="font-size:.95rem;font-weight:700;margin-bottom:4px;">${todayProg.icon} ${todayProg.name}</div>
+          <div style="font-size:.75rem;color:var(--text2);margin-bottom:10px;">⏱ ${todayProg.duration} · ${todayProg.level}</div>
+          <button class="btn btn-p" style="width:100%;font-size:.8rem;" onclick="showPage('sport')">🚀 Démarrer</button>
+        </div>`:`<div style="background:var(--bg2);border-radius:14px;padding:16px;border:1px solid var(--bg4);">
+          <div style="font-weight:700;font-size:.9rem;margin-bottom:8px;">💪 Sport</div>
+          <div style="font-size:.8rem;color:var(--text2);margin-bottom:10px);">Pas de séance planifiée aujourd'hui</div>
+          <button class="btn btn-g" style="width:100%;font-size:.8rem;" onclick="showPage('sport')">Voir les programmes</button>
+        </div>`}
+
+        <!-- Conseil du jour -->
+        <div style="background:linear-gradient(135deg,#f0e6da,#fdf6ec);border-radius:14px;padding:16px;border:1px solid var(--bg4);flex:1;">
+          <div style="font-weight:700;font-size:.9rem;margin-bottom:8px;">💡 Conseil du jour</div>
+          <div style="font-size:.8rem;line-height:1.6;color:var(--text);">${tips[0]||'Bois suffisamment d\'eau aujourd\'hui !'}</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Favoris -->
+    ${favRecipes.length?`<div style="background:var(--bg2);border-radius:14px;padding:16px;border:1px solid var(--bg4);margin-bottom:16px;">
+      <div style="font-weight:700;font-size:.9rem;margin-bottom:12px;">⭐ Mes favoris</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;">
+        ${favRecipes.map(r=>`<div onclick="viewRecipe(${S.recipes.indexOf(r)})" style="
+          display:flex;align-items:center;gap:10px;padding:10px;
+          background:var(--bg3);border-radius:12px;cursor:pointer;
+          border:1.5px solid var(--bg4);transition:all .2s;"
+          onmouseover="this.style.borderColor='var(--primary)'"
+          onmouseout="this.style.borderColor='var(--bg4)'">
+          <div style="width:38px;height:38px;border-radius:10px;background:${r.color||'var(--bg4)'};
+            display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">${r.emoji||'🍽️'}</div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-weight:700;font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${r.name}</div>
+            <div style="font-size:.7rem;color:var(--text2);">${r.prep||''} ${r.cook?'· '+r.cook:''}</div>
+          </div>
+        </div>`).join('')}
       </div>
     </div>`:''}
-
-    <!-- Favoris rapides -->
-    ${favRecipes.length?`<div class="card mb16">
-      <div class="card-title">⭐ Mes favoris</div>
-      ${favRecipes.map((r,i)=>`<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bg3);cursor:pointer;" onclick="viewRecipe(${S.recipes.indexOf(r)})">
-        <div style="width:40px;height:40px;background:${r.color||'var(--bg3)'};border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">${r.emoji||'🍽️'}</div>
-        <div style="flex:1;">
-          <div style="font-weight:600;font-size:.88rem;">${r.name}</div>
-          <div style="font-size:.75rem;color:var(--text2);">${r.prep||''} ${r.cook?'· '+r.cook:''}</div>
-        </div>
-      </div>`).join('')}
-    </div>`:''}
-
-    <!-- Tips -->
-    <div class="card mb16">
-      <div class="card-title">💡 Conseil du jour</div>
-      <div style="font-size:.85rem;line-height:1.6;color:var(--text);">${tips[0]||'Bois suffisamment d\'eau aujourd\'hui !'}</div>
-    </div>
   `;
 }
 
